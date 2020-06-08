@@ -5,7 +5,7 @@ on: pull_request
 # add [skip ci] to pull_request title to skip ci check
 jobs:
   analyze:
-    if: ${{ !contains(github.event.pull_request.title, '[skip ci]' }}
+    if: ${{ !contains(github.event.pull_request.title, '[skip ci]') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -14,25 +14,23 @@ jobs:
           flutter-version: '1.17.3'
           channel: 'stable'
       - name: Flutter analyze
-        run: |
-          flutter pub get
-          flutter analyze > flutter_analyze_report.txt
+        run: flutter analyze > flutter_analyze_report.txt
       - name: Cache bundle
         uses: actions/cache@v1
         with:
           path: vendor/bundle
           key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: |
-            ${{ runners.os }}-gem-
+            ${{ runner.os }}-gem-
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7.1
-      - name: Dnager
+      - name: Danger PR Comment
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gem isntall bundler
+          gem install bundler
           bundle install
           bundle exec danger
 
@@ -60,19 +58,12 @@ jobs:
         run: echo $GOOGLE_SERVICES_BASE64 | base64 --decode --ignore-garbage > $GITHUB_WORKSPACE/android/app/google-services.json
       - name: Android build
         run: flutter build apk --release
-      - uses: actions/upload-artifact@v2
-        with:
-          name: generated_apk
-          path: ./build/app/outputs/apk/release/app-release.apk
-      - name: Create file failure.txt and write 'true' into it
-        if: always()
-        run: echo ${{ job.status == 'failure' }} > failure.txt
-      - name: Upload file about failure
-        if: always()
-        uses: actions/upload-artifact@v2
-        with:
-          name: pass_file
-          path: failure.txt
+        # TODO: DeployGateのjobを使いする
+  #      - uses: actions/upload-artifact@v2
+  #        with:
+  #          name: generated_apk
+  #          path: ./build/app/outputs/apk/release/app-release.apk
+
 
   build-ios:
     if: ${{ !contains(github.event.pull_request.title, '[skip ci]') }}
@@ -98,41 +89,24 @@ jobs:
         run: echo $GOOGLE_SERVICE_INFO_BASE64 | base64 --decode > $GITHUB_WORKSPACE/ios/Runner/GoogleService-Info.plist
       - name: iOS build
         run: flutter build ios --release --no-codesign
-      # TODO: upload ipa
-      - name: Create file failure.txt and write 'true' into it
-        if: always()
-        run: echo ${{ job.status == 'failure' }} > failure.txt
-      - name: Upload file about failure
-        if: always()
-        uses: actions/upload-artifact@v1
-        with:
-          name: pass_file
-          path: failure.txt
 
   notification:
-    needs: [distribute_app]
+    needs: [build-android, build-ios]
     if: ${{ !contains(github.event.pull_request.title, '[skip ci]') }} && always()
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.pull_request.head.sha }}
-      - name: Download file post_message.txt
-        uses: actions/download-artifact@v1
-        with:
-          name: pass_file
-      - name: Read file failure.txt and set output parameter
-        id: set_output
-        run: echo "::set-output name=failure::$(<pass_file/failure.txt)"
       - name: get commit message
         id: set_commitmsg
         run: echo "::set-output name=commitmsg::$(git log --format=%B -n 1 ${{ github.event.after }})"
       # 失敗したときのSlackへの通知
       - name: Slack Notification Failure
-        if: steps.set_output.outputs.failure == 'true'
+        if: ${{ failure() }}
         uses: rtCamp/action-slack-notify@v2.0.1
         env:
-          SLACK_CHANNEL: gotties-log
+          SLACK_CHANNEL: hack01_flutter_log
           SLACK_ICON: https://github.com/actions.png?size=48
           SLACK_COLOR: '#ff0000'
           SLACK_TITLE: ':fire: Build Failure :fire:'
@@ -144,10 +118,10 @@ jobs:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
       # 成功した時のSlackへの通知
       - name: Slack Notification Success
-        if: steps.set_output.outputs.failure != 'true'
+        if: ${{ success() }}
         uses: rtCamp/action-slack-notify@v2.0.1
         env:
-          SLACK_CHANNEL: gotties-log
+          SLACK_CHANNEL: hack01_flutter_log
           SLACK_ICON: https://github.com/actions.png?size=48
           SLACK_TITLE: ':rocket: Build Success :rocket:'
           SLACK_MESSAGE: |
