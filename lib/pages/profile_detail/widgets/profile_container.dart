@@ -19,7 +19,7 @@ class ProfileContainer extends StatelessWidget {
               textAlign: TextAlign.left,
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
           Text(contentName,
-              textAlign: TextAlign.right, style: TextStyle(fontSize: 20)),
+              textAlign: TextAlign.right, style: const TextStyle(fontSize: 20)),
         ],
       ),
     );
