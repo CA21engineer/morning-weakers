@@ -25,7 +25,7 @@ class AllPage extends StatelessWidget {
       body: ListView.builder(
         itemBuilder: (BuildContext context, int index) {
           return Container(
-              margin: const EdgeInsets.all(5),
+              margin: const EdgeInsets.all(3),
               child: Card(
                 child: ListTile(
                   title: Text(_pageList[index].toString()),
