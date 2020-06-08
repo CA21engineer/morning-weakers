@@ -8,6 +8,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        primaryColor: Colors.blueAccent,
+          accentColor: Colors.cyan[600],
+      ),
       debugShowCheckedModeBanner: false,
       onGenerateRoute: (RouteSettings settings) {
         switch (settings.name) {
