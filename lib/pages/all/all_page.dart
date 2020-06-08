@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:morning_weakers/pages/input_participant_info/input_participant_Info_page.dart';
+import 'package:morning_weakers/pages/input_participant_info/input_participant_info_page.dart';
 import 'package:morning_weakers/pages/new_profile/new_profile_page.dart';
 import 'package:morning_weakers/pages/profile_detail/profile_detail_page.dart';
 
