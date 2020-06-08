@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         primaryColor: Colors.blueAccent,
-          accentColor: Colors.cyan[600],
+        accentColor: Colors.cyan[600],
       ),
       debugShowCheckedModeBanner: false,
       onGenerateRoute: (RouteSettings settings) {
