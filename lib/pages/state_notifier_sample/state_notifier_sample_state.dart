@@ -5,5 +5,5 @@ part 'state_notifier_sample_state.freezed.dart';
 
 @freezed
 abstract class SampleState with _$SampleState {
-  const factory SampleState(String name) = _SampleState;
+  const factory SampleState({@Default(0) int count}) = _SampleState;
 }

@@ -12,9 +12,9 @@ T _$identity<T>(T value) => value;
 class _$SampleStateTearOff {
   const _$SampleStateTearOff();
 
-  _SampleState call(String name) {
+  _SampleState call({int count = 0}) {
     return _SampleState(
-      name,
+      count: count,
     );
   }
 }
@@ -23,7 +23,7 @@ class _$SampleStateTearOff {
 const $SampleState = _$SampleStateTearOff();
 
 mixin _$SampleState {
-  String get name;
+  int get count;
 
   $SampleStateCopyWith<SampleState> get copyWith;
 }
@@ -32,7 +32,7 @@ abstract class $SampleStateCopyWith<$Res> {
   factory $SampleStateCopyWith(
           SampleState value, $Res Function(SampleState) then) =
       _$SampleStateCopyWithImpl<$Res>;
-  $Res call({String name});
+  $Res call({int count});
 }
 
 class _$SampleStateCopyWithImpl<$Res> implements $SampleStateCopyWith<$Res> {
@@ -44,10 +44,10 @@ class _$SampleStateCopyWithImpl<$Res> implements $SampleStateCopyWith<$Res> {
 
   @override
   $Res call({
-    Object name = freezed,
+    Object count = freezed,
   }) {
     return _then(_value.copyWith(
-      name: name == freezed ? _value.name : name as String,
+      count: count == freezed ? _value.count : count as int,
     ));
   }
 }
@@ -58,7 +58,7 @@ abstract class _$SampleStateCopyWith<$Res>
           _SampleState value, $Res Function(_SampleState) then) =
       __$SampleStateCopyWithImpl<$Res>;
   @override
-  $Res call({String name});
+  $Res call({int count});
 }
 
 class __$SampleStateCopyWithImpl<$Res> extends _$SampleStateCopyWithImpl<$Res>
@@ -72,23 +72,24 @@ class __$SampleStateCopyWithImpl<$Res> extends _$SampleStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object name = freezed,
+    Object count = freezed,
   }) {
     return _then(_SampleState(
-      name == freezed ? _value.name : name as String,
+      count: count == freezed ? _value.count : count as int,
     ));
   }
 }
 
 class _$_SampleState with DiagnosticableTreeMixin implements _SampleState {
-  const _$_SampleState(this.name) : assert(name != null);
+  const _$_SampleState({this.count = 0}) : assert(count != null);
 
+  @JsonKey(defaultValue: 0)
   @override
-  final String name;
+  final int count;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SampleState(name: $name)';
+    return 'SampleState(count: $count)';
   }
 
   @override
@@ -96,20 +97,20 @@ class _$_SampleState with DiagnosticableTreeMixin implements _SampleState {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'SampleState'))
-      ..add(DiagnosticsProperty('name', name));
+      ..add(DiagnosticsProperty('count', count));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _SampleState &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)));
+            (identical(other.count, count) ||
+                const DeepCollectionEquality().equals(other.count, count)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(count);
 
   @override
   _$SampleStateCopyWith<_SampleState> get copyWith =>
@@ -117,10 +118,10 @@ class _$_SampleState with DiagnosticableTreeMixin implements _SampleState {
 }
 
 abstract class _SampleState implements SampleState {
-  const factory _SampleState(String name) = _$_SampleState;
+  const factory _SampleState({int count}) = _$_SampleState;
 
   @override
-  String get name;
+  int get count;
   @override
   _$SampleStateCopyWith<_SampleState> get copyWith;
 }
