@@ -18,10 +18,10 @@ _$_User _$_$_UserFromJson(Map<String, dynamic> json) {
 }
 
 Map<String, dynamic> _$_$_UserToJson(_$_User instance) => <String, dynamic>{
-      'id': instance.id,
-      'full_name': instance.fullName,
-      'display_name': instance.displayName,
-      'github_account': instance.githubAccount,
-      'twitter_account': instance.twitterAccount,
-      'icon_url': instance.iconUrl,
-    };
+  'id': instance.id,
+  'full_name': instance.fullName,
+  'display_name': instance.displayName,
+  'github_account': instance.githubAccount,
+  'twitter_account': instance.twitterAccount,
+  'icon_url': instance.iconUrl,
+};

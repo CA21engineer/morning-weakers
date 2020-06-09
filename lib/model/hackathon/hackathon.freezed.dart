@@ -17,15 +17,15 @@ class _$HackathonTearOff {
 
   _Hackathon call(
       {@required String id,
-      @required String title,
-      @required String description,
-      @required String theme,
-      @required @JsonKey(name: 'icon_url') String iconUrl,
-      @required @JsonKey(name: 'slack_url') String slackUrl,
-      @required @JsonKey(name: 'presentation_url') String presentationUrl,
-      @required @JsonKey(name: 'state_date') DateTime startDate,
-      @required @JsonKey(name: 'end_date') DateTime endDate,
-      @required int span}) {
+        @required String title,
+        @required String description,
+        @required String theme,
+        @required @JsonKey(name: 'icon_url') String iconUrl,
+        @required @JsonKey(name: 'slack_url') String slackUrl,
+        @required @JsonKey(name: 'presentation_url') String presentationUrl,
+        @required @JsonKey(name: 'state_date') DateTime startDate,
+        @required @JsonKey(name: 'end_date') DateTime endDate,
+        @required int span}) {
     return _Hackathon(
       id: id,
       title: title,
@@ -67,18 +67,18 @@ mixin _$Hackathon {
 
 abstract class $HackathonCopyWith<$Res> {
   factory $HackathonCopyWith(Hackathon value, $Res Function(Hackathon) then) =
-      _$HackathonCopyWithImpl<$Res>;
+  _$HackathonCopyWithImpl<$Res>;
   $Res call(
       {String id,
-      String title,
-      String description,
-      String theme,
-      @JsonKey(name: 'icon_url') String iconUrl,
-      @JsonKey(name: 'slack_url') String slackUrl,
-      @JsonKey(name: 'presentation_url') String presentationUrl,
-      @JsonKey(name: 'state_date') DateTime startDate,
-      @JsonKey(name: 'end_date') DateTime endDate,
-      int span});
+        String title,
+        String description,
+        String theme,
+        @JsonKey(name: 'icon_url') String iconUrl,
+        @JsonKey(name: 'slack_url') String slackUrl,
+        @JsonKey(name: 'presentation_url') String presentationUrl,
+        @JsonKey(name: 'state_date') DateTime startDate,
+        @JsonKey(name: 'end_date') DateTime endDate,
+        int span});
 }
 
 class _$HackathonCopyWithImpl<$Res> implements $HackathonCopyWith<$Res> {
@@ -105,7 +105,7 @@ class _$HackathonCopyWithImpl<$Res> implements $HackathonCopyWith<$Res> {
       id: id == freezed ? _value.id : id as String,
       title: title == freezed ? _value.title : title as String,
       description:
-          description == freezed ? _value.description : description as String,
+      description == freezed ? _value.description : description as String,
       theme: theme == freezed ? _value.theme : theme as String,
       iconUrl: iconUrl == freezed ? _value.iconUrl : iconUrl as String,
       slackUrl: slackUrl == freezed ? _value.slackUrl : slackUrl as String,
@@ -113,7 +113,7 @@ class _$HackathonCopyWithImpl<$Res> implements $HackathonCopyWith<$Res> {
           ? _value.presentationUrl
           : presentationUrl as String,
       startDate:
-          startDate == freezed ? _value.startDate : startDate as DateTime,
+      startDate == freezed ? _value.startDate : startDate as DateTime,
       endDate: endDate == freezed ? _value.endDate : endDate as DateTime,
       span: span == freezed ? _value.span : span as int,
     ));
@@ -122,20 +122,20 @@ class _$HackathonCopyWithImpl<$Res> implements $HackathonCopyWith<$Res> {
 
 abstract class _$HackathonCopyWith<$Res> implements $HackathonCopyWith<$Res> {
   factory _$HackathonCopyWith(
-          _Hackathon value, $Res Function(_Hackathon) then) =
-      __$HackathonCopyWithImpl<$Res>;
+      _Hackathon value, $Res Function(_Hackathon) then) =
+  __$HackathonCopyWithImpl<$Res>;
   @override
   $Res call(
       {String id,
-      String title,
-      String description,
-      String theme,
-      @JsonKey(name: 'icon_url') String iconUrl,
-      @JsonKey(name: 'slack_url') String slackUrl,
-      @JsonKey(name: 'presentation_url') String presentationUrl,
-      @JsonKey(name: 'state_date') DateTime startDate,
-      @JsonKey(name: 'end_date') DateTime endDate,
-      int span});
+        String title,
+        String description,
+        String theme,
+        @JsonKey(name: 'icon_url') String iconUrl,
+        @JsonKey(name: 'slack_url') String slackUrl,
+        @JsonKey(name: 'presentation_url') String presentationUrl,
+        @JsonKey(name: 'state_date') DateTime startDate,
+        @JsonKey(name: 'end_date') DateTime endDate,
+        int span});
 }
 
 class __$HackathonCopyWithImpl<$Res> extends _$HackathonCopyWithImpl<$Res>
@@ -163,7 +163,7 @@ class __$HackathonCopyWithImpl<$Res> extends _$HackathonCopyWithImpl<$Res>
       id: id == freezed ? _value.id : id as String,
       title: title == freezed ? _value.title : title as String,
       description:
-          description == freezed ? _value.description : description as String,
+      description == freezed ? _value.description : description as String,
       theme: theme == freezed ? _value.theme : theme as String,
       iconUrl: iconUrl == freezed ? _value.iconUrl : iconUrl as String,
       slackUrl: slackUrl == freezed ? _value.slackUrl : slackUrl as String,
@@ -171,7 +171,7 @@ class __$HackathonCopyWithImpl<$Res> extends _$HackathonCopyWithImpl<$Res>
           ? _value.presentationUrl
           : presentationUrl as String,
       startDate:
-          startDate == freezed ? _value.startDate : startDate as DateTime,
+      startDate == freezed ? _value.startDate : startDate as DateTime,
       endDate: endDate == freezed ? _value.endDate : endDate as DateTime,
       span: span == freezed ? _value.span : span as int,
     ));
@@ -182,15 +182,15 @@ class __$HackathonCopyWithImpl<$Res> extends _$HackathonCopyWithImpl<$Res>
 class _$_Hackathon with DiagnosticableTreeMixin implements _Hackathon {
   const _$_Hackathon(
       {@required this.id,
-      @required this.title,
-      @required this.description,
-      @required this.theme,
-      @required @JsonKey(name: 'icon_url') this.iconUrl,
-      @required @JsonKey(name: 'slack_url') this.slackUrl,
-      @required @JsonKey(name: 'presentation_url') this.presentationUrl,
-      @required @JsonKey(name: 'state_date') this.startDate,
-      @required @JsonKey(name: 'end_date') this.endDate,
-      @required this.span})
+        @required this.title,
+        @required this.description,
+        @required this.theme,
+        @required @JsonKey(name: 'icon_url') this.iconUrl,
+        @required @JsonKey(name: 'slack_url') this.slackUrl,
+        @required @JsonKey(name: 'presentation_url') this.presentationUrl,
+        @required @JsonKey(name: 'state_date') this.startDate,
+        @required @JsonKey(name: 'end_date') this.endDate,
+        @required this.span})
       : assert(id != null),
         assert(title != null),
         assert(description != null),
@@ -312,18 +312,18 @@ class _$_Hackathon with DiagnosticableTreeMixin implements _Hackathon {
 abstract class _Hackathon implements Hackathon {
   const factory _Hackathon(
       {@required String id,
-      @required String title,
-      @required String description,
-      @required String theme,
-      @required @JsonKey(name: 'icon_url') String iconUrl,
-      @required @JsonKey(name: 'slack_url') String slackUrl,
-      @required @JsonKey(name: 'presentation_url') String presentationUrl,
-      @required @JsonKey(name: 'state_date') DateTime startDate,
-      @required @JsonKey(name: 'end_date') DateTime endDate,
-      @required int span}) = _$_Hackathon;
+        @required String title,
+        @required String description,
+        @required String theme,
+        @required @JsonKey(name: 'icon_url') String iconUrl,
+        @required @JsonKey(name: 'slack_url') String slackUrl,
+        @required @JsonKey(name: 'presentation_url') String presentationUrl,
+        @required @JsonKey(name: 'state_date') DateTime startDate,
+        @required @JsonKey(name: 'end_date') DateTime endDate,
+        @required int span}) = _$_Hackathon;
 
   factory _Hackathon.fromJson(Map<String, dynamic> json) =
-      _$_Hackathon.fromJson;
+  _$_Hackathon.fromJson;
 
   @override
   String get id;
