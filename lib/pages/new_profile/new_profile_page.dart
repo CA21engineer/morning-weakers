@@ -44,34 +44,26 @@ class NewProfilePage extends StatelessWidget {
   }
 
   Widget _profileDetail() {
-    return Column(
-      children: <Widget>[
-        TextFormField(
-          decoration: const InputDecoration(
-            labelText: '名前',
-          ),
-        ),
-        TextFormField(
-          decoration: const InputDecoration(
-            labelText: 'ハンドルネーム',
-          ),
-        ),
-        TextFormField(
-          decoration: const InputDecoration(
-            labelText: 'twitter アカウント',
-          ),
-        ),
-        TextFormField(
-          decoration: const InputDecoration(
-            labelText: 'github アカウント',
-          ),
-        ),
-        TextFormField(
-          decoration: const InputDecoration(
-            labelText: '得意技術',
-          ),
-        ),
-      ],
+    final List<String> _titleList = [
+      'ユーザ名',
+      'ハンドルネーム',
+      'Twitter アカウント',
+      'Github アカウント',
+      '技術スタック'
+    ];
+    return Container(
+      padding: const EdgeInsets.all(20),
+      child: Column(
+        children: _titleList
+            .map(
+              (element) => TextFormField(
+                decoration: InputDecoration(
+                  labelText: element,
+                ),
+              ),
+            )
+            .toList(),
+      ),
     );
   }
 }
