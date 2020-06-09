@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:morning_weakers/pages/state_notifier_sample/state_notifier_sample_state.dart';
 import 'package:state_notifier/state_notifier.dart';
 
