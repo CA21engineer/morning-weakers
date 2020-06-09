@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:morning_weakers/model/models.dart';
 
 part 'notification.freezed.dart';
 
@@ -11,8 +12,8 @@ abstract class Notification with _$Notification {
     @required String id,
     @required String title,
     @required String description,
-    //@required @JsonKey(name:'') User publishedUser,
-    //@required @JsonKey(name:'') TimeStamp createAt,
+    @required @JsonKey(name:'published_user') User publishedUser,
+    @required @JsonKey(name:'created_at') DateTime createdAt,
     @required @JsonKey(name:'is_important') bool isImportant,
   }) = _Notification;
 

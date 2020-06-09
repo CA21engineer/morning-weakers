@@ -14,4 +14,3 @@ abstract class Joined with _$Joined {
 
   factory Joined.fromJson(Map<String, dynamic> json) => _$JoinedFromJson(json);
 }
-

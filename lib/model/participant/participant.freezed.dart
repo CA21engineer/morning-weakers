@@ -16,12 +16,25 @@ class _$ParticipantTearOff {
   const _$ParticipantTearOff();
 
   _Participant call(
-      {@required String id,
-      @required @JsonKey(name: 'working_days') int workingDays,
-      @required String note,
-      @required @JsonKey(name: 'is_admin') bool isAdmin}) {
+      {@required
+          String id,
+      @required
+          User user,
+      @required
+      @JsonKey(name: 'desired_occupation')
+          List<TechnicalStack> desiredOccupation,
+      @required
+      @JsonKey(name: 'working_days')
+          int workingDays,
+      @required
+          String note,
+      @required
+      @JsonKey(name: 'is_admin')
+          bool isAdmin}) {
     return _Participant(
       id: id,
+      user: user,
+      desiredOccupation: desiredOccupation,
       workingDays: workingDays,
       note: note,
       isAdmin: isAdmin,
@@ -34,6 +47,9 @@ const $Participant = _$ParticipantTearOff();
 
 mixin _$Participant {
   String get id;
+  User get user;
+  @JsonKey(name: 'desired_occupation')
+  List<TechnicalStack> get desiredOccupation;
   @JsonKey(name: 'working_days')
   int get workingDays;
   String get note;
@@ -50,9 +66,16 @@ abstract class $ParticipantCopyWith<$Res> {
       _$ParticipantCopyWithImpl<$Res>;
   $Res call(
       {String id,
-      @JsonKey(name: 'working_days') int workingDays,
+      User user,
+      @JsonKey(name: 'desired_occupation')
+          List<TechnicalStack> desiredOccupation,
+      @JsonKey(name: 'working_days')
+          int workingDays,
       String note,
-      @JsonKey(name: 'is_admin') bool isAdmin});
+      @JsonKey(name: 'is_admin')
+          bool isAdmin});
+
+  $UserCopyWith<$Res> get user;
 }
 
 class _$ParticipantCopyWithImpl<$Res> implements $ParticipantCopyWith<$Res> {
@@ -65,17 +88,33 @@ class _$ParticipantCopyWithImpl<$Res> implements $ParticipantCopyWith<$Res> {
   @override
   $Res call({
     Object id = freezed,
+    Object user = freezed,
+    Object desiredOccupation = freezed,
     Object workingDays = freezed,
     Object note = freezed,
     Object isAdmin = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as String,
+      user: user == freezed ? _value.user : user as User,
+      desiredOccupation: desiredOccupation == freezed
+          ? _value.desiredOccupation
+          : desiredOccupation as List<TechnicalStack>,
       workingDays:
           workingDays == freezed ? _value.workingDays : workingDays as int,
       note: note == freezed ? _value.note : note as String,
       isAdmin: isAdmin == freezed ? _value.isAdmin : isAdmin as bool,
     ));
+  }
+
+  @override
+  $UserCopyWith<$Res> get user {
+    if (_value.user == null) {
+      return null;
+    }
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
   }
 }
 
@@ -87,9 +126,17 @@ abstract class _$ParticipantCopyWith<$Res>
   @override
   $Res call(
       {String id,
-      @JsonKey(name: 'working_days') int workingDays,
+      User user,
+      @JsonKey(name: 'desired_occupation')
+          List<TechnicalStack> desiredOccupation,
+      @JsonKey(name: 'working_days')
+          int workingDays,
       String note,
-      @JsonKey(name: 'is_admin') bool isAdmin});
+      @JsonKey(name: 'is_admin')
+          bool isAdmin});
+
+  @override
+  $UserCopyWith<$Res> get user;
 }
 
 class __$ParticipantCopyWithImpl<$Res> extends _$ParticipantCopyWithImpl<$Res>
@@ -104,12 +151,18 @@ class __$ParticipantCopyWithImpl<$Res> extends _$ParticipantCopyWithImpl<$Res>
   @override
   $Res call({
     Object id = freezed,
+    Object user = freezed,
+    Object desiredOccupation = freezed,
     Object workingDays = freezed,
     Object note = freezed,
     Object isAdmin = freezed,
   }) {
     return _then(_Participant(
       id: id == freezed ? _value.id : id as String,
+      user: user == freezed ? _value.user : user as User,
+      desiredOccupation: desiredOccupation == freezed
+          ? _value.desiredOccupation
+          : desiredOccupation as List<TechnicalStack>,
       workingDays:
           workingDays == freezed ? _value.workingDays : workingDays as int,
       note: note == freezed ? _value.note : note as String,
@@ -122,10 +175,14 @@ class __$ParticipantCopyWithImpl<$Res> extends _$ParticipantCopyWithImpl<$Res>
 class _$_Participant with DiagnosticableTreeMixin implements _Participant {
   const _$_Participant(
       {@required this.id,
+      @required this.user,
+      @required @JsonKey(name: 'desired_occupation') this.desiredOccupation,
       @required @JsonKey(name: 'working_days') this.workingDays,
       @required this.note,
       @required @JsonKey(name: 'is_admin') this.isAdmin})
       : assert(id != null),
+        assert(user != null),
+        assert(desiredOccupation != null),
         assert(workingDays != null),
         assert(note != null),
         assert(isAdmin != null);
@@ -135,6 +192,11 @@ class _$_Participant with DiagnosticableTreeMixin implements _Participant {
 
   @override
   final String id;
+  @override
+  final User user;
+  @override
+  @JsonKey(name: 'desired_occupation')
+  final List<TechnicalStack> desiredOccupation;
   @override
   @JsonKey(name: 'working_days')
   final int workingDays;
@@ -146,7 +208,7 @@ class _$_Participant with DiagnosticableTreeMixin implements _Participant {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Participant(id: $id, workingDays: $workingDays, note: $note, isAdmin: $isAdmin)';
+    return 'Participant(id: $id, user: $user, desiredOccupation: $desiredOccupation, workingDays: $workingDays, note: $note, isAdmin: $isAdmin)';
   }
 
   @override
@@ -155,6 +217,8 @@ class _$_Participant with DiagnosticableTreeMixin implements _Participant {
     properties
       ..add(DiagnosticsProperty('type', 'Participant'))
       ..add(DiagnosticsProperty('id', id))
+      ..add(DiagnosticsProperty('user', user))
+      ..add(DiagnosticsProperty('desiredOccupation', desiredOccupation))
       ..add(DiagnosticsProperty('workingDays', workingDays))
       ..add(DiagnosticsProperty('note', note))
       ..add(DiagnosticsProperty('isAdmin', isAdmin));
@@ -166,6 +230,11 @@ class _$_Participant with DiagnosticableTreeMixin implements _Participant {
         (other is _Participant &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)) &&
+            (identical(other.desiredOccupation, desiredOccupation) ||
+                const DeepCollectionEquality()
+                    .equals(other.desiredOccupation, desiredOccupation)) &&
             (identical(other.workingDays, workingDays) ||
                 const DeepCollectionEquality()
                     .equals(other.workingDays, workingDays)) &&
@@ -179,6 +248,8 @@ class _$_Participant with DiagnosticableTreeMixin implements _Participant {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(user) ^
+      const DeepCollectionEquality().hash(desiredOccupation) ^
       const DeepCollectionEquality().hash(workingDays) ^
       const DeepCollectionEquality().hash(note) ^
       const DeepCollectionEquality().hash(isAdmin);
@@ -195,16 +266,32 @@ class _$_Participant with DiagnosticableTreeMixin implements _Participant {
 
 abstract class _Participant implements Participant {
   const factory _Participant(
-      {@required String id,
-      @required @JsonKey(name: 'working_days') int workingDays,
-      @required String note,
-      @required @JsonKey(name: 'is_admin') bool isAdmin}) = _$_Participant;
+      {@required
+          String id,
+      @required
+          User user,
+      @required
+      @JsonKey(name: 'desired_occupation')
+          List<TechnicalStack> desiredOccupation,
+      @required
+      @JsonKey(name: 'working_days')
+          int workingDays,
+      @required
+          String note,
+      @required
+      @JsonKey(name: 'is_admin')
+          bool isAdmin}) = _$_Participant;
 
   factory _Participant.fromJson(Map<String, dynamic> json) =
       _$_Participant.fromJson;
 
   @override
   String get id;
+  @override
+  User get user;
+  @override
+  @JsonKey(name: 'desired_occupation')
+  List<TechnicalStack> get desiredOccupation;
   @override
   @JsonKey(name: 'working_days')
   int get workingDays;

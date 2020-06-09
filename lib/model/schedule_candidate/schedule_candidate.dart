@@ -9,8 +9,8 @@ part 'schedule_candidate.g.dart';
 abstract class ScheduleCandidate with _$ScheduleCandidate {
   const factory ScheduleCandidate({
     @required String id,
-    //@required TimeStamp start,
-    // @required TimeStamp end,
+    @required DateTime start,
+     @required DateTime end,
   }) = _ScheduleCandidate;
 
   factory ScheduleCandidate.fromJson(Map<String, dynamic> json) =>
