@@ -15,7 +15,7 @@ abstract class Hackathon with _$Hackathon {
     @required @JsonKey(name: 'icon_url') String iconUrl,
     @required @JsonKey(name: 'slack_url') String slackUrl,
     @required @JsonKey(name: 'presentation_url') String presentationUrl,
-    @required @JsonKey(name: 'state_date') DateTime startDate,
+    @required @JsonKey(name: 'state_date') DateTime stateDate,
     @required @JsonKey(name: 'end_date') DateTime endDate,
     @required int span
   }) = _Hackathon;
