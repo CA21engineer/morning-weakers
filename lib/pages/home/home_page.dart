@@ -32,13 +32,6 @@ class HomePage extends StatelessWidget {
     ['高橋', 'Taka-C', 'twi-taka', 'git-taka', 'All'],
   ];
 
-  final List<List<String>> _hackData = [
-    ['Suzu-K', '15hour', 'All'],
-    ['Sato-U', '15hour', 'All'],
-    ['Tana-K', '15hour', 'All'],
-    ['Taka-C', '15hour', 'All'],
-  ];
-
   Widget _memberInfo() {
     return Container(
       color: Colors.lightBlueAccent,
@@ -47,8 +40,8 @@ class HomePage extends StatelessWidget {
         crossAxisCount: 2,
         children: _data
             .map(
-          _memberCard,
-        )
+              _memberCard,
+            )
             .toList(),
       ),
     );
@@ -60,11 +53,10 @@ class HomePage extends StatelessWidget {
         child: Column(
             children: member
                 .map(
-                  (info) =>
-                  Text(
+                  (info) => Text(
                     info,
                   ),
-            )
+                )
                 .toList()),
       ),
     );
@@ -87,18 +79,16 @@ class HomePage extends StatelessWidget {
       ],
       rows: _hackData
           .map(
-            (member) =>
-            DataRow(
+            (member) => DataRow(
               cells: member
                   .map(
-                    (info) =>
-                    DataCell(
+                    (info) => DataCell(
                       Text(info),
                     ),
-              )
+                  )
                   .toList(),
             ),
-      )
+          )
           .toList(),
     );
   }
@@ -108,10 +98,12 @@ class HomePage extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
       child: Column(children: <Widget>[
-        const Text('資料リンク',
-          style: TextStyle(fontSize: 20,),
+        const Text(
+          '資料リンク',
+          style: TextStyle(
+            fontSize: 20,
+          ),
         ),
-
         ListTile(
             title: Text(
               'Github',
@@ -137,15 +129,12 @@ class HomePage extends StatelessWidget {
 
   Widget _allGroupNav() {
     return ListTile(
-      title: const Text('全てのグループを見る',
+      title: const Text(
+        '全てのグループを見る',
         style: TextStyle(fontSize: 20),
       ),
-      trailing: Icon(Icons.arrow_forward_ios),
+      trailing: const Icon(Icons.arrow_forward_ios),
       onTap: () => null,
-
     );
-
-
   }
-
 }
