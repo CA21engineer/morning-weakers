@@ -15,9 +15,9 @@ _$_Hackathon _$_$_HackathonFromJson(Map<String, dynamic> json) {
     iconUrl: json['icon_url'] as String,
     slackUrl: json['slack_url'] as String,
     presentationUrl: json['presentation_url'] as String,
-    startDate: json['state_date'] == null
+    startDate: json['start_date'] == null
         ? null
-        : DateTime.parse(json['state_date'] as String),
+        : DateTime.parse(json['start_date'] as String),
     endDate: json['end_date'] == null
         ? null
         : DateTime.parse(json['end_date'] as String),
@@ -34,7 +34,7 @@ Map<String, dynamic> _$_$_HackathonToJson(_$_Hackathon instance) =>
       'icon_url': instance.iconUrl,
       'slack_url': instance.slackUrl,
       'presentation_url': instance.presentationUrl,
-      'state_date': instance.startDate?.toIso8601String(),
+      'start_date': instance.startDate?.toIso8601String(),
       'end_date': instance.endDate?.toIso8601String(),
       'span': instance.span,
     };
