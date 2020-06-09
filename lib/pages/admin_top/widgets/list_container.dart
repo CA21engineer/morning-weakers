@@ -14,12 +14,10 @@ class ListContainer extends StatelessWidget {
     return ListTile(
       title: Text(
         titleName,
-        style: TextStyle(fontSize: 20, color: Colors.black),
+        style: const TextStyle(fontSize: 20, color: Colors.black),
       ),
       trailing: const Icon(Icons.arrow_forward_ios),
-      onTap: () {
-        //
-      },
+      onTap: () => onTap,
     );
   }
 }

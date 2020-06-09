@@ -9,7 +9,7 @@ class AdminTopPage extends StatelessWidget {
         title: const Text('管理者画面'),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.notifications),
+            icon: const Icon(Icons.notifications),
             onPressed: () => null,
 //            onPressed: () => Navigator.pushNamed(context, '/notification_page'),
           ),
@@ -20,31 +20,26 @@ class AdminTopPage extends StatelessWidget {
     );
   }
 
-  final List<List<String>> _titleItem = [
-    ['全体連絡入力', '/'],
-    ['グループ分け結果', '/'],
-    ['参加者情報詳細', '/']
-  ];
+  Widget _getListContainer(BuildContext context) {
+    final List<List<String>> titleItem = [
+      ['全体連絡入力', '/'],
+      ['グループ分け結果', '/'],
+      ['参加者情報詳細', '/']
+    ];
 
-  List<Widget> _getList(BuildContext context) {
-    final List<Widget> listContainerList = [];
-
-    for (var i = 0; i < _titleItem.length; i++) {
-      listContainerList.add(
-        ListContainer(
-          onTap: () => null,
-          //          onTap: () => Navigator.pushNamed(context, item[1]),
-          titleName: _titleItem[i][0],
-        ),
-      );
-    }
-    return listContainerList;
+    return Container(
+      padding: const EdgeInsets.all(20),
+      child: Column(
+        children: titleItem
+            .map(
+              (element) => ListContainer(
+                onTap: () => null,
+                //          onTap: () => Navigator.pushNamed(context, element[1]),
+                titleName: element[0],
+              ),
+            )
+            .toList(),
+      ),
+    );
   }
-
-  Widget _getListContainer(BuildContext context) => Container(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          children: _getList(context),
-        ),
-      );
 }
