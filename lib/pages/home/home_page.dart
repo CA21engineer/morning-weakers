@@ -16,6 +16,8 @@ class HomePage extends StatelessWidget {
               _memberInfo(),
               _dataTable(),
               _sourceLinks(),
+              const Divider(),
+              _allGroupNav(),
             ],
           ),
         ),
@@ -45,8 +47,8 @@ class HomePage extends StatelessWidget {
         crossAxisCount: 2,
         children: _data
             .map(
-              _memberCard,
-            )
+          _memberCard,
+        )
             .toList(),
       ),
     );
@@ -58,10 +60,11 @@ class HomePage extends StatelessWidget {
         child: Column(
             children: member
                 .map(
-                  (info) => Text(
+                  (info) =>
+                  Text(
                     info,
                   ),
-                )
+            )
                 .toList()),
       ),
     );
@@ -84,16 +87,18 @@ class HomePage extends StatelessWidget {
       ],
       rows: _hackData
           .map(
-            (member) => DataRow(
+            (member) =>
+            DataRow(
               cells: member
                   .map(
-                    (info) => DataCell(
+                    (info) =>
+                    DataCell(
                       Text(info),
                     ),
-                  )
+              )
                   .toList(),
             ),
-          )
+      )
           .toList(),
     );
   }
@@ -101,8 +106,12 @@ class HomePage extends StatelessWidget {
   //Github/slideなど資料のリンク置き場
   Widget _sourceLinks() {
     return Container(
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
       child: Column(children: <Widget>[
+        const Text('資料リンク',
+          style: TextStyle(fontSize: 20,),
+        ),
+
         ListTile(
             title: Text(
               'Github',
@@ -125,4 +134,18 @@ class HomePage extends StatelessWidget {
       ]),
     );
   }
+
+  Widget _allGroupNav() {
+    return ListTile(
+      title: const Text('全てのグループを見る',
+        style: TextStyle(fontSize: 20),
+      ),
+      trailing: Icon(Icons.arrow_forward_ios),
+      onTap: () => null,
+
+    );
+
+
+  }
+
 }
