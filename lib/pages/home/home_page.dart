@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
             children: <Widget>[
               _memberInfo(),
               _dataTable(),
-              //_links(),
+              _sourceLinks(),
             ],
           ),
         ),
@@ -98,6 +98,31 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  //TwitterやGithubなどののリンク置き場
-  Widget _links() {}
+  //Github/slideなど資料のリンク置き場
+  Widget _sourceLinks() {
+    return Container(
+      padding: const EdgeInsets.all(10),
+      child: Column(children: <Widget>[
+        ListTile(
+            title: Text(
+              'Github',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            subtitle: const Text(
+              'https://github.com/CA21engineer/morning-weakers',
+              style: TextStyle(fontStyle: FontStyle.italic),
+            )),
+        ListTile(
+          title: Text(
+            'Slide',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          subtitle: const Text(
+            'https://docs.google.com/presentation/morning-weakers',
+            style: TextStyle(fontStyle: FontStyle.italic),
+          ),
+        ),
+      ]),
+    );
+  }
 }
