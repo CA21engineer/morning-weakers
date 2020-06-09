@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
               _dataTable(),
               _sourceLinks(),
               const Divider(),
-              _allGroupNav(),
+              _allGroupNav(context),
             ],
           ),
         ),
@@ -38,11 +38,7 @@ class HomePage extends StatelessWidget {
       child: GridView.count(
         shrinkWrap: true,
         crossAxisCount: 2,
-        children: _data
-            .map(
-              _memberCard,
-            )
-            .toList(),
+        children: _data.map(_memberCard).toList(),
       ),
     );
   }
@@ -50,14 +46,7 @@ class HomePage extends StatelessWidget {
   Widget _memberCard(List<String> member) {
     return Card(
       child: Center(
-        child: Column(
-            children: member
-                .map(
-                  (info) => Text(
-                    info,
-                  ),
-                )
-                .toList()),
+        child: Column(children: member.map((info) => Text(info)).toList()),
       ),
     );
   }
@@ -69,6 +58,7 @@ class HomePage extends StatelessWidget {
       ['Tana-K', '8hour', 'All'],
       ['Taka-C', '12hour', 'All'],
     ];
+
     return DataTable(
       sortColumnIndex: 1,
       sortAscending: true,
@@ -78,17 +68,8 @@ class HomePage extends StatelessWidget {
         DataColumn(label: Text('技術スタック')),
       ],
       rows: _hackData
-          .map(
-            (member) => DataRow(
-              cells: member
-                  .map(
-                    (info) => DataCell(
-                      Text(info),
-                    ),
-                  )
-                  .toList(),
-            ),
-          )
+          .map((member) => DataRow(
+              cells: member.map((info) => DataCell(Text(info))).toList()))
           .toList(),
     );
   }
@@ -96,16 +77,16 @@ class HomePage extends StatelessWidget {
   //Github/slideなど資料のリンク置き場
   Widget _sourceLinks() {
     return Container(
-      padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-      child: Column(children: <Widget>[
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: Column(children: const <Widget>[
         const Text(
           '資料リンク',
           style: TextStyle(
             fontSize: 20,
           ),
         ),
-        ListTile(
-            title: Text(
+        const ListTile(
+            title: const Text(
               'Github',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
@@ -113,7 +94,7 @@ class HomePage extends StatelessWidget {
               'https://github.com/CA21engineer/morning-weakers',
               style: TextStyle(fontStyle: FontStyle.italic),
             )),
-        ListTile(
+        const ListTile(
           title: Text(
             'Slide',
             style: TextStyle(fontWeight: FontWeight.bold),
@@ -127,7 +108,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _allGroupNav() {
+  Widget _allGroupNav(BuildContext context) {
     return ListTile(
       title: const Text(
         '全てのグループを見る',
