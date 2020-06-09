@@ -8,13 +8,15 @@ class NewProfilePage extends StatelessWidget {
         title: const Text('プロフィール新規作成'),
       ),
       body: SafeArea(
-        child: Container(
-          padding: const EdgeInsets.all(30),
-          child: Column(
-            children: <Widget>[
-              _profileIcon(),
-              _profileDetail(),
-            ],
+        child: SingleChildScrollView(
+          child: Container(
+            padding: const EdgeInsets.all(30),
+            child: Column(
+              children: <Widget>[
+                _profileIcon(),
+                _profileDetail(),
+              ],
+            ),
           ),
         ),
       ),
@@ -24,7 +26,7 @@ class NewProfilePage extends StatelessWidget {
   Widget _profileIcon() {
     return Center(
       child: Container(
-        padding: const EdgeInsets.all(50.0),
+        padding: const EdgeInsets.all(50),
         child: Column(
           children: <Widget>[
             Icon(
