@@ -5,7 +5,7 @@ class NewProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('プロフィール新規作成'),
+        title: const Text('プロフィール新規作成'),
       ),
       body: SafeArea(
         child: Container(
@@ -31,7 +31,7 @@ class NewProfilePage extends StatelessWidget {
               Icons.people,
               size: 100,
             ),
-            RaisedButton(
+            const RaisedButton(
               onPressed: null,
               child: const Text('選択'),
             ),
@@ -45,27 +45,27 @@ class NewProfilePage extends StatelessWidget {
     return Column(
       children: <Widget>[
         TextFormField(
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             labelText: '名前',
           ),
         ),
         TextFormField(
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             labelText: 'ハンドルネーム',
           ),
         ),
         TextFormField(
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             labelText: 'twitter アカウント',
           ),
         ),
         TextFormField(
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             labelText: 'github アカウント',
           ),
         ),
         TextFormField(
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             labelText: '得意技術',
           ),
         ),
