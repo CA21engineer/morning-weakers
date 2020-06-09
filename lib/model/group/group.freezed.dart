@@ -19,14 +19,14 @@ class _$GroupTearOff {
       {@required String id,
       @required @JsonKey(name: 'group_name') String groupName,
       @required @JsonKey(name: 'github_url') String githubUrl,
-      @required @JsonKey(name: 'side_url') List<String> sideUrl,
+      @required @JsonKey(name: 'slide_url') List<String> slideUrl,
       @required @JsonKey(name: 'other_urls') List<String> otherUrls,
       @required @JsonKey(name: 'icon_url') List<String> iconUrl}) {
     return _Group(
       id: id,
       groupName: groupName,
       githubUrl: githubUrl,
-      sideUrl: sideUrl,
+      slideUrl: slideUrl,
       otherUrls: otherUrls,
       iconUrl: iconUrl,
     );
@@ -42,8 +42,8 @@ mixin _$Group {
   String get groupName;
   @JsonKey(name: 'github_url')
   String get githubUrl;
-  @JsonKey(name: 'side_url')
-  List<String> get sideUrl;
+  @JsonKey(name: 'slide_url')
+  List<String> get slideUrl;
   @JsonKey(name: 'other_urls')
   List<String> get otherUrls;
   @JsonKey(name: 'icon_url')
@@ -60,7 +60,7 @@ abstract class $GroupCopyWith<$Res> {
       {String id,
       @JsonKey(name: 'group_name') String groupName,
       @JsonKey(name: 'github_url') String githubUrl,
-      @JsonKey(name: 'side_url') List<String> sideUrl,
+      @JsonKey(name: 'slide_url') List<String> slideUrl,
       @JsonKey(name: 'other_urls') List<String> otherUrls,
       @JsonKey(name: 'icon_url') List<String> iconUrl});
 }
@@ -77,7 +77,7 @@ class _$GroupCopyWithImpl<$Res> implements $GroupCopyWith<$Res> {
     Object id = freezed,
     Object groupName = freezed,
     Object githubUrl = freezed,
-    Object sideUrl = freezed,
+    Object slideUrl = freezed,
     Object otherUrls = freezed,
     Object iconUrl = freezed,
   }) {
@@ -85,7 +85,8 @@ class _$GroupCopyWithImpl<$Res> implements $GroupCopyWith<$Res> {
       id: id == freezed ? _value.id : id as String,
       groupName: groupName == freezed ? _value.groupName : groupName as String,
       githubUrl: githubUrl == freezed ? _value.githubUrl : githubUrl as String,
-      sideUrl: sideUrl == freezed ? _value.sideUrl : sideUrl as List<String>,
+      slideUrl:
+          slideUrl == freezed ? _value.slideUrl : slideUrl as List<String>,
       otherUrls:
           otherUrls == freezed ? _value.otherUrls : otherUrls as List<String>,
       iconUrl: iconUrl == freezed ? _value.iconUrl : iconUrl as List<String>,
@@ -101,7 +102,7 @@ abstract class _$GroupCopyWith<$Res> implements $GroupCopyWith<$Res> {
       {String id,
       @JsonKey(name: 'group_name') String groupName,
       @JsonKey(name: 'github_url') String githubUrl,
-      @JsonKey(name: 'side_url') List<String> sideUrl,
+      @JsonKey(name: 'slide_url') List<String> slideUrl,
       @JsonKey(name: 'other_urls') List<String> otherUrls,
       @JsonKey(name: 'icon_url') List<String> iconUrl});
 }
@@ -119,7 +120,7 @@ class __$GroupCopyWithImpl<$Res> extends _$GroupCopyWithImpl<$Res>
     Object id = freezed,
     Object groupName = freezed,
     Object githubUrl = freezed,
-    Object sideUrl = freezed,
+    Object slideUrl = freezed,
     Object otherUrls = freezed,
     Object iconUrl = freezed,
   }) {
@@ -127,7 +128,8 @@ class __$GroupCopyWithImpl<$Res> extends _$GroupCopyWithImpl<$Res>
       id: id == freezed ? _value.id : id as String,
       groupName: groupName == freezed ? _value.groupName : groupName as String,
       githubUrl: githubUrl == freezed ? _value.githubUrl : githubUrl as String,
-      sideUrl: sideUrl == freezed ? _value.sideUrl : sideUrl as List<String>,
+      slideUrl:
+          slideUrl == freezed ? _value.slideUrl : slideUrl as List<String>,
       otherUrls:
           otherUrls == freezed ? _value.otherUrls : otherUrls as List<String>,
       iconUrl: iconUrl == freezed ? _value.iconUrl : iconUrl as List<String>,
@@ -141,13 +143,13 @@ class _$_Group with DiagnosticableTreeMixin implements _Group {
       {@required this.id,
       @required @JsonKey(name: 'group_name') this.groupName,
       @required @JsonKey(name: 'github_url') this.githubUrl,
-      @required @JsonKey(name: 'side_url') this.sideUrl,
+      @required @JsonKey(name: 'slide_url') this.slideUrl,
       @required @JsonKey(name: 'other_urls') this.otherUrls,
       @required @JsonKey(name: 'icon_url') this.iconUrl})
       : assert(id != null),
         assert(groupName != null),
         assert(githubUrl != null),
-        assert(sideUrl != null),
+        assert(slideUrl != null),
         assert(otherUrls != null),
         assert(iconUrl != null);
 
@@ -163,8 +165,8 @@ class _$_Group with DiagnosticableTreeMixin implements _Group {
   @JsonKey(name: 'github_url')
   final String githubUrl;
   @override
-  @JsonKey(name: 'side_url')
-  final List<String> sideUrl;
+  @JsonKey(name: 'slide_url')
+  final List<String> slideUrl;
   @override
   @JsonKey(name: 'other_urls')
   final List<String> otherUrls;
@@ -174,7 +176,7 @@ class _$_Group with DiagnosticableTreeMixin implements _Group {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Group(id: $id, groupName: $groupName, githubUrl: $githubUrl, sideUrl: $sideUrl, otherUrls: $otherUrls, iconUrl: $iconUrl)';
+    return 'Group(id: $id, groupName: $groupName, githubUrl: $githubUrl, slideUrl: $slideUrl, otherUrls: $otherUrls, iconUrl: $iconUrl)';
   }
 
   @override
@@ -185,7 +187,7 @@ class _$_Group with DiagnosticableTreeMixin implements _Group {
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('groupName', groupName))
       ..add(DiagnosticsProperty('githubUrl', githubUrl))
-      ..add(DiagnosticsProperty('sideUrl', sideUrl))
+      ..add(DiagnosticsProperty('slideUrl', slideUrl))
       ..add(DiagnosticsProperty('otherUrls', otherUrls))
       ..add(DiagnosticsProperty('iconUrl', iconUrl));
   }
@@ -202,9 +204,9 @@ class _$_Group with DiagnosticableTreeMixin implements _Group {
             (identical(other.githubUrl, githubUrl) ||
                 const DeepCollectionEquality()
                     .equals(other.githubUrl, githubUrl)) &&
-            (identical(other.sideUrl, sideUrl) ||
+            (identical(other.slideUrl, slideUrl) ||
                 const DeepCollectionEquality()
-                    .equals(other.sideUrl, sideUrl)) &&
+                    .equals(other.slideUrl, slideUrl)) &&
             (identical(other.otherUrls, otherUrls) ||
                 const DeepCollectionEquality()
                     .equals(other.otherUrls, otherUrls)) &&
@@ -218,7 +220,7 @@ class _$_Group with DiagnosticableTreeMixin implements _Group {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(groupName) ^
       const DeepCollectionEquality().hash(githubUrl) ^
-      const DeepCollectionEquality().hash(sideUrl) ^
+      const DeepCollectionEquality().hash(slideUrl) ^
       const DeepCollectionEquality().hash(otherUrls) ^
       const DeepCollectionEquality().hash(iconUrl);
 
@@ -237,7 +239,7 @@ abstract class _Group implements Group {
       {@required String id,
       @required @JsonKey(name: 'group_name') String groupName,
       @required @JsonKey(name: 'github_url') String githubUrl,
-      @required @JsonKey(name: 'side_url') List<String> sideUrl,
+      @required @JsonKey(name: 'slide_url') List<String> slideUrl,
       @required @JsonKey(name: 'other_urls') List<String> otherUrls,
       @required @JsonKey(name: 'icon_url') List<String> iconUrl}) = _$_Group;
 
@@ -252,8 +254,8 @@ abstract class _Group implements Group {
   @JsonKey(name: 'github_url')
   String get githubUrl;
   @override
-  @JsonKey(name: 'side_url')
-  List<String> get sideUrl;
+  @JsonKey(name: 'slide_url')
+  List<String> get slideUrl;
   @override
   @JsonKey(name: 'other_urls')
   List<String> get otherUrls;

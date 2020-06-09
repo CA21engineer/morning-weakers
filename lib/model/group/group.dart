@@ -9,7 +9,7 @@ abstract class Group with _$Group {
     @required String id,
     @required @JsonKey(name: 'group_name') String groupName,
     @required @JsonKey(name: 'github_url') String githubUrl,
-    @required @JsonKey(name: 'side_url') List<String> sideUrl,
+    @required @JsonKey(name: 'slide_url') List<String> slideUrl,
     @required @JsonKey(name: 'other_urls') List<String> otherUrls,
     @required @JsonKey(name: 'icon_url') List<String> iconUrl,
   }) = _Group;
