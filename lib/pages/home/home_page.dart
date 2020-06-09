@@ -10,10 +10,11 @@ class HomePage extends StatelessWidget {
           title: const Text('ホーム画面'),
         ),
         body: Container(
-          padding: const EdgeInsets.all(20),
-          child: Column(
+          child: ListView(
+            padding: const EdgeInsets.all(20),
             children: <Widget>[
               _memberInfo(),
+              _dataTable(),
               //_links(),
             ],
           ),
@@ -27,6 +28,13 @@ class HomePage extends StatelessWidget {
     ['佐藤', 'Sato-U', 'twi-sato', 'git-sato', 'All'],
     ['田中', 'Tana-K', 'twi-tana', 'git-tana', 'All'],
     ['高橋', 'Taka-C', 'twi-taka', 'git-taka', 'All'],
+  ];
+
+  final List<List<String>> _hackData = [
+    ['Suzu-K', '15hour', 'All'],
+    ['Sato-U', '15hour', 'All'],
+    ['Tana-K', '15hour', 'All'],
+    ['Taka-C', '15hour', 'All'],
   ];
 
   Widget _memberInfo() {
@@ -56,6 +64,37 @@ class HomePage extends StatelessWidget {
                 )
                 .toList()),
       ),
+    );
+  }
+
+  Widget _dataTable() {
+    final List<List<String>> _hackData = [
+      ['Suzu-K', '15hour', 'All'],
+      ['Sato-U', '10hour', 'All'],
+      ['Tana-K', '8hour', 'All'],
+      ['Taka-C', '12hour', 'All'],
+    ];
+    return DataTable(
+      sortColumnIndex: 1,
+      sortAscending: true,
+      columns: const [
+        DataColumn(label: Text('ユーザ名')),
+        DataColumn(label: Text('合計稼働時間'), numeric: true),
+        DataColumn(label: Text('技術スタック')),
+      ],
+      rows: _hackData
+          .map(
+            (member) => DataRow(
+              cells: member
+                  .map(
+                    (info) => DataCell(
+                      Text(info),
+                    ),
+                  )
+                  .toList(),
+            ),
+          )
+          .toList(),
     );
   }
 
