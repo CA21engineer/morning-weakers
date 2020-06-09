@@ -9,7 +9,7 @@ class NewProfilePage extends StatelessWidget {
       ),
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.all(30),
+          padding: const EdgeInsets.all(30),
           child: Column(
             children: <Widget>[
               _profileIcon(),
@@ -33,7 +33,7 @@ class NewProfilePage extends StatelessWidget {
             ),
             RaisedButton(
               onPressed: null,
-              child: Text('選択'),
+              child: const Text('選択'),
             ),
           ],
         ),
@@ -62,6 +62,11 @@ class NewProfilePage extends StatelessWidget {
         TextFormField(
           decoration: InputDecoration(
             labelText: 'github アカウント',
+          ),
+        ),
+        TextFormField(
+          decoration: InputDecoration(
+            labelText: '得意技術',
           ),
         ),
       ],
