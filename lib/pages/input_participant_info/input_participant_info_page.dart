@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:morning_weakers/pages/input_participant_info/widgets/desired_occupation.dart';
 
 class InputParticipantInfoPage extends StatelessWidget {
-  static const String pageName = '参加者情報入力';
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(pageName),
+        title: const Text('参加者情報入力'),
       ),
       body: _inputParticipantInfo,
     );
@@ -20,7 +18,7 @@ class InputParticipantInfoPage extends StatelessWidget {
       children: <Widget>[
         DesiredOccupation(),
         TextFormField(
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             labelText: '備考欄'
           ),
         )

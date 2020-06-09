@@ -5,7 +5,7 @@ class DesiredOccupation extends StatelessWidget {
   Widget build(BuildContext context) {
     return DropdownButton<String>(
       value: 'iOS',
-      icon: Icon(Icons.arrow_downward),
+      icon: const Icon(Icons.arrow_downward),
       iconSize: 24,
       elevation: 16,
       style: TextStyle(color: Theme.of(context).primaryColor),
