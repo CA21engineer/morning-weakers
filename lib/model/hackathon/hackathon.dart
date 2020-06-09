@@ -1,6 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 part 'hackathon.freezed.dart';
+
 part 'hackathon.g.dart';
 
 @freezed
@@ -11,11 +13,12 @@ abstract class Hackathon with _$Hackathon {
     @required String description,
     @required String theme,
     @required @JsonKey(name: 'icon_url') String iconUrl,
-    @required @JsonKey(name: 'icon_url')String slackUrl,
-    @required @JsonKey(name: 'icon_url') String presentationUrl,
-    @required @JsonKey(name: 'icon_url') DateTime startDate,
-    @required @JsonKey(name: 'icon_url') DateTime endDate,
-}) = _Hackathon;
+    @required @JsonKey(name: 'slack_url') String slackUrl,
+    @required @JsonKey(name: 'presentation_url') String presentationUrl,
+    @required @JsonKey(name: 'state_date') DateTime startDate,
+    @required @JsonKey(name: 'end_date') DateTime endDate,
+    @required int span
+  }) = _Hackathon;
 
- factory Hackathon.fromJson(Map<String, dynamic> json) => _$HackathonFromJson(json);
+  factory Hackathon.fromJson(Map<String, dynamic> json) => _$HackathonFromJson(json);
 }

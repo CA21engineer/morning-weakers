@@ -15,10 +15,20 @@ User _$UserFromJson(Map<String, dynamic> json) {
 class _$UserTearOff {
   const _$UserTearOff();
 
-  _User call({@required String id, @required String nickname}) {
+  _User call(
+      {@required String id,
+        @required @JsonKey(name: 'full_name') String fullName,
+        @required @JsonKey(name: 'display_name') String displayName,
+        @required @JsonKey(name: 'github_account') String githubAccount,
+        @required @JsonKey(name: 'twitter_account') String twitterAccount,
+        @required @JsonKey(name: 'icon_url') String iconUrl}) {
     return _User(
       id: id,
-      nickname: nickname,
+      fullName: fullName,
+      displayName: displayName,
+      githubAccount: githubAccount,
+      twitterAccount: twitterAccount,
+      iconUrl: iconUrl,
     );
   }
 }
@@ -28,7 +38,16 @@ const $User = _$UserTearOff();
 
 mixin _$User {
   String get id;
-  String get nickname;
+  @JsonKey(name: 'full_name')
+  String get fullName;
+  @JsonKey(name: 'display_name')
+  String get displayName;
+  @JsonKey(name: 'github_account')
+  String get githubAccount;
+  @JsonKey(name: 'twitter_account')
+  String get twitterAccount;
+  @JsonKey(name: 'icon_url')
+  String get iconUrl;
 
   Map<String, dynamic> toJson();
   $UserCopyWith<User> get copyWith;
@@ -36,8 +55,14 @@ mixin _$User {
 
 abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
-      _$UserCopyWithImpl<$Res>;
-  $Res call({String id, String nickname});
+  _$UserCopyWithImpl<$Res>;
+  $Res call(
+      {String id,
+        @JsonKey(name: 'full_name') String fullName,
+        @JsonKey(name: 'display_name') String displayName,
+        @JsonKey(name: 'github_account') String githubAccount,
+        @JsonKey(name: 'twitter_account') String twitterAccount,
+        @JsonKey(name: 'icon_url') String iconUrl});
 }
 
 class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
@@ -50,20 +75,39 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
   @override
   $Res call({
     Object id = freezed,
-    Object nickname = freezed,
+    Object fullName = freezed,
+    Object displayName = freezed,
+    Object githubAccount = freezed,
+    Object twitterAccount = freezed,
+    Object iconUrl = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as String,
-      nickname: nickname == freezed ? _value.nickname : nickname as String,
+      fullName: fullName == freezed ? _value.fullName : fullName as String,
+      displayName:
+      displayName == freezed ? _value.displayName : displayName as String,
+      githubAccount: githubAccount == freezed
+          ? _value.githubAccount
+          : githubAccount as String,
+      twitterAccount: twitterAccount == freezed
+          ? _value.twitterAccount
+          : twitterAccount as String,
+      iconUrl: iconUrl == freezed ? _value.iconUrl : iconUrl as String,
     ));
   }
 }
 
 abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   factory _$UserCopyWith(_User value, $Res Function(_User) then) =
-      __$UserCopyWithImpl<$Res>;
+  __$UserCopyWithImpl<$Res>;
   @override
-  $Res call({String id, String nickname});
+  $Res call(
+      {String id,
+        @JsonKey(name: 'full_name') String fullName,
+        @JsonKey(name: 'display_name') String displayName,
+        @JsonKey(name: 'github_account') String githubAccount,
+        @JsonKey(name: 'twitter_account') String twitterAccount,
+        @JsonKey(name: 'icon_url') String iconUrl});
 }
 
 class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
@@ -77,20 +121,43 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
   @override
   $Res call({
     Object id = freezed,
-    Object nickname = freezed,
+    Object fullName = freezed,
+    Object displayName = freezed,
+    Object githubAccount = freezed,
+    Object twitterAccount = freezed,
+    Object iconUrl = freezed,
   }) {
     return _then(_User(
       id: id == freezed ? _value.id : id as String,
-      nickname: nickname == freezed ? _value.nickname : nickname as String,
+      fullName: fullName == freezed ? _value.fullName : fullName as String,
+      displayName:
+      displayName == freezed ? _value.displayName : displayName as String,
+      githubAccount: githubAccount == freezed
+          ? _value.githubAccount
+          : githubAccount as String,
+      twitterAccount: twitterAccount == freezed
+          ? _value.twitterAccount
+          : twitterAccount as String,
+      iconUrl: iconUrl == freezed ? _value.iconUrl : iconUrl as String,
     ));
   }
 }
 
 @JsonSerializable()
 class _$_User with DiagnosticableTreeMixin implements _User {
-  const _$_User({@required this.id, @required this.nickname})
+  const _$_User(
+      {@required this.id,
+        @required @JsonKey(name: 'full_name') this.fullName,
+        @required @JsonKey(name: 'display_name') this.displayName,
+        @required @JsonKey(name: 'github_account') this.githubAccount,
+        @required @JsonKey(name: 'twitter_account') this.twitterAccount,
+        @required @JsonKey(name: 'icon_url') this.iconUrl})
       : assert(id != null),
-        assert(nickname != null);
+        assert(fullName != null),
+        assert(displayName != null),
+        assert(githubAccount != null),
+        assert(twitterAccount != null),
+        assert(iconUrl != null);
 
   factory _$_User.fromJson(Map<String, dynamic> json) =>
       _$_$_UserFromJson(json);
@@ -98,11 +165,24 @@ class _$_User with DiagnosticableTreeMixin implements _User {
   @override
   final String id;
   @override
-  final String nickname;
+  @JsonKey(name: 'full_name')
+  final String fullName;
+  @override
+  @JsonKey(name: 'display_name')
+  final String displayName;
+  @override
+  @JsonKey(name: 'github_account')
+  final String githubAccount;
+  @override
+  @JsonKey(name: 'twitter_account')
+  final String twitterAccount;
+  @override
+  @JsonKey(name: 'icon_url')
+  final String iconUrl;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'User(id: $id, nickname: $nickname)';
+    return 'User(id: $id, fullName: $fullName, displayName: $displayName, githubAccount: $githubAccount, twitterAccount: $twitterAccount, iconUrl: $iconUrl)';
   }
 
   @override
@@ -111,7 +191,11 @@ class _$_User with DiagnosticableTreeMixin implements _User {
     properties
       ..add(DiagnosticsProperty('type', 'User'))
       ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('nickname', nickname));
+      ..add(DiagnosticsProperty('fullName', fullName))
+      ..add(DiagnosticsProperty('displayName', displayName))
+      ..add(DiagnosticsProperty('githubAccount', githubAccount))
+      ..add(DiagnosticsProperty('twitterAccount', twitterAccount))
+      ..add(DiagnosticsProperty('iconUrl', iconUrl));
   }
 
   @override
@@ -120,16 +204,31 @@ class _$_User with DiagnosticableTreeMixin implements _User {
         (other is _User &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.nickname, nickname) ||
+            (identical(other.fullName, fullName) ||
                 const DeepCollectionEquality()
-                    .equals(other.nickname, nickname)));
+                    .equals(other.fullName, fullName)) &&
+            (identical(other.displayName, displayName) ||
+                const DeepCollectionEquality()
+                    .equals(other.displayName, displayName)) &&
+            (identical(other.githubAccount, githubAccount) ||
+                const DeepCollectionEquality()
+                    .equals(other.githubAccount, githubAccount)) &&
+            (identical(other.twitterAccount, twitterAccount) ||
+                const DeepCollectionEquality()
+                    .equals(other.twitterAccount, twitterAccount)) &&
+            (identical(other.iconUrl, iconUrl) ||
+                const DeepCollectionEquality().equals(other.iconUrl, iconUrl)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(nickname);
+      const DeepCollectionEquality().hash(fullName) ^
+      const DeepCollectionEquality().hash(displayName) ^
+      const DeepCollectionEquality().hash(githubAccount) ^
+      const DeepCollectionEquality().hash(twitterAccount) ^
+      const DeepCollectionEquality().hash(iconUrl);
 
   @override
   _$UserCopyWith<_User> get copyWith =>
@@ -142,15 +241,33 @@ class _$_User with DiagnosticableTreeMixin implements _User {
 }
 
 abstract class _User implements User {
-  const factory _User({@required String id, @required String nickname}) =
-      _$_User;
+  const factory _User(
+      {@required String id,
+        @required @JsonKey(name: 'full_name') String fullName,
+        @required @JsonKey(name: 'display_name') String displayName,
+        @required @JsonKey(name: 'github_account') String githubAccount,
+        @required @JsonKey(name: 'twitter_account') String twitterAccount,
+        @required @JsonKey(name: 'icon_url') String iconUrl}) = _$_User;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
   @override
   String get id;
   @override
-  String get nickname;
+  @JsonKey(name: 'full_name')
+  String get fullName;
+  @override
+  @JsonKey(name: 'display_name')
+  String get displayName;
+  @override
+  @JsonKey(name: 'github_account')
+  String get githubAccount;
+  @override
+  @JsonKey(name: 'twitter_account')
+  String get twitterAccount;
+  @override
+  @JsonKey(name: 'icon_url')
+  String get iconUrl;
   @override
   _$UserCopyWith<_User> get copyWith;
 }

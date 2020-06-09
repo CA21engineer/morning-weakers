@@ -13,15 +13,15 @@ _$_Hackathon _$_$_HackathonFromJson(Map<String, dynamic> json) {
     description: json['description'] as String,
     theme: json['theme'] as String,
     iconUrl: json['icon_url'] as String,
-    slackUrl: json['slackUrl'] as String,
-    presentationUrl: json['presentationUrl'] as String,
-    startDate: json['startDate'] == null
+    slackUrl: json['slack_url'] as String,
+    presentationUrl: json['presentation_url'] as String,
+    startDate: json['state_date'] == null
         ? null
-        : DateTime.parse(json['startDate'] as String),
-    endDate: json['endDate'] == null
+        : DateTime.parse(json['state_date'] as String),
+    endDate: json['end_date'] == null
         ? null
-        : DateTime.parse(json['endDate'] as String),
-    participantCount: json['participantCount'] as int,
+        : DateTime.parse(json['end_date'] as String),
+    span: json['span'] as int,
   );
 }
 
@@ -32,9 +32,9 @@ Map<String, dynamic> _$_$_HackathonToJson(_$_Hackathon instance) =>
       'description': instance.description,
       'theme': instance.theme,
       'icon_url': instance.iconUrl,
-      'slackUrl': instance.slackUrl,
-      'presentationUrl': instance.presentationUrl,
-      'startDate': instance.startDate?.toIso8601String(),
-      'endDate': instance.endDate?.toIso8601String(),
-      'participantCount': instance.participantCount,
+      'slack_url': instance.slackUrl,
+      'presentation_url': instance.presentationUrl,
+      'state_date': instance.startDate?.toIso8601String(),
+      'end_date': instance.endDate?.toIso8601String(),
+      'span': instance.span,
     };
