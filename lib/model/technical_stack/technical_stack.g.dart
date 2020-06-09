@@ -61,8 +61,8 @@ T _$enumDecodeNullable<T>(
 }
 
 const _$StackEnumMap = {
-  Stack.iOS: 'iOS',
-  Stack.Android: 'Android',
+  Stack.iOS: 'IOS',
+  Stack.Android: 'ANDROID',
   Stack.Serverside: 'Serverside',
 };
 
@@ -72,6 +72,6 @@ const _$LanguageEnumMap = {
 };
 
 const _$ProficiencyEnumMap = {
-  Proficiency.Good: 'Good',
-  Proficiency.Bad: 'Bad',
+  Proficiency.Good: 'GOOD',
+  Proficiency.Bad: 'BAD',
 };

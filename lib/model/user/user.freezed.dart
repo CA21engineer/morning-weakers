@@ -17,11 +17,11 @@ class _$UserTearOff {
 
   _User call(
       {@required String id,
-        @required @JsonKey(name: 'full_name') String fullName,
-        @required @JsonKey(name: 'display_name') String displayName,
-        @required @JsonKey(name: 'github_account') String githubAccount,
-        @required @JsonKey(name: 'twitter_account') String twitterAccount,
-        @required @JsonKey(name: 'icon_url') String iconUrl}) {
+      @required @JsonKey(name: 'full_name') String fullName,
+      @required @JsonKey(name: 'display_name') String displayName,
+      @required @JsonKey(name: 'github_account') String githubAccount,
+      @required @JsonKey(name: 'twitter_account') String twitterAccount,
+      @required @JsonKey(name: 'icon_url') String iconUrl}) {
     return _User(
       id: id,
       fullName: fullName,
@@ -55,14 +55,14 @@ mixin _$User {
 
 abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
-  _$UserCopyWithImpl<$Res>;
+      _$UserCopyWithImpl<$Res>;
   $Res call(
       {String id,
-        @JsonKey(name: 'full_name') String fullName,
-        @JsonKey(name: 'display_name') String displayName,
-        @JsonKey(name: 'github_account') String githubAccount,
-        @JsonKey(name: 'twitter_account') String twitterAccount,
-        @JsonKey(name: 'icon_url') String iconUrl});
+      @JsonKey(name: 'full_name') String fullName,
+      @JsonKey(name: 'display_name') String displayName,
+      @JsonKey(name: 'github_account') String githubAccount,
+      @JsonKey(name: 'twitter_account') String twitterAccount,
+      @JsonKey(name: 'icon_url') String iconUrl});
 }
 
 class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
@@ -85,7 +85,7 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
       id: id == freezed ? _value.id : id as String,
       fullName: fullName == freezed ? _value.fullName : fullName as String,
       displayName:
-      displayName == freezed ? _value.displayName : displayName as String,
+          displayName == freezed ? _value.displayName : displayName as String,
       githubAccount: githubAccount == freezed
           ? _value.githubAccount
           : githubAccount as String,
@@ -99,15 +99,15 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
 
 abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   factory _$UserCopyWith(_User value, $Res Function(_User) then) =
-  __$UserCopyWithImpl<$Res>;
+      __$UserCopyWithImpl<$Res>;
   @override
   $Res call(
       {String id,
-        @JsonKey(name: 'full_name') String fullName,
-        @JsonKey(name: 'display_name') String displayName,
-        @JsonKey(name: 'github_account') String githubAccount,
-        @JsonKey(name: 'twitter_account') String twitterAccount,
-        @JsonKey(name: 'icon_url') String iconUrl});
+      @JsonKey(name: 'full_name') String fullName,
+      @JsonKey(name: 'display_name') String displayName,
+      @JsonKey(name: 'github_account') String githubAccount,
+      @JsonKey(name: 'twitter_account') String twitterAccount,
+      @JsonKey(name: 'icon_url') String iconUrl});
 }
 
 class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
@@ -131,7 +131,7 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
       id: id == freezed ? _value.id : id as String,
       fullName: fullName == freezed ? _value.fullName : fullName as String,
       displayName:
-      displayName == freezed ? _value.displayName : displayName as String,
+          displayName == freezed ? _value.displayName : displayName as String,
       githubAccount: githubAccount == freezed
           ? _value.githubAccount
           : githubAccount as String,
@@ -147,11 +147,11 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 class _$_User with DiagnosticableTreeMixin implements _User {
   const _$_User(
       {@required this.id,
-        @required @JsonKey(name: 'full_name') this.fullName,
-        @required @JsonKey(name: 'display_name') this.displayName,
-        @required @JsonKey(name: 'github_account') this.githubAccount,
-        @required @JsonKey(name: 'twitter_account') this.twitterAccount,
-        @required @JsonKey(name: 'icon_url') this.iconUrl})
+      @required @JsonKey(name: 'full_name') this.fullName,
+      @required @JsonKey(name: 'display_name') this.displayName,
+      @required @JsonKey(name: 'github_account') this.githubAccount,
+      @required @JsonKey(name: 'twitter_account') this.twitterAccount,
+      @required @JsonKey(name: 'icon_url') this.iconUrl})
       : assert(id != null),
         assert(fullName != null),
         assert(displayName != null),
@@ -243,11 +243,11 @@ class _$_User with DiagnosticableTreeMixin implements _User {
 abstract class _User implements User {
   const factory _User(
       {@required String id,
-        @required @JsonKey(name: 'full_name') String fullName,
-        @required @JsonKey(name: 'display_name') String displayName,
-        @required @JsonKey(name: 'github_account') String githubAccount,
-        @required @JsonKey(name: 'twitter_account') String twitterAccount,
-        @required @JsonKey(name: 'icon_url') String iconUrl}) = _$_User;
+      @required @JsonKey(name: 'full_name') String fullName,
+      @required @JsonKey(name: 'display_name') String displayName,
+      @required @JsonKey(name: 'github_account') String githubAccount,
+      @required @JsonKey(name: 'twitter_account') String twitterAccount,
+      @required @JsonKey(name: 'icon_url') String iconUrl}) = _$_User;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
