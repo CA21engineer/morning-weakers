@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:morning_weakers/pages/input_participant_info/input_participant_info_page.dart';
 import 'package:morning_weakers/pages/new_profile/new_profile_page.dart';
 import 'package:morning_weakers/pages/profile_detail/profile_detail_page.dart';
+import 'package:morning_weakers/pages/admin_top/admin_top_page.dart';
 
 class AllPage extends StatelessWidget {
   @override
@@ -10,12 +11,14 @@ class AllPage extends StatelessWidget {
       InputParticipantInfoPage(),
       NewProfilePage(),
       ProfileDetailPage(),
+      AdminTopPage(),
     ];
 
     List<String> _pageRouteNames = [
       '/inputParticipantInfo',
       '/newProfile',
       '/profileDetail',
+      '/adminTopPage'
     ];
 
     return Scaffold(
