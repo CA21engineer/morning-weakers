@@ -18,12 +18,12 @@ class DesiredOccupation extends StatelessWidget {
           ),
           onChanged: (String newValue) {},
           items: <String>['iOS', 'Android', 'Webフロント', 'サーバーサイド']
-              .map<DropdownMenuItem<String>>((String value) {
-            return DropdownMenuItem<String>(
+            .map<DropdownMenuItem<String>>((String value) =>
+              DropdownMenuItem<String>(
               value: value,
               child: Text(value),
-            );
-          }).toList(),
+              )
+            ).toList(),
         ),
         const Text('参加希望職種(第2希望)'),
         DropdownButton<String>(
@@ -39,12 +39,12 @@ class DesiredOccupation extends StatelessWidget {
           onChanged: (String newValue) {},
           // TODO: 既に選んだ職種は選択不可にする
           items: <String>['iOS', 'Android', 'Webフロント', 'サーバーサイド']
-              .map<DropdownMenuItem<String>>((String value) {
-            return DropdownMenuItem<String>(
-              value: value,
-              child: Text(value),
-            );
-          }).toList(),
+            .map<DropdownMenuItem<String>>((String value) =>
+              DropdownMenuItem<String>(
+                value: value,
+                child: Text(value),
+              )
+            ).toList(),
         ),
         const Text('参加希望職種(第3希望)'),
         DropdownButton<String>(
@@ -60,12 +60,12 @@ class DesiredOccupation extends StatelessWidget {
           onChanged: (String newValue) {},
           // TODO: 既に選んだ職種は選択不可にする
           items: <String>['iOS', 'Android', 'Webフロント', 'サーバーサイド']
-              .map<DropdownMenuItem<String>>((String value) {
-            return DropdownMenuItem<String>(
-              value: value,
-              child: Text(value),
-            );
-          }).toList(),
+            .map<DropdownMenuItem<String>>((String value) =>
+              DropdownMenuItem<String>(
+                value: value,
+                child: Text(value),
+              )
+            ).toList(),
         ),
       ],
     );
