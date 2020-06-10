@@ -1,25 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:morning_weakers/pages/profile_detail/widgets/profile_list_container.dart';
 
 class ProfileContainer extends StatelessWidget {
-  const ProfileContainer({
-    @required this.titleName,
-    @required this.contentName,
-  });
-
-  final String titleName, contentName;
-
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 10),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      padding: const EdgeInsets.all(20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text(titleName,
-              textAlign: TextAlign.left,
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-          Text(contentName,
-              textAlign: TextAlign.right, style: const TextStyle(fontSize: 20)),
+          Row(
+            children: <Widget>[
+              Container(
+                decoration: const BoxDecoration(
+                    shape: BoxShape.circle, color: Colors.blue),
+                child: const CircleAvatar(
+                  backgroundColor: Colors.blue,
+                  radius: 35,
+                ),
+              ),
+              const SizedBox(width: 20),
+              const Text(
+                'Ryu1',
+                style: TextStyle(fontSize: 30),
+              ),
+            ],
+          ),
+          const SizedBox(height: 20),
+          const ProfileListContainer(titleName: 'ハンドルネーム', contentName: 'Ryu1'),
+          const Divider(),
+          const ProfileListContainer(
+              titleName: 'Twitter', contentName: '@ryu1'),
+          const Divider(),
+          const ProfileListContainer(titleName: 'Github', contentName: '@ryu1'),
+          const Divider(),
+          const ProfileListContainer(
+              titleName: '技術スタック', contentName: 'Flutter, Swift'),
+          const Divider(),
         ],
       ),
     );
