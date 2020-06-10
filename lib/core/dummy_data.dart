@@ -2,7 +2,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:morning_weakers/models/hackathon/hackathon.dart';
 import 'package:morning_weakers/models/models.dart';
 
-// TODO
 User dummyUser({
   @Default('') String id,
   @Default('') String fullName,

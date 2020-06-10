@@ -16,26 +16,13 @@ class _$UserTearOff {
   const _$UserTearOff();
 
   _User call(
-      {@required
-          String id,
-      @required
-      @JsonKey(name: 'full_name')
-          String fullName,
-      @required
-      @JsonKey(name: 'display_name')
-          String displayName,
-      @required
-      @JsonKey(name: 'technical_stack')
-          List<TechnicalStack> technicalStacks,
-      @required
-      @JsonKey(name: 'github_account')
-          String githubAccount,
-      @required
-      @JsonKey(name: 'twitter_account')
-          String twitterAccount,
-      @required
-      @JsonKey(name: 'icon_url')
-          String iconUrl}) {
+      {@required String id,
+      @JsonKey(name: 'full_name') String fullName = '',
+      @JsonKey(name: 'display_name') String displayName = '',
+      @JsonKey(name: 'technical_stack') List<TechnicalStack> technicalStacks,
+      @JsonKey(name: 'github_account') String githubAccount = '',
+      @JsonKey(name: 'twitter_account') String twitterAccount = '',
+      @JsonKey(name: 'icon_url') String iconUrl = ''}) {
     return _User(
       id: id,
       fullName: fullName,
@@ -174,16 +161,15 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 class _$_User with DiagnosticableTreeMixin implements _User {
   const _$_User(
       {@required this.id,
-      @required @JsonKey(name: 'full_name') this.fullName,
-      @required @JsonKey(name: 'display_name') this.displayName,
-      @required @JsonKey(name: 'technical_stack') this.technicalStacks,
-      @required @JsonKey(name: 'github_account') this.githubAccount,
-      @required @JsonKey(name: 'twitter_account') this.twitterAccount,
-      @required @JsonKey(name: 'icon_url') this.iconUrl})
+      @JsonKey(name: 'full_name') this.fullName = '',
+      @JsonKey(name: 'display_name') this.displayName = '',
+      @JsonKey(name: 'technical_stack') this.technicalStacks,
+      @JsonKey(name: 'github_account') this.githubAccount = '',
+      @JsonKey(name: 'twitter_account') this.twitterAccount = '',
+      @JsonKey(name: 'icon_url') this.iconUrl = ''})
       : assert(id != null),
         assert(fullName != null),
         assert(displayName != null),
-        assert(technicalStacks != null),
         assert(githubAccount != null),
         assert(twitterAccount != null),
         assert(iconUrl != null);
@@ -279,26 +265,13 @@ class _$_User with DiagnosticableTreeMixin implements _User {
 
 abstract class _User implements User {
   const factory _User(
-      {@required
-          String id,
-      @required
-      @JsonKey(name: 'full_name')
-          String fullName,
-      @required
-      @JsonKey(name: 'display_name')
-          String displayName,
-      @required
-      @JsonKey(name: 'technical_stack')
-          List<TechnicalStack> technicalStacks,
-      @required
-      @JsonKey(name: 'github_account')
-          String githubAccount,
-      @required
-      @JsonKey(name: 'twitter_account')
-          String twitterAccount,
-      @required
-      @JsonKey(name: 'icon_url')
-          String iconUrl}) = _$_User;
+      {@required String id,
+      @JsonKey(name: 'full_name') String fullName,
+      @JsonKey(name: 'display_name') String displayName,
+      @JsonKey(name: 'technical_stack') List<TechnicalStack> technicalStacks,
+      @JsonKey(name: 'github_account') String githubAccount,
+      @JsonKey(name: 'twitter_account') String twitterAccount,
+      @JsonKey(name: 'icon_url') String iconUrl}) = _$_User;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
