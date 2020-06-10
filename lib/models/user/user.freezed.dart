@@ -19,7 +19,7 @@ class _$UserTearOff {
       {@required String id,
       @JsonKey(name: 'full_name') String fullName = '',
       @JsonKey(name: 'display_name') String displayName = '',
-      @JsonKey(name: 'technical_stack') List<TechnicalStack> technicalStacks,
+      @JsonKey(name: 'technical_stacks') List<TechnicalStack> technicalStacks,
       @JsonKey(name: 'github_account') String githubAccount = '',
       @JsonKey(name: 'twitter_account') String twitterAccount = '',
       @JsonKey(name: 'icon_url') String iconUrl = ''}) {
@@ -44,7 +44,7 @@ mixin _$User {
   String get fullName;
   @JsonKey(name: 'display_name')
   String get displayName;
-  @JsonKey(name: 'technical_stack')
+  @JsonKey(name: 'technical_stacks')
   List<TechnicalStack> get technicalStacks;
   @JsonKey(name: 'github_account')
   String get githubAccount;
@@ -64,7 +64,7 @@ abstract class $UserCopyWith<$Res> {
       {String id,
       @JsonKey(name: 'full_name') String fullName,
       @JsonKey(name: 'display_name') String displayName,
-      @JsonKey(name: 'technical_stack') List<TechnicalStack> technicalStacks,
+      @JsonKey(name: 'technical_stacks') List<TechnicalStack> technicalStacks,
       @JsonKey(name: 'github_account') String githubAccount,
       @JsonKey(name: 'twitter_account') String twitterAccount,
       @JsonKey(name: 'icon_url') String iconUrl});
@@ -114,7 +114,7 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       {String id,
       @JsonKey(name: 'full_name') String fullName,
       @JsonKey(name: 'display_name') String displayName,
-      @JsonKey(name: 'technical_stack') List<TechnicalStack> technicalStacks,
+      @JsonKey(name: 'technical_stacks') List<TechnicalStack> technicalStacks,
       @JsonKey(name: 'github_account') String githubAccount,
       @JsonKey(name: 'twitter_account') String twitterAccount,
       @JsonKey(name: 'icon_url') String iconUrl});
@@ -163,7 +163,7 @@ class _$_User with DiagnosticableTreeMixin implements _User {
       {@required this.id,
       @JsonKey(name: 'full_name') this.fullName = '',
       @JsonKey(name: 'display_name') this.displayName = '',
-      @JsonKey(name: 'technical_stack') this.technicalStacks,
+      @JsonKey(name: 'technical_stacks') this.technicalStacks,
       @JsonKey(name: 'github_account') this.githubAccount = '',
       @JsonKey(name: 'twitter_account') this.twitterAccount = '',
       @JsonKey(name: 'icon_url') this.iconUrl = ''})
@@ -186,7 +186,7 @@ class _$_User with DiagnosticableTreeMixin implements _User {
   @JsonKey(name: 'display_name')
   final String displayName;
   @override
-  @JsonKey(name: 'technical_stack')
+  @JsonKey(name: 'technical_stacks')
   final List<TechnicalStack> technicalStacks;
   @override
   @JsonKey(name: 'github_account')
@@ -268,7 +268,7 @@ abstract class _User implements User {
       {@required String id,
       @JsonKey(name: 'full_name') String fullName,
       @JsonKey(name: 'display_name') String displayName,
-      @JsonKey(name: 'technical_stack') List<TechnicalStack> technicalStacks,
+      @JsonKey(name: 'technical_stacks') List<TechnicalStack> technicalStacks,
       @JsonKey(name: 'github_account') String githubAccount,
       @JsonKey(name: 'twitter_account') String twitterAccount,
       @JsonKey(name: 'icon_url') String iconUrl}) = _$_User;
@@ -284,7 +284,7 @@ abstract class _User implements User {
   @JsonKey(name: 'display_name')
   String get displayName;
   @override
-  @JsonKey(name: 'technical_stack')
+  @JsonKey(name: 'technical_stacks')
   List<TechnicalStack> get technicalStacks;
   @override
   @JsonKey(name: 'github_account')

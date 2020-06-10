@@ -11,7 +11,7 @@ abstract class Participant with _$Participant {
   const factory Participant({
     @required String id,
     @required User user,
-    @required @JsonKey(name: 'desired_occupation') List<TechnicalStack> desiredOccupations,
+    @required @JsonKey(name: 'desired_occupations') List<TechnicalStack> desiredOccupations,
     @required @JsonKey(name: 'working_days') int workingDays,
     @required String note,
     @required @JsonKey(name: 'is_admin') bool isAdmin,

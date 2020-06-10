@@ -12,7 +12,7 @@ abstract class User with _$User {
     @required String id,
     @Default('') @JsonKey(name: 'full_name') String fullName,
     @Default('') @JsonKey(name: 'display_name') String displayName,
-    @JsonKey(name: 'technical_stack') List<TechnicalStack> technicalStacks,
+    @JsonKey(name: 'technical_stacks') List<TechnicalStack> technicalStacks,
     @Default('') @JsonKey(name: 'github_account') String githubAccount,
     @Default('') @JsonKey(name: 'twitter_account') String twitterAccount,
     @Default('') @JsonKey(name: 'icon_url') String iconUrl,

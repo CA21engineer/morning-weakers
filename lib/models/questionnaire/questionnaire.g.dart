@@ -11,12 +11,12 @@ _$_Questionnaire _$_$_QuestionnaireFromJson(Map<String, dynamic> json) {
     id: json['id'] as String,
     title: json['title'] as String,
     description: json['description'] as String,
-    scheduleCandidates: (json['schedule_candidate'] as List)
+    scheduleCandidates: (json['schedule_candidates'] as List)
         ?.map((e) => e == null
             ? null
             : ScheduleCandidate.fromJson(e as Map<String, dynamic>))
         ?.toList(),
-    desiredOccupations: (json['desired_occupation'] as List)
+    desiredOccupations: (json['desired_occupations'] as List)
         ?.map((e) => e == null
             ? null
             : TechnicalStack.fromJson(e as Map<String, dynamic>))
@@ -31,8 +31,8 @@ Map<String, dynamic> _$_$_QuestionnaireToJson(_$_Questionnaire instance) =>
       'id': instance.id,
       'title': instance.title,
       'description': instance.description,
-      'schedule_candidate': instance.scheduleCandidates,
-      'desired_occupation': instance.desiredOccupations,
+      'schedule_candidates': instance.scheduleCandidates,
+      'desired_occupations': instance.desiredOccupations,
       'working_days': instance.workingDays,
       'note': instance.note,
     };

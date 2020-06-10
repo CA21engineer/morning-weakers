@@ -21,7 +21,7 @@ class _$ParticipantTearOff {
       @required
           User user,
       @required
-      @JsonKey(name: 'desired_occupation')
+      @JsonKey(name: 'desired_occupations')
           List<TechnicalStack> desiredOccupations,
       @required
       @JsonKey(name: 'working_days')
@@ -48,7 +48,7 @@ const $Participant = _$ParticipantTearOff();
 mixin _$Participant {
   String get id;
   User get user;
-  @JsonKey(name: 'desired_occupation')
+  @JsonKey(name: 'desired_occupations')
   List<TechnicalStack> get desiredOccupations;
   @JsonKey(name: 'working_days')
   int get workingDays;
@@ -67,7 +67,7 @@ abstract class $ParticipantCopyWith<$Res> {
   $Res call(
       {String id,
       User user,
-      @JsonKey(name: 'desired_occupation')
+      @JsonKey(name: 'desired_occupations')
           List<TechnicalStack> desiredOccupations,
       @JsonKey(name: 'working_days')
           int workingDays,
@@ -127,7 +127,7 @@ abstract class _$ParticipantCopyWith<$Res>
   $Res call(
       {String id,
       User user,
-      @JsonKey(name: 'desired_occupation')
+      @JsonKey(name: 'desired_occupations')
           List<TechnicalStack> desiredOccupations,
       @JsonKey(name: 'working_days')
           int workingDays,
@@ -176,7 +176,7 @@ class _$_Participant with DiagnosticableTreeMixin implements _Participant {
   const _$_Participant(
       {@required this.id,
       @required this.user,
-      @required @JsonKey(name: 'desired_occupation') this.desiredOccupations,
+      @required @JsonKey(name: 'desired_occupations') this.desiredOccupations,
       @required @JsonKey(name: 'working_days') this.workingDays,
       @required this.note,
       @required @JsonKey(name: 'is_admin') this.isAdmin})
@@ -195,7 +195,7 @@ class _$_Participant with DiagnosticableTreeMixin implements _Participant {
   @override
   final User user;
   @override
-  @JsonKey(name: 'desired_occupation')
+  @JsonKey(name: 'desired_occupations')
   final List<TechnicalStack> desiredOccupations;
   @override
   @JsonKey(name: 'working_days')
@@ -271,7 +271,7 @@ abstract class _Participant implements Participant {
       @required
           User user,
       @required
-      @JsonKey(name: 'desired_occupation')
+      @JsonKey(name: 'desired_occupations')
           List<TechnicalStack> desiredOccupations,
       @required
       @JsonKey(name: 'working_days')
@@ -290,7 +290,7 @@ abstract class _Participant implements Participant {
   @override
   User get user;
   @override
-  @JsonKey(name: 'desired_occupation')
+  @JsonKey(name: 'desired_occupations')
   List<TechnicalStack> get desiredOccupations;
   @override
   @JsonKey(name: 'working_days')

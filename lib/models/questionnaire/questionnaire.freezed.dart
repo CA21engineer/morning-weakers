@@ -23,10 +23,10 @@ class _$QuestionnaireTearOff {
       @required
           String description,
       @required
-      @JsonKey(name: 'schedule_candidate')
+      @JsonKey(name: 'schedule_candidates')
           List<ScheduleCandidate> scheduleCandidates,
       @required
-      @JsonKey(name: 'desired_occupation')
+      @JsonKey(name: 'desired_occupations')
           List<TechnicalStack> desiredOccupations,
       @required
       @JsonKey(name: 'working_days')
@@ -52,9 +52,9 @@ mixin _$Questionnaire {
   String get id;
   String get title;
   String get description;
-  @JsonKey(name: 'schedule_candidate')
+  @JsonKey(name: 'schedule_candidates')
   List<ScheduleCandidate> get scheduleCandidates;
-  @JsonKey(name: 'desired_occupation')
+  @JsonKey(name: 'desired_occupations')
   List<TechnicalStack> get desiredOccupations;
   @JsonKey(name: 'working_days')
   int get workingDays;
@@ -72,9 +72,9 @@ abstract class $QuestionnaireCopyWith<$Res> {
       {String id,
       String title,
       String description,
-      @JsonKey(name: 'schedule_candidate')
+      @JsonKey(name: 'schedule_candidates')
           List<ScheduleCandidate> scheduleCandidates,
-      @JsonKey(name: 'desired_occupation')
+      @JsonKey(name: 'desired_occupations')
           List<TechnicalStack> desiredOccupations,
       @JsonKey(name: 'working_days')
           int workingDays,
@@ -127,9 +127,9 @@ abstract class _$QuestionnaireCopyWith<$Res>
       {String id,
       String title,
       String description,
-      @JsonKey(name: 'schedule_candidate')
+      @JsonKey(name: 'schedule_candidates')
           List<ScheduleCandidate> scheduleCandidates,
-      @JsonKey(name: 'desired_occupation')
+      @JsonKey(name: 'desired_occupations')
           List<TechnicalStack> desiredOccupations,
       @JsonKey(name: 'working_days')
           int workingDays,
@@ -180,8 +180,8 @@ class _$_Questionnaire with DiagnosticableTreeMixin implements _Questionnaire {
       {@required this.id,
       @required this.title,
       @required this.description,
-      @required @JsonKey(name: 'schedule_candidate') this.scheduleCandidates,
-      @required @JsonKey(name: 'desired_occupation') this.desiredOccupations,
+      @required @JsonKey(name: 'schedule_candidates') this.scheduleCandidates,
+      @required @JsonKey(name: 'desired_occupations') this.desiredOccupations,
       @required @JsonKey(name: 'working_days') this.workingDays,
       @required this.note})
       : assert(id != null),
@@ -202,10 +202,10 @@ class _$_Questionnaire with DiagnosticableTreeMixin implements _Questionnaire {
   @override
   final String description;
   @override
-  @JsonKey(name: 'schedule_candidate')
+  @JsonKey(name: 'schedule_candidates')
   final List<ScheduleCandidate> scheduleCandidates;
   @override
-  @JsonKey(name: 'desired_occupation')
+  @JsonKey(name: 'desired_occupations')
   final List<TechnicalStack> desiredOccupations;
   @override
   @JsonKey(name: 'working_days')
@@ -286,10 +286,10 @@ abstract class _Questionnaire implements Questionnaire {
       @required
           String description,
       @required
-      @JsonKey(name: 'schedule_candidate')
+      @JsonKey(name: 'schedule_candidates')
           List<ScheduleCandidate> scheduleCandidates,
       @required
-      @JsonKey(name: 'desired_occupation')
+      @JsonKey(name: 'desired_occupations')
           List<TechnicalStack> desiredOccupations,
       @required
       @JsonKey(name: 'working_days')
@@ -307,10 +307,10 @@ abstract class _Questionnaire implements Questionnaire {
   @override
   String get description;
   @override
-  @JsonKey(name: 'schedule_candidate')
+  @JsonKey(name: 'schedule_candidates')
   List<ScheduleCandidate> get scheduleCandidates;
   @override
-  @JsonKey(name: 'desired_occupation')
+  @JsonKey(name: 'desired_occupations')
   List<TechnicalStack> get desiredOccupations;
   @override
   @JsonKey(name: 'working_days')

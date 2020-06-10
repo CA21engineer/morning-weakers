@@ -12,7 +12,7 @@ _$_Participant _$_$_ParticipantFromJson(Map<String, dynamic> json) {
     user: json['user'] == null
         ? null
         : User.fromJson(json['user'] as Map<String, dynamic>),
-    desiredOccupations: (json['desired_occupation'] as List)
+    desiredOccupations: (json['desired_occupations'] as List)
         ?.map((e) => e == null
             ? null
             : TechnicalStack.fromJson(e as Map<String, dynamic>))
@@ -27,7 +27,7 @@ Map<String, dynamic> _$_$_ParticipantToJson(_$_Participant instance) =>
     <String, dynamic>{
       'id': instance.id,
       'user': instance.user,
-      'desired_occupation': instance.desiredOccupations,
+      'desired_occupations': instance.desiredOccupations,
       'working_days': instance.workingDays,
       'note': instance.note,
       'is_admin': instance.isAdmin,
