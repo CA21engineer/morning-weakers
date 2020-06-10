@@ -22,8 +22,8 @@ class ProfileContainer extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 20),
-              const Text(
-                'Ryu1',
+              Text(
+                '${context.select<ProfileDetailState, String>((state) => state.fullName)}',
                 style: TextStyle(fontSize: 30),
               ),
             ],
