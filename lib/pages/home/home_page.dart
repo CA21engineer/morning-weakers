@@ -79,27 +79,27 @@ class HomePage extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: Column(children: const <Widget>[
-        const Text(
+        Text(
           '資料リンク',
           style: TextStyle(
             fontSize: 20,
           ),
         ),
-        const ListTile(
-            title: const Text(
+        ListTile(
+            title: Text(
               'Github',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            subtitle: const Text(
+            subtitle: Text(
               'https://github.com/CA21engineer/morning-weakers',
               style: TextStyle(fontStyle: FontStyle.italic),
             )),
-        const ListTile(
+        ListTile(
           title: Text(
             'Slide',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
-          subtitle: const Text(
+          subtitle: Text(
             'https://docs.google.com/presentation/morning-weakers',
             style: TextStyle(fontStyle: FontStyle.italic),
           ),
