@@ -12,21 +12,21 @@ class ProfileDetailController extends StateNotifier<ProfileDetailState>
   }
 
   void getProfileDetail() {
-    final user = const User(
-      id: '',
-      fullName: '',
-      displayName: '',
-      githubAccount: '',
-      twitterAccount: '',
-      iconUrl: '',
+    final dummyUser = const User(
+      id: 'dummy',
+      fullName: 'dummy',
+      displayName: 'dummy',
+      githubAccount: 'dummy',
+      twitterAccount: 'dummy',
+      iconUrl: 'dummy',
     );
 
     state = state.copyWith(
-      fullName: user.fullName,
-      displayName: user.displayName,
-      githubAccount: user.githubAccount,
-      twitterAccount: user.twitterAccount,
-      iconUrl: user.iconUrl,
+      fullName: dummyUser.fullName,
+      displayName: dummyUser.displayName,
+      githubAccount: dummyUser.githubAccount,
+      twitterAccount: dummyUser.twitterAccount,
+      iconUrl: dummyUser.iconUrl,
     );
   }
 }
