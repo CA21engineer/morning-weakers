@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:morning_weakers/pages/input_participant_info/widgets/desired_occupation.dart';
+import 'package:morning_weakers/pages/input_participant_info/widgets/working_days.dart';
 
 class InputParticipantInfoPage extends StatelessWidget {
   @override
@@ -17,6 +18,7 @@ class InputParticipantInfoPage extends StatelessWidget {
     child: Column(
       children: <Widget>[
         DesiredOccupation(),
+        WorkingDays(),
         TextFormField(
           decoration: const InputDecoration(
             labelText: '備考欄'
