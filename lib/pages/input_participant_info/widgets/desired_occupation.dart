@@ -23,12 +23,12 @@ class DesiredOccupation extends StatelessWidget {
               onChanged: (String newValue) {},
               // TODO: 既に選んだ職種は選択不可にする
               items: <String>['iOS', 'Android', 'Webフロント', 'サーバーサイド']
-                  .map<DropdownMenuItem<String>>((String value) =>
+                .map<DropdownMenuItem<String>>((String value) =>
                   DropdownMenuItem<String>(
                     value: value,
                     child: Text(value),
                   )
-              ).toList(),
+                ).toList(),
             ),
           ],
         )
