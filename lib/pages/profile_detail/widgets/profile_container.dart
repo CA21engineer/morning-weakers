@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:morning_weakers/pages/profile_detail/widgets/profile_list_container.dart';
 import 'package:morning_weakers/pages/profile_detail/profile_detail_state.dart';
 import 'package:provider/provider.dart';
+import 'package:morning_weakers/pages/profile_detail/widgets/technical_stack_container.dart';
 
 class ProfileContainer extends StatelessWidget {
   @override
@@ -44,7 +45,7 @@ class ProfileContainer extends StatelessWidget {
               contentName:
                   '${context.select<ProfileDetailState, String>((state) => state.githubAccount)}'),
           const Divider(),
-          const ProfileListContainer(
+          const TechnicalStackContainer(
               titleName: '技術スタック', contentName: 'Flutter, Swift'),
           const Divider(),
         ],
