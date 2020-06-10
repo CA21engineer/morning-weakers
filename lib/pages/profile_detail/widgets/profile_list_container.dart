@@ -15,11 +15,16 @@ class ProfileListContainer extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Text(titleName,
-              textAlign: TextAlign.left,
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-          Text(contentName,
-              textAlign: TextAlign.right, style: const TextStyle(fontSize: 20)),
+          Text(
+            titleName,
+            textAlign: TextAlign.left,
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+          Text(
+            contentName,
+            textAlign: TextAlign.right,
+            style: const TextStyle(fontSize: 20),
+          ),
         ],
       ),
     );
