@@ -25,7 +25,11 @@ class _$HackathonTearOff {
       @required @JsonKey(name: 'presentation_url') String presentationUrl,
       @required @JsonKey(name: 'start_date') DateTime startDate,
       @required @JsonKey(name: 'end_date') DateTime endDate,
-      @required int span}) {
+      @required int span,
+      Questionnaire questionnaire,
+      @required List<Participant> participants,
+      List<Group> groups,
+      List<Notification> notifications}) {
     return _Hackathon(
       id: id,
       title: title,
@@ -37,6 +41,10 @@ class _$HackathonTearOff {
       startDate: startDate,
       endDate: endDate,
       span: span,
+      questionnaire: questionnaire,
+      participants: participants,
+      groups: groups,
+      notifications: notifications,
     );
   }
 }
@@ -60,6 +68,10 @@ mixin _$Hackathon {
   @JsonKey(name: 'end_date')
   DateTime get endDate;
   int get span;
+  Questionnaire get questionnaire;
+  List<Participant> get participants;
+  List<Group> get groups;
+  List<Notification> get notifications;
 
   Map<String, dynamic> toJson();
   $HackathonCopyWith<Hackathon> get copyWith;
@@ -78,7 +90,13 @@ abstract class $HackathonCopyWith<$Res> {
       @JsonKey(name: 'presentation_url') String presentationUrl,
       @JsonKey(name: 'start_date') DateTime startDate,
       @JsonKey(name: 'end_date') DateTime endDate,
-      int span});
+      int span,
+      Questionnaire questionnaire,
+      List<Participant> participants,
+      List<Group> groups,
+      List<Notification> notifications});
+
+  $QuestionnaireCopyWith<$Res> get questionnaire;
 }
 
 class _$HackathonCopyWithImpl<$Res> implements $HackathonCopyWith<$Res> {
@@ -100,6 +118,10 @@ class _$HackathonCopyWithImpl<$Res> implements $HackathonCopyWith<$Res> {
     Object startDate = freezed,
     Object endDate = freezed,
     Object span = freezed,
+    Object questionnaire = freezed,
+    Object participants = freezed,
+    Object groups = freezed,
+    Object notifications = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as String,
@@ -116,7 +138,27 @@ class _$HackathonCopyWithImpl<$Res> implements $HackathonCopyWith<$Res> {
           startDate == freezed ? _value.startDate : startDate as DateTime,
       endDate: endDate == freezed ? _value.endDate : endDate as DateTime,
       span: span == freezed ? _value.span : span as int,
+      questionnaire: questionnaire == freezed
+          ? _value.questionnaire
+          : questionnaire as Questionnaire,
+      participants: participants == freezed
+          ? _value.participants
+          : participants as List<Participant>,
+      groups: groups == freezed ? _value.groups : groups as List<Group>,
+      notifications: notifications == freezed
+          ? _value.notifications
+          : notifications as List<Notification>,
     ));
+  }
+
+  @override
+  $QuestionnaireCopyWith<$Res> get questionnaire {
+    if (_value.questionnaire == null) {
+      return null;
+    }
+    return $QuestionnaireCopyWith<$Res>(_value.questionnaire, (value) {
+      return _then(_value.copyWith(questionnaire: value));
+    });
   }
 }
 
@@ -135,7 +177,14 @@ abstract class _$HackathonCopyWith<$Res> implements $HackathonCopyWith<$Res> {
       @JsonKey(name: 'presentation_url') String presentationUrl,
       @JsonKey(name: 'start_date') DateTime startDate,
       @JsonKey(name: 'end_date') DateTime endDate,
-      int span});
+      int span,
+      Questionnaire questionnaire,
+      List<Participant> participants,
+      List<Group> groups,
+      List<Notification> notifications});
+
+  @override
+  $QuestionnaireCopyWith<$Res> get questionnaire;
 }
 
 class __$HackathonCopyWithImpl<$Res> extends _$HackathonCopyWithImpl<$Res>
@@ -158,6 +207,10 @@ class __$HackathonCopyWithImpl<$Res> extends _$HackathonCopyWithImpl<$Res>
     Object startDate = freezed,
     Object endDate = freezed,
     Object span = freezed,
+    Object questionnaire = freezed,
+    Object participants = freezed,
+    Object groups = freezed,
+    Object notifications = freezed,
   }) {
     return _then(_Hackathon(
       id: id == freezed ? _value.id : id as String,
@@ -174,6 +227,16 @@ class __$HackathonCopyWithImpl<$Res> extends _$HackathonCopyWithImpl<$Res>
           startDate == freezed ? _value.startDate : startDate as DateTime,
       endDate: endDate == freezed ? _value.endDate : endDate as DateTime,
       span: span == freezed ? _value.span : span as int,
+      questionnaire: questionnaire == freezed
+          ? _value.questionnaire
+          : questionnaire as Questionnaire,
+      participants: participants == freezed
+          ? _value.participants
+          : participants as List<Participant>,
+      groups: groups == freezed ? _value.groups : groups as List<Group>,
+      notifications: notifications == freezed
+          ? _value.notifications
+          : notifications as List<Notification>,
     ));
   }
 }
@@ -190,7 +253,11 @@ class _$_Hackathon with DiagnosticableTreeMixin implements _Hackathon {
       @required @JsonKey(name: 'presentation_url') this.presentationUrl,
       @required @JsonKey(name: 'start_date') this.startDate,
       @required @JsonKey(name: 'end_date') this.endDate,
-      @required this.span})
+      @required this.span,
+      this.questionnaire,
+      @required this.participants,
+      this.groups,
+      this.notifications})
       : assert(id != null),
         assert(title != null),
         assert(description != null),
@@ -200,7 +267,8 @@ class _$_Hackathon with DiagnosticableTreeMixin implements _Hackathon {
         assert(presentationUrl != null),
         assert(startDate != null),
         assert(endDate != null),
-        assert(span != null);
+        assert(span != null),
+        assert(participants != null);
 
   factory _$_Hackathon.fromJson(Map<String, dynamic> json) =>
       _$_$_HackathonFromJson(json);
@@ -230,10 +298,18 @@ class _$_Hackathon with DiagnosticableTreeMixin implements _Hackathon {
   final DateTime endDate;
   @override
   final int span;
+  @override
+  final Questionnaire questionnaire;
+  @override
+  final List<Participant> participants;
+  @override
+  final List<Group> groups;
+  @override
+  final List<Notification> notifications;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Hackathon(id: $id, title: $title, description: $description, theme: $theme, iconUrl: $iconUrl, slackUrl: $slackUrl, presentationUrl: $presentationUrl, startDate: $startDate, endDate: $endDate, span: $span)';
+    return 'Hackathon(id: $id, title: $title, description: $description, theme: $theme, iconUrl: $iconUrl, slackUrl: $slackUrl, presentationUrl: $presentationUrl, startDate: $startDate, endDate: $endDate, span: $span, questionnaire: $questionnaire, participants: $participants, groups: $groups, notifications: $notifications)';
   }
 
   @override
@@ -250,7 +326,11 @@ class _$_Hackathon with DiagnosticableTreeMixin implements _Hackathon {
       ..add(DiagnosticsProperty('presentationUrl', presentationUrl))
       ..add(DiagnosticsProperty('startDate', startDate))
       ..add(DiagnosticsProperty('endDate', endDate))
-      ..add(DiagnosticsProperty('span', span));
+      ..add(DiagnosticsProperty('span', span))
+      ..add(DiagnosticsProperty('questionnaire', questionnaire))
+      ..add(DiagnosticsProperty('participants', participants))
+      ..add(DiagnosticsProperty('groups', groups))
+      ..add(DiagnosticsProperty('notifications', notifications));
   }
 
   @override
@@ -282,7 +362,18 @@ class _$_Hackathon with DiagnosticableTreeMixin implements _Hackathon {
                 const DeepCollectionEquality()
                     .equals(other.endDate, endDate)) &&
             (identical(other.span, span) ||
-                const DeepCollectionEquality().equals(other.span, span)));
+                const DeepCollectionEquality().equals(other.span, span)) &&
+            (identical(other.questionnaire, questionnaire) ||
+                const DeepCollectionEquality()
+                    .equals(other.questionnaire, questionnaire)) &&
+            (identical(other.participants, participants) ||
+                const DeepCollectionEquality()
+                    .equals(other.participants, participants)) &&
+            (identical(other.groups, groups) ||
+                const DeepCollectionEquality().equals(other.groups, groups)) &&
+            (identical(other.notifications, notifications) ||
+                const DeepCollectionEquality()
+                    .equals(other.notifications, notifications)));
   }
 
   @override
@@ -297,7 +388,11 @@ class _$_Hackathon with DiagnosticableTreeMixin implements _Hackathon {
       const DeepCollectionEquality().hash(presentationUrl) ^
       const DeepCollectionEquality().hash(startDate) ^
       const DeepCollectionEquality().hash(endDate) ^
-      const DeepCollectionEquality().hash(span);
+      const DeepCollectionEquality().hash(span) ^
+      const DeepCollectionEquality().hash(questionnaire) ^
+      const DeepCollectionEquality().hash(participants) ^
+      const DeepCollectionEquality().hash(groups) ^
+      const DeepCollectionEquality().hash(notifications);
 
   @override
   _$HackathonCopyWith<_Hackathon> get copyWith =>
@@ -320,7 +415,11 @@ abstract class _Hackathon implements Hackathon {
       @required @JsonKey(name: 'presentation_url') String presentationUrl,
       @required @JsonKey(name: 'start_date') DateTime startDate,
       @required @JsonKey(name: 'end_date') DateTime endDate,
-      @required int span}) = _$_Hackathon;
+      @required int span,
+      Questionnaire questionnaire,
+      @required List<Participant> participants,
+      List<Group> groups,
+      List<Notification> notifications}) = _$_Hackathon;
 
   factory _Hackathon.fromJson(Map<String, dynamic> json) =
       _$_Hackathon.fromJson;
@@ -350,6 +449,14 @@ abstract class _Hackathon implements Hackathon {
   DateTime get endDate;
   @override
   int get span;
+  @override
+  Questionnaire get questionnaire;
+  @override
+  List<Participant> get participants;
+  @override
+  List<Group> get groups;
+  @override
+  List<Notification> get notifications;
   @override
   _$HackathonCopyWith<_Hackathon> get copyWith;
 }

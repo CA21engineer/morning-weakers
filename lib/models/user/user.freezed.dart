@@ -16,16 +16,31 @@ class _$UserTearOff {
   const _$UserTearOff();
 
   _User call(
-      {@required String id,
-      @required @JsonKey(name: 'full_name') String fullName,
-      @required @JsonKey(name: 'display_name') String displayName,
-      @required @JsonKey(name: 'github_account') String githubAccount,
-      @required @JsonKey(name: 'twitter_account') String twitterAccount,
-      @required @JsonKey(name: 'icon_url') String iconUrl}) {
+      {@required
+          String id,
+      @required
+      @JsonKey(name: 'full_name')
+          String fullName,
+      @required
+      @JsonKey(name: 'display_name')
+          String displayName,
+      @required
+      @JsonKey(name: 'technical_stack')
+          List<TechnicalStack> technicalStacks,
+      @required
+      @JsonKey(name: 'github_account')
+          String githubAccount,
+      @required
+      @JsonKey(name: 'twitter_account')
+          String twitterAccount,
+      @required
+      @JsonKey(name: 'icon_url')
+          String iconUrl}) {
     return _User(
       id: id,
       fullName: fullName,
       displayName: displayName,
+      technicalStacks: technicalStacks,
       githubAccount: githubAccount,
       twitterAccount: twitterAccount,
       iconUrl: iconUrl,
@@ -42,6 +57,8 @@ mixin _$User {
   String get fullName;
   @JsonKey(name: 'display_name')
   String get displayName;
+  @JsonKey(name: 'technical_stack')
+  List<TechnicalStack> get technicalStacks;
   @JsonKey(name: 'github_account')
   String get githubAccount;
   @JsonKey(name: 'twitter_account')
@@ -60,6 +77,7 @@ abstract class $UserCopyWith<$Res> {
       {String id,
       @JsonKey(name: 'full_name') String fullName,
       @JsonKey(name: 'display_name') String displayName,
+      @JsonKey(name: 'technical_stack') List<TechnicalStack> technicalStacks,
       @JsonKey(name: 'github_account') String githubAccount,
       @JsonKey(name: 'twitter_account') String twitterAccount,
       @JsonKey(name: 'icon_url') String iconUrl});
@@ -77,6 +95,7 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
     Object id = freezed,
     Object fullName = freezed,
     Object displayName = freezed,
+    Object technicalStacks = freezed,
     Object githubAccount = freezed,
     Object twitterAccount = freezed,
     Object iconUrl = freezed,
@@ -86,6 +105,9 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
       fullName: fullName == freezed ? _value.fullName : fullName as String,
       displayName:
           displayName == freezed ? _value.displayName : displayName as String,
+      technicalStacks: technicalStacks == freezed
+          ? _value.technicalStacks
+          : technicalStacks as List<TechnicalStack>,
       githubAccount: githubAccount == freezed
           ? _value.githubAccount
           : githubAccount as String,
@@ -105,6 +127,7 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       {String id,
       @JsonKey(name: 'full_name') String fullName,
       @JsonKey(name: 'display_name') String displayName,
+      @JsonKey(name: 'technical_stack') List<TechnicalStack> technicalStacks,
       @JsonKey(name: 'github_account') String githubAccount,
       @JsonKey(name: 'twitter_account') String twitterAccount,
       @JsonKey(name: 'icon_url') String iconUrl});
@@ -123,6 +146,7 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
     Object id = freezed,
     Object fullName = freezed,
     Object displayName = freezed,
+    Object technicalStacks = freezed,
     Object githubAccount = freezed,
     Object twitterAccount = freezed,
     Object iconUrl = freezed,
@@ -132,6 +156,9 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
       fullName: fullName == freezed ? _value.fullName : fullName as String,
       displayName:
           displayName == freezed ? _value.displayName : displayName as String,
+      technicalStacks: technicalStacks == freezed
+          ? _value.technicalStacks
+          : technicalStacks as List<TechnicalStack>,
       githubAccount: githubAccount == freezed
           ? _value.githubAccount
           : githubAccount as String,
@@ -149,12 +176,14 @@ class _$_User with DiagnosticableTreeMixin implements _User {
       {@required this.id,
       @required @JsonKey(name: 'full_name') this.fullName,
       @required @JsonKey(name: 'display_name') this.displayName,
+      @required @JsonKey(name: 'technical_stack') this.technicalStacks,
       @required @JsonKey(name: 'github_account') this.githubAccount,
       @required @JsonKey(name: 'twitter_account') this.twitterAccount,
       @required @JsonKey(name: 'icon_url') this.iconUrl})
       : assert(id != null),
         assert(fullName != null),
         assert(displayName != null),
+        assert(technicalStacks != null),
         assert(githubAccount != null),
         assert(twitterAccount != null),
         assert(iconUrl != null);
@@ -171,6 +200,9 @@ class _$_User with DiagnosticableTreeMixin implements _User {
   @JsonKey(name: 'display_name')
   final String displayName;
   @override
+  @JsonKey(name: 'technical_stack')
+  final List<TechnicalStack> technicalStacks;
+  @override
   @JsonKey(name: 'github_account')
   final String githubAccount;
   @override
@@ -182,7 +214,7 @@ class _$_User with DiagnosticableTreeMixin implements _User {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'User(id: $id, fullName: $fullName, displayName: $displayName, githubAccount: $githubAccount, twitterAccount: $twitterAccount, iconUrl: $iconUrl)';
+    return 'User(id: $id, fullName: $fullName, displayName: $displayName, technicalStacks: $technicalStacks, githubAccount: $githubAccount, twitterAccount: $twitterAccount, iconUrl: $iconUrl)';
   }
 
   @override
@@ -193,6 +225,7 @@ class _$_User with DiagnosticableTreeMixin implements _User {
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('fullName', fullName))
       ..add(DiagnosticsProperty('displayName', displayName))
+      ..add(DiagnosticsProperty('technicalStacks', technicalStacks))
       ..add(DiagnosticsProperty('githubAccount', githubAccount))
       ..add(DiagnosticsProperty('twitterAccount', twitterAccount))
       ..add(DiagnosticsProperty('iconUrl', iconUrl));
@@ -210,6 +243,9 @@ class _$_User with DiagnosticableTreeMixin implements _User {
             (identical(other.displayName, displayName) ||
                 const DeepCollectionEquality()
                     .equals(other.displayName, displayName)) &&
+            (identical(other.technicalStacks, technicalStacks) ||
+                const DeepCollectionEquality()
+                    .equals(other.technicalStacks, technicalStacks)) &&
             (identical(other.githubAccount, githubAccount) ||
                 const DeepCollectionEquality()
                     .equals(other.githubAccount, githubAccount)) &&
@@ -226,6 +262,7 @@ class _$_User with DiagnosticableTreeMixin implements _User {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(fullName) ^
       const DeepCollectionEquality().hash(displayName) ^
+      const DeepCollectionEquality().hash(technicalStacks) ^
       const DeepCollectionEquality().hash(githubAccount) ^
       const DeepCollectionEquality().hash(twitterAccount) ^
       const DeepCollectionEquality().hash(iconUrl);
@@ -242,12 +279,26 @@ class _$_User with DiagnosticableTreeMixin implements _User {
 
 abstract class _User implements User {
   const factory _User(
-      {@required String id,
-      @required @JsonKey(name: 'full_name') String fullName,
-      @required @JsonKey(name: 'display_name') String displayName,
-      @required @JsonKey(name: 'github_account') String githubAccount,
-      @required @JsonKey(name: 'twitter_account') String twitterAccount,
-      @required @JsonKey(name: 'icon_url') String iconUrl}) = _$_User;
+      {@required
+          String id,
+      @required
+      @JsonKey(name: 'full_name')
+          String fullName,
+      @required
+      @JsonKey(name: 'display_name')
+          String displayName,
+      @required
+      @JsonKey(name: 'technical_stack')
+          List<TechnicalStack> technicalStacks,
+      @required
+      @JsonKey(name: 'github_account')
+          String githubAccount,
+      @required
+      @JsonKey(name: 'twitter_account')
+          String twitterAccount,
+      @required
+      @JsonKey(name: 'icon_url')
+          String iconUrl}) = _$_User;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
@@ -259,6 +310,9 @@ abstract class _User implements User {
   @override
   @JsonKey(name: 'display_name')
   String get displayName;
+  @override
+  @JsonKey(name: 'technical_stack')
+  List<TechnicalStack> get technicalStacks;
   @override
   @JsonKey(name: 'github_account')
   String get githubAccount;

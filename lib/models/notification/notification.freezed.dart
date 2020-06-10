@@ -62,6 +62,8 @@ abstract class $NotificationCopyWith<$Res> {
       @JsonKey(name: 'published_user') User publishedUser,
       @JsonKey(name: 'created_at') DateTime createdAt,
       @JsonKey(name: 'is_important') bool isImportant});
+
+  $UserCopyWith<$Res> get publishedUser;
 }
 
 class _$NotificationCopyWithImpl<$Res> implements $NotificationCopyWith<$Res> {
@@ -94,6 +96,16 @@ class _$NotificationCopyWithImpl<$Res> implements $NotificationCopyWith<$Res> {
           isImportant == freezed ? _value.isImportant : isImportant as bool,
     ));
   }
+
+  @override
+  $UserCopyWith<$Res> get publishedUser {
+    if (_value.publishedUser == null) {
+      return null;
+    }
+    return $UserCopyWith<$Res>(_value.publishedUser, (value) {
+      return _then(_value.copyWith(publishedUser: value));
+    });
+  }
 }
 
 abstract class _$NotificationCopyWith<$Res>
@@ -109,6 +121,9 @@ abstract class _$NotificationCopyWith<$Res>
       @JsonKey(name: 'published_user') User publishedUser,
       @JsonKey(name: 'created_at') DateTime createdAt,
       @JsonKey(name: 'is_important') bool isImportant});
+
+  @override
+  $UserCopyWith<$Res> get publishedUser;
 }
 
 class __$NotificationCopyWithImpl<$Res> extends _$NotificationCopyWithImpl<$Res>
