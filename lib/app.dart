@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:morning_weakers/pages/all/all_page.dart';
+import 'package:morning_weakers/pages/home/home_page.dart';
 import 'package:morning_weakers/pages/input_participant_info/input_participant_Info_page.dart';
 import 'package:morning_weakers/pages/new_profile/new_profile_page.dart';
 import 'package:morning_weakers/pages/profile_detail/profile_detail_page.dart';
@@ -46,6 +47,10 @@ class MyApp extends StatelessWidget {
             case '/adminTopPage':
               return MaterialPageRoute<void>(
                 builder: (_) => AdminTopPage(),
+              );
+            case '/home':
+              return MaterialPageRoute<void>(
+                builder: (_) => HomePage(),
               );
             default:
               throw UnimplementedError('Undefined route ${settings.name}');
