@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:morning_weakers/model/models.dart';
 
 part 'participant.freezed.dart';
 
@@ -9,13 +10,12 @@ part 'participant.g.dart';
 abstract class Participant with _$Participant {
   const factory Participant({
     @required String id,
-    //@required User user,
-    //@required @JsonKey(name: 'desired_occupation') List<TechnicalStack> desiredOccupation,
+    @required User user,
+    @required @JsonKey(name: 'desired_occupation') List<TechnicalStack> desiredOccupation,
     @required @JsonKey(name: 'working_days') int workingDays,
     @required String note,
     @required @JsonKey(name: 'is_admin') bool isAdmin,
   }) = _Participant;
 
-  factory Participant.fromJson(Map<String, dynamic> json) =>
-      _$ParticipantFromJson(json);
+  factory Participant.fromJson(Map<String, dynamic> json) => _$ParticipantFromJson(json);
 }

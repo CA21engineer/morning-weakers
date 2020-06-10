@@ -19,11 +19,15 @@ class _$NotificationTearOff {
       {@required String id,
       @required String title,
       @required String description,
+      @required @JsonKey(name: 'published_user') User publishedUser,
+      @required @JsonKey(name: 'created_at') DateTime createdAt,
       @required @JsonKey(name: 'is_important') bool isImportant}) {
     return _Notification(
       id: id,
       title: title,
       description: description,
+      publishedUser: publishedUser,
+      createdAt: createdAt,
       isImportant: isImportant,
     );
   }
@@ -36,6 +40,10 @@ mixin _$Notification {
   String get id;
   String get title;
   String get description;
+  @JsonKey(name: 'published_user')
+  User get publishedUser;
+  @JsonKey(name: 'created_at')
+  DateTime get createdAt;
   @JsonKey(name: 'is_important')
   bool get isImportant;
 
@@ -51,6 +59,8 @@ abstract class $NotificationCopyWith<$Res> {
       {String id,
       String title,
       String description,
+      @JsonKey(name: 'published_user') User publishedUser,
+      @JsonKey(name: 'created_at') DateTime createdAt,
       @JsonKey(name: 'is_important') bool isImportant});
 }
 
@@ -66,6 +76,8 @@ class _$NotificationCopyWithImpl<$Res> implements $NotificationCopyWith<$Res> {
     Object id = freezed,
     Object title = freezed,
     Object description = freezed,
+    Object publishedUser = freezed,
+    Object createdAt = freezed,
     Object isImportant = freezed,
   }) {
     return _then(_value.copyWith(
@@ -73,6 +85,11 @@ class _$NotificationCopyWithImpl<$Res> implements $NotificationCopyWith<$Res> {
       title: title == freezed ? _value.title : title as String,
       description:
           description == freezed ? _value.description : description as String,
+      publishedUser: publishedUser == freezed
+          ? _value.publishedUser
+          : publishedUser as User,
+      createdAt:
+          createdAt == freezed ? _value.createdAt : createdAt as DateTime,
       isImportant:
           isImportant == freezed ? _value.isImportant : isImportant as bool,
     ));
@@ -89,6 +106,8 @@ abstract class _$NotificationCopyWith<$Res>
       {String id,
       String title,
       String description,
+      @JsonKey(name: 'published_user') User publishedUser,
+      @JsonKey(name: 'created_at') DateTime createdAt,
       @JsonKey(name: 'is_important') bool isImportant});
 }
 
@@ -106,6 +125,8 @@ class __$NotificationCopyWithImpl<$Res> extends _$NotificationCopyWithImpl<$Res>
     Object id = freezed,
     Object title = freezed,
     Object description = freezed,
+    Object publishedUser = freezed,
+    Object createdAt = freezed,
     Object isImportant = freezed,
   }) {
     return _then(_Notification(
@@ -113,6 +134,11 @@ class __$NotificationCopyWithImpl<$Res> extends _$NotificationCopyWithImpl<$Res>
       title: title == freezed ? _value.title : title as String,
       description:
           description == freezed ? _value.description : description as String,
+      publishedUser: publishedUser == freezed
+          ? _value.publishedUser
+          : publishedUser as User,
+      createdAt:
+          createdAt == freezed ? _value.createdAt : createdAt as DateTime,
       isImportant:
           isImportant == freezed ? _value.isImportant : isImportant as bool,
     ));
@@ -125,10 +151,14 @@ class _$_Notification with DiagnosticableTreeMixin implements _Notification {
       {@required this.id,
       @required this.title,
       @required this.description,
+      @required @JsonKey(name: 'published_user') this.publishedUser,
+      @required @JsonKey(name: 'created_at') this.createdAt,
       @required @JsonKey(name: 'is_important') this.isImportant})
       : assert(id != null),
         assert(title != null),
         assert(description != null),
+        assert(publishedUser != null),
+        assert(createdAt != null),
         assert(isImportant != null);
 
   factory _$_Notification.fromJson(Map<String, dynamic> json) =>
@@ -141,12 +171,18 @@ class _$_Notification with DiagnosticableTreeMixin implements _Notification {
   @override
   final String description;
   @override
+  @JsonKey(name: 'published_user')
+  final User publishedUser;
+  @override
+  @JsonKey(name: 'created_at')
+  final DateTime createdAt;
+  @override
   @JsonKey(name: 'is_important')
   final bool isImportant;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Notification(id: $id, title: $title, description: $description, isImportant: $isImportant)';
+    return 'Notification(id: $id, title: $title, description: $description, publishedUser: $publishedUser, createdAt: $createdAt, isImportant: $isImportant)';
   }
 
   @override
@@ -157,6 +193,8 @@ class _$_Notification with DiagnosticableTreeMixin implements _Notification {
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('title', title))
       ..add(DiagnosticsProperty('description', description))
+      ..add(DiagnosticsProperty('publishedUser', publishedUser))
+      ..add(DiagnosticsProperty('createdAt', createdAt))
       ..add(DiagnosticsProperty('isImportant', isImportant));
   }
 
@@ -171,6 +209,12 @@ class _$_Notification with DiagnosticableTreeMixin implements _Notification {
             (identical(other.description, description) ||
                 const DeepCollectionEquality()
                     .equals(other.description, description)) &&
+            (identical(other.publishedUser, publishedUser) ||
+                const DeepCollectionEquality()
+                    .equals(other.publishedUser, publishedUser)) &&
+            (identical(other.createdAt, createdAt) ||
+                const DeepCollectionEquality()
+                    .equals(other.createdAt, createdAt)) &&
             (identical(other.isImportant, isImportant) ||
                 const DeepCollectionEquality()
                     .equals(other.isImportant, isImportant)));
@@ -182,6 +226,8 @@ class _$_Notification with DiagnosticableTreeMixin implements _Notification {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(description) ^
+      const DeepCollectionEquality().hash(publishedUser) ^
+      const DeepCollectionEquality().hash(createdAt) ^
       const DeepCollectionEquality().hash(isImportant);
 
   @override
@@ -199,6 +245,8 @@ abstract class _Notification implements Notification {
           {@required String id,
           @required String title,
           @required String description,
+          @required @JsonKey(name: 'published_user') User publishedUser,
+          @required @JsonKey(name: 'created_at') DateTime createdAt,
           @required @JsonKey(name: 'is_important') bool isImportant}) =
       _$_Notification;
 
@@ -211,6 +259,12 @@ abstract class _Notification implements Notification {
   String get title;
   @override
   String get description;
+  @override
+  @JsonKey(name: 'published_user')
+  User get publishedUser;
+  @override
+  @JsonKey(name: 'created_at')
+  DateTime get createdAt;
   @override
   @JsonKey(name: 'is_important')
   bool get isImportant;

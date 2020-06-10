@@ -16,15 +16,29 @@ class _$QuestionnaireTearOff {
   const _$QuestionnaireTearOff();
 
   _Questionnaire call(
-      {@required String id,
-      @required String title,
-      @required String description,
-      @required @JsonKey(name: 'working_days') int workingDays,
-      @required String note}) {
+      {@required
+          String id,
+      @required
+          String title,
+      @required
+          String description,
+      @required
+      @JsonKey(name: 'schedule_candidate')
+          List<dynamic> scheduleCandidate,
+      @required
+      @JsonKey(name: 'desired_occupation')
+          List<dynamic> desiredOccupation,
+      @required
+      @JsonKey(name: 'working_days')
+          int workingDays,
+      @required
+          String note}) {
     return _Questionnaire(
       id: id,
       title: title,
       description: description,
+      scheduleCandidate: scheduleCandidate,
+      desiredOccupation: desiredOccupation,
       workingDays: workingDays,
       note: note,
     );
@@ -38,6 +52,10 @@ mixin _$Questionnaire {
   String get id;
   String get title;
   String get description;
+  @JsonKey(name: 'schedule_candidate')
+  List<dynamic> get scheduleCandidate;
+  @JsonKey(name: 'desired_occupation')
+  List<dynamic> get desiredOccupation;
   @JsonKey(name: 'working_days')
   int get workingDays;
   String get note;
@@ -54,6 +72,8 @@ abstract class $QuestionnaireCopyWith<$Res> {
       {String id,
       String title,
       String description,
+      @JsonKey(name: 'schedule_candidate') List<dynamic> scheduleCandidate,
+      @JsonKey(name: 'desired_occupation') List<dynamic> desiredOccupation,
       @JsonKey(name: 'working_days') int workingDays,
       String note});
 }
@@ -71,6 +91,8 @@ class _$QuestionnaireCopyWithImpl<$Res>
     Object id = freezed,
     Object title = freezed,
     Object description = freezed,
+    Object scheduleCandidate = freezed,
+    Object desiredOccupation = freezed,
     Object workingDays = freezed,
     Object note = freezed,
   }) {
@@ -79,6 +101,12 @@ class _$QuestionnaireCopyWithImpl<$Res>
       title: title == freezed ? _value.title : title as String,
       description:
           description == freezed ? _value.description : description as String,
+      scheduleCandidate: scheduleCandidate == freezed
+          ? _value.scheduleCandidate
+          : scheduleCandidate as List<dynamic>,
+      desiredOccupation: desiredOccupation == freezed
+          ? _value.desiredOccupation
+          : desiredOccupation as List<dynamic>,
       workingDays:
           workingDays == freezed ? _value.workingDays : workingDays as int,
       note: note == freezed ? _value.note : note as String,
@@ -96,6 +124,8 @@ abstract class _$QuestionnaireCopyWith<$Res>
       {String id,
       String title,
       String description,
+      @JsonKey(name: 'schedule_candidate') List<dynamic> scheduleCandidate,
+      @JsonKey(name: 'desired_occupation') List<dynamic> desiredOccupation,
       @JsonKey(name: 'working_days') int workingDays,
       String note});
 }
@@ -115,6 +145,8 @@ class __$QuestionnaireCopyWithImpl<$Res>
     Object id = freezed,
     Object title = freezed,
     Object description = freezed,
+    Object scheduleCandidate = freezed,
+    Object desiredOccupation = freezed,
     Object workingDays = freezed,
     Object note = freezed,
   }) {
@@ -123,6 +155,12 @@ class __$QuestionnaireCopyWithImpl<$Res>
       title: title == freezed ? _value.title : title as String,
       description:
           description == freezed ? _value.description : description as String,
+      scheduleCandidate: scheduleCandidate == freezed
+          ? _value.scheduleCandidate
+          : scheduleCandidate as List<dynamic>,
+      desiredOccupation: desiredOccupation == freezed
+          ? _value.desiredOccupation
+          : desiredOccupation as List<dynamic>,
       workingDays:
           workingDays == freezed ? _value.workingDays : workingDays as int,
       note: note == freezed ? _value.note : note as String,
@@ -136,11 +174,15 @@ class _$_Questionnaire with DiagnosticableTreeMixin implements _Questionnaire {
       {@required this.id,
       @required this.title,
       @required this.description,
+      @required @JsonKey(name: 'schedule_candidate') this.scheduleCandidate,
+      @required @JsonKey(name: 'desired_occupation') this.desiredOccupation,
       @required @JsonKey(name: 'working_days') this.workingDays,
       @required this.note})
       : assert(id != null),
         assert(title != null),
         assert(description != null),
+        assert(scheduleCandidate != null),
+        assert(desiredOccupation != null),
         assert(workingDays != null),
         assert(note != null);
 
@@ -154,6 +196,12 @@ class _$_Questionnaire with DiagnosticableTreeMixin implements _Questionnaire {
   @override
   final String description;
   @override
+  @JsonKey(name: 'schedule_candidate')
+  final List<dynamic> scheduleCandidate;
+  @override
+  @JsonKey(name: 'desired_occupation')
+  final List<dynamic> desiredOccupation;
+  @override
   @JsonKey(name: 'working_days')
   final int workingDays;
   @override
@@ -161,7 +209,7 @@ class _$_Questionnaire with DiagnosticableTreeMixin implements _Questionnaire {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Questionnaire(id: $id, title: $title, description: $description, workingDays: $workingDays, note: $note)';
+    return 'Questionnaire(id: $id, title: $title, description: $description, scheduleCandidate: $scheduleCandidate, desiredOccupation: $desiredOccupation, workingDays: $workingDays, note: $note)';
   }
 
   @override
@@ -172,6 +220,8 @@ class _$_Questionnaire with DiagnosticableTreeMixin implements _Questionnaire {
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('title', title))
       ..add(DiagnosticsProperty('description', description))
+      ..add(DiagnosticsProperty('scheduleCandidate', scheduleCandidate))
+      ..add(DiagnosticsProperty('desiredOccupation', desiredOccupation))
       ..add(DiagnosticsProperty('workingDays', workingDays))
       ..add(DiagnosticsProperty('note', note));
   }
@@ -187,6 +237,12 @@ class _$_Questionnaire with DiagnosticableTreeMixin implements _Questionnaire {
             (identical(other.description, description) ||
                 const DeepCollectionEquality()
                     .equals(other.description, description)) &&
+            (identical(other.scheduleCandidate, scheduleCandidate) ||
+                const DeepCollectionEquality()
+                    .equals(other.scheduleCandidate, scheduleCandidate)) &&
+            (identical(other.desiredOccupation, desiredOccupation) ||
+                const DeepCollectionEquality()
+                    .equals(other.desiredOccupation, desiredOccupation)) &&
             (identical(other.workingDays, workingDays) ||
                 const DeepCollectionEquality()
                     .equals(other.workingDays, workingDays)) &&
@@ -200,6 +256,8 @@ class _$_Questionnaire with DiagnosticableTreeMixin implements _Questionnaire {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(description) ^
+      const DeepCollectionEquality().hash(scheduleCandidate) ^
+      const DeepCollectionEquality().hash(desiredOccupation) ^
       const DeepCollectionEquality().hash(workingDays) ^
       const DeepCollectionEquality().hash(note);
 
@@ -215,11 +273,23 @@ class _$_Questionnaire with DiagnosticableTreeMixin implements _Questionnaire {
 
 abstract class _Questionnaire implements Questionnaire {
   const factory _Questionnaire(
-      {@required String id,
-      @required String title,
-      @required String description,
-      @required @JsonKey(name: 'working_days') int workingDays,
-      @required String note}) = _$_Questionnaire;
+      {@required
+          String id,
+      @required
+          String title,
+      @required
+          String description,
+      @required
+      @JsonKey(name: 'schedule_candidate')
+          List<dynamic> scheduleCandidate,
+      @required
+      @JsonKey(name: 'desired_occupation')
+          List<dynamic> desiredOccupation,
+      @required
+      @JsonKey(name: 'working_days')
+          int workingDays,
+      @required
+          String note}) = _$_Questionnaire;
 
   factory _Questionnaire.fromJson(Map<String, dynamic> json) =
       _$_Questionnaire.fromJson;
@@ -230,6 +300,12 @@ abstract class _Questionnaire implements Questionnaire {
   String get title;
   @override
   String get description;
+  @override
+  @JsonKey(name: 'schedule_candidate')
+  List<dynamic> get scheduleCandidate;
+  @override
+  @JsonKey(name: 'desired_occupation')
+  List<dynamic> get desiredOccupation;
   @override
   @JsonKey(name: 'working_days')
   int get workingDays;

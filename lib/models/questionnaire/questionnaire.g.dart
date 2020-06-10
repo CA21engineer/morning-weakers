@@ -11,6 +11,8 @@ _$_Questionnaire _$_$_QuestionnaireFromJson(Map<String, dynamic> json) {
     id: json['id'] as String,
     title: json['title'] as String,
     description: json['description'] as String,
+    scheduleCandidate: json['schedule_candidate'] as List,
+    desiredOccupation: json['desired_occupation'] as List,
     workingDays: json['working_days'] as int,
     note: json['note'] as String,
   );
@@ -21,6 +23,8 @@ Map<String, dynamic> _$_$_QuestionnaireToJson(_$_Questionnaire instance) =>
       'id': instance.id,
       'title': instance.title,
       'description': instance.description,
+      'schedule_candidate': instance.scheduleCandidate,
+      'desired_occupation': instance.desiredOccupation,
       'working_days': instance.workingDays,
       'note': instance.note,
     };

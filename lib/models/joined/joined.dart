@@ -1,6 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 part 'joined.freezed.dart';
+
 part 'joined.g.dart';
 
 @freezed
@@ -14,4 +16,3 @@ abstract class Joined with _$Joined {
 
   factory Joined.fromJson(Map<String, dynamic> json) => _$JoinedFromJson(json);
 }
-

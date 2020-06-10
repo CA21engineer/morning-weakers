@@ -18,7 +18,7 @@ class _$TechnicalStackTearOff {
   _TechnicalStack call(
       {@required String id,
       @required Stack stack,
-      List<Language> language,
+      @required List<dynamic> language,
       @required Proficiency proficiency,
       int priority}) {
     return _TechnicalStack(
@@ -37,7 +37,7 @@ const $TechnicalStack = _$TechnicalStackTearOff();
 mixin _$TechnicalStack {
   String get id;
   Stack get stack;
-  List<Language> get language;
+  List<dynamic> get language;
   Proficiency get proficiency;
   int get priority;
 
@@ -52,7 +52,7 @@ abstract class $TechnicalStackCopyWith<$Res> {
   $Res call(
       {String id,
       Stack stack,
-      List<Language> language,
+      List<dynamic> language,
       Proficiency proficiency,
       int priority});
 }
@@ -77,7 +77,7 @@ class _$TechnicalStackCopyWithImpl<$Res>
       id: id == freezed ? _value.id : id as String,
       stack: stack == freezed ? _value.stack : stack as Stack,
       language:
-          language == freezed ? _value.language : language as List<Language>,
+          language == freezed ? _value.language : language as List<dynamic>,
       proficiency: proficiency == freezed
           ? _value.proficiency
           : proficiency as Proficiency,
@@ -95,7 +95,7 @@ abstract class _$TechnicalStackCopyWith<$Res>
   $Res call(
       {String id,
       Stack stack,
-      List<Language> language,
+      List<dynamic> language,
       Proficiency proficiency,
       int priority});
 }
@@ -122,7 +122,7 @@ class __$TechnicalStackCopyWithImpl<$Res>
       id: id == freezed ? _value.id : id as String,
       stack: stack == freezed ? _value.stack : stack as Stack,
       language:
-          language == freezed ? _value.language : language as List<Language>,
+          language == freezed ? _value.language : language as List<dynamic>,
       proficiency: proficiency == freezed
           ? _value.proficiency
           : proficiency as Proficiency,
@@ -138,11 +138,12 @@ class _$_TechnicalStack
   const _$_TechnicalStack(
       {@required this.id,
       @required this.stack,
-      this.language,
+      @required this.language,
       @required this.proficiency,
       this.priority})
       : assert(id != null),
         assert(stack != null),
+        assert(language != null),
         assert(proficiency != null);
 
   factory _$_TechnicalStack.fromJson(Map<String, dynamic> json) =>
@@ -153,7 +154,7 @@ class _$_TechnicalStack
   @override
   final Stack stack;
   @override
-  final List<Language> language;
+  final List<dynamic> language;
   @override
   final Proficiency proficiency;
   @override
@@ -218,7 +219,7 @@ abstract class _TechnicalStack implements TechnicalStack {
   const factory _TechnicalStack(
       {@required String id,
       @required Stack stack,
-      List<Language> language,
+      @required List<dynamic> language,
       @required Proficiency proficiency,
       int priority}) = _$_TechnicalStack;
 
@@ -230,7 +231,7 @@ abstract class _TechnicalStack implements TechnicalStack {
   @override
   Stack get stack;
   @override
-  List<Language> get language;
+  List<dynamic> get language;
   @override
   Proficiency get proficiency;
   @override
