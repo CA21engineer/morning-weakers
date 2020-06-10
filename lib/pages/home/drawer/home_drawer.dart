@@ -71,7 +71,7 @@ class HomeDrawer extends StatelessWidget {
                             button[0],
                             style: const TextStyle(fontSize: 15),
                           ),
-                          trailing: Icon(Icons.arrow_forward_ios),
+                          trailing: const Icon(Icons.arrow_forward_ios),
                           //onTap: () => button[1],
                         ),
                       )
@@ -102,7 +102,7 @@ class HomeDrawer extends StatelessWidget {
           shrinkWrap: true,
           children: groups,
         ),
-        Icon(
+        const Icon(
           Icons.add,
           size: 50,
         ),
