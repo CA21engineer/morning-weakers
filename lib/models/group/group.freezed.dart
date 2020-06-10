@@ -19,16 +19,18 @@ class _$GroupTearOff {
       {@required String id,
       @required @JsonKey(name: 'group_name') String groupName,
       @required @JsonKey(name: 'github_url') String githubUrl,
-      @required @JsonKey(name: 'slide_url') List<String> slideUrl,
+      @required @JsonKey(name: 'slide_url') List<String> slideUrls,
       @required @JsonKey(name: 'other_urls') List<String> otherUrls,
-      @required @JsonKey(name: 'icon_url') List<String> iconUrl}) {
+      @required @JsonKey(name: 'icon_url') List<String> iconUrls,
+      @required List<Participant> participants}) {
     return _Group(
       id: id,
       groupName: groupName,
       githubUrl: githubUrl,
-      slideUrl: slideUrl,
+      slideUrls: slideUrls,
       otherUrls: otherUrls,
-      iconUrl: iconUrl,
+      iconUrls: iconUrls,
+      participants: participants,
     );
   }
 }
@@ -43,11 +45,12 @@ mixin _$Group {
   @JsonKey(name: 'github_url')
   String get githubUrl;
   @JsonKey(name: 'slide_url')
-  List<String> get slideUrl;
+  List<String> get slideUrls;
   @JsonKey(name: 'other_urls')
   List<String> get otherUrls;
   @JsonKey(name: 'icon_url')
-  List<String> get iconUrl;
+  List<String> get iconUrls;
+  List<Participant> get participants;
 
   Map<String, dynamic> toJson();
   $GroupCopyWith<Group> get copyWith;
@@ -60,9 +63,10 @@ abstract class $GroupCopyWith<$Res> {
       {String id,
       @JsonKey(name: 'group_name') String groupName,
       @JsonKey(name: 'github_url') String githubUrl,
-      @JsonKey(name: 'slide_url') List<String> slideUrl,
+      @JsonKey(name: 'slide_url') List<String> slideUrls,
       @JsonKey(name: 'other_urls') List<String> otherUrls,
-      @JsonKey(name: 'icon_url') List<String> iconUrl});
+      @JsonKey(name: 'icon_url') List<String> iconUrls,
+      List<Participant> participants});
 }
 
 class _$GroupCopyWithImpl<$Res> implements $GroupCopyWith<$Res> {
@@ -77,19 +81,24 @@ class _$GroupCopyWithImpl<$Res> implements $GroupCopyWith<$Res> {
     Object id = freezed,
     Object groupName = freezed,
     Object githubUrl = freezed,
-    Object slideUrl = freezed,
+    Object slideUrls = freezed,
     Object otherUrls = freezed,
-    Object iconUrl = freezed,
+    Object iconUrls = freezed,
+    Object participants = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as String,
       groupName: groupName == freezed ? _value.groupName : groupName as String,
       githubUrl: githubUrl == freezed ? _value.githubUrl : githubUrl as String,
-      slideUrl:
-          slideUrl == freezed ? _value.slideUrl : slideUrl as List<String>,
+      slideUrls:
+          slideUrls == freezed ? _value.slideUrls : slideUrls as List<String>,
       otherUrls:
           otherUrls == freezed ? _value.otherUrls : otherUrls as List<String>,
-      iconUrl: iconUrl == freezed ? _value.iconUrl : iconUrl as List<String>,
+      iconUrls:
+          iconUrls == freezed ? _value.iconUrls : iconUrls as List<String>,
+      participants: participants == freezed
+          ? _value.participants
+          : participants as List<Participant>,
     ));
   }
 }
@@ -102,9 +111,10 @@ abstract class _$GroupCopyWith<$Res> implements $GroupCopyWith<$Res> {
       {String id,
       @JsonKey(name: 'group_name') String groupName,
       @JsonKey(name: 'github_url') String githubUrl,
-      @JsonKey(name: 'slide_url') List<String> slideUrl,
+      @JsonKey(name: 'slide_url') List<String> slideUrls,
       @JsonKey(name: 'other_urls') List<String> otherUrls,
-      @JsonKey(name: 'icon_url') List<String> iconUrl});
+      @JsonKey(name: 'icon_url') List<String> iconUrls,
+      List<Participant> participants});
 }
 
 class __$GroupCopyWithImpl<$Res> extends _$GroupCopyWithImpl<$Res>
@@ -120,19 +130,24 @@ class __$GroupCopyWithImpl<$Res> extends _$GroupCopyWithImpl<$Res>
     Object id = freezed,
     Object groupName = freezed,
     Object githubUrl = freezed,
-    Object slideUrl = freezed,
+    Object slideUrls = freezed,
     Object otherUrls = freezed,
-    Object iconUrl = freezed,
+    Object iconUrls = freezed,
+    Object participants = freezed,
   }) {
     return _then(_Group(
       id: id == freezed ? _value.id : id as String,
       groupName: groupName == freezed ? _value.groupName : groupName as String,
       githubUrl: githubUrl == freezed ? _value.githubUrl : githubUrl as String,
-      slideUrl:
-          slideUrl == freezed ? _value.slideUrl : slideUrl as List<String>,
+      slideUrls:
+          slideUrls == freezed ? _value.slideUrls : slideUrls as List<String>,
       otherUrls:
           otherUrls == freezed ? _value.otherUrls : otherUrls as List<String>,
-      iconUrl: iconUrl == freezed ? _value.iconUrl : iconUrl as List<String>,
+      iconUrls:
+          iconUrls == freezed ? _value.iconUrls : iconUrls as List<String>,
+      participants: participants == freezed
+          ? _value.participants
+          : participants as List<Participant>,
     ));
   }
 }
@@ -143,15 +158,17 @@ class _$_Group with DiagnosticableTreeMixin implements _Group {
       {@required this.id,
       @required @JsonKey(name: 'group_name') this.groupName,
       @required @JsonKey(name: 'github_url') this.githubUrl,
-      @required @JsonKey(name: 'slide_url') this.slideUrl,
+      @required @JsonKey(name: 'slide_url') this.slideUrls,
       @required @JsonKey(name: 'other_urls') this.otherUrls,
-      @required @JsonKey(name: 'icon_url') this.iconUrl})
+      @required @JsonKey(name: 'icon_url') this.iconUrls,
+      @required this.participants})
       : assert(id != null),
         assert(groupName != null),
         assert(githubUrl != null),
-        assert(slideUrl != null),
+        assert(slideUrls != null),
         assert(otherUrls != null),
-        assert(iconUrl != null);
+        assert(iconUrls != null),
+        assert(participants != null);
 
   factory _$_Group.fromJson(Map<String, dynamic> json) =>
       _$_$_GroupFromJson(json);
@@ -166,17 +183,19 @@ class _$_Group with DiagnosticableTreeMixin implements _Group {
   final String githubUrl;
   @override
   @JsonKey(name: 'slide_url')
-  final List<String> slideUrl;
+  final List<String> slideUrls;
   @override
   @JsonKey(name: 'other_urls')
   final List<String> otherUrls;
   @override
   @JsonKey(name: 'icon_url')
-  final List<String> iconUrl;
+  final List<String> iconUrls;
+  @override
+  final List<Participant> participants;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Group(id: $id, groupName: $groupName, githubUrl: $githubUrl, slideUrl: $slideUrl, otherUrls: $otherUrls, iconUrl: $iconUrl)';
+    return 'Group(id: $id, groupName: $groupName, githubUrl: $githubUrl, slideUrls: $slideUrls, otherUrls: $otherUrls, iconUrls: $iconUrls, participants: $participants)';
   }
 
   @override
@@ -187,9 +206,10 @@ class _$_Group with DiagnosticableTreeMixin implements _Group {
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('groupName', groupName))
       ..add(DiagnosticsProperty('githubUrl', githubUrl))
-      ..add(DiagnosticsProperty('slideUrl', slideUrl))
+      ..add(DiagnosticsProperty('slideUrls', slideUrls))
       ..add(DiagnosticsProperty('otherUrls', otherUrls))
-      ..add(DiagnosticsProperty('iconUrl', iconUrl));
+      ..add(DiagnosticsProperty('iconUrls', iconUrls))
+      ..add(DiagnosticsProperty('participants', participants));
   }
 
   @override
@@ -204,14 +224,18 @@ class _$_Group with DiagnosticableTreeMixin implements _Group {
             (identical(other.githubUrl, githubUrl) ||
                 const DeepCollectionEquality()
                     .equals(other.githubUrl, githubUrl)) &&
-            (identical(other.slideUrl, slideUrl) ||
+            (identical(other.slideUrls, slideUrls) ||
                 const DeepCollectionEquality()
-                    .equals(other.slideUrl, slideUrl)) &&
+                    .equals(other.slideUrls, slideUrls)) &&
             (identical(other.otherUrls, otherUrls) ||
                 const DeepCollectionEquality()
                     .equals(other.otherUrls, otherUrls)) &&
-            (identical(other.iconUrl, iconUrl) ||
-                const DeepCollectionEquality().equals(other.iconUrl, iconUrl)));
+            (identical(other.iconUrls, iconUrls) ||
+                const DeepCollectionEquality()
+                    .equals(other.iconUrls, iconUrls)) &&
+            (identical(other.participants, participants) ||
+                const DeepCollectionEquality()
+                    .equals(other.participants, participants)));
   }
 
   @override
@@ -220,9 +244,10 @@ class _$_Group with DiagnosticableTreeMixin implements _Group {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(groupName) ^
       const DeepCollectionEquality().hash(githubUrl) ^
-      const DeepCollectionEquality().hash(slideUrl) ^
+      const DeepCollectionEquality().hash(slideUrls) ^
       const DeepCollectionEquality().hash(otherUrls) ^
-      const DeepCollectionEquality().hash(iconUrl);
+      const DeepCollectionEquality().hash(iconUrls) ^
+      const DeepCollectionEquality().hash(participants);
 
   @override
   _$GroupCopyWith<_Group> get copyWith =>
@@ -239,9 +264,10 @@ abstract class _Group implements Group {
       {@required String id,
       @required @JsonKey(name: 'group_name') String groupName,
       @required @JsonKey(name: 'github_url') String githubUrl,
-      @required @JsonKey(name: 'slide_url') List<String> slideUrl,
+      @required @JsonKey(name: 'slide_url') List<String> slideUrls,
       @required @JsonKey(name: 'other_urls') List<String> otherUrls,
-      @required @JsonKey(name: 'icon_url') List<String> iconUrl}) = _$_Group;
+      @required @JsonKey(name: 'icon_url') List<String> iconUrls,
+      @required List<Participant> participants}) = _$_Group;
 
   factory _Group.fromJson(Map<String, dynamic> json) = _$_Group.fromJson;
 
@@ -255,13 +281,15 @@ abstract class _Group implements Group {
   String get githubUrl;
   @override
   @JsonKey(name: 'slide_url')
-  List<String> get slideUrl;
+  List<String> get slideUrls;
   @override
   @JsonKey(name: 'other_urls')
   List<String> get otherUrls;
   @override
   @JsonKey(name: 'icon_url')
-  List<String> get iconUrl;
+  List<String> get iconUrls;
+  @override
+  List<Participant> get participants;
   @override
   _$GroupCopyWith<_Group> get copyWith;
 }

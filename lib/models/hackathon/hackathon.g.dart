@@ -22,6 +22,21 @@ _$_Hackathon _$_$_HackathonFromJson(Map<String, dynamic> json) {
         ? null
         : DateTime.parse(json['end_date'] as String),
     span: json['span'] as int,
+    questionnaire: json['questionnaire'] == null
+        ? null
+        : Questionnaire.fromJson(json['questionnaire'] as Map<String, dynamic>),
+    participants: (json['participants'] as List)
+        ?.map((e) =>
+            e == null ? null : Participant.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    groups: (json['groups'] as List)
+        ?.map(
+            (e) => e == null ? null : Group.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    notifications: (json['notifications'] as List)
+        ?.map((e) =>
+            e == null ? null : Notification.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
   );
 }
 
@@ -37,4 +52,8 @@ Map<String, dynamic> _$_$_HackathonToJson(_$_Hackathon instance) =>
       'start_date': instance.startDate?.toIso8601String(),
       'end_date': instance.endDate?.toIso8601String(),
       'span': instance.span,
+      'questionnaire': instance.questionnaire,
+      'participants': instance.participants,
+      'groups': instance.groups,
+      'notifications': instance.notifications,
     };

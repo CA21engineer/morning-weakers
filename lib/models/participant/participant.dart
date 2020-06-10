@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:morning_weakers/model/models.dart';
+import 'package:morning_weakers/models/models.dart';
 
 part 'participant.freezed.dart';
 
@@ -11,7 +11,7 @@ abstract class Participant with _$Participant {
   const factory Participant({
     @required String id,
     @required User user,
-    @required @JsonKey(name: 'desired_occupation') List<TechnicalStack> desiredOccupation,
+    @required @JsonKey(name: 'desired_occupation') List<TechnicalStack> desiredOccupations,
     @required @JsonKey(name: 'working_days') int workingDays,
     @required String note,
     @required @JsonKey(name: 'is_admin') bool isAdmin,

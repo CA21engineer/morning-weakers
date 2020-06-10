@@ -9,8 +9,14 @@ part of 'participant.dart';
 _$_Participant _$_$_ParticipantFromJson(Map<String, dynamic> json) {
   return _$_Participant(
     id: json['id'] as String,
-    user: json['user'],
-    desiredOccupation: json['desired_occupation'] as List,
+    user: json['user'] == null
+        ? null
+        : User.fromJson(json['user'] as Map<String, dynamic>),
+    desiredOccupations: (json['desired_occupation'] as List)
+        ?.map((e) => e == null
+            ? null
+            : TechnicalStack.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
     workingDays: json['working_days'] as int,
     note: json['note'] as String,
     isAdmin: json['is_admin'] as bool,
@@ -21,7 +27,7 @@ Map<String, dynamic> _$_$_ParticipantToJson(_$_Participant instance) =>
     <String, dynamic>{
       'id': instance.id,
       'user': instance.user,
-      'desired_occupation': instance.desiredOccupation,
+      'desired_occupation': instance.desiredOccupations,
       'working_days': instance.workingDays,
       'note': instance.note,
       'is_admin': instance.isAdmin,

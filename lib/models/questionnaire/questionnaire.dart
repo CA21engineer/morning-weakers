@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:morning_weakers/model/models.dart';
+import 'package:morning_weakers/models/models.dart';
 
 part 'questionnaire.freezed.dart';
 
@@ -12,8 +12,8 @@ abstract class Questionnaire with _$Questionnaire {
     @required String id,
     @required String title,
     @required String description,
-    @required @JsonKey(name: 'schedule_candidate') List<ScheduleCandidate> scheduleCandidate,
-    @required @JsonKey(name: 'desired_occupation') List<TechnicalStack> desiredOccupation,
+    @required @JsonKey(name: 'schedule_candidate') List<ScheduleCandidate> scheduleCandidates,
+    @required @JsonKey(name: 'desired_occupation') List<TechnicalStack> desiredOccupations,
     @required @JsonKey(name: 'working_days') int workingDays,
     @required String note,
   }) = _Questionnaire;
