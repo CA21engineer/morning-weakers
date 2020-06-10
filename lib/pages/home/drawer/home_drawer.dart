@@ -21,13 +21,13 @@ class HomeDrawer extends StatelessWidget {
   }
 
   Widget _menus() {
-    final List<String> _eventDetail = [
+    final List<String> eventDetails = [
       'これは概要ですが、特に思いつくことがないので、何も書きません。',
       '2020/6/7 ~ 2020/6/14',
       'Twitterでの投票',
     ];
 
-    final List<List<String>> _buttons = [
+    final List<List<String>> buttons = [
       ['All Groups', '/navigation'],
       ['All Participants', '/navigation'],
       ['Edit My Info', '/navigation'],
@@ -36,7 +36,7 @@ class HomeDrawer extends StatelessWidget {
     return Container(
       child: Column(
         children: <Widget>[
-          DrawerHeader(
+          const DrawerHeader(
             child: Center(
               child: Text(
                 'CyberAgent21 Hackathon',
@@ -51,10 +51,9 @@ class HomeDrawer extends StatelessWidget {
           ),
           Expanded(
             child: ListView(
-              shrinkWrap: true,
               children: <Widget>[
                 Column(
-                  children: _eventDetail
+                  children: eventDetails
                       .map(
                         (detail) => Container(
                           padding: const EdgeInsets.all(10),
@@ -64,7 +63,7 @@ class HomeDrawer extends StatelessWidget {
                       .toList(),
                 ),
                 Column(
-                  children: _buttons
+                  children: buttons
                       .map(
                         (button) => ListTile(
                           title: Text(
