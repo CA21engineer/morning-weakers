@@ -12,18 +12,9 @@ T _$identity<T>(T value) => value;
 class _$ProfileDetailStateTearOff {
   const _$ProfileDetailStateTearOff();
 
-  _ProfileDetailState call(
-      {String fullName = '',
-      String displayName = '',
-      String githubAccount = '',
-      String twitterAccount = '',
-      String iconUrl = ''}) {
+  _ProfileDetailState call({User user}) {
     return _ProfileDetailState(
-      fullName: fullName,
-      displayName: displayName,
-      githubAccount: githubAccount,
-      twitterAccount: twitterAccount,
-      iconUrl: iconUrl,
+      user: user,
     );
   }
 }
@@ -32,11 +23,7 @@ class _$ProfileDetailStateTearOff {
 const $ProfileDetailState = _$ProfileDetailStateTearOff();
 
 mixin _$ProfileDetailState {
-  String get fullName;
-  String get displayName;
-  String get githubAccount;
-  String get twitterAccount;
-  String get iconUrl;
+  User get user;
 
   $ProfileDetailStateCopyWith<ProfileDetailState> get copyWith;
 }
@@ -45,12 +32,9 @@ abstract class $ProfileDetailStateCopyWith<$Res> {
   factory $ProfileDetailStateCopyWith(
           ProfileDetailState value, $Res Function(ProfileDetailState) then) =
       _$ProfileDetailStateCopyWithImpl<$Res>;
-  $Res call(
-      {String fullName,
-      String displayName,
-      String githubAccount,
-      String twitterAccount,
-      String iconUrl});
+  $Res call({User user});
+
+  $UserCopyWith<$Res> get user;
 }
 
 class _$ProfileDetailStateCopyWithImpl<$Res>
@@ -63,24 +47,21 @@ class _$ProfileDetailStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object fullName = freezed,
-    Object displayName = freezed,
-    Object githubAccount = freezed,
-    Object twitterAccount = freezed,
-    Object iconUrl = freezed,
+    Object user = freezed,
   }) {
     return _then(_value.copyWith(
-      fullName: fullName == freezed ? _value.fullName : fullName as String,
-      displayName:
-          displayName == freezed ? _value.displayName : displayName as String,
-      githubAccount: githubAccount == freezed
-          ? _value.githubAccount
-          : githubAccount as String,
-      twitterAccount: twitterAccount == freezed
-          ? _value.twitterAccount
-          : twitterAccount as String,
-      iconUrl: iconUrl == freezed ? _value.iconUrl : iconUrl as String,
+      user: user == freezed ? _value.user : user as User,
     ));
+  }
+
+  @override
+  $UserCopyWith<$Res> get user {
+    if (_value.user == null) {
+      return null;
+    }
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
   }
 }
 
@@ -90,12 +71,10 @@ abstract class _$ProfileDetailStateCopyWith<$Res>
           _ProfileDetailState value, $Res Function(_ProfileDetailState) then) =
       __$ProfileDetailStateCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {String fullName,
-      String displayName,
-      String githubAccount,
-      String twitterAccount,
-      String iconUrl});
+  $Res call({User user});
+
+  @override
+  $UserCopyWith<$Res> get user;
 }
 
 class __$ProfileDetailStateCopyWithImpl<$Res>
@@ -110,23 +89,10 @@ class __$ProfileDetailStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object fullName = freezed,
-    Object displayName = freezed,
-    Object githubAccount = freezed,
-    Object twitterAccount = freezed,
-    Object iconUrl = freezed,
+    Object user = freezed,
   }) {
     return _then(_ProfileDetailState(
-      fullName: fullName == freezed ? _value.fullName : fullName as String,
-      displayName:
-          displayName == freezed ? _value.displayName : displayName as String,
-      githubAccount: githubAccount == freezed
-          ? _value.githubAccount
-          : githubAccount as String,
-      twitterAccount: twitterAccount == freezed
-          ? _value.twitterAccount
-          : twitterAccount as String,
-      iconUrl: iconUrl == freezed ? _value.iconUrl : iconUrl as String,
+      user: user == freezed ? _value.user : user as User,
     ));
   }
 }
@@ -134,37 +100,14 @@ class __$ProfileDetailStateCopyWithImpl<$Res>
 class _$_ProfileDetailState
     with DiagnosticableTreeMixin
     implements _ProfileDetailState {
-  const _$_ProfileDetailState(
-      {this.fullName = '',
-      this.displayName = '',
-      this.githubAccount = '',
-      this.twitterAccount = '',
-      this.iconUrl = ''})
-      : assert(fullName != null),
-        assert(displayName != null),
-        assert(githubAccount != null),
-        assert(twitterAccount != null),
-        assert(iconUrl != null);
+  const _$_ProfileDetailState({this.user});
 
-  @JsonKey(defaultValue: '')
   @override
-  final String fullName;
-  @JsonKey(defaultValue: '')
-  @override
-  final String displayName;
-  @JsonKey(defaultValue: '')
-  @override
-  final String githubAccount;
-  @JsonKey(defaultValue: '')
-  @override
-  final String twitterAccount;
-  @JsonKey(defaultValue: '')
-  @override
-  final String iconUrl;
+  final User user;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ProfileDetailState(fullName: $fullName, displayName: $displayName, githubAccount: $githubAccount, twitterAccount: $twitterAccount, iconUrl: $iconUrl)';
+    return 'ProfileDetailState(user: $user)';
   }
 
   @override
@@ -172,41 +115,20 @@ class _$_ProfileDetailState
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'ProfileDetailState'))
-      ..add(DiagnosticsProperty('fullName', fullName))
-      ..add(DiagnosticsProperty('displayName', displayName))
-      ..add(DiagnosticsProperty('githubAccount', githubAccount))
-      ..add(DiagnosticsProperty('twitterAccount', twitterAccount))
-      ..add(DiagnosticsProperty('iconUrl', iconUrl));
+      ..add(DiagnosticsProperty('user', user));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ProfileDetailState &&
-            (identical(other.fullName, fullName) ||
-                const DeepCollectionEquality()
-                    .equals(other.fullName, fullName)) &&
-            (identical(other.displayName, displayName) ||
-                const DeepCollectionEquality()
-                    .equals(other.displayName, displayName)) &&
-            (identical(other.githubAccount, githubAccount) ||
-                const DeepCollectionEquality()
-                    .equals(other.githubAccount, githubAccount)) &&
-            (identical(other.twitterAccount, twitterAccount) ||
-                const DeepCollectionEquality()
-                    .equals(other.twitterAccount, twitterAccount)) &&
-            (identical(other.iconUrl, iconUrl) ||
-                const DeepCollectionEquality().equals(other.iconUrl, iconUrl)));
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(fullName) ^
-      const DeepCollectionEquality().hash(displayName) ^
-      const DeepCollectionEquality().hash(githubAccount) ^
-      const DeepCollectionEquality().hash(twitterAccount) ^
-      const DeepCollectionEquality().hash(iconUrl);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
   @override
   _$ProfileDetailStateCopyWith<_ProfileDetailState> get copyWith =>
@@ -214,23 +136,10 @@ class _$_ProfileDetailState
 }
 
 abstract class _ProfileDetailState implements ProfileDetailState {
-  const factory _ProfileDetailState(
-      {String fullName,
-      String displayName,
-      String githubAccount,
-      String twitterAccount,
-      String iconUrl}) = _$_ProfileDetailState;
+  const factory _ProfileDetailState({User user}) = _$_ProfileDetailState;
 
   @override
-  String get fullName;
-  @override
-  String get displayName;
-  @override
-  String get githubAccount;
-  @override
-  String get twitterAccount;
-  @override
-  String get iconUrl;
+  User get user;
   @override
   _$ProfileDetailStateCopyWith<_ProfileDetailState> get copyWith;
 }

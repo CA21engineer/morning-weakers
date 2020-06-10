@@ -1,14 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:morning_weakers/models/user/user.dart';
 part 'profile_detail_state.freezed.dart';
 
 @freezed
 abstract class ProfileDetailState with _$ProfileDetailState {
   const factory ProfileDetailState({
-    @Default('') String fullName,
-    @Default('') String displayName,
-    @Default('') String githubAccount,
-    @Default('') String twitterAccount,
-    @Default('') String iconUrl,
+    User user,
   }) = _ProfileDetailState;
 }

@@ -24,8 +24,8 @@ class ProfileContainer extends StatelessWidget {
               ),
               const SizedBox(width: 20),
               Text(
-                '${context.select<ProfileDetailState, String>((state) => state.fullName)}',
-                style: TextStyle(fontSize: 30),
+                '${context.select<ProfileDetailState, String>((state) => state.user.fullName)}',
+                style: const TextStyle(fontSize: 30),
               ),
             ],
           ),
@@ -33,17 +33,17 @@ class ProfileContainer extends StatelessWidget {
           ProfileListContainer(
               titleName: 'ハンドルネーム',
               contentName:
-                  '${context.select<ProfileDetailState, String>((state) => state.displayName)}'),
+                  '${context.select<ProfileDetailState, String>((state) => state.user.displayName)}'),
           const Divider(),
           ProfileListContainer(
               titleName: 'Twitter',
               contentName:
-                  '${context.select<ProfileDetailState, String>((state) => state.twitterAccount)}'),
+                  '${context.select<ProfileDetailState, String>((state) => state.user.twitterAccount)}'),
           const Divider(),
           ProfileListContainer(
               titleName: 'Github',
               contentName:
-                  '${context.select<ProfileDetailState, String>((state) => state.githubAccount)}'),
+                  '${context.select<ProfileDetailState, String>((state) => state.user.githubAccount)}'),
           const Divider(),
           const TechnicalStackContainer(
             titleName: '技術スタック',

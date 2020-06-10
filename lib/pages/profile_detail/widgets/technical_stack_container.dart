@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:morning_weakers/pages/profile_detail/profile_detail_state.dart';
+import 'package:provider/provider.dart';
 
 class TechnicalStackContainer extends StatelessWidget {
   const TechnicalStackContainer({
@@ -24,7 +26,9 @@ class TechnicalStackContainer extends StatelessWidget {
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
           Column(
-            children: technicalStackTitles
+            children: context
+                .select<ProfileDetailState, String>(
+                    (state) => state.user.technicalStacks)
                 .map(
                   (technicalStackTitles) => Text(
                     technicalStackTitles,
