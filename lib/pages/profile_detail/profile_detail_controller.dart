@@ -11,7 +11,9 @@ class ProfileDetailController extends StateNotifier<ProfileDetailState>
     getProfileDetail();
   }
 
-  void getProfileDetail() {
+  Future<void> getProfileDetail() async {
+    await Future<void>.delayed(const Duration(seconds: 2));
+
     final dummyUser = const User(
       id: 'dummy',
       fullName: 'dummy',
