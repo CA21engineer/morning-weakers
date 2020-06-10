@@ -16,17 +16,19 @@ class InputParticipantInfoPage extends StatelessWidget {
 
   final Widget _inputParticipantInfo = Container(
     padding: const EdgeInsets.all(20),
-    child: Column(
-      children: <Widget>[
-        DesiredOccupation(),
-        ScheduleCandidate(),
-        WorkingDays(),
-        TextFormField(
-          decoration: const InputDecoration(
-            labelText: '備考欄'
-          ),
-        )
-      ],
+    child: SingleChildScrollView(
+      child: Column(
+        children: <Widget>[
+          DesiredOccupation(),
+          ScheduleCandidate(),
+          WorkingDays(),
+          TextFormField(
+            decoration: const InputDecoration(
+              labelText: '備考欄'
+            ),
+          )
+        ],
+      ),
     ),
   );
 }
