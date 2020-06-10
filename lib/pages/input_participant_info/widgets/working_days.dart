@@ -1,47 +1,28 @@
 import 'package:flutter/material.dart';
 
 class WorkingDays extends StatelessWidget {
+  final List<String> workingDays = ['1', '2', '3', '4', '5'];
+
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        const Text('稼働参加日数(単位は日)'),
-        ListTile(
-          title: const Text('1'),
-          leading: Radio(
-            value: 1,
-            activeColor: Theme.of(context).primaryColor,
-          ),
-        ),
-        ListTile(
-          title: const Text('2'),
-          leading: Radio(
-            value: 2,
-            activeColor: Theme.of(context).primaryColor,
-          ),
-        ),
-        ListTile(
-          title: const Text('3'),
-          leading: Radio(
-            value: 3,
-            activeColor: Theme.of(context).primaryColor,
-          ),
-        ),
-        ListTile(
-          title: const Text('4'),
-          leading: Radio(
-            value: 4,
-            activeColor: Theme.of(context).primaryColor,
-          ),
-        ),
-        ListTile(
-          title: const Text('5'),
-          leading: Radio(
-            value: 5,
-            activeColor: Theme.of(context).primaryColor,
-          ),
-        ),
-      ],
+    return Container(
+      padding: const EdgeInsets.all(8),
+      child: Column(
+        children: <Widget>[
+          const Text('参加可能日程(複数選択可)'),
+          Column(
+            children: workingDays.map(
+              (workingDay) => ListTile(
+                title: Text(workingDay),
+                leading: Radio(
+                  value: workingDay,
+                  activeColor: Theme.of(context).primaryColor,
+                ),
+              ),
+            ).toList()
+          )
+        ]
+      ),
     );
   }
 }
