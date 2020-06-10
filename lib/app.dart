@@ -21,6 +21,10 @@ class MyApp extends StatelessWidget {
         )
       ],
       child: MaterialApp(
+        theme: ThemeData(
+          primaryColor: Colors.blueAccent,
+          accentColor: Colors.cyan[600],
+        ),
         debugShowCheckedModeBanner: false,
         onGenerateRoute: (RouteSettings settings) {
           switch (settings.name) {
