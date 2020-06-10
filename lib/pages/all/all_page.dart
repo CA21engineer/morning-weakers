@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:morning_weakers/pages/home/home_page.dart';
+import 'package:morning_weakers/pages/login/login_page.dart';
 import 'package:morning_weakers/pages/input_participant_info/input_participant_Info_page.dart';
 import 'package:morning_weakers/pages/new_profile/new_profile_page.dart';
 import 'package:morning_weakers/pages/profile_detail/profile_detail_page.dart';
@@ -10,6 +11,7 @@ class AllPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<Widget> _pageList = [
+      LoginPage(),
       InputParticipantInfoPage(),
       NewProfilePage(),
       ProfileDetailPage(),
@@ -19,6 +21,7 @@ class AllPage extends StatelessWidget {
     ];
 
     final List<String> _pageRouteNames = [
+      '/login',
       '/inputParticipantInfo',
       '/newProfile',
       '/profileDetail',
