@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:morning_weakers/pages/home/drawer/home_drawer.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -21,6 +22,7 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ),
+        drawer: HomeDrawer(),
       ),
     );
   }
