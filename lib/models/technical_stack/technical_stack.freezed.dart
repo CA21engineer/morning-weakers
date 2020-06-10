@@ -18,7 +18,7 @@ class _$TechnicalStackTearOff {
   _TechnicalStack call(
       {@required String id,
       @required Stack stack,
-      List<dynamic> language,
+      @required List<dynamic> language,
       @required Proficiency proficiency,
       int priority}) {
     return _TechnicalStack(
@@ -138,11 +138,12 @@ class _$_TechnicalStack
   const _$_TechnicalStack(
       {@required this.id,
       @required this.stack,
-      this.language,
+      @required this.language,
       @required this.proficiency,
       this.priority})
       : assert(id != null),
         assert(stack != null),
+        assert(language != null),
         assert(proficiency != null);
 
   factory _$_TechnicalStack.fromJson(Map<String, dynamic> json) =>
@@ -218,7 +219,7 @@ abstract class _TechnicalStack implements TechnicalStack {
   const factory _TechnicalStack(
       {@required String id,
       @required Stack stack,
-      List<dynamic> language,
+      @required List<dynamic> language,
       @required Proficiency proficiency,
       int priority}) = _$_TechnicalStack;
 

@@ -11,16 +11,8 @@ _$_Questionnaire _$_$_QuestionnaireFromJson(Map<String, dynamic> json) {
     id: json['id'] as String,
     title: json['title'] as String,
     description: json['description'] as String,
-    scheduleCandidate: (json['schedule_candidate'] as List)
-        ?.map((e) => e == null
-            ? null
-            : ScheduleCandidate.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
-    desiredOccupation: (json['desired_occupation'] as List)
-        ?.map((e) => e == null
-            ? null
-            : TechnicalStack.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    scheduleCandidate: json['schedule_candidate'] as List,
+    desiredOccupation: json['desired_occupation'] as List,
     workingDays: json['working_days'] as int,
     note: json['note'] as String,
   );

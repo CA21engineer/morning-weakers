@@ -17,6 +17,5 @@ abstract class Participant with _$Participant {
     @required @JsonKey(name: 'is_admin') bool isAdmin,
   }) = _Participant;
 
-  factory Participant.fromJson(Map<String, dynamic> json) =>
-      _$ParticipantFromJson(json);
+  factory Participant.fromJson(Map<String, dynamic> json) => _$ParticipantFromJson(json);
 }

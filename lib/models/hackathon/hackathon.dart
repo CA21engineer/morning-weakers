@@ -17,7 +17,7 @@ abstract class Hackathon with _$Hackathon {
     @required @JsonKey(name: 'presentation_url') String presentationUrl,
     @required @JsonKey(name: 'start_date') DateTime startDate,
     @required @JsonKey(name: 'end_date') DateTime endDate,
-    @required int span
+    @required int span,
   }) = _Hackathon;
 
   factory Hackathon.fromJson(Map<String, dynamic> json) => _$HackathonFromJson(json);

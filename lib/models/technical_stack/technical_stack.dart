@@ -11,7 +11,7 @@ abstract class TechnicalStack with _$TechnicalStack {
   const factory TechnicalStack({
     @required String id,
     @required Stack stack,
-    List<Language> language,
+    @required List<Language> language,
     @required Proficiency proficiency,
     int priority,
   }) = _TechnicalStack;

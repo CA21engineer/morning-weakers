@@ -18,6 +18,5 @@ abstract class Questionnaire with _$Questionnaire {
     @required String note,
   }) = _Questionnaire;
 
-  factory Questionnaire.fromJson(Map<String, dynamic> json) =>
-      _$QuestionnaireFromJson(json);
+  factory Questionnaire.fromJson(Map<String, dynamic> json) => _$QuestionnaireFromJson(json);
 }

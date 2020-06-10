@@ -22,7 +22,7 @@ class _$ParticipantTearOff {
           User user,
       @required
       @JsonKey(name: 'desired_occupation')
-          List<TechnicalStack> desiredOccupation,
+          List<dynamic> desiredOccupation,
       @required
       @JsonKey(name: 'working_days')
           int workingDays,
@@ -49,7 +49,7 @@ mixin _$Participant {
   String get id;
   User get user;
   @JsonKey(name: 'desired_occupation')
-  List<TechnicalStack> get desiredOccupation;
+  List<dynamic> get desiredOccupation;
   @JsonKey(name: 'working_days')
   int get workingDays;
   String get note;
@@ -67,15 +67,10 @@ abstract class $ParticipantCopyWith<$Res> {
   $Res call(
       {String id,
       User user,
-      @JsonKey(name: 'desired_occupation')
-          List<TechnicalStack> desiredOccupation,
-      @JsonKey(name: 'working_days')
-          int workingDays,
+      @JsonKey(name: 'desired_occupation') List<dynamic> desiredOccupation,
+      @JsonKey(name: 'working_days') int workingDays,
       String note,
-      @JsonKey(name: 'is_admin')
-          bool isAdmin});
-
-  $UserCopyWith<$Res> get user;
+      @JsonKey(name: 'is_admin') bool isAdmin});
 }
 
 class _$ParticipantCopyWithImpl<$Res> implements $ParticipantCopyWith<$Res> {
@@ -99,22 +94,12 @@ class _$ParticipantCopyWithImpl<$Res> implements $ParticipantCopyWith<$Res> {
       user: user == freezed ? _value.user : user as User,
       desiredOccupation: desiredOccupation == freezed
           ? _value.desiredOccupation
-          : desiredOccupation as List<TechnicalStack>,
+          : desiredOccupation as List<dynamic>,
       workingDays:
           workingDays == freezed ? _value.workingDays : workingDays as int,
       note: note == freezed ? _value.note : note as String,
       isAdmin: isAdmin == freezed ? _value.isAdmin : isAdmin as bool,
     ));
-  }
-
-  @override
-  $UserCopyWith<$Res> get user {
-    if (_value.user == null) {
-      return null;
-    }
-    return $UserCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value));
-    });
   }
 }
 
@@ -127,16 +112,10 @@ abstract class _$ParticipantCopyWith<$Res>
   $Res call(
       {String id,
       User user,
-      @JsonKey(name: 'desired_occupation')
-          List<TechnicalStack> desiredOccupation,
-      @JsonKey(name: 'working_days')
-          int workingDays,
+      @JsonKey(name: 'desired_occupation') List<dynamic> desiredOccupation,
+      @JsonKey(name: 'working_days') int workingDays,
       String note,
-      @JsonKey(name: 'is_admin')
-          bool isAdmin});
-
-  @override
-  $UserCopyWith<$Res> get user;
+      @JsonKey(name: 'is_admin') bool isAdmin});
 }
 
 class __$ParticipantCopyWithImpl<$Res> extends _$ParticipantCopyWithImpl<$Res>
@@ -162,7 +141,7 @@ class __$ParticipantCopyWithImpl<$Res> extends _$ParticipantCopyWithImpl<$Res>
       user: user == freezed ? _value.user : user as User,
       desiredOccupation: desiredOccupation == freezed
           ? _value.desiredOccupation
-          : desiredOccupation as List<TechnicalStack>,
+          : desiredOccupation as List<dynamic>,
       workingDays:
           workingDays == freezed ? _value.workingDays : workingDays as int,
       note: note == freezed ? _value.note : note as String,
@@ -196,7 +175,7 @@ class _$_Participant with DiagnosticableTreeMixin implements _Participant {
   final User user;
   @override
   @JsonKey(name: 'desired_occupation')
-  final List<TechnicalStack> desiredOccupation;
+  final List<dynamic> desiredOccupation;
   @override
   @JsonKey(name: 'working_days')
   final int workingDays;
@@ -272,7 +251,7 @@ abstract class _Participant implements Participant {
           User user,
       @required
       @JsonKey(name: 'desired_occupation')
-          List<TechnicalStack> desiredOccupation,
+          List<dynamic> desiredOccupation,
       @required
       @JsonKey(name: 'working_days')
           int workingDays,
@@ -291,7 +270,7 @@ abstract class _Participant implements Participant {
   User get user;
   @override
   @JsonKey(name: 'desired_occupation')
-  List<TechnicalStack> get desiredOccupation;
+  List<dynamic> get desiredOccupation;
   @override
   @JsonKey(name: 'working_days')
   int get workingDays;

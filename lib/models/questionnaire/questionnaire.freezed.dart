@@ -24,10 +24,10 @@ class _$QuestionnaireTearOff {
           String description,
       @required
       @JsonKey(name: 'schedule_candidate')
-          List<ScheduleCandidate> scheduleCandidate,
+          List<dynamic> scheduleCandidate,
       @required
       @JsonKey(name: 'desired_occupation')
-          List<TechnicalStack> desiredOccupation,
+          List<dynamic> desiredOccupation,
       @required
       @JsonKey(name: 'working_days')
           int workingDays,
@@ -53,9 +53,9 @@ mixin _$Questionnaire {
   String get title;
   String get description;
   @JsonKey(name: 'schedule_candidate')
-  List<ScheduleCandidate> get scheduleCandidate;
+  List<dynamic> get scheduleCandidate;
   @JsonKey(name: 'desired_occupation')
-  List<TechnicalStack> get desiredOccupation;
+  List<dynamic> get desiredOccupation;
   @JsonKey(name: 'working_days')
   int get workingDays;
   String get note;
@@ -72,12 +72,9 @@ abstract class $QuestionnaireCopyWith<$Res> {
       {String id,
       String title,
       String description,
-      @JsonKey(name: 'schedule_candidate')
-          List<ScheduleCandidate> scheduleCandidate,
-      @JsonKey(name: 'desired_occupation')
-          List<TechnicalStack> desiredOccupation,
-      @JsonKey(name: 'working_days')
-          int workingDays,
+      @JsonKey(name: 'schedule_candidate') List<dynamic> scheduleCandidate,
+      @JsonKey(name: 'desired_occupation') List<dynamic> desiredOccupation,
+      @JsonKey(name: 'working_days') int workingDays,
       String note});
 }
 
@@ -106,10 +103,10 @@ class _$QuestionnaireCopyWithImpl<$Res>
           description == freezed ? _value.description : description as String,
       scheduleCandidate: scheduleCandidate == freezed
           ? _value.scheduleCandidate
-          : scheduleCandidate as List<ScheduleCandidate>,
+          : scheduleCandidate as List<dynamic>,
       desiredOccupation: desiredOccupation == freezed
           ? _value.desiredOccupation
-          : desiredOccupation as List<TechnicalStack>,
+          : desiredOccupation as List<dynamic>,
       workingDays:
           workingDays == freezed ? _value.workingDays : workingDays as int,
       note: note == freezed ? _value.note : note as String,
@@ -127,12 +124,9 @@ abstract class _$QuestionnaireCopyWith<$Res>
       {String id,
       String title,
       String description,
-      @JsonKey(name: 'schedule_candidate')
-          List<ScheduleCandidate> scheduleCandidate,
-      @JsonKey(name: 'desired_occupation')
-          List<TechnicalStack> desiredOccupation,
-      @JsonKey(name: 'working_days')
-          int workingDays,
+      @JsonKey(name: 'schedule_candidate') List<dynamic> scheduleCandidate,
+      @JsonKey(name: 'desired_occupation') List<dynamic> desiredOccupation,
+      @JsonKey(name: 'working_days') int workingDays,
       String note});
 }
 
@@ -163,10 +157,10 @@ class __$QuestionnaireCopyWithImpl<$Res>
           description == freezed ? _value.description : description as String,
       scheduleCandidate: scheduleCandidate == freezed
           ? _value.scheduleCandidate
-          : scheduleCandidate as List<ScheduleCandidate>,
+          : scheduleCandidate as List<dynamic>,
       desiredOccupation: desiredOccupation == freezed
           ? _value.desiredOccupation
-          : desiredOccupation as List<TechnicalStack>,
+          : desiredOccupation as List<dynamic>,
       workingDays:
           workingDays == freezed ? _value.workingDays : workingDays as int,
       note: note == freezed ? _value.note : note as String,
@@ -203,10 +197,10 @@ class _$_Questionnaire with DiagnosticableTreeMixin implements _Questionnaire {
   final String description;
   @override
   @JsonKey(name: 'schedule_candidate')
-  final List<ScheduleCandidate> scheduleCandidate;
+  final List<dynamic> scheduleCandidate;
   @override
   @JsonKey(name: 'desired_occupation')
-  final List<TechnicalStack> desiredOccupation;
+  final List<dynamic> desiredOccupation;
   @override
   @JsonKey(name: 'working_days')
   final int workingDays;
@@ -287,10 +281,10 @@ abstract class _Questionnaire implements Questionnaire {
           String description,
       @required
       @JsonKey(name: 'schedule_candidate')
-          List<ScheduleCandidate> scheduleCandidate,
+          List<dynamic> scheduleCandidate,
       @required
       @JsonKey(name: 'desired_occupation')
-          List<TechnicalStack> desiredOccupation,
+          List<dynamic> desiredOccupation,
       @required
       @JsonKey(name: 'working_days')
           int workingDays,
@@ -308,10 +302,10 @@ abstract class _Questionnaire implements Questionnaire {
   String get description;
   @override
   @JsonKey(name: 'schedule_candidate')
-  List<ScheduleCandidate> get scheduleCandidate;
+  List<dynamic> get scheduleCandidate;
   @override
   @JsonKey(name: 'desired_occupation')
-  List<TechnicalStack> get desiredOccupation;
+  List<dynamic> get desiredOccupation;
   @override
   @JsonKey(name: 'working_days')
   int get workingDays;

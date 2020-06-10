@@ -12,11 +12,10 @@ abstract class Notification with _$Notification {
     @required String id,
     @required String title,
     @required String description,
-    @required @JsonKey(name:'published_user') User publishedUser,
-    @required @JsonKey(name:'created_at') DateTime createdAt,
-    @required @JsonKey(name:'is_important') bool isImportant,
+    @required @JsonKey(name: 'published_user') User publishedUser,
+    @required @JsonKey(name: 'created_at') DateTime createdAt,
+    @required @JsonKey(name: 'is_important') bool isImportant,
   }) = _Notification;
 
-  factory Notification.fromJson(Map<String, dynamic> json) =>
-      _$NotificationFromJson(json);
+  factory Notification.fromJson(Map<String, dynamic> json) => _$NotificationFromJson(json);
 }
