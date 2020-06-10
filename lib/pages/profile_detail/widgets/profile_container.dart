@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:morning_weakers/pages/profile_detail/widgets/profile_list_container.dart';
+import 'package:morning_weakers/pages/profile_detail/profile_detail_state.dart';
+import 'package:provider/provider.dart';
 
 class ProfileContainer extends StatelessWidget {
   @override
@@ -27,12 +29,20 @@ class ProfileContainer extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 20),
-          const ProfileListContainer(titleName: 'ハンドルネーム', contentName: 'Ryu1'),
+          ProfileListContainer(
+              titleName: 'ハンドルネーム',
+              contentName:
+                  '${context.select<ProfileDetailState, String>((state) => state.displayName)}'),
           const Divider(),
-          const ProfileListContainer(
-              titleName: 'Twitter', contentName: '@ryu1'),
+          ProfileListContainer(
+              titleName: 'Twitter',
+              contentName:
+                  '${context.select<ProfileDetailState, String>((state) => state.twitterAccount)}'),
           const Divider(),
-          const ProfileListContainer(titleName: 'Github', contentName: '@ryu1'),
+          ProfileListContainer(
+              titleName: 'Github',
+              contentName:
+                  '${context.select<ProfileDetailState, String>((state) => state.githubAccount)}'),
           const Divider(),
           const ProfileListContainer(
               titleName: '技術スタック', contentName: 'Flutter, Swift'),
