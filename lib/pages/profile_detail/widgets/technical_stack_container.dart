@@ -29,6 +29,7 @@ class TechnicalStackContainer extends StatelessWidget {
                         ? const EdgeInsets.only(bottom: 32)
                         : null,
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
                       children: <Widget>[
                         Container(
                           padding: const EdgeInsets.only(bottom: 12),
