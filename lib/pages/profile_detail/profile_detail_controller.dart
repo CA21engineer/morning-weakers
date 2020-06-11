@@ -1,6 +1,5 @@
 import 'package:morning_weakers/pages/profile_detail/profile_detail_state.dart';
 import 'package:state_notifier/state_notifier.dart';
-import 'package:morning_weakers/core/dummy_data.dart';
 import 'package:morning_weakers/models/models.dart';
 
 class ProfileDetailController extends StateNotifier<ProfileDetailState>

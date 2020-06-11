@@ -45,11 +45,7 @@ class ProfileContainer extends StatelessWidget {
               contentName:
                   '${context.select<ProfileDetailState, String>((state) => state.user.githubAccount)}'),
           const Divider(),
-          const TechnicalStackContainer(
-            titleName: '技術スタック',
-            contentName: 'Flutter, Swift',
-            technicalStackTitles: ['Flutter', 'Swift', 'ut'],
-          ),
+          TechnicalStackContainer(),
           const Divider(),
         ],
       ),

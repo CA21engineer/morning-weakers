@@ -5,15 +5,6 @@ import 'package:morning_weakers/models/models.dart' as models;
 import 'package:morning_weakers/extensions/list.dart';
 
 class TechnicalStackContainer extends StatelessWidget {
-  const TechnicalStackContainer({
-    @required this.titleName,
-    @required this.contentName,
-    @required this.technicalStackTitles,
-  });
-
-  final String titleName, contentName;
-  final List<String> technicalStackTitles;
-
   @override
   Widget build(BuildContext context) {
     final models.User user =
@@ -25,8 +16,8 @@ class TechnicalStackContainer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Text(
-            titleName,
+          const Text(
+            '技術スタック',
             textAlign: TextAlign.left,
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
@@ -49,7 +40,7 @@ class TechnicalStackContainer extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Text(_getLanguageList(technicalStack.languages))
+                        Text(_getLanguageText(technicalStack.languages))
                       ],
                     ),
                   ),
