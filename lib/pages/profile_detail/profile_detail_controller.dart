@@ -9,7 +9,6 @@ class ProfileDetailController extends StateNotifier<ProfileDetailState>
 
   @override
   void initState() {
-    state = state.copyWith(user: const User(id: '', technicalStacks: []));
     getProfileDetail();
   }
 
