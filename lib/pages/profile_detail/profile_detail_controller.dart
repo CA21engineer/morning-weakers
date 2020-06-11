@@ -5,7 +5,13 @@ import 'package:morning_weakers/core/dummy_data.dart';
 
 class ProfileDetailController extends StateNotifier<ProfileDetailState>
     with LocatorMixin {
-  ProfileDetailController() : super(const ProfileDetailState());
+  ProfileDetailController()
+      : super(const ProfileDetailState(
+          user: User(
+            id: '',
+            technicalStacks: [],
+          ),
+        ));
 
   @override
   void initState() {
@@ -15,30 +21,7 @@ class ProfileDetailController extends StateNotifier<ProfileDetailState>
   Future<void> getProfileDetail() async {
     await Future<void>.delayed(const Duration(seconds: 2));
 
-    final User user = dummyUser(
-      id: 'dummy',
-      fullName: 'dummy',
-      displayName: 'dummmy',
-      technicalStacks: [
-        dummyTechnicalStack(
-          id: 'dummy',
-          stack: Stack.iOS,
-          languages: [Language.Kotlin, Language.Swift],
-          proficiency: Proficiency.Good,
-          priority: 1,
-        ),
-        dummyTechnicalStack(
-          id: 'dummy',
-          stack: Stack.Android,
-          languages: [Language.Kotlin, Language.Swift],
-          proficiency: Proficiency.Good,
-          priority: 1,
-        ),
-      ],
-      githubAccount: 'dummy',
-      twitterAccount: 'dummy',
-      iconUrl: 'dummy',
-    );
+    final User user = dummyUser();
 
     state = state.copyWith(user: user);
   }
