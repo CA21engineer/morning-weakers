@@ -27,7 +27,7 @@ class SourceLinkWidget extends StatelessWidget {
         ));
 
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: const EdgeInsets.symmetric(vertical: 12),
       child: Column(children: <Widget>[
         const Text(
           '資料リンク',
@@ -41,11 +41,11 @@ class SourceLinkWidget extends StatelessWidget {
                   (link) => ListTile(
                     title: Text(
                       link.title,
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
                     subtitle: Text(
                       link.url,
-                      style: TextStyle(fontStyle: FontStyle.italic),
+                      style: const TextStyle(fontStyle: FontStyle.italic),
                     ),
                   ),
                 )

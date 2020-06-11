@@ -22,9 +22,13 @@ class HomePage extends StatelessWidget {
               padding: const EdgeInsets.all(20),
               children: <Widget>[
                 DataTableView(),
-                const Divider(),
+                Divider(
+                  color: Theme.of(context).primaryColor,
+                ),
                 SourceLinkWidget(),
-                const Divider(),
+                Divider(
+                  color: Theme.of(context).primaryColor,
+                ),
                 ListTile(
                   title: const Text(
                     '全てのグループを見る',
