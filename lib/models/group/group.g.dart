@@ -12,7 +12,10 @@ _$_Group _$_$_GroupFromJson(Map<String, dynamic> json) {
     groupName: json['group_name'] as String,
     githubUrl: json['github_url'] as String,
     slideUrls: (json['slide_url'] as List)?.map((e) => e as String)?.toList(),
-    otherUrls: (json['other_urls'] as List)?.map((e) => e as String)?.toList(),
+    otherUrls: (json['other_urls'] as List)
+        ?.map(
+            (e) => e == null ? null : Link.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
     iconUrls: (json['icon_url'] as List)?.map((e) => e as String)?.toList(),
     participants: (json['participants'] as List)
         ?.map((e) =>

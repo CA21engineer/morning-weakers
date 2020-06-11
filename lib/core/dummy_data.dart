@@ -126,7 +126,7 @@ Group dummyGroup({
   String groupName = 'morning weaker ~朝弱いけん~',
   String githubUrl = 'https://github.com/CA21engineer/morning-weakers',
   List<String> slideUrls,
-  List<String> otherUrls,
+  List<Link> otherUrls,
   List<String> iconUrls,
   List<Participant> participants,
 }) =>
@@ -135,7 +135,7 @@ Group dummyGroup({
       groupName: groupName,
       githubUrl: githubUrl,
       slideUrls: slideUrls ?? ['slide_url'],
-      otherUrls: otherUrls ?? ['other_url'],
+      otherUrls: otherUrls ?? [dummyLink()],
       iconUrls: iconUrls ?? ['icon_url'],
       participants: participants ?? [dummyParticipant()],
     );
