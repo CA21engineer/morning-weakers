@@ -43,9 +43,11 @@ class _MyHomePageState extends State<LoginPage> {
   }
 
   void transitionNextPage(FirebaseUser user) {
-    if (user == null) return;
+    if (user == null) {
+      return;
+    }
 
-    Navigator.push(context, MaterialPageRoute(builder: (context) =>
+    Navigator.push<void>(context, MaterialPageRoute(builder: (context) =>
         NextPage(userData: user)
     ));
   }
@@ -64,13 +66,9 @@ class _MyHomePageState extends State<LoginPage> {
                 child: const Image(
                   image: AssetImage('assets/images/btn_google_signin/light/normal.png'),
                 ),
-                onPressed: () {
-                  _handleSignIn()
-                    .then((FirebaseUser user) =>
-                      transitionNextPage(user)
-                    )
-                    .catchError((error) => print(error));
-                },
+                onPressed: () =>
+                  _handleSignIn().then(transitionNextPage)
+                    .catchError(print),
               ),
             ]
         ),
@@ -114,10 +112,9 @@ class _NextPageState extends State<NextPage> {
   }
 
   void _handleToAllPage() {
-    Navigator.push(context, MaterialPageRoute(builder: (context) =>
-        AllPage()
+    Navigator.push<void>(context, MaterialPageRoute(builder: (context) =>
+        const AllPage()
     ));
-//    Navigator.pop(context);
   }
 
   @override
@@ -144,14 +141,12 @@ class _NextPageState extends State<NextPage> {
             RaisedButton(
               child: const Text('Sign out Google'),
               onPressed: () {
-                _handleSignOut().catchError((error) => print(error));
+                _handleSignOut().catchError(print);
               },
             ),
             RaisedButton(
               child: const Text('to AllPage'),
-              onPressed: () {
-                _handleToAllPage();
-              },
+              onPressed: _handleToAllPage,
             ),
           ]
         ),
