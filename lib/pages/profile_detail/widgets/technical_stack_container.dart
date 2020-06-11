@@ -61,24 +61,12 @@ class TechnicalStackContainer extends StatelessWidget {
     );
   }
 
-  String _getLanguageValue(models.Language language) {
-    switch (language) {
-      case models.Language.Swift:
-        return 'Swift';
-      case models.Language.Kotlin:
-        return 'Kotlin';
-    }
-  }
-
-  String _getLanguageList(List<models.Language> languages) {
+  String _getLanguageText(List<models.Language> languages) {
     String text = '';
     languages.asMap().forEach((index, language) {
-      text += '${_getLanguageValue(language)}';
+      text += '${models.getLanguageValue(language)}';
       text += index != languages.length - 1 ? ', ' : '';
     });
     return text;
   }
 }
-
-//Error: 'Stack' is imported from both 'package:flutter/src/widgets/basic.dart' and 'package:morning_weakers/models/technical_stack/stack.dart'.
-//case Stack.Android:
