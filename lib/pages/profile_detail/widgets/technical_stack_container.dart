@@ -11,7 +11,7 @@ class TechnicalStackContainer extends StatelessWidget {
         context.select<ProfileDetailState, models.User>((state) => state.user);
 
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: const EdgeInsets.symmetric(vertical: 12),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -26,12 +26,12 @@ class TechnicalStackContainer extends StatelessWidget {
                 .indexedMap(
                   (index, technicalStack) => Container(
                     padding: index != user.technicalStacks.length - 1
-                        ? const EdgeInsets.only(bottom: 30)
+                        ? const EdgeInsets.only(bottom: 32)
                         : null,
                     child: Column(
                       children: <Widget>[
                         Container(
-                          padding: const EdgeInsets.only(bottom: 10),
+                          padding: const EdgeInsets.only(bottom: 12),
                           child: SingleChildScrollView(
                             child: Text(
                               models.getStackValue(technicalStack.stack),
