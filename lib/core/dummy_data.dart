@@ -108,7 +108,7 @@ Questionnaire dummyQuestionnaire({
   List<ScheduleCandidate> scheduleCandidates,
   List<TechnicalStack> desiredOccupations,
   int workingDays = 1,
-  String note = 'note',
+  String note = '備考欄だよ',
 }) =>
     Questionnaire(
       id: id,
