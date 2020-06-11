@@ -3,6 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:morning_weakers/pages/all/all_page.dart';
 
+// TODO: StateNotifierを使ってリファクタ
+// TODO: その後、GitHub Loginを追加
 class LoginPage extends StatefulWidget {
   const LoginPage({Key key, this.title}) : super(key: key);
   final String title;
