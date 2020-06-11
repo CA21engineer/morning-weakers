@@ -6,16 +6,14 @@ import 'package:morning_weakers/pages/new_profile/new_profile_page.dart';
 import 'package:morning_weakers/pages/profile_detail/profile_detail_page.dart';
 import 'package:morning_weakers/pages/admin_top/admin_top_page.dart';
 import 'package:morning_weakers/pages/state_notifier_sample/state_notifier_sample_page.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class AllPage extends StatelessWidget {
-  FirebaseUser userData;
-  AllPage({Key key, this.userData}) : super(key: key);
+  const AllPage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final List<Widget> _pageList = [
-      LoginPage(),
+      const LoginPage(),
       InputParticipantInfoPage(),
       NewProfilePage(),
       ProfileDetailPage(),

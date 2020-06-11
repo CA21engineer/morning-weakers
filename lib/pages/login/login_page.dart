@@ -90,7 +90,7 @@ class NextPage extends StatefulWidget {
 
 class _NextPageState extends State<NextPage> {
   FirebaseUser userData;
-  String name = "";
+  String name = '';
   String email;
   String photoUrl;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
@@ -113,11 +113,9 @@ class _NextPageState extends State<NextPage> {
     Navigator.pop(context);
   }
 
-  void _handletoAllPage(FirebaseUser user) {
-  if (user == null) return;
-
+  void _handleToAllPage() {
     Navigator.push(context, MaterialPageRoute(builder: (context) =>
-        AllPage(userData: user)
+        AllPage()
     ));
 //    Navigator.pop(context);
   }
@@ -152,7 +150,7 @@ class _NextPageState extends State<NextPage> {
             RaisedButton(
               child: const Text('to AllPage'),
               onPressed: () {
-                _handletoAllPage(userData);
+                _handleToAllPage();
               },
             ),
           ]
