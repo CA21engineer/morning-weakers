@@ -7,6 +7,6 @@ part 'profile_detail_state.freezed.dart';
 @freezed
 abstract class ProfileDetailState with _$ProfileDetailState {
   const factory ProfileDetailState({
-    @required User user,
+    User user,
   }) = _ProfileDetailState;
 }

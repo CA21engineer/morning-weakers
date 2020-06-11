@@ -12,7 +12,7 @@ T _$identity<T>(T value) => value;
 class _$ProfileDetailStateTearOff {
   const _$ProfileDetailStateTearOff();
 
-  _ProfileDetailState call({@required User user}) {
+  _ProfileDetailState call({User user}) {
     return _ProfileDetailState(
       user: user,
     );
@@ -100,7 +100,7 @@ class __$ProfileDetailStateCopyWithImpl<$Res>
 class _$_ProfileDetailState
     with DiagnosticableTreeMixin
     implements _ProfileDetailState {
-  const _$_ProfileDetailState({@required this.user}) : assert(user != null);
+  const _$_ProfileDetailState({this.user});
 
   @override
   final User user;
@@ -136,8 +136,7 @@ class _$_ProfileDetailState
 }
 
 abstract class _ProfileDetailState implements ProfileDetailState {
-  const factory _ProfileDetailState({@required User user}) =
-      _$_ProfileDetailState;
+  const factory _ProfileDetailState({User user}) = _$_ProfileDetailState;
 
   @override
   User get user;

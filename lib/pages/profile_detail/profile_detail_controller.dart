@@ -5,16 +5,11 @@ import 'package:morning_weakers/core/dummy_data.dart';
 
 class ProfileDetailController extends StateNotifier<ProfileDetailState>
     with LocatorMixin {
-  ProfileDetailController()
-      : super(const ProfileDetailState(
-          user: User(
-            id: '',
-            technicalStacks: [],
-          ),
-        ));
+  ProfileDetailController() : super(const ProfileDetailState());
 
   @override
   void initState() {
+    state = state.copyWith(user: const User(id: '', technicalStacks: []));
     getProfileDetail();
   }
 
