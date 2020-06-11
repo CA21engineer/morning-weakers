@@ -31,19 +31,22 @@ class ProfileContainer extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           ProfileListContainer(
-              titleName: 'ハンドルネーム',
-              contentName:
-                  '${context.select<ProfileDetailState, String>((state) => state.user.displayName)}'),
+            titleName: 'ハンドルネーム',
+            contentName:
+                '${context.select<ProfileDetailState, String>((state) => state.user.displayName)}',
+          ),
           const Divider(),
           ProfileListContainer(
-              titleName: 'Twitter',
-              contentName:
-                  '${context.select<ProfileDetailState, String>((state) => state.user.twitterAccount)}'),
+            titleName: 'Twitter',
+            contentName:
+                '${context.select<ProfileDetailState, String>((state) => state.user.twitterAccount)}',
+          ),
           const Divider(),
           ProfileListContainer(
-              titleName: 'Github',
-              contentName:
-                  '${context.select<ProfileDetailState, String>((state) => state.user.githubAccount)}'),
+            titleName: 'Github',
+            contentName:
+                '${context.select<ProfileDetailState, String>((state) => state.user.githubAccount)}',
+          ),
           const Divider(),
           TechnicalStackContainer(),
           const Divider(),
