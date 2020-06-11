@@ -6,6 +6,17 @@ part 'profile_detail_state.freezed.dart';
 @freezed
 abstract class ProfileDetailState with _$ProfileDetailState {
   const factory ProfileDetailState({
-    User user,
+    @Default(
+      User(
+        id: '',
+        fullName: '',
+        displayName: '',
+        technicalStacks: [],
+        githubAccount: '',
+        twitterAccount: '',
+        iconUrl: '',
+      ),
+    )
+        User user,
   }) = _ProfileDetailState;
 }

@@ -12,7 +12,15 @@ T _$identity<T>(T value) => value;
 class _$ProfileDetailStateTearOff {
   const _$ProfileDetailStateTearOff();
 
-  _ProfileDetailState call({User user}) {
+  _ProfileDetailState call(
+      {User user = const User(
+          id: '',
+          fullName: '',
+          displayName: '',
+          technicalStacks: [],
+          githubAccount: '',
+          twitterAccount: '',
+          iconUrl: '')}) {
     return _ProfileDetailState(
       user: user,
     );
@@ -100,8 +108,26 @@ class __$ProfileDetailStateCopyWithImpl<$Res>
 class _$_ProfileDetailState
     with DiagnosticableTreeMixin
     implements _ProfileDetailState {
-  const _$_ProfileDetailState({this.user});
+  const _$_ProfileDetailState(
+      {this.user = const User(
+          id: '',
+          fullName: '',
+          displayName: '',
+          technicalStacks: [],
+          githubAccount: '',
+          twitterAccount: '',
+          iconUrl: '')})
+      : assert(user != null);
 
+  @JsonKey(
+      defaultValue: const User(
+          id: '',
+          fullName: '',
+          displayName: '',
+          technicalStacks: [],
+          githubAccount: '',
+          twitterAccount: '',
+          iconUrl: ''))
   @override
   final User user;
 
