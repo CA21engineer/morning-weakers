@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:morning_weakers/models/models.dart';
 import 'package:morning_weakers/pages/state_notifier_sample/state_notifier_sample_controller.dart';
 import 'package:morning_weakers/pages/state_notifier_sample/state_notifier_sample_state.dart';
 import 'package:provider/provider.dart';
