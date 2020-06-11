@@ -22,7 +22,9 @@ class _MyHomePageState extends State<LoginPage> {
     try {
       googleCurrentUser ??= await _googleSignIn.signInSilently();
       googleCurrentUser ??= await _googleSignIn.signIn();
-      if (googleCurrentUser == null) return null;
+      if (googleCurrentUser == null) {
+        return null;
+      }
 
       final GoogleSignInAuthentication googleAuth = await googleCurrentUser.authentication;
       final AuthCredential credential = GoogleAuthProvider.getCredential(
