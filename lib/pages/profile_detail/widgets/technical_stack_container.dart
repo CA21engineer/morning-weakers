@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:morning_weakers/pages/profile_detail/profile_detail_state.dart';
 import 'package:provider/provider.dart';
 import 'package:morning_weakers/models/models.dart' as models;
+import 'package:morning_weakers/extensions/list.dart';
 
 class TechnicalStackContainer extends StatelessWidget {
   const TechnicalStackContainer({
@@ -42,7 +43,7 @@ class TechnicalStackContainer extends StatelessWidget {
                           padding: const EdgeInsets.only(bottom: 10),
                           child: SingleChildScrollView(
                             child: Text(
-                              _getStackValue(technicalStack.stack),
+                              models.getStackValue(technicalStack.stack),
                               textAlign: TextAlign.right,
                               style: const TextStyle(fontSize: 20),
                             ),
@@ -58,17 +59,6 @@ class TechnicalStackContainer extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  String _getStackValue(models.Stack stack) {
-    switch (stack) {
-      case models.Stack.iOS:
-        return 'iOS';
-      case models.Stack.Android:
-        return 'Android';
-      case models.Stack.Serverside:
-        return 'Serverside';
-    }
   }
 
   String _getLanguageValue(models.Language language) {
