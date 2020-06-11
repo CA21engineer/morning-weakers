@@ -108,8 +108,8 @@ Questionnaire dummyQuestionnaire({
   String description = 'アンケートの概要',
   List<ScheduleCandidate> scheduleCandidates,
   List<TechnicalStack> desiredOccupations,
-  @Default(1) int workingDays,
-  @Default('') String note,
+  int workingDays = 1,
+  String note = 'note',
 }) =>
     Questionnaire(
       id: id,
