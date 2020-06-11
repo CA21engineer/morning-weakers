@@ -4,6 +4,7 @@ import 'package:morning_weakers/models/models.dart';
 import 'package:morning_weakers/pages/home/data/data_table_model.dart';
 import 'package:morning_weakers/pages/home/home_state.dart';
 import 'package:provider/provider.dart';
+import 'package:morning_weakers/pages/home/enum.dart';
 
 class DataTableView extends StatelessWidget {
   @override
@@ -18,36 +19,47 @@ class DataTableView extends StatelessWidget {
     final List<DataTableModel> dataTableList = teamPeople.map((participant) {
       final String aIconUrl = participant.user.iconUrl;
       final String aDisplayName = participant.user.displayName;
-      final List<TechnicalStack> aDesiredOccupation =
-          participant.desiredOccupations;
+      final List<TechnicalStack> aTechnicalStacks =
+          participant.user.technicalStacks;
       final int aWorkingDays = participant.workingDays;
       return DataTableModel(
         iconUrl: aIconUrl,
         displayName: aDisplayName,
-        desiredOccupation: aDesiredOccupation,
+        technicalStacks: aTechnicalStacks,
         workingDays: aWorkingDays,
       );
     }).toList();
 
-    return DataTable(
-      sortColumnIndex: 1,
-      sortAscending: true,
-      columns: const [
-        DataColumn(label: Text('アイコン')),
-        DataColumn(label: Text('ユーザ名')),
-        DataColumn(label: Text('合計稼働時間')),
-        DataColumn(label: Text('技術スタック')),
-      ],
-      rows: dataTableList
-          .map(
-            (row) => DataRow(cells: [
-              DataCell(Text(row.iconUrl)),
-              DataCell(Text(row.displayName)),
-              DataCell(Text(row.workingDays.toString())),
-              DataCell(Text(row.desiredOccupation.toString())),
-            ]),
-          )
-          .toList(),
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: DataTable(
+        sortColumnIndex: 1,
+        sortAscending: true,
+        columns: const [
+          DataColumn(label: Text('アイコン')),
+          DataColumn(label: Text('ユーザ名')),
+          DataColumn(label: Text('合計稼働時間')),
+          DataColumn(label: Text('技術スタック')),
+        ],
+        rows: dataTableList
+            .map(
+              (row) => DataRow(cells: [
+                DataCell(
+                  Image.network(row.iconUrl),
+                ),
+                DataCell(Text(row.displayName)),
+                DataCell(Text(row.workingDays.toString())),
+                DataCell(
+                  Row(
+                      children: row.technicalStacks
+                          .map((technicalStack) =>
+                              Text(technicalStack.stack.getStackTech()))
+                          .toList()),
+                ),
+              ]),
+            )
+            .toList(),
+      ),
     );
   }
 }

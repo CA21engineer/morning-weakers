@@ -9,7 +9,7 @@ abstract class DataTableModel with _$DataTableModel {
   const factory DataTableModel({
     String iconUrl,
     String displayName,
-    List<TechnicalStack> desiredOccupation,
+    List<TechnicalStack> technicalStacks,
     int workingDays,
   }) = _DataTableModel;
 }

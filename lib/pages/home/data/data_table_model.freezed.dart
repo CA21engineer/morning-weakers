@@ -15,12 +15,12 @@ class _$DataTableModelTearOff {
   _DataTableModel call(
       {String iconUrl,
       String displayName,
-      List<TechnicalStack> desiredOccupation,
+      List<TechnicalStack> technicalStacks,
       int workingDays}) {
     return _DataTableModel(
       iconUrl: iconUrl,
       displayName: displayName,
-      desiredOccupation: desiredOccupation,
+      technicalStacks: technicalStacks,
       workingDays: workingDays,
     );
   }
@@ -32,7 +32,7 @@ const $DataTableModel = _$DataTableModelTearOff();
 mixin _$DataTableModel {
   String get iconUrl;
   String get displayName;
-  List<TechnicalStack> get desiredOccupation;
+  List<TechnicalStack> get technicalStacks;
   int get workingDays;
 
   $DataTableModelCopyWith<DataTableModel> get copyWith;
@@ -45,7 +45,7 @@ abstract class $DataTableModelCopyWith<$Res> {
   $Res call(
       {String iconUrl,
       String displayName,
-      List<TechnicalStack> desiredOccupation,
+      List<TechnicalStack> technicalStacks,
       int workingDays});
 }
 
@@ -61,16 +61,16 @@ class _$DataTableModelCopyWithImpl<$Res>
   $Res call({
     Object iconUrl = freezed,
     Object displayName = freezed,
-    Object desiredOccupation = freezed,
+    Object technicalStacks = freezed,
     Object workingDays = freezed,
   }) {
     return _then(_value.copyWith(
       iconUrl: iconUrl == freezed ? _value.iconUrl : iconUrl as String,
       displayName:
           displayName == freezed ? _value.displayName : displayName as String,
-      desiredOccupation: desiredOccupation == freezed
-          ? _value.desiredOccupation
-          : desiredOccupation as List<TechnicalStack>,
+      technicalStacks: technicalStacks == freezed
+          ? _value.technicalStacks
+          : technicalStacks as List<TechnicalStack>,
       workingDays:
           workingDays == freezed ? _value.workingDays : workingDays as int,
     ));
@@ -86,7 +86,7 @@ abstract class _$DataTableModelCopyWith<$Res>
   $Res call(
       {String iconUrl,
       String displayName,
-      List<TechnicalStack> desiredOccupation,
+      List<TechnicalStack> technicalStacks,
       int workingDays});
 }
 
@@ -104,16 +104,16 @@ class __$DataTableModelCopyWithImpl<$Res>
   $Res call({
     Object iconUrl = freezed,
     Object displayName = freezed,
-    Object desiredOccupation = freezed,
+    Object technicalStacks = freezed,
     Object workingDays = freezed,
   }) {
     return _then(_DataTableModel(
       iconUrl: iconUrl == freezed ? _value.iconUrl : iconUrl as String,
       displayName:
           displayName == freezed ? _value.displayName : displayName as String,
-      desiredOccupation: desiredOccupation == freezed
-          ? _value.desiredOccupation
-          : desiredOccupation as List<TechnicalStack>,
+      technicalStacks: technicalStacks == freezed
+          ? _value.technicalStacks
+          : technicalStacks as List<TechnicalStack>,
       workingDays:
           workingDays == freezed ? _value.workingDays : workingDays as int,
     ));
@@ -124,23 +124,20 @@ class _$_DataTableModel
     with DiagnosticableTreeMixin
     implements _DataTableModel {
   const _$_DataTableModel(
-      {this.iconUrl,
-      this.displayName,
-      this.desiredOccupation,
-      this.workingDays});
+      {this.iconUrl, this.displayName, this.technicalStacks, this.workingDays});
 
   @override
   final String iconUrl;
   @override
   final String displayName;
   @override
-  final List<TechnicalStack> desiredOccupation;
+  final List<TechnicalStack> technicalStacks;
   @override
   final int workingDays;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'DataTableModel(iconUrl: $iconUrl, displayName: $displayName, desiredOccupation: $desiredOccupation, workingDays: $workingDays)';
+    return 'DataTableModel(iconUrl: $iconUrl, displayName: $displayName, technicalStacks: $technicalStacks, workingDays: $workingDays)';
   }
 
   @override
@@ -150,7 +147,7 @@ class _$_DataTableModel
       ..add(DiagnosticsProperty('type', 'DataTableModel'))
       ..add(DiagnosticsProperty('iconUrl', iconUrl))
       ..add(DiagnosticsProperty('displayName', displayName))
-      ..add(DiagnosticsProperty('desiredOccupation', desiredOccupation))
+      ..add(DiagnosticsProperty('technicalStacks', technicalStacks))
       ..add(DiagnosticsProperty('workingDays', workingDays));
   }
 
@@ -164,9 +161,9 @@ class _$_DataTableModel
             (identical(other.displayName, displayName) ||
                 const DeepCollectionEquality()
                     .equals(other.displayName, displayName)) &&
-            (identical(other.desiredOccupation, desiredOccupation) ||
+            (identical(other.technicalStacks, technicalStacks) ||
                 const DeepCollectionEquality()
-                    .equals(other.desiredOccupation, desiredOccupation)) &&
+                    .equals(other.technicalStacks, technicalStacks)) &&
             (identical(other.workingDays, workingDays) ||
                 const DeepCollectionEquality()
                     .equals(other.workingDays, workingDays)));
@@ -177,7 +174,7 @@ class _$_DataTableModel
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(iconUrl) ^
       const DeepCollectionEquality().hash(displayName) ^
-      const DeepCollectionEquality().hash(desiredOccupation) ^
+      const DeepCollectionEquality().hash(technicalStacks) ^
       const DeepCollectionEquality().hash(workingDays);
 
   @override
@@ -189,7 +186,7 @@ abstract class _DataTableModel implements DataTableModel {
   const factory _DataTableModel(
       {String iconUrl,
       String displayName,
-      List<TechnicalStack> desiredOccupation,
+      List<TechnicalStack> technicalStacks,
       int workingDays}) = _$_DataTableModel;
 
   @override
@@ -197,7 +194,7 @@ abstract class _DataTableModel implements DataTableModel {
   @override
   String get displayName;
   @override
-  List<TechnicalStack> get desiredOccupation;
+  List<TechnicalStack> get technicalStacks;
   @override
   int get workingDays;
   @override
