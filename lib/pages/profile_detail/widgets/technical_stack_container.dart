@@ -40,7 +40,7 @@ class TechnicalStackContainer extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Text(_getLanguageText(technicalStack.languages))
+                        Text(_getCombinedLanguageText(technicalStack.languages))
                       ],
                     ),
                   ),
@@ -52,7 +52,7 @@ class TechnicalStackContainer extends StatelessWidget {
     );
   }
 
-  String _getLanguageText(List<models.Language> languages) {
+  String _getCombinedLanguageText(List<models.Language> languages) {
     String text = '';
     languages.asMap().forEach((index, language) {
       text += '${models.getLanguageValue(language)}';
