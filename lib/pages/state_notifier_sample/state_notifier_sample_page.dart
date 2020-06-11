@@ -15,6 +15,7 @@ class SamplePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text('${context.select<SampleState, int>((state) => state.count)}'),
+            Text('${context.select<SampleState, String>((state) => state.user.fullName)}'),
             GestureDetector(
               onTap: () => context.read<SampleController>().handleClick(),
               child: const Icon(Icons.add),

@@ -7,3 +7,12 @@ enum Language {
   @JsonValue('KOTLIN')
   Kotlin,
 }
+
+String getLanguageValue(Language language) {
+  switch (language) {
+    case Language.Swift:
+      return 'Swift';
+    case Language.Kotlin:
+      return 'Kotlin';
+  }
+}

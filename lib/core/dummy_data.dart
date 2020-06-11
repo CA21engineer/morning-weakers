@@ -3,13 +3,13 @@ import 'package:morning_weakers/models/hackathon/hackathon.dart';
 import 'package:morning_weakers/models/models.dart';
 
 User dummyUser({
-  @Default('') String id,
-  @Default('') String fullName,
-  @Default('') String displayName,
+  String id = 'dummy',
+  String fullName = 'Full Name',
+  String displayName = 'Display Name',
   List<TechnicalStack> technicalStacks,
-  @Default('') String githubAccount,
-  @Default('') String twitterAccount,
-  @Default('') String iconUrl,
+  String githubAccount = 'ho2ri2s',
+  String twitterAccount = '@hohohoris',
+  String iconUrl = 'https://github.com/ho2ri2s.png?size=48',
 }) =>
     User(
       id: id,
@@ -22,27 +22,27 @@ User dummyUser({
     );
 
 TechnicalStack dummyTechnicalStack({
-  @Default('') String id,
-  @Default(Stack.Android) Stack stack,
-  @Default(Language.Kotlin) List<Language> languages,
-  @Default(Proficiency.Good) Proficiency proficiency,
-  @Default(1) int priority,
+  String id = 'dummy',
+  Stack stack = Stack.Android,
+  List<Language> languages,
+  Proficiency proficiency = Proficiency.Good,
+  int priority = 1,
 }) =>
     TechnicalStack(
       id: id,
       stack: stack,
-      languages: languages,
+      languages: languages ?? [Language.Kotlin],
       proficiency: proficiency,
       priority: priority,
     );
 
 Participant dummyParticipant({
-  @Default('') String id,
+  String id = 'dummy',
   User user,
   List<TechnicalStack> desiredOccupations,
-  @Default(1) int workingDays,
-  @Default('') String note,
-  @Default(false) bool isAdmin,
+  int workingDays = 1,
+  String note = '備考欄だよ',
+  bool isAdmin = false,
 }) =>
     Participant(
         id: id,
@@ -53,16 +53,16 @@ Participant dummyParticipant({
         isAdmin: isAdmin);
 
 Hackathon dummyHackathon({
-  @Default('') String id,
-  @Default('') String title,
-  @Default('') String description,
-  @Default('') String theme,
-  @Default('') String iconUrl,
-  @Default('') String slackUrl,
-  @Default('') String presentationUrl,
+  String id = 'dummy',
+  String title = 'CA21 hackathon',
+  String description = 'CA21 hackathonだよよよよよよよよ',
+  String theme = 'with コロナ, after コロナ',
+  String iconUrl = 'https://github.com/fukami421.png?size=48',
+  String slackUrl = 'slack_url',
+  String presentationUrl = 'presentation_url',
   DateTime startDate,
   DateTime endDate,
-  @Default(1) int span,
+  int span = 1,
   Questionnaire questionnaire,
   List<Participant> participants,
   List<Group> groups,
@@ -86,12 +86,12 @@ Hackathon dummyHackathon({
     );
 
 Notification dummyNotification({
-  @Default('') String id,
-  @Default('') String title,
-  @Default('') String description,
+  String id = 'dummy',
+  String title = '今からHackathon始めるやで',
+  String description = 'みんな起きてる？始めるやで',
   User publishedUser,
   DateTime createdAt,
-  @Default(false) bool isImportant,
+  bool isImportant = false,
 }) =>
     Notification(
       id: id,
@@ -103,9 +103,9 @@ Notification dummyNotification({
     );
 
 Questionnaire dummyQuestionnaire({
-  @Default('') String id,
-  @Default('') String title,
-  @Default('') String description,
+  String id = 'dummy',
+  String title = 'CA21Hackathonアンケート',
+  String description = 'アンケートの概要',
   List<ScheduleCandidate> scheduleCandidates,
   List<TechnicalStack> desiredOccupations,
   @Default(1) int workingDays,
@@ -122,26 +122,26 @@ Questionnaire dummyQuestionnaire({
     );
 
 Group dummyGroup({
-  @Default('') String id,
-  @Default('') String groupName,
-  @Default('') String githubUrl,
-  @Default(['']) List<String> slideUrls,
-  @Default(['']) List<String> otherUrls,
-  @Default(['']) List<String> iconUrls,
+  String id = 'dummy',
+  String groupName = 'morning weaker ~朝弱いけん~',
+  String githubUrl = 'https://github.com/CA21engineer/morning-weakers',
+  List<String> slideUrls,
+  List<String> otherUrls,
+  List<String> iconUrls,
   List<Participant> participants,
 }) =>
     Group(
       id: id,
       groupName: groupName,
       githubUrl: githubUrl,
-      slideUrls: slideUrls,
-      otherUrls: otherUrls,
-      iconUrls: iconUrls,
+      slideUrls: slideUrls ?? ['slide_url'],
+      otherUrls: otherUrls ?? ['other_url'],
+      iconUrls: iconUrls ?? ['icon_url'],
       participants: participants ?? [dummyParticipant()],
     );
 
 ScheduleCandidate dummyScheduleCandidate({
-  @Default('') String id,
+  String id = 'dummy',
   DateTime start,
   DateTime end,
 }) =>
@@ -152,10 +152,10 @@ ScheduleCandidate dummyScheduleCandidate({
     );
 
 Link dummyLink({
-  @Default('') String id,
-  @Default('') String title,
-  @Default('') String url,
-  @Default('') String iconUrl,
+  String id = 'dummy',
+  String title = 'Notion',
+  String url = 'https://www.notion.so/ho2ri2s/21hack01-Flutter-e0c721715bf64506b071fc90a3f3462e',
+  String iconUrl = 'https://github.com/zoothezoo.png?size=48',
 }) =>
     Link(
       id: id,
