@@ -22,26 +22,23 @@ class HomePage extends StatelessWidget {
               padding: const EdgeInsets.all(20),
               children: <Widget>[
                 DataTableView(),
+                const Divider(),
                 SourceLinkWidget(),
                 const Divider(),
-                _allGroupNav(context),
+                ListTile(
+                  title: const Text(
+                    '全てのグループを見る',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  trailing: const Icon(Icons.arrow_forward_ios),
+                  onTap: () => null,
+                ),
               ],
             ),
           ),
         ),
         drawer: HomeDrawer(),
       ),
-    );
-  }
-
-  Widget _allGroupNav(BuildContext context) {
-    return ListTile(
-      title: const Text(
-        '全てのグループを見る',
-        style: TextStyle(fontSize: 20),
-      ),
-      trailing: const Icon(Icons.arrow_forward_ios),
-      onTap: () => null,
     );
   }
 }

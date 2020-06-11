@@ -30,35 +30,48 @@ class DataTableView extends StatelessWidget {
       );
     }).toList();
 
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: DataTable(
-        sortColumnIndex: 1,
-        sortAscending: true,
-        columns: const [
-          DataColumn(label: Text('アイコン')),
-          DataColumn(label: Text('ユーザ名')),
-          DataColumn(label: Text('合計稼働時間')),
-          DataColumn(label: Text('技術スタック')),
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: Column(
+        children: <Widget>[
+          const Text(
+            'メンバーデータ',
+            style: TextStyle(
+              fontSize: 20,
+            ),
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: DataTable(
+              sortColumnIndex: 1,
+              sortAscending: true,
+              columns: const [
+                DataColumn(label: Text('アイコン')),
+                DataColumn(label: Text('ユーザ名')),
+                DataColumn(label: Text('合計稼働時間')),
+                DataColumn(label: Text('技術スタック')),
+              ],
+              rows: dataTableList
+                  .map(
+                    (row) => DataRow(cells: [
+                      DataCell(
+                        Image.network(row.iconUrl),
+                      ),
+                      DataCell(Text(row.displayName)),
+                      DataCell(Text(row.workingDays.toString())),
+                      DataCell(
+                        Row(
+                            children: row.technicalStacks
+                                .map((technicalStack) =>
+                                    Text(technicalStack.stack.getStackTech()))
+                                .toList()),
+                      ),
+                    ]),
+                  )
+                  .toList(),
+            ),
+          ),
         ],
-        rows: dataTableList
-            .map(
-              (row) => DataRow(cells: [
-                DataCell(
-                  Image.network(row.iconUrl),
-                ),
-                DataCell(Text(row.displayName)),
-                DataCell(Text(row.workingDays.toString())),
-                DataCell(
-                  Row(
-                      children: row.technicalStacks
-                          .map((technicalStack) =>
-                              Text(technicalStack.stack.getStackTech()))
-                          .toList()),
-                ),
-              ]),
-            )
-            .toList(),
       ),
     );
   }
