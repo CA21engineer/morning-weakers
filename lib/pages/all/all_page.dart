@@ -5,6 +5,7 @@ import 'package:morning_weakers/pages/new_profile/new_profile_page.dart';
 import 'package:morning_weakers/pages/profile_detail/profile_detail_page.dart';
 import 'package:morning_weakers/pages/admin_top/admin_top_page.dart';
 import 'package:morning_weakers/pages/state_notifier_sample/state_notifier_sample_page.dart';
+import 'package:morning_weakers/pages/admin_group_edit/admin_group_edit_page.dart';
 
 class AllPage extends StatelessWidget {
   @override
@@ -16,6 +17,7 @@ class AllPage extends StatelessWidget {
       HomePage(),
       AdminTopPage(),
       SamplePage(),
+      AdminGroupEditPage(),
     ];
 
     final List<String> _pageRouteNames = [
@@ -25,6 +27,7 @@ class AllPage extends StatelessWidget {
       '/home',
       '/adminTopPage',
       '/sample',
+      '/adminGroupEditPage'
     ];
 
     return Scaffold(
