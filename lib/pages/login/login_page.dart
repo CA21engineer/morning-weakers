@@ -113,7 +113,7 @@ class _NextPageState extends State<NextPage> {
 
   void _handleToAllPage() {
     Navigator.push<void>(context, MaterialPageRoute(builder: (context) =>
-        const AllPage()
+      const AllPage()
     ));
   }
 
