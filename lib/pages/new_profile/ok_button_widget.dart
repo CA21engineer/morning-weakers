@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import 'new_profile_controller.dart';
 
 class OkButtonWidget extends StatelessWidget {

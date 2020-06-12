@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 class InputTextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final List<String> _titleList = [
+    final List<String> titleList = [
       'ユーザ名',
       'ハンドルネーム',
       'Twitter アカウント',
@@ -17,8 +17,7 @@ class InputTextWidget extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.all(20),
-      child: Column(children: _titleList.indexedMap<Widget>((index, value) {
-        debugPrint('$index, $value');
+      child: Column(children: titleList.indexedMap<Widget>((index, value) {
         return Container(
           padding: const EdgeInsets.all(8),
           child: TextFormField(

@@ -21,12 +21,12 @@ class NewProfileController extends StateNotifier<NewProfileState>
       displayName: user.displayName,
       twitterAccount: user.twitterAccount,
       githubAccount: user.githubAccount,
-      //technicalStacks: user.technicalStacks,
+      //TODO:technicalStacks: user.technicalStacks,
     );
   }
 
   Future<void> postUser() {
-    debugPrint('こんにちはpostUserです');
+    //TODO:Repositoryやる
     debugPrint('debugger: $state');
   }
 
@@ -45,7 +45,7 @@ class NewProfileController extends StateNotifier<NewProfileState>
       case 3:
         _setGithubState(value);
         break;
-      //case 4: _set
+      //TODO:case 4: _set
     }
   }
 
@@ -60,5 +60,5 @@ class NewProfileController extends StateNotifier<NewProfileState>
   void _setGithubState(String value) =>
       state = state.copyWith(githubAccount: value);
 
-//void _setStackState(String value) => state = state.copyWith(stacks: [Stack.]);
+//TODO:void _setStackState(String value) => state = state.copyWith(stacks: [Stack.]);
 }
