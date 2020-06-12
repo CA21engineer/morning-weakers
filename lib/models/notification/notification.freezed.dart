@@ -16,12 +16,22 @@ class _$NotificationTearOff {
   const _$NotificationTearOff();
 
   _Notification call(
-      {@required String id,
-      @required String title,
-      @required String description,
-      @required @JsonKey(name: 'published_user') User publishedUser,
-      @required @JsonKey(name: 'created_at') DateTime createdAt,
-      @required @JsonKey(name: 'is_important') bool isImportant}) {
+      {@required
+          String id,
+      @required
+          String title,
+      @required
+          String description,
+      @required
+      @JsonKey(name: 'published_user')
+      @UserConverter()
+          User publishedUser,
+      @required
+      @JsonKey(name: 'created_at')
+          DateTime createdAt,
+      @required
+      @JsonKey(name: 'is_important')
+          bool isImportant}) {
     return _Notification(
       id: id,
       title: title,
@@ -41,6 +51,7 @@ mixin _$Notification {
   String get title;
   String get description;
   @JsonKey(name: 'published_user')
+  @UserConverter()
   User get publishedUser;
   @JsonKey(name: 'created_at')
   DateTime get createdAt;
@@ -59,7 +70,7 @@ abstract class $NotificationCopyWith<$Res> {
       {String id,
       String title,
       String description,
-      @JsonKey(name: 'published_user') User publishedUser,
+      @JsonKey(name: 'published_user') @UserConverter() User publishedUser,
       @JsonKey(name: 'created_at') DateTime createdAt,
       @JsonKey(name: 'is_important') bool isImportant});
 
@@ -118,7 +129,7 @@ abstract class _$NotificationCopyWith<$Res>
       {String id,
       String title,
       String description,
-      @JsonKey(name: 'published_user') User publishedUser,
+      @JsonKey(name: 'published_user') @UserConverter() User publishedUser,
       @JsonKey(name: 'created_at') DateTime createdAt,
       @JsonKey(name: 'is_important') bool isImportant});
 
@@ -163,12 +174,22 @@ class __$NotificationCopyWithImpl<$Res> extends _$NotificationCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Notification with DiagnosticableTreeMixin implements _Notification {
   const _$_Notification(
-      {@required this.id,
-      @required this.title,
-      @required this.description,
-      @required @JsonKey(name: 'published_user') this.publishedUser,
-      @required @JsonKey(name: 'created_at') this.createdAt,
-      @required @JsonKey(name: 'is_important') this.isImportant})
+      {@required
+          this.id,
+      @required
+          this.title,
+      @required
+          this.description,
+      @required
+      @JsonKey(name: 'published_user')
+      @UserConverter()
+          this.publishedUser,
+      @required
+      @JsonKey(name: 'created_at')
+          this.createdAt,
+      @required
+      @JsonKey(name: 'is_important')
+          this.isImportant})
       : assert(id != null),
         assert(title != null),
         assert(description != null),
@@ -187,6 +208,7 @@ class _$_Notification with DiagnosticableTreeMixin implements _Notification {
   final String description;
   @override
   @JsonKey(name: 'published_user')
+  @UserConverter()
   final User publishedUser;
   @override
   @JsonKey(name: 'created_at')
@@ -257,13 +279,22 @@ class _$_Notification with DiagnosticableTreeMixin implements _Notification {
 
 abstract class _Notification implements Notification {
   const factory _Notification(
-          {@required String id,
-          @required String title,
-          @required String description,
-          @required @JsonKey(name: 'published_user') User publishedUser,
-          @required @JsonKey(name: 'created_at') DateTime createdAt,
-          @required @JsonKey(name: 'is_important') bool isImportant}) =
-      _$_Notification;
+      {@required
+          String id,
+      @required
+          String title,
+      @required
+          String description,
+      @required
+      @JsonKey(name: 'published_user')
+      @UserConverter()
+          User publishedUser,
+      @required
+      @JsonKey(name: 'created_at')
+          DateTime createdAt,
+      @required
+      @JsonKey(name: 'is_important')
+          bool isImportant}) = _$_Notification;
 
   factory _Notification.fromJson(Map<String, dynamic> json) =
       _$_Notification.fromJson;
@@ -276,6 +307,7 @@ abstract class _Notification implements Notification {
   String get description;
   @override
   @JsonKey(name: 'published_user')
+  @UserConverter()
   User get publishedUser;
   @override
   @JsonKey(name: 'created_at')

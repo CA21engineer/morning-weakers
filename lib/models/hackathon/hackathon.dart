@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:morning_weakers/models/converter/converters.dart';
 import 'package:morning_weakers/models/models.dart';
 
 part 'hackathon.freezed.dart';
@@ -19,10 +20,10 @@ abstract class Hackathon with _$Hackathon {
     @required @JsonKey(name: 'start_date') DateTime startDate,
     @required @JsonKey(name: 'end_date') DateTime endDate,
     @required int span,
-    Questionnaire questionnaire,
-    @required List<Participant> participants,
-    List<Group> groups,
-    List<Notification> notifications,
+    @QuestionnaireConverter() Questionnaire questionnaire,
+    @required @ParticipantConverter() List<Participant> participants,
+    @GroupConverter() List<Group> groups,
+    @NotificationConverter() List<Notification> notifications,
   }) = _Hackathon;
 
   factory Hackathon.fromJson(Map<String, dynamic> json) => _$HackathonFromJson(json);

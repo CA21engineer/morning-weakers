@@ -16,18 +16,32 @@ class _$GroupTearOff {
   const _$GroupTearOff();
 
   _Group call(
-      {@required String id,
-      @required @JsonKey(name: 'group_name') String groupName,
-      @required @JsonKey(name: 'github_url') String githubUrl,
-      @required @JsonKey(name: 'slide_url') List<String> slideUrls,
-      @required @JsonKey(name: 'other_urls') List<Link> otherUrls,
-      @required @JsonKey(name: 'icon_url') String iconUrl,
-      @required List<Participant> participants}) {
+      {@required
+          String id,
+      @required
+      @JsonKey(name: 'group_name')
+          String groupName,
+      @required
+      @JsonKey(name: 'github_url')
+          String githubUrl,
+      @required
+      @JsonKey(name: 'slide_url')
+          List<String> slideUrl,
+      @required
+      @JsonKey(name: 'other_urls')
+      @LinkConverter()
+          List<Link> otherUrls,
+      @required
+      @JsonKey(name: 'icon_url')
+          String iconUrl,
+      @required
+      @ParticipantConverter()
+          List<Participant> participants}) {
     return _Group(
       id: id,
       groupName: groupName,
       githubUrl: githubUrl,
-      slideUrls: slideUrls,
+      slideUrl: slideUrl,
       otherUrls: otherUrls,
       iconUrl: iconUrl,
       participants: participants,
@@ -45,11 +59,13 @@ mixin _$Group {
   @JsonKey(name: 'github_url')
   String get githubUrl;
   @JsonKey(name: 'slide_url')
-  List<String> get slideUrls;
+  List<String> get slideUrl;
   @JsonKey(name: 'other_urls')
+  @LinkConverter()
   List<Link> get otherUrls;
   @JsonKey(name: 'icon_url')
   String get iconUrl;
+  @ParticipantConverter()
   List<Participant> get participants;
 
   Map<String, dynamic> toJson();
@@ -63,10 +79,10 @@ abstract class $GroupCopyWith<$Res> {
       {String id,
       @JsonKey(name: 'group_name') String groupName,
       @JsonKey(name: 'github_url') String githubUrl,
-      @JsonKey(name: 'slide_url') List<String> slideUrls,
-      @JsonKey(name: 'other_urls') List<Link> otherUrls,
+      @JsonKey(name: 'slide_url') List<String> slideUrl,
+      @JsonKey(name: 'other_urls') @LinkConverter() List<Link> otherUrls,
       @JsonKey(name: 'icon_url') String iconUrl,
-      List<Participant> participants});
+      @ParticipantConverter() List<Participant> participants});
 }
 
 class _$GroupCopyWithImpl<$Res> implements $GroupCopyWith<$Res> {
@@ -81,7 +97,7 @@ class _$GroupCopyWithImpl<$Res> implements $GroupCopyWith<$Res> {
     Object id = freezed,
     Object groupName = freezed,
     Object githubUrl = freezed,
-    Object slideUrls = freezed,
+    Object slideUrl = freezed,
     Object otherUrls = freezed,
     Object iconUrl = freezed,
     Object participants = freezed,
@@ -90,8 +106,8 @@ class _$GroupCopyWithImpl<$Res> implements $GroupCopyWith<$Res> {
       id: id == freezed ? _value.id : id as String,
       groupName: groupName == freezed ? _value.groupName : groupName as String,
       githubUrl: githubUrl == freezed ? _value.githubUrl : githubUrl as String,
-      slideUrls:
-          slideUrls == freezed ? _value.slideUrls : slideUrls as List<String>,
+      slideUrl:
+          slideUrl == freezed ? _value.slideUrl : slideUrl as List<String>,
       otherUrls:
           otherUrls == freezed ? _value.otherUrls : otherUrls as List<Link>,
       iconUrl: iconUrl == freezed ? _value.iconUrl : iconUrl as String,
@@ -110,10 +126,10 @@ abstract class _$GroupCopyWith<$Res> implements $GroupCopyWith<$Res> {
       {String id,
       @JsonKey(name: 'group_name') String groupName,
       @JsonKey(name: 'github_url') String githubUrl,
-      @JsonKey(name: 'slide_url') List<String> slideUrls,
-      @JsonKey(name: 'other_urls') List<Link> otherUrls,
+      @JsonKey(name: 'slide_url') List<String> slideUrl,
+      @JsonKey(name: 'other_urls') @LinkConverter() List<Link> otherUrls,
       @JsonKey(name: 'icon_url') String iconUrl,
-      List<Participant> participants});
+      @ParticipantConverter() List<Participant> participants});
 }
 
 class __$GroupCopyWithImpl<$Res> extends _$GroupCopyWithImpl<$Res>
@@ -129,7 +145,7 @@ class __$GroupCopyWithImpl<$Res> extends _$GroupCopyWithImpl<$Res>
     Object id = freezed,
     Object groupName = freezed,
     Object githubUrl = freezed,
-    Object slideUrls = freezed,
+    Object slideUrl = freezed,
     Object otherUrls = freezed,
     Object iconUrl = freezed,
     Object participants = freezed,
@@ -138,8 +154,8 @@ class __$GroupCopyWithImpl<$Res> extends _$GroupCopyWithImpl<$Res>
       id: id == freezed ? _value.id : id as String,
       groupName: groupName == freezed ? _value.groupName : groupName as String,
       githubUrl: githubUrl == freezed ? _value.githubUrl : githubUrl as String,
-      slideUrls:
-          slideUrls == freezed ? _value.slideUrls : slideUrls as List<String>,
+      slideUrl:
+          slideUrl == freezed ? _value.slideUrl : slideUrl as List<String>,
       otherUrls:
           otherUrls == freezed ? _value.otherUrls : otherUrls as List<Link>,
       iconUrl: iconUrl == freezed ? _value.iconUrl : iconUrl as String,
@@ -156,14 +172,14 @@ class _$_Group with DiagnosticableTreeMixin implements _Group {
       {@required this.id,
       @required @JsonKey(name: 'group_name') this.groupName,
       @required @JsonKey(name: 'github_url') this.githubUrl,
-      @required @JsonKey(name: 'slide_url') this.slideUrls,
-      @required @JsonKey(name: 'other_urls') this.otherUrls,
+      @required @JsonKey(name: 'slide_url') this.slideUrl,
+      @required @JsonKey(name: 'other_urls') @LinkConverter() this.otherUrls,
       @required @JsonKey(name: 'icon_url') this.iconUrl,
-      @required this.participants})
+      @required @ParticipantConverter() this.participants})
       : assert(id != null),
         assert(groupName != null),
         assert(githubUrl != null),
-        assert(slideUrls != null),
+        assert(slideUrl != null),
         assert(otherUrls != null),
         assert(iconUrl != null),
         assert(participants != null);
@@ -181,19 +197,21 @@ class _$_Group with DiagnosticableTreeMixin implements _Group {
   final String githubUrl;
   @override
   @JsonKey(name: 'slide_url')
-  final List<String> slideUrls;
+  final List<String> slideUrl;
   @override
   @JsonKey(name: 'other_urls')
+  @LinkConverter()
   final List<Link> otherUrls;
   @override
   @JsonKey(name: 'icon_url')
   final String iconUrl;
   @override
+  @ParticipantConverter()
   final List<Participant> participants;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Group(id: $id, groupName: $groupName, githubUrl: $githubUrl, slideUrls: $slideUrls, otherUrls: $otherUrls, iconUrl: $iconUrl, participants: $participants)';
+    return 'Group(id: $id, groupName: $groupName, githubUrl: $githubUrl, slideUrl: $slideUrl, otherUrls: $otherUrls, iconUrl: $iconUrl, participants: $participants)';
   }
 
   @override
@@ -204,7 +222,7 @@ class _$_Group with DiagnosticableTreeMixin implements _Group {
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('groupName', groupName))
       ..add(DiagnosticsProperty('githubUrl', githubUrl))
-      ..add(DiagnosticsProperty('slideUrls', slideUrls))
+      ..add(DiagnosticsProperty('slideUrl', slideUrl))
       ..add(DiagnosticsProperty('otherUrls', otherUrls))
       ..add(DiagnosticsProperty('iconUrl', iconUrl))
       ..add(DiagnosticsProperty('participants', participants));
@@ -222,9 +240,9 @@ class _$_Group with DiagnosticableTreeMixin implements _Group {
             (identical(other.githubUrl, githubUrl) ||
                 const DeepCollectionEquality()
                     .equals(other.githubUrl, githubUrl)) &&
-            (identical(other.slideUrls, slideUrls) ||
+            (identical(other.slideUrl, slideUrl) ||
                 const DeepCollectionEquality()
-                    .equals(other.slideUrls, slideUrls)) &&
+                    .equals(other.slideUrl, slideUrl)) &&
             (identical(other.otherUrls, otherUrls) ||
                 const DeepCollectionEquality()
                     .equals(other.otherUrls, otherUrls)) &&
@@ -242,7 +260,7 @@ class _$_Group with DiagnosticableTreeMixin implements _Group {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(groupName) ^
       const DeepCollectionEquality().hash(githubUrl) ^
-      const DeepCollectionEquality().hash(slideUrls) ^
+      const DeepCollectionEquality().hash(slideUrl) ^
       const DeepCollectionEquality().hash(otherUrls) ^
       const DeepCollectionEquality().hash(iconUrl) ^
       const DeepCollectionEquality().hash(participants);
@@ -259,13 +277,27 @@ class _$_Group with DiagnosticableTreeMixin implements _Group {
 
 abstract class _Group implements Group {
   const factory _Group(
-      {@required String id,
-      @required @JsonKey(name: 'group_name') String groupName,
-      @required @JsonKey(name: 'github_url') String githubUrl,
-      @required @JsonKey(name: 'slide_url') List<String> slideUrls,
-      @required @JsonKey(name: 'other_urls') List<Link> otherUrls,
-      @required @JsonKey(name: 'icon_url') String iconUrl,
-      @required List<Participant> participants}) = _$_Group;
+      {@required
+          String id,
+      @required
+      @JsonKey(name: 'group_name')
+          String groupName,
+      @required
+      @JsonKey(name: 'github_url')
+          String githubUrl,
+      @required
+      @JsonKey(name: 'slide_url')
+          List<String> slideUrl,
+      @required
+      @JsonKey(name: 'other_urls')
+      @LinkConverter()
+          List<Link> otherUrls,
+      @required
+      @JsonKey(name: 'icon_url')
+          String iconUrl,
+      @required
+      @ParticipantConverter()
+          List<Participant> participants}) = _$_Group;
 
   factory _Group.fromJson(Map<String, dynamic> json) = _$_Group.fromJson;
 
@@ -279,14 +311,16 @@ abstract class _Group implements Group {
   String get githubUrl;
   @override
   @JsonKey(name: 'slide_url')
-  List<String> get slideUrls;
+  List<String> get slideUrl;
   @override
   @JsonKey(name: 'other_urls')
+  @LinkConverter()
   List<Link> get otherUrls;
   @override
   @JsonKey(name: 'icon_url')
   String get iconUrl;
   @override
+  @ParticipantConverter()
   List<Participant> get participants;
   @override
   _$GroupCopyWith<_Group> get copyWith;
