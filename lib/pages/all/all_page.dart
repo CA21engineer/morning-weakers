@@ -6,6 +6,7 @@ import 'package:morning_weakers/pages/new_profile/new_profile_page.dart';
 import 'package:morning_weakers/pages/profile_detail/profile_detail_page.dart';
 import 'package:morning_weakers/pages/admin_top/admin_top_page.dart';
 import 'package:morning_weakers/pages/state_notifier_sample/state_notifier_sample_page.dart';
+import 'package:morning_weakers/pages/state_management_sample/state_management_sample_page.dart';
 
 class AllPage extends StatelessWidget {
   const AllPage({Key key}) : super(key: key);
@@ -20,6 +21,7 @@ class AllPage extends StatelessWidget {
       HomePage(),
       AdminTopPage(),
       SamplePage(),
+      StateManagementSamplePage(),
     ];
 
     final List<String> _pageRouteNames = [
@@ -30,6 +32,7 @@ class AllPage extends StatelessWidget {
       '/home',
       '/adminTopPage',
       '/sample',
+      '/stateManagementSample'
     ];
 
     return Scaffold(

@@ -10,6 +10,7 @@ import 'package:morning_weakers/pages/admin_top/admin_top_page.dart';
 import 'package:morning_weakers/pages/state_notifier_sample/state_notifier_sample_controller.dart';
 import 'package:morning_weakers/pages/state_notifier_sample/state_notifier_sample_page.dart';
 import 'package:morning_weakers/pages/state_notifier_sample/state_notifier_sample_state.dart';
+import 'package:morning_weakers/pages/state_management_sample/state_management_sample_page.dart';
 import 'package:provider/provider.dart';
 
 class MyApp extends StatelessWidget {
@@ -60,6 +61,10 @@ class MyApp extends StatelessWidget {
             case '/home':
               return MaterialPageRoute<void>(
                 builder: (_) => HomePage(),
+              );
+            case '/stateManagementSample':
+              return MaterialPageRoute<void>(
+                builder: (_) => StateManagementSamplePage(),
               );
             default:
               throw UnimplementedError('Undefined route ${settings.name}');
