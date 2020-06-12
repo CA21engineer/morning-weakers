@@ -8,6 +8,10 @@ enum Stack {
   Android,
   @JsonValue('Serverside')
   Serverside,
+  @JsonValue('Web')
+  Web,
+  @JsonValue('Unity')
+  Unity,
 }
 
 extension StackExtension on Stack {
@@ -19,6 +23,10 @@ extension StackExtension on Stack {
         return 'Android';
       case Stack.Serverside:
         return 'Serverside';
+      case Stack.Web:
+        return 'Web';
+      case Stack.Unity:
+        return 'Unity';
     }
   }
 }

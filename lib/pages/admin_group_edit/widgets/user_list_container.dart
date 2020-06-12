@@ -1,36 +1,49 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:morning_weakers/models/models.dart';
-import 'package:morning_weakers/models/technical_stack/technical_stack.dart';
+import 'package:morning_weakers/models/technical_stack/stack.dart' as stackFile;
 import 'package:morning_weakers/core/dummy_data.dart';
 
 class UserListContainer extends StatelessWidget {
   final List<Participant> _participants = [
+    dummyParticipant(),
+    dummyParticipant(),
+    dummyParticipant(),
+    dummyParticipant(),
+    dummyParticipant(),
+    dummyParticipant(),
+    dummyParticipant(),
+    dummyParticipant(),
+    dummyParticipant(),
     dummyParticipant(
-      user: dummyUser(
-        technicalStacks: [
-          dummyTechnicalStack(),
-          dummyTechnicalStack(),
-          dummyTechnicalStack(),
-        ],
-      ),
+      user: dummyUser(technicalStacks: [
+        dummyTechnicalStack(stack: stackFile.Stack.Serverside)
+      ]),
     ),
-    dummyParticipant(),
-    dummyParticipant(),
-    dummyParticipant(),
-    dummyParticipant(),
-    dummyParticipant(),
-    dummyParticipant(),
-    dummyParticipant(),
-    dummyParticipant(),
     dummyParticipant(
-      user: dummyUser(
-        technicalStacks: [
-          dummyTechnicalStack(),
-          dummyTechnicalStack(),
-          dummyTechnicalStack(),
-        ],
-      ),
+      user: dummyUser(technicalStacks: [
+        dummyTechnicalStack(stack: stackFile.Stack.Serverside)
+      ]),
+    ),
+    dummyParticipant(
+      user: dummyUser(technicalStacks: [
+        dummyTechnicalStack(stack: stackFile.Stack.Serverside)
+      ]),
+    ),
+    dummyParticipant(
+      user: dummyUser(technicalStacks: [
+        dummyTechnicalStack(stack: stackFile.Stack.Serverside)
+      ]),
+    ),
+    dummyParticipant(
+      user: dummyUser(technicalStacks: [
+        dummyTechnicalStack(stack: stackFile.Stack.Serverside)
+      ]),
+    ),
+    dummyParticipant(
+      user: dummyUser(technicalStacks: [
+        dummyTechnicalStack(stack: stackFile.Stack.Serverside)
+      ]),
     ),
   ];
 

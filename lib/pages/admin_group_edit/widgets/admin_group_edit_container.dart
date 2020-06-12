@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:morning_weakers/pages/admin_group_edit/widgets/total_number_container.dart';
 import 'package:morning_weakers/pages/admin_group_edit/widgets/user_list_container.dart';
-import 'package:morning_weakers/pages/admin_group_edit/widgets/one_team_number_container.dart';
 import 'package:flutter/cupertino.dart';
 
 class AdminGroupEditContainer extends StatelessWidget {
@@ -15,13 +14,6 @@ class AdminGroupEditContainer extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             const TotalNumberContainer(totalNumber: 12),
-            const Divider(),
-            OneTeamNumberContainer(
-              // state.participantsを監視
-              memberNumber: 6,
-              teamNumber: 2,
-              pickerList: List<int>.generate(6, (i) => i),
-            ),
             const Divider(),
             UserListContainer(),
             SizedBox(
@@ -61,3 +53,6 @@ class AdminGroupEditContainer extends StatelessWidget {
 //チーム数 = (全体の数 // 最低人数)
 //ex. 全体の人数: 13, 最低人数: 3
 //チーム数 => (13 // 3) = 4チーム
+
+//別のStackのものは共存できない && 第一志望のみ
+//人数でStacksをsortする
