@@ -20,3 +20,16 @@ String getStackValue(Stack stack) {
       return 'Serverside';
   }
 }
+
+extension StackExtension on Stack {
+  String getValue() {
+    switch (this) {
+      case Stack.iOS:
+        return 'iOS';
+      case Stack.Android:
+        return 'Android';
+      case Stack.Serverside:
+        return 'Serverside';
+    }
+  }
+}
