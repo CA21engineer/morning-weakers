@@ -12,9 +12,8 @@ class DataTableView extends StatelessWidget {
     const int myId = 0;
 
     final List<Participant> teamPeople =
-        context.select<HomeState, List<Participant>>((state) {
-      return state.hackathon.groups[myId].participants;
-    });
+        context.select<HomeState, List<Participant>>(
+            (state) => state.hackathon.groups[myId].participants);
 
     final List<DataTableModel> dataTableList = teamPeople.map((participant) {
       final String tempIconUrl = participant.user.iconUrl;
