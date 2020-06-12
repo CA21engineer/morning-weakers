@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:morning_weakers/pages/home/drawer/hackathon_detail_widget.dart';
 
 class HomeDrawer extends StatelessWidget {
   @override
@@ -13,72 +14,8 @@ class HomeDrawer extends StatelessWidget {
           ),
           Expanded(
             flex: 5,
-            child: _menus(),
+            child: HackathonDetailWidget(),
           )
-        ],
-      ),
-    );
-  }
-
-  Widget _menus() {
-    final List<String> eventDetails = [
-      'これは概要ですが、特に思いつくことがないので、何も書きません。',
-      '2020/6/7 ~ 2020/6/14',
-      'Twitterでの投票',
-    ];
-
-    final List<List<String>> buttons = [
-      ['All Groups', '/navigation'],
-      ['All Participants', '/navigation'],
-      ['Edit My Info', '/navigation'],
-    ];
-
-    return Container(
-      child: Column(
-        children: <Widget>[
-          const DrawerHeader(
-            child: Center(
-              child: Text(
-                'CyberAgent21 Hackathon',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            decoration: BoxDecoration(color: Colors.lightBlueAccent),
-          ),
-          Expanded(
-            child: ListView(
-              children: <Widget>[
-                Column(
-                  children: eventDetails
-                      .map(
-                        (detail) => Container(
-                          padding: const EdgeInsets.all(10),
-                          child: Text(detail),
-                        ),
-                      )
-                      .toList(),
-                ),
-                Column(
-                  children: buttons
-                      .map(
-                        (button) => ListTile(
-                          title: Text(
-                            button[0],
-                            style: const TextStyle(fontSize: 15),
-                          ),
-                          trailing: const Icon(Icons.arrow_forward_ios),
-                          //onTap: () => button[1],
-                        ),
-                      )
-                      .toList(),
-                )
-              ],
-            ),
-          ),
         ],
       ),
     );
@@ -86,16 +23,16 @@ class HomeDrawer extends StatelessWidget {
 
   Widget _allGroups() {
     final List<Widget> groups = [
-      Icon(Icons.people, size: 50),
-      Icon(Icons.people_outline, size: 50),
-      Icon(Icons.people, size: 50),
-      Icon(Icons.people_outline, size: 50),
-      Icon(Icons.people, size: 50),
-      Icon(Icons.people_outline, size: 50),
+      Icon(Icons.people, size: 52),
+      Icon(Icons.people_outline, size: 52),
+      Icon(Icons.people, size: 52),
+      Icon(Icons.people_outline, size: 52),
+      Icon(Icons.people, size: 52),
+      Icon(Icons.people_outline, size: 52),
     ];
 
     return Container(
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(12),
       child: Column(children: [
         ListView(
           shrinkWrap: true,
@@ -103,7 +40,7 @@ class HomeDrawer extends StatelessWidget {
         ),
         const Icon(
           Icons.add,
-          size: 50,
+          size: 52,
         ),
       ]),
     );
