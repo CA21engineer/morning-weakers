@@ -26,10 +26,11 @@ class FirebaseAuthService extends StateNotifier<AuthState> with LocatorMixin {
       );
 
       final FirebaseUser user = (await _auth.signInWithCredential(credential)).user;
-      state = state.copyWith(isLogin: true);
-      state = state.copyWith(displayName: user.displayName);
-      state = state.copyWith(iconUrl: user.photoUrl);
-
+      state = state.copyWith(
+        isLogin: true,
+        displayName: user.displayName,
+        iconUrl: user.photoUrl
+      );
       return user;
     }
     on Exception catch(error) {

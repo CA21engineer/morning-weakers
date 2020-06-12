@@ -5,7 +5,7 @@ import 'package:morning_weakers/infrastructure/firebase_auth_service.dart';
 import 'package:morning_weakers/pages/all/all_page.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({Key key}) : super(key: key);
+  const LoginPage() : super();
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class LoginPage extends StatelessWidget {
               onPressed: () {
                 FirebaseAuthService().signIn().then((user) {
                   // Debug用
-                  Navigator.push<void>(context, MaterialPageRoute(builder: (context) =>
+                  Navigator.push<void>(context, MaterialPageRoute(builder: (_) =>
                     const AllPage()
                   ));
                 });

@@ -5,7 +5,7 @@ import 'package:morning_weakers/infrastructure/firebase_auth_service.dart';
 import 'package:morning_weakers/pages/all/all_page.dart';
 
 class LogoutPage extends StatelessWidget {
-  const LogoutPage({Key key}) : super(key: key);
+  const LogoutPage() : super();
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class LogoutPage extends StatelessWidget {
               onPressed: () {
                 FirebaseAuthService().signOut().then((user) {
                   // Debug用
-                  Navigator.push<void>(context, MaterialPageRoute(builder: (context) =>
+                  Navigator.push<void>(context, MaterialPageRoute(builder: (_) =>
                     const AllPage()
                   ));
                 });
