@@ -6,15 +6,97 @@ import 'package:morning_weakers/core/dummy_data.dart';
 
 class UserListContainer extends StatelessWidget {
   final List<Participant> _participants = [
-    dummyParticipant(),
-    dummyParticipant(),
-    dummyParticipant(),
-    dummyParticipant(),
-    dummyParticipant(),
-    dummyParticipant(),
-    dummyParticipant(),
-    dummyParticipant(),
-    dummyParticipant(),
+    dummyParticipant(
+      user: dummyUser(
+          technicalStacks: [dummyTechnicalStack(stack: stackFile.Stack.iOS)]),
+    ),
+    dummyParticipant(
+      user: dummyUser(
+          technicalStacks: [dummyTechnicalStack(stack: stackFile.Stack.iOS)]),
+    ),
+    dummyParticipant(
+      user: dummyUser(
+          technicalStacks: [dummyTechnicalStack(stack: stackFile.Stack.iOS)]),
+    ),
+    dummyParticipant(
+      user: dummyUser(
+          technicalStacks: [dummyTechnicalStack(stack: stackFile.Stack.iOS)]),
+    ),
+    dummyParticipant(
+      user: dummyUser(
+          technicalStacks: [dummyTechnicalStack(stack: stackFile.Stack.iOS)]),
+    ),
+    dummyParticipant(
+      user: dummyUser(
+          technicalStacks: [dummyTechnicalStack(stack: stackFile.Stack.iOS)]),
+    ),
+    dummyParticipant(
+      user: dummyUser(
+          technicalStacks: [dummyTechnicalStack(stack: stackFile.Stack.iOS)]),
+    ),
+    dummyParticipant(
+      user: dummyUser(technicalStacks: [
+        dummyTechnicalStack(stack: stackFile.Stack.Android)
+      ]),
+    ),
+    dummyParticipant(
+      user: dummyUser(technicalStacks: [
+        dummyTechnicalStack(stack: stackFile.Stack.Android)
+      ]),
+    ),
+    dummyParticipant(
+      user: dummyUser(technicalStacks: [
+        dummyTechnicalStack(stack: stackFile.Stack.Android)
+      ]),
+    ),
+    dummyParticipant(
+      user: dummyUser(technicalStacks: [
+        dummyTechnicalStack(stack: stackFile.Stack.Android)
+      ]),
+    ),
+    dummyParticipant(
+      user: dummyUser(technicalStacks: [
+        dummyTechnicalStack(stack: stackFile.Stack.Android)
+      ]),
+    ),
+    dummyParticipant(
+      user: dummyUser(
+          technicalStacks: [dummyTechnicalStack(stack: stackFile.Stack.Web)]),
+    ),
+    dummyParticipant(
+      user: dummyUser(
+          technicalStacks: [dummyTechnicalStack(stack: stackFile.Stack.Web)]),
+    ),
+    dummyParticipant(
+      user: dummyUser(
+          technicalStacks: [dummyTechnicalStack(stack: stackFile.Stack.Web)]),
+    ),
+    dummyParticipant(
+      user: dummyUser(
+          technicalStacks: [dummyTechnicalStack(stack: stackFile.Stack.Web)]),
+    ),
+    dummyParticipant(
+      user: dummyUser(
+          technicalStacks: [dummyTechnicalStack(stack: stackFile.Stack.Unity)]),
+    ),
+    dummyParticipant(
+      user: dummyUser(
+          technicalStacks: [dummyTechnicalStack(stack: stackFile.Stack.Unity)]),
+    ),
+    dummyParticipant(
+      user: dummyUser(
+          technicalStacks: [dummyTechnicalStack(stack: stackFile.Stack.Unity)]),
+    ),
+    dummyParticipant(
+      user: dummyUser(technicalStacks: [
+        dummyTechnicalStack(stack: stackFile.Stack.Serverside)
+      ]),
+    ),
+    dummyParticipant(
+      user: dummyUser(technicalStacks: [
+        dummyTechnicalStack(stack: stackFile.Stack.Serverside)
+      ]),
+    ),
     dummyParticipant(
       user: dummyUser(technicalStacks: [
         dummyTechnicalStack(stack: stackFile.Stack.Serverside)
