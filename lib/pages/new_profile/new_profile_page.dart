@@ -1,4 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_state_notifier/flutter_state_notifier.dart';
+import 'package:morning_weakers/pages/home/home_controller.dart';
+import 'package:morning_weakers/pages/home/home_state.dart';
+import 'package:morning_weakers/pages/new_profile/input_text_widget.dart';
+import 'package:morning_weakers/pages/new_profile/new_profile_controller.dart';
+import 'package:morning_weakers/pages/new_profile/new_profile_state.dart';
+import 'package:morning_weakers/pages/new_profile/ok_button_widget.dart';
 
 class NewProfilePage extends StatelessWidget {
   @override
@@ -7,15 +14,19 @@ class NewProfilePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('プロフィール新規作成'),
       ),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Container(
-            padding: const EdgeInsets.all(30),
-            child: Column(
-              children: <Widget>[
-                _profileIcon(),
-                _profileDetail(),
-              ],
+      body: StateNotifierProvider<NewProfileController, NewProfileState>(
+        create: (_) => NewProfileController(),
+        child: SafeArea(
+          child: SingleChildScrollView(
+            child: Container(
+              padding: const EdgeInsets.all(28),
+              child: Column(
+                children: <Widget>[
+                  _profileIcon(),
+                  InputTextWidget(),
+                  OkButtonWidget(),
+                ],
+              ),
             ),
           ),
         ),
@@ -26,7 +37,7 @@ class NewProfilePage extends StatelessWidget {
   Widget _profileIcon() {
     return Center(
       child: Container(
-        padding: const EdgeInsets.all(50),
+        padding: const EdgeInsets.all(48),
         child: Column(
           children: <Widget>[
             Icon(
@@ -35,34 +46,10 @@ class NewProfilePage extends StatelessWidget {
             ),
             const RaisedButton(
               onPressed: null,
-              child: const Text('選択'),
+              child: Text('選択'),
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget _profileDetail() {
-    final List<String> _titleList = [
-      'ユーザ名',
-      'ハンドルネーム',
-      'Twitter アカウント',
-      'Github アカウント',
-      '技術スタック'
-    ];
-    return Container(
-      padding: const EdgeInsets.all(20),
-      child: Column(
-        children: _titleList
-            .map(
-              (element) => TextFormField(
-                decoration: InputDecoration(
-                  labelText: element,
-                ),
-              ),
-            )
-            .toList(),
       ),
     );
   }
