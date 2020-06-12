@@ -88,7 +88,7 @@ class UserListContainer extends StatelessWidget {
             },
             child: CupertinoPicker(
               itemExtent: 40,
-              children: [1, 2, 3]
+              children: [1, 2, 3, 4, 5, 6]
                   .map<Widget>((element) => Text(element.toString()))
                   .toList(), // (state.チーム数)を監視してListにmap
               onSelectedItemChanged: (index) {

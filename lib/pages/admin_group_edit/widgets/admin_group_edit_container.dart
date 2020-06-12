@@ -16,10 +16,11 @@ class AdminGroupEditContainer extends StatelessWidget {
           children: <Widget>[
             const TotalNumberContainer(totalNumber: 12),
             const Divider(),
-            const OneTeamNumberContainer(
+            OneTeamNumberContainer(
+              // state.participantsを監視
               memberNumber: 6,
               teamNumber: 2,
-              pickerList: [1, 2],
+              pickerList: List<int>.generate(6, (i) => i),
             ),
             const Divider(),
             UserListContainer(),
