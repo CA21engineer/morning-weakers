@@ -18,7 +18,7 @@ class AllGroupsWidget extends StatelessWidget {
           children: groupIconUrls
               .map(
                 (url) => ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(12),
                   child: Image.network(url, fit: BoxFit.cover),
                 ),
               )
