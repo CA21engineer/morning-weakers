@@ -1,18 +1,10 @@
-import 'package:flutter/material.dart';
+import 'package:morning_weakers/models/models.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:state_notifier/state_notifier.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-@immutable
-class AuthState {
-  AuthState({
-    this.isLogin = false
-  });
-  final bool isLogin;
-}
-
 class FirebaseAuthService extends StateNotifier<AuthState> with LocatorMixin {
-  FirebaseAuthService() : super(AuthState());
+  FirebaseAuthService() : super(const AuthState());
 
   FirebaseUser user;
 
@@ -32,10 +24,10 @@ class FirebaseAuthService extends StateNotifier<AuthState> with LocatorMixin {
         accessToken: googleAuth.accessToken,
         idToken: googleAuth.idToken,
       );
+
       // TODO: ログイン後、userModelに値を入れる
-      state = AuthState(
-        isLogin: true,
-      );
+      state = state.copyWith(isLogin: true);
+
       final FirebaseUser user = (await _auth.signInWithCredential(credential)).user;
       print('signed in ${user.displayName}');
 
@@ -51,9 +43,7 @@ class FirebaseAuthService extends StateNotifier<AuthState> with LocatorMixin {
     await FirebaseAuth.instance.signOut();
     try {
       await _googleSignIn.signOut();
-      state = AuthState(
-        isLogin: false,
-      );
+      state = state.copyWith(isLogin: false);
     }
       on Exception catch (error) {
       print(error);
