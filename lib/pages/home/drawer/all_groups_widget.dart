@@ -24,10 +24,7 @@ class AllGroupsWidget extends StatelessWidget {
               )
               .toList(),
         ),
-        const Icon(
-          Icons.add,
-          size: 52,
-        ),
+        const Icon(Icons.add, size: 52),
       ]),
     );
   }

@@ -7,10 +7,10 @@ import 'package:provider/provider.dart';
 class HackathonDetailWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Hackathon hackathon =
+    final Hackathon hackathon =
         context.select<HomeState, Hackathon>((context) => context.hackathon);
 
-    List<List<String>> hackathonDetail = [
+    final List<List<String>> hackathonDetail = [
       ['テーマ', hackathon.theme],
       ['概要', hackathon.description],
       ['開始日', hackathon.startDate.toString()],
@@ -24,7 +24,7 @@ class HackathonDetailWidget extends StatelessWidget {
             child: Center(
               child: Text(
                 hackathon.title,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
