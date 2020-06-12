@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:morning_weakers/pages/home/drawer/all_groups_widget.dart';
 import 'package:morning_weakers/pages/home/drawer/hackathon_detail_widget.dart';
 
 class HomeDrawer extends StatelessWidget {
@@ -10,7 +11,7 @@ class HomeDrawer extends StatelessWidget {
         children: <Widget>[
           Expanded(
             flex: 2,
-            child: _allGroups(),
+            child: AllGroupsWidget(),
           ),
           Expanded(
             flex: 5,
@@ -18,31 +19,6 @@ class HomeDrawer extends StatelessWidget {
           )
         ],
       ),
-    );
-  }
-
-  Widget _allGroups() {
-    final List<Widget> groups = [
-      Icon(Icons.people, size: 52),
-      Icon(Icons.people_outline, size: 52),
-      Icon(Icons.people, size: 52),
-      Icon(Icons.people_outline, size: 52),
-      Icon(Icons.people, size: 52),
-      Icon(Icons.people_outline, size: 52),
-    ];
-
-    return Container(
-      padding: const EdgeInsets.all(12),
-      child: Column(children: [
-        ListView(
-          shrinkWrap: true,
-          children: groups,
-        ),
-        const Icon(
-          Icons.add,
-          size: 52,
-        ),
-      ]),
     );
   }
 }
