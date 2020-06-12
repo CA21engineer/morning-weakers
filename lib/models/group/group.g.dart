@@ -16,7 +16,7 @@ _$_Group _$_$_GroupFromJson(Map<String, dynamic> json) {
         ?.map(
             (e) => e == null ? null : Link.fromJson(e as Map<String, dynamic>))
         ?.toList(),
-    iconUrls: (json['icon_url'] as List)?.map((e) => e as String)?.toList(),
+    iconUrl: json['icon_url'] as String,
     participants: (json['participants'] as List)
         ?.map((e) =>
             e == null ? null : Participant.fromJson(e as Map<String, dynamic>))
@@ -30,6 +30,6 @@ Map<String, dynamic> _$_$_GroupToJson(_$_Group instance) => <String, dynamic>{
       'github_url': instance.githubUrl,
       'slide_url': instance.slideUrls,
       'other_urls': instance.otherUrls,
-      'icon_url': instance.iconUrls,
+      'icon_url': instance.iconUrl,
       'participants': instance.participants,
     };
