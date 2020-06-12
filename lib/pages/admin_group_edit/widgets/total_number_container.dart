@@ -19,11 +19,15 @@ class TotalNumberContainer extends StatelessWidget {
             textAlign: TextAlign.left,
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
-          Text(
-            '$totalNumber人',
-            textAlign: TextAlign.right,
-            style: const TextStyle(fontSize: 20),
-          ),
+          Row(
+            children: <Widget>[
+              Text(
+                '$totalNumber人',
+                textAlign: TextAlign.right,
+                style: const TextStyle(fontSize: 20),
+              ),
+            ],
+          )
         ],
       ),
     );
