@@ -38,6 +38,10 @@ class MyApp extends StatelessWidget {
               return MaterialPageRoute<void>(
                 builder: (_) => const LoginPage(),
               );
+            case '/logout':
+              return MaterialPageRoute<void>(
+                builder: (_) => const LogoutPage(),
+              );
             case '/inputParticipantInfo':
               return MaterialPageRoute<void>(
                 builder: (_) => InputParticipantInfoPage(),
