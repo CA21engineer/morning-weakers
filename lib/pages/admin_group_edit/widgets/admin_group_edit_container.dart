@@ -3,9 +3,6 @@ import 'package:morning_weakers/pages/admin_group_edit/widgets/total_number_cont
 import 'package:morning_weakers/pages/admin_group_edit/widgets/user_list_container.dart';
 import 'package:morning_weakers/pages/admin_group_edit/widgets/one_team_number_container.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:morning_weakers/models/models.dart';
-import 'package:morning_weakers/models/technical_stack/technical_stack.dart';
-import 'package:morning_weakers/core/dummy_data.dart';
 
 class AdminGroupEditContainer extends StatelessWidget {
   @override
