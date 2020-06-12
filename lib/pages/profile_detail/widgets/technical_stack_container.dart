@@ -35,7 +35,7 @@ class TechnicalStackContainer extends StatelessWidget {
                           padding: const EdgeInsets.only(bottom: 12),
                           child: SingleChildScrollView(
                             child: Text(
-                              models.getStackValue(technicalStack.stack),
+                              technicalStack.stack.getValue(),
                               textAlign: TextAlign.right,
                               style: const TextStyle(fontSize: 20),
                             ),

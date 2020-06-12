@@ -10,17 +10,6 @@ enum Stack {
   Serverside,
 }
 
-String getStackValue(Stack stack) {
-  switch (stack) {
-    case Stack.iOS:
-      return 'iOS';
-    case Stack.Android:
-      return 'Android';
-    case Stack.Serverside:
-      return 'Serverside';
-  }
-}
-
 extension StackExtension on Stack {
   String getValue() {
     switch (this) {

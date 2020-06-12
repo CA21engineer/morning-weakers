@@ -24,7 +24,7 @@ extension TechnicalStacksExtension on List<TechnicalStack> {
   String getCombinedLanguageText() {
     String text = '';
     asMap().forEach((index, technicalStack) {
-      text += '${getStackValue(technicalStack.stack)}';
+      text += '${technicalStack.stack.getValue()}';
       text += index != length - 1 ? ', ' : '';
     });
     return text;
