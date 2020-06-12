@@ -1,6 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:morning_weakers/pages/home/drawer/home_drawer.dart';
+import 'package:morning_weakers/pages/home/home_controller.dart';
+import 'package:morning_weakers/pages/home/home_state.dart';
+import 'package:morning_weakers/pages/home/widget/data_table.dart';
+import 'package:morning_weakers/pages/home/widget/source_link_widget.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -10,114 +15,34 @@ class HomePage extends StatelessWidget {
         appBar: AppBar(
           title: const Text('ホーム画面'),
         ),
-        body: Container(
-          child: ListView(
-            padding: const EdgeInsets.all(20),
-            children: <Widget>[
-              _memberInfo(),
-              _dataTable(),
-              _sourceLinks(),
-              const Divider(),
-              _allGroupNav(context),
-            ],
+        body: StateNotifierProvider<HomeController, HomeState>(
+          create: (_) => HomeController(),
+          child: Container(
+            child: ListView(
+              padding: const EdgeInsets.all(20),
+              children: <Widget>[
+                DataTableView(),
+                Divider(
+                  color: Theme.of(context).primaryColor,
+                ),
+                SourceLinkWidget(),
+                Divider(
+                  color: Theme.of(context).primaryColor,
+                ),
+                ListTile(
+                  title: const Text(
+                    '全てのグループを見る',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  trailing: const Icon(Icons.arrow_forward_ios),
+                  onTap: () => null,
+                ),
+              ],
+            ),
           ),
         ),
         drawer: HomeDrawer(),
       ),
-    );
-  }
-
-  final List<List<String>> _data = [
-    ['鈴木', 'Suzu-K', 'twi-suzu', 'git-suzu', 'All'],
-    ['佐藤', 'Sato-U', 'twi-sato', 'git-sato', 'All'],
-    ['田中', 'Tana-K', 'twi-tana', 'git-tana', 'All'],
-    ['高橋', 'Taka-C', 'twi-taka', 'git-taka', 'All'],
-  ];
-
-  Widget _memberInfo() {
-    return Container(
-      color: Colors.lightBlueAccent,
-      child: GridView.count(
-        shrinkWrap: true,
-        crossAxisCount: 2,
-        children: _data.map(_memberCard).toList(),
-      ),
-    );
-  }
-
-  Widget _memberCard(List<String> member) {
-    return Card(
-      child: Center(
-        child: Column(children: member.map((info) => Text(info)).toList()),
-      ),
-    );
-  }
-
-  Widget _dataTable() {
-    final List<List<String>> _hackData = [
-      ['Suzu-K', '15hour', 'All'],
-      ['Sato-U', '10hour', 'All'],
-      ['Tana-K', '8hour', 'All'],
-      ['Taka-C', '12hour', 'All'],
-    ];
-
-    return DataTable(
-      sortColumnIndex: 1,
-      sortAscending: true,
-      columns: const [
-        DataColumn(label: Text('ユーザ名')),
-        DataColumn(label: Text('合計稼働時間'), numeric: true),
-        DataColumn(label: Text('技術スタック')),
-      ],
-      rows: _hackData
-          .map((member) => DataRow(
-              cells: member.map((info) => DataCell(Text(info))).toList()))
-          .toList(),
-    );
-  }
-
-  //Github/slideなど資料のリンク置き場
-  Widget _sourceLinks() {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 10),
-      child: Column(children: const <Widget>[
-        Text(
-          '資料リンク',
-          style: TextStyle(
-            fontSize: 20,
-          ),
-        ),
-        ListTile(
-            title: Text(
-              'Github',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            subtitle: Text(
-              'https://github.com/CA21engineer/morning-weakers',
-              style: TextStyle(fontStyle: FontStyle.italic),
-            )),
-        ListTile(
-          title: Text(
-            'Slide',
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
-          subtitle: Text(
-            'https://docs.google.com/presentation/morning-weakers',
-            style: TextStyle(fontStyle: FontStyle.italic),
-          ),
-        ),
-      ]),
-    );
-  }
-
-  Widget _allGroupNav(BuildContext context) {
-    return ListTile(
-      title: const Text(
-        '全てのグループを見る',
-        style: TextStyle(fontSize: 20),
-      ),
-      trailing: const Icon(Icons.arrow_forward_ios),
-      onTap: () => null,
     );
   }
 }
