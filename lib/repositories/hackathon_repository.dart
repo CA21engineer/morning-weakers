@@ -6,11 +6,19 @@ class HackathonRepository {
   final Firestore _firestore = Firestore.instance;
 
   /// ハッカソンの新規作成
-  Future<Hackathon> createHackathon(Hackathon hackathon) async {
-    final DocumentReference ref = _firestore.collection('hackathons/v1').document();
-    final Hackathon result = hackathon.copyWith(id: ref.documentID);
-    await ref.setData(result.toJson());
-    return Future.value(result);
+  Future<void> createHackathon(Hackathon hackathon) async {
+    final DocumentReference hackRef = _firestore.collection('hackathons').document();
+    final Map<String, dynamic> hackMap = hackathon.copyWith(id: hackRef.documentID).toJson()
+      ..remove('participants')
+      ..remove('groups')
+      ..remove('notifications');
+    await hackRef.setData(hackMap).whenComplete(() {
+      // participantsのSubCollectionに代入
+      final CollectionReference participantsRef = hackRef.collection('participants');
+      hackathon.participants.forEach((participant) async {
+        await participantsRef.add(participant.toJson()..remove('id'));
+      });
+    });
   }
 
   /// ハッカソンの単体取得

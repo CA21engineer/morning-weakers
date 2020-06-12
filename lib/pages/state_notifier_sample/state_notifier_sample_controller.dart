@@ -10,20 +10,17 @@ class SampleController extends StateNotifier<SampleState> with LocatorMixin {
 
   HackathonRepository get hackathonRepository => read<HackathonRepository>();
 
-  void handleClick(){
+  void handleClick() {
     state = state.copyWith(count: state.count + 1);
   }
 
   Future<void> createHackathon() async {
     final FirebaseUser firebaseUser = await FirebaseAuth.instance.currentUser();
-    if(firebaseUser == null){
+    if (firebaseUser == null) {
       return;
     }
-    final Participant participant = dummyParticipant(
-      user: dummyUser(id: firebaseUser.uid),
-      isAdmin: true
-    );
+    final Participant participant = dummyParticipant(user: dummyUser(id: firebaseUser.uid), isAdmin: true);
     final hackathon = dummyHackathon(participants: [participant]);
-    state = state.copyWith(hackathon: await hackathonRepository.createHackathon(hackathon));
+    await hackathonRepository.createHackathon(hackathon);
   }
 }
