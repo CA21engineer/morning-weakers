@@ -25,11 +25,10 @@ class FirebaseAuthService extends StateNotifier<AuthState> with LocatorMixin {
         idToken: googleAuth.idToken,
       );
 
-      // TODO: ログイン後、userModelに値を入れる
-      state = state.copyWith(isLogin: true);
-
       final FirebaseUser user = (await _auth.signInWithCredential(credential)).user;
-      print('signed in ${user.displayName}');
+      state = state.copyWith(isLogin: true);
+      state = state.copyWith(displayName: user.displayName);
+      state = state.copyWith(iconUrl: user.photoUrl);
 
       return user;
     }
