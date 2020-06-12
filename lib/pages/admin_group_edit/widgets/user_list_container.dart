@@ -53,10 +53,11 @@ class UserListContainer extends StatelessWidget {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (BuildContext context, int index) {
+        // ここら辺でparticipantsの値をstateから参照して定数に入れる
         return Container(
           child: Card(
             child: ListTile(
-              // state.participantsを監視
+              // state.participantsを参照
               title: Text(_participants[index].user.displayName),
               subtitle: Text(
                 _participants[index]
@@ -64,53 +65,12 @@ class UserListContainer extends StatelessWidget {
                     .technicalStacks
                     .getCombinedLanguageText(),
               ),
-              trailing: Column(
-                children: <Widget>[
-                  const Text('チーム'),
-                  SizedBox(
-                    height: 30,
-                    width: 30,
-                    child: GestureDetector(
-                      onTap: () => _showModalPicker(context, index),
-                      child: const AbsorbPointer(
-                        child: TextField(
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              trailing: const Text('チーム1'), //どのチームに属するのかstateを参照
             ),
           ),
         );
       },
       itemCount: _participants.length,
-    );
-  }
-
-  void _showModalPicker(BuildContext context, int index) {
-    showModalBottomSheet<void>(
-      context: context,
-      builder: (BuildContext context) {
-        return Container(
-          height: MediaQuery.of(context).size.height / 3,
-          child: GestureDetector(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: CupertinoPicker(
-              itemExtent: 40,
-              children: [1, 2, 3, 4, 5, 6]
-                  .map<Widget>((element) => Text(element.toString()))
-                  .toList(), // (state.チーム数)を監視してListにmap
-              onSelectedItemChanged: (index) {
-                // stateに変更を伝える(引数はindex)
-              },
-            ),
-          ),
-        );
-      },
     );
   }
 }
