@@ -5,8 +5,14 @@ class NotificationConverter implements JsonConverter<Notification, Map<String, d
   const NotificationConverter();
 
   @override
-  Notification fromJson(Map<String, dynamic> json) => Notification.fromJson(json);
+  Notification fromJson(Map<String, dynamic> json) {
+    if (json != null) {
+      return Notification.fromJson(json);
+    } else {
+      return null;
+    }
+  }
 
   @override
-  Map<String, dynamic> toJson(Notification notification) => notification.toJson();
+  Map<String, dynamic> toJson(Notification notification) => notification?.toJson();
 }

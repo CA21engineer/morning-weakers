@@ -5,8 +5,14 @@ class LinkConverter implements JsonConverter<Link, Map<String, dynamic>> {
   const LinkConverter();
 
   @override
-  Link fromJson(Map<String, dynamic> json) => Link.fromJson(json);
+  Link fromJson(Map<String, dynamic> json) {
+    if (json != null) {
+      return Link.fromJson(json);
+    } else {
+      return null;
+    }
+  }
 
   @override
-  Map<String, dynamic> toJson(Link link) => link.toJson();
+  Map<String, dynamic> toJson(Link link) => link?.toJson();
 }

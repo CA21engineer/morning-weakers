@@ -17,7 +17,6 @@ class HackathonRepository {
     final Map<String, dynamic> hackMap = hackathon.copyWith(id: hackRef.documentID).toJson()
       ..remove('participants')
       ..remove('groups')
-      ..remove('questionnaire')
       ..remove('notifications');
     debugPrint(hackMap.toString());
     await hackRef.setData(hackMap).whenComplete(() {
