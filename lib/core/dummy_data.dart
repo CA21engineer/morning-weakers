@@ -164,86 +164,43 @@ Link dummyLink({
       iconUrl: iconUrl,
     );
 
-List<Participant> dummyParticipants() => [
+List<Participant> dummyParticipants() =>
+    List<Participant>.filled(
+      7,
       dummyParticipant(
-        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.iOS)]),
+        user: dummyUser(
+          technicalStacks: [dummyTechnicalStack(stack: Stack.iOS)],
+        ),
       ),
+    ) +
+    List<Participant>.filled(
+      5,
       dummyParticipant(
-        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.iOS)]),
+        user: dummyUser(
+          technicalStacks: [dummyTechnicalStack(stack: Stack.Android)],
+        ),
       ),
+    ) +
+    List<Participant>.filled(
+      4,
       dummyParticipant(
-        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.iOS)]),
-      ),
+          user: dummyUser(
+        technicalStacks: [dummyTechnicalStack(stack: Stack.Web)],
+      )),
+    ) +
+    List<Participant>.filled(
+      3,
       dummyParticipant(
-        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.iOS)]),
+        user: dummyUser(
+          technicalStacks: [dummyTechnicalStack(stack: Stack.Unity)],
+        ),
       ),
+    ) +
+    List<Participant>.filled(
+      6,
       dummyParticipant(
-        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.iOS)]),
+        user: dummyUser(
+          technicalStacks: [dummyTechnicalStack(stack: Stack.Serverside)],
+        ),
       ),
-      dummyParticipant(
-        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.iOS)]),
-      ),
-      dummyParticipant(
-        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.iOS)]),
-      ),
-      dummyParticipant(
-        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Android)]),
-      ),
-      dummyParticipant(
-        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Android)]),
-      ),
-      dummyParticipant(
-        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Android)]),
-      ),
-      dummyParticipant(
-        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Android)]),
-      ),
-      dummyParticipant(
-        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Android)]),
-      ),
-      dummyParticipant(
-        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Web)]),
-      ),
-      dummyParticipant(
-        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Web)]),
-      ),
-      dummyParticipant(
-        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Web)]),
-      ),
-      dummyParticipant(
-        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Web)]),
-      ),
-      dummyParticipant(
-        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Unity)]),
-      ),
-      dummyParticipant(
-        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Unity)]),
-      ),
-      dummyParticipant(
-        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Unity)]),
-      ),
-      dummyParticipant(
-        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Serverside)]),
-      ),
-      dummyParticipant(
-        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Serverside)]),
-      ),
-      dummyParticipant(
-        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Serverside)]),
-      ),
-      dummyParticipant(
-        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Serverside)]),
-      ),
-      dummyParticipant(
-        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Serverside)]),
-      ),
-      dummyParticipant(
-        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Serverside)]),
-      ),
-      dummyParticipant(
-        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Serverside)]),
-      ),
-      dummyParticipant(
-        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Serverside)]),
-      ),
-    ];
+    );
