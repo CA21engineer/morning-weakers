@@ -8,19 +8,18 @@ part of 'auth_state.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
-AuthState _$AuthStateFromJson(Map<String, dynamic> json) {
-  return _AuthState.fromJson(json);
-}
 
 class _$AuthStateTearOff {
   const _$AuthStateTearOff();
 
   _AuthState call(
       {bool isLogin = false,
-      @JsonKey(name: 'display_name') String displayName = '',
-      @JsonKey(name: 'icon_url') String iconUrl = ''}) {
+      String firebaseUserId,
+      String displayName = '',
+      String iconUrl = ''}) {
     return _AuthState(
       isLogin: isLogin,
+      firebaseUserId: firebaseUserId,
       displayName: displayName,
       iconUrl: iconUrl,
     );
@@ -32,12 +31,10 @@ const $AuthState = _$AuthStateTearOff();
 
 mixin _$AuthState {
   bool get isLogin;
-  @JsonKey(name: 'display_name')
+  String get firebaseUserId;
   String get displayName;
-  @JsonKey(name: 'icon_url')
   String get iconUrl;
 
-  Map<String, dynamic> toJson();
   $AuthStateCopyWith<AuthState> get copyWith;
 }
 
@@ -46,8 +43,9 @@ abstract class $AuthStateCopyWith<$Res> {
       _$AuthStateCopyWithImpl<$Res>;
   $Res call(
       {bool isLogin,
-      @JsonKey(name: 'display_name') String displayName,
-      @JsonKey(name: 'icon_url') String iconUrl});
+      String firebaseUserId,
+      String displayName,
+      String iconUrl});
 }
 
 class _$AuthStateCopyWithImpl<$Res> implements $AuthStateCopyWith<$Res> {
@@ -60,11 +58,15 @@ class _$AuthStateCopyWithImpl<$Res> implements $AuthStateCopyWith<$Res> {
   @override
   $Res call({
     Object isLogin = freezed,
+    Object firebaseUserId = freezed,
     Object displayName = freezed,
     Object iconUrl = freezed,
   }) {
     return _then(_value.copyWith(
       isLogin: isLogin == freezed ? _value.isLogin : isLogin as bool,
+      firebaseUserId: firebaseUserId == freezed
+          ? _value.firebaseUserId
+          : firebaseUserId as String,
       displayName:
           displayName == freezed ? _value.displayName : displayName as String,
       iconUrl: iconUrl == freezed ? _value.iconUrl : iconUrl as String,
@@ -79,8 +81,9 @@ abstract class _$AuthStateCopyWith<$Res> implements $AuthStateCopyWith<$Res> {
   @override
   $Res call(
       {bool isLogin,
-      @JsonKey(name: 'display_name') String displayName,
-      @JsonKey(name: 'icon_url') String iconUrl});
+      String firebaseUserId,
+      String displayName,
+      String iconUrl});
 }
 
 class __$AuthStateCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
@@ -94,11 +97,15 @@ class __$AuthStateCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object isLogin = freezed,
+    Object firebaseUserId = freezed,
     Object displayName = freezed,
     Object iconUrl = freezed,
   }) {
     return _then(_AuthState(
       isLogin: isLogin == freezed ? _value.isLogin : isLogin as bool,
+      firebaseUserId: firebaseUserId == freezed
+          ? _value.firebaseUserId
+          : firebaseUserId as String,
       displayName:
           displayName == freezed ? _value.displayName : displayName as String,
       iconUrl: iconUrl == freezed ? _value.iconUrl : iconUrl as String,
@@ -106,32 +113,31 @@ class __$AuthStateCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
 class _$_AuthState with DiagnosticableTreeMixin implements _AuthState {
   const _$_AuthState(
       {this.isLogin = false,
-      @JsonKey(name: 'display_name') this.displayName = '',
-      @JsonKey(name: 'icon_url') this.iconUrl = ''})
+      this.firebaseUserId,
+      this.displayName = '',
+      this.iconUrl = ''})
       : assert(isLogin != null),
         assert(displayName != null),
         assert(iconUrl != null);
-
-  factory _$_AuthState.fromJson(Map<String, dynamic> json) =>
-      _$_$_AuthStateFromJson(json);
 
   @JsonKey(defaultValue: false)
   @override
   final bool isLogin;
   @override
-  @JsonKey(name: 'display_name')
-  final String displayName;
+  final String firebaseUserId;
+  @JsonKey(defaultValue: '')
   @override
-  @JsonKey(name: 'icon_url')
+  final String displayName;
+  @JsonKey(defaultValue: '')
+  @override
   final String iconUrl;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AuthState(isLogin: $isLogin, displayName: $displayName, iconUrl: $iconUrl)';
+    return 'AuthState(isLogin: $isLogin, firebaseUserId: $firebaseUserId, displayName: $displayName, iconUrl: $iconUrl)';
   }
 
   @override
@@ -140,6 +146,7 @@ class _$_AuthState with DiagnosticableTreeMixin implements _AuthState {
     properties
       ..add(DiagnosticsProperty('type', 'AuthState'))
       ..add(DiagnosticsProperty('isLogin', isLogin))
+      ..add(DiagnosticsProperty('firebaseUserId', firebaseUserId))
       ..add(DiagnosticsProperty('displayName', displayName))
       ..add(DiagnosticsProperty('iconUrl', iconUrl));
   }
@@ -151,6 +158,9 @@ class _$_AuthState with DiagnosticableTreeMixin implements _AuthState {
             (identical(other.isLogin, isLogin) ||
                 const DeepCollectionEquality()
                     .equals(other.isLogin, isLogin)) &&
+            (identical(other.firebaseUserId, firebaseUserId) ||
+                const DeepCollectionEquality()
+                    .equals(other.firebaseUserId, firebaseUserId)) &&
             (identical(other.displayName, displayName) ||
                 const DeepCollectionEquality()
                     .equals(other.displayName, displayName)) &&
@@ -162,35 +172,29 @@ class _$_AuthState with DiagnosticableTreeMixin implements _AuthState {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isLogin) ^
+      const DeepCollectionEquality().hash(firebaseUserId) ^
       const DeepCollectionEquality().hash(displayName) ^
       const DeepCollectionEquality().hash(iconUrl);
 
   @override
   _$AuthStateCopyWith<_AuthState> get copyWith =>
       __$AuthStateCopyWithImpl<_AuthState>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$_AuthStateToJson(this);
-  }
 }
 
 abstract class _AuthState implements AuthState {
   const factory _AuthState(
       {bool isLogin,
-      @JsonKey(name: 'display_name') String displayName,
-      @JsonKey(name: 'icon_url') String iconUrl}) = _$_AuthState;
-
-  factory _AuthState.fromJson(Map<String, dynamic> json) =
-      _$_AuthState.fromJson;
+      String firebaseUserId,
+      String displayName,
+      String iconUrl}) = _$_AuthState;
 
   @override
   bool get isLogin;
   @override
-  @JsonKey(name: 'display_name')
+  String get firebaseUserId;
+  @override
   String get displayName;
   @override
-  @JsonKey(name: 'icon_url')
   String get iconUrl;
   @override
   _$AuthStateCopyWith<_AuthState> get copyWith;
