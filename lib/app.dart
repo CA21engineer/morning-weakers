@@ -27,17 +27,18 @@ import 'package:morning_weakers/core/dummy_data.dart';
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return StateNotifierProvider<FirebaseAuthService, AuthState>(
+    return Provider<FirebaseAuthService>(
         create: (_) => FirebaseAuthService(),
-        child: Builder(builder: (context) {
+        dispose: (_, value) => value.dispose(),
+        child: Consumer<FirebaseAuthService>(builder: (_, authService, __) {
           return MultiProvider(
             providers: [
               // TODO: この書き方はアンチパターンなのか調べる
               Provider<HackathonRepository>.value(
-                value: HackathonRepository(context.select<AuthState, String>((state) => state.firebaseUserId)),
+                value: HackathonRepository(authService),
               ),
               Provider<UserRepository>.value(
-                value: UserRepository(context.select<AuthState, String>((state) => state.firebaseUserId)),
+                value: UserRepository(authService),
               ),
               Provider<QuestionnaireRepository>.value(
                 value: QuestionnaireRepository(),
