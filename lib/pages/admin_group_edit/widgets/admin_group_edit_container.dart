@@ -29,11 +29,11 @@ class AdminGroupEditContainer extends StatelessWidget {
                   margin: const EdgeInsets.symmetric(vertical: 16),
                   child: RaisedButton(
                     child: const Text('チームを確定する'),
-                    color: Colors.blue,
+                    color: Theme.of(context).accentColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    onPressed: () async => context.read<AdminGroupEditController>().postGroups(),
+                    onPressed: () async => context.read<AdminGroupEditController>().handlePostGroups(),
                   ),
                 ),
               ),

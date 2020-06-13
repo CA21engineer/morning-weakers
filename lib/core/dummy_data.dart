@@ -197,7 +197,7 @@ List<Participant> dummyParticipants() =>
       ),
     ) +
     List<Participant>.filled(
-      6,
+      8,
       dummyParticipant(
         user: dummyUser(
           technicalStacks: [dummyTechnicalStack(stack: Stack.Serverside)],
