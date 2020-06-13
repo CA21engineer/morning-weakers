@@ -5,8 +5,14 @@ class TechnicalStackConverter implements JsonConverter<TechnicalStack, Map<Strin
   const TechnicalStackConverter();
 
   @override
-  TechnicalStack fromJson(Map<String, dynamic> json) => TechnicalStack.fromJson(json);
+  TechnicalStack fromJson(Map<String, dynamic> json) {
+    if (json != null) {
+      return TechnicalStack.fromJson(json);
+    } else {
+      return null;
+    }
+  }
 
   @override
-  Map<String, dynamic> toJson(TechnicalStack technicalStack) => technicalStack.toJson();
+  Map<String, dynamic> toJson(TechnicalStack technicalStack) => technicalStack?.toJson();
 }

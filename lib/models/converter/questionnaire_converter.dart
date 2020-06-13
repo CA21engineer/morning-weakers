@@ -5,8 +5,14 @@ class QuestionnaireConverter implements JsonConverter<Questionnaire, Map<String,
   const QuestionnaireConverter();
 
   @override
-  Questionnaire fromJson(Map<String, dynamic> json) => Questionnaire.fromJson(json);
+  Questionnaire fromJson(Map<String, dynamic> json) {
+    if (json != null) {
+      return Questionnaire.fromJson(json);
+    } else {
+      return null;
+    }
+  }
 
   @override
-  Map<String, dynamic> toJson(Questionnaire questionnaire) => questionnaire.toJson();
+  Map<String, dynamic> toJson(Questionnaire questionnaire) => questionnaire?.toJson();
 }

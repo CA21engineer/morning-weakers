@@ -79,10 +79,10 @@ Hackathon dummyHackathon({
       startDate: startDate ?? DateTime.now(),
       endDate: endDate ?? DateTime.now(),
       span: span,
-      questionnaire: questionnaire ?? dummyQuestionnaire(),
+      questionnaire: questionnaire,
       participants: participants ?? [dummyParticipant()],
-      groups: groups ?? [dummyGroup()],
-      notifications: notifications ?? [dummyNotification()],
+      groups: groups,
+      notifications: notifications,
     );
 
 Notification dummyNotification({

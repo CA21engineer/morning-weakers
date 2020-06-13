@@ -5,8 +5,14 @@ class ScheduleCandidateConverter implements JsonConverter<ScheduleCandidate, Map
   const ScheduleCandidateConverter();
 
   @override
-  ScheduleCandidate fromJson(Map<String, dynamic> json) => ScheduleCandidate.fromJson(json);
+  ScheduleCandidate fromJson(Map<String, dynamic> json) {
+    if (json != null) {
+      return ScheduleCandidate.fromJson(json);
+    } else {
+      return null;
+    }
+  }
 
   @override
-  Map<String, dynamic> toJson(ScheduleCandidate scheduleCandidate) => scheduleCandidate.toJson();
+  Map<String, dynamic> toJson(ScheduleCandidate scheduleCandidate) => scheduleCandidate?.toJson();
 }
