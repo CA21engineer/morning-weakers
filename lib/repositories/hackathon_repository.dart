@@ -14,7 +14,6 @@ class HackathonRepository {
     final Map<String, dynamic> hackMap = hackathon.copyWith(id: hackRef.documentID).toJson()
       ..remove('participants')
       ..remove('groups')
-      ..remove('questionnaire')
       ..remove('notifications');
     debugPrint(hackMap.toString());
     await hackRef.setData(hackMap).whenComplete(() {
@@ -57,7 +56,7 @@ class HackathonRepository {
       ..putIfAbsent('id', () => hackRef.documentID)
       ..putIfAbsent('participants', () => participants)
       ..putIfAbsent('groups', () => groups)
-      ..putIfAbsent('notification', () => notifications)));
+      ..putIfAbsent('notifications', () => notifications)));
   }
 
   /// Drawerに表示するハッカソンアイコン一覧とidの取得, 所属なしならnullが返る
