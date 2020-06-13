@@ -19,6 +19,7 @@
 
 ## 設計
 - MVVM + Layered Architecture
+![Architecture](https://user-images.githubusercontent.com/28621480/84579070-cddb6b00-ae05-11ea-9761-5a5f16c210b5.png)
 
 ## 使用ライブラリ
 - [freezed](https://pub.dev/packages/freezed)
