@@ -7,7 +7,8 @@ class OkButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlatButton(
-        child: const Text('ok'),
+        child: const Text('OK'),
+        color: Theme.of(context).primaryColor,
         onPressed: () async {
           await context.read<NewProfileController>().handlePostUser();
         });
