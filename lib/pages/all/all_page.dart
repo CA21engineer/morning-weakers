@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:morning_weakers/pages/group_result/group_result_page.dart';
 import 'package:morning_weakers/pages/home/home_page.dart';
 import 'package:morning_weakers/pages/login/login_page.dart';
 import 'package:morning_weakers/pages/input_participant_info/input_participant_info_page.dart';
@@ -24,6 +25,7 @@ class AllPage extends StatelessWidget {
       SamplePage(),
       AdminGroupEditPage(),
       StateManagementSamplePage(),
+      GroupResultPage(),
     ];
 
     final List<String> _pageRouteNames = [
@@ -34,6 +36,8 @@ class AllPage extends StatelessWidget {
       '/home',
       '/adminTopPage',
       '/sample',
+      '/stateManagementSample',
+      '/groupResultPage'
       '/adminGroupEditPage',
       '/stateManagementSample',
     ];
