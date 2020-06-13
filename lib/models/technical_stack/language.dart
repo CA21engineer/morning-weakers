@@ -16,3 +16,14 @@ String getLanguageValue(Language language) {
       return 'Kotlin';
   }
 }
+
+extension LanguagesExtension on List<Language> {
+  String getCombinedLanguageText() {
+    String text = '';
+    asMap().forEach((index, language) {
+      text += '${getLanguageValue(language)}';
+      text += index != length - 1 ? ', ' : '';
+    });
+    return text;
+  }
+}

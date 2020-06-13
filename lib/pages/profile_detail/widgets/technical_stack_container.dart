@@ -41,7 +41,7 @@ class TechnicalStackContainer extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Text(_getCombinedLanguageText(technicalStack.languages))
+                        Text(technicalStack.languages.getCombinedLanguageText())
                       ],
                     ),
                   ),
