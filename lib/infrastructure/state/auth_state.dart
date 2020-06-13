@@ -11,5 +11,5 @@ abstract class AuthState with _$AuthState {
     @Default('') @JsonKey(name: 'icon_url') String iconUrl,
   }) = _AuthState;
 
- factory AuthState.fromJson(Map<String, dynamic> json) => _$AuthStateFromJson(json);
+  factory AuthState.fromJson(Map<String, dynamic> json) => _$AuthStateFromJson(json);
 }

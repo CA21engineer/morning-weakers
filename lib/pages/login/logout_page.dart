@@ -5,8 +5,6 @@ import 'package:morning_weakers/infrastructure/firebase_auth_service.dart';
 import 'package:morning_weakers/pages/all/all_page.dart';
 
 class LogoutPage extends StatelessWidget {
-  const LogoutPage() : super();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

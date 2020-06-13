@@ -36,11 +36,11 @@ class MyApp extends StatelessWidget {
               );
             case '/login':
               return MaterialPageRoute<void>(
-                builder: (_) => const LoginPage(),
+                builder: (_) => LoginPage(),
               );
             case '/logout':
               return MaterialPageRoute<void>(
-                builder: (_) => const LogoutPage(),
+                builder: (_) => LogoutPage(),
               );
             case '/inputParticipantInfo':
               return MaterialPageRoute<void>(

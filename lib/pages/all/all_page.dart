@@ -14,8 +14,8 @@ class AllPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<Widget> _pageList = [
-      const LoginPage(),
-      const LogoutPage(),
+      LoginPage(),
+      LogoutPage(),
       InputParticipantInfoPage(),
       NewProfilePage(),
       ProfileDetailPage(),
