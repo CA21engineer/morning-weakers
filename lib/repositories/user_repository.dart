@@ -16,7 +16,7 @@ class UserRepository {
 
   Future<void> updateUser(User user) async {
     final String uid = authService.uid.value;
-    await _firestore.collection('users').document(uid).setData(user.toJson()..remove('id'));
+    await _firestore.collection('users').document(uid).updateData(user.toJson()..remove('id'));
   }
 
   Future<User> getMyInfo() async {
