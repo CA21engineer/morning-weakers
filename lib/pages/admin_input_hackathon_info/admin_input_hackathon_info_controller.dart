@@ -43,7 +43,7 @@ class AdminInputHackathonInfoController extends StateNotifier<AdminInputHackatho
     state = state.copyWith(notifierState: NotifierState.loading);
     // TODO: Repositoryのmethod
     await Future<void>.delayed(const Duration(seconds: 2));
-//    await stateManagementSampleRepository.waitFewSecond();
+    // await stateManagementSampleRepository.waitFewSecond();
     state = state.copyWith(notifierState: NotifierState.loaded);
   }
 }
