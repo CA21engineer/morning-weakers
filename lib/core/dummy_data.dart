@@ -164,3 +164,87 @@ Link dummyLink({
       url: url,
       iconUrl: iconUrl,
     );
+
+List<Participant> dummyParticipants() => [
+      dummyParticipant(
+        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.iOS)]),
+      ),
+      dummyParticipant(
+        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.iOS)]),
+      ),
+      dummyParticipant(
+        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.iOS)]),
+      ),
+      dummyParticipant(
+        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.iOS)]),
+      ),
+      dummyParticipant(
+        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.iOS)]),
+      ),
+      dummyParticipant(
+        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.iOS)]),
+      ),
+      dummyParticipant(
+        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.iOS)]),
+      ),
+      dummyParticipant(
+        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Android)]),
+      ),
+      dummyParticipant(
+        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Android)]),
+      ),
+      dummyParticipant(
+        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Android)]),
+      ),
+      dummyParticipant(
+        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Android)]),
+      ),
+      dummyParticipant(
+        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Android)]),
+      ),
+      dummyParticipant(
+        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Web)]),
+      ),
+      dummyParticipant(
+        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Web)]),
+      ),
+      dummyParticipant(
+        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Web)]),
+      ),
+      dummyParticipant(
+        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Web)]),
+      ),
+      dummyParticipant(
+        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Unity)]),
+      ),
+      dummyParticipant(
+        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Unity)]),
+      ),
+      dummyParticipant(
+        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Unity)]),
+      ),
+      dummyParticipant(
+        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Serverside)]),
+      ),
+      dummyParticipant(
+        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Serverside)]),
+      ),
+      dummyParticipant(
+        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Serverside)]),
+      ),
+      dummyParticipant(
+        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Serverside)]),
+      ),
+      dummyParticipant(
+        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Serverside)]),
+      ),
+      dummyParticipant(
+        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Serverside)]),
+      ),
+      dummyParticipant(
+        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Serverside)]),
+      ),
+      dummyParticipant(
+        user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: Stack.Serverside)]),
+      ),
+    ];

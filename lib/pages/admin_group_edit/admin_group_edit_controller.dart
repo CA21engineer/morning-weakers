@@ -2,6 +2,8 @@ import 'package:morning_weakers/pages/admin_group_edit/admin_group_edit_state.da
 import 'package:state_notifier/state_notifier.dart';
 import 'package:morning_weakers/models/notifier_state.dart';
 import 'package:morning_weakers/models/models.dart';
+import 'package:morning_weakers/models/technical_stack/stack.dart' as stack_file;
+import 'package:morning_weakers/core/dummy_data.dart';
 
 class AdminGroupEditController extends StateNotifier<AdminGroupEditState> with LocatorMixin {
   AdminGroupEditController() : super(const AdminGroupEditState());

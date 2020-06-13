@@ -5,90 +5,6 @@ import 'package:morning_weakers/models/technical_stack/stack.dart' as stack_file
 import 'package:morning_weakers/core/dummy_data.dart';
 
 class UserListContainer extends StatelessWidget {
-  final List<Participant> _participants = [
-    dummyParticipant(
-      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.iOS)]),
-    ),
-    dummyParticipant(
-      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.iOS)]),
-    ),
-    dummyParticipant(
-      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.iOS)]),
-    ),
-    dummyParticipant(
-      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.iOS)]),
-    ),
-    dummyParticipant(
-      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.iOS)]),
-    ),
-    dummyParticipant(
-      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.iOS)]),
-    ),
-    dummyParticipant(
-      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.iOS)]),
-    ),
-    dummyParticipant(
-      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Android)]),
-    ),
-    dummyParticipant(
-      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Android)]),
-    ),
-    dummyParticipant(
-      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Android)]),
-    ),
-    dummyParticipant(
-      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Android)]),
-    ),
-    dummyParticipant(
-      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Android)]),
-    ),
-    dummyParticipant(
-      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Web)]),
-    ),
-    dummyParticipant(
-      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Web)]),
-    ),
-    dummyParticipant(
-      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Web)]),
-    ),
-    dummyParticipant(
-      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Web)]),
-    ),
-    dummyParticipant(
-      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Unity)]),
-    ),
-    dummyParticipant(
-      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Unity)]),
-    ),
-    dummyParticipant(
-      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Unity)]),
-    ),
-    dummyParticipant(
-      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Serverside)]),
-    ),
-    dummyParticipant(
-      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Serverside)]),
-    ),
-    dummyParticipant(
-      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Serverside)]),
-    ),
-    dummyParticipant(
-      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Serverside)]),
-    ),
-    dummyParticipant(
-      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Serverside)]),
-    ),
-    dummyParticipant(
-      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Serverside)]),
-    ),
-    dummyParticipant(
-      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Serverside)]),
-    ),
-    dummyParticipant(
-      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Serverside)]),
-    ),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -100,16 +16,16 @@ class UserListContainer extends StatelessWidget {
           child: Card(
             child: ListTile(
               // state.participantsを参照
-              title: Text(_participants[index].user.displayName),
+              title: Text(''),
               subtitle: Text(
-                _participants[index].user.technicalStacks.getCombinedLanguageText(),
+                '',
               ),
               trailing: const Text('チーム1'), //どのチームに属するのかstateを参照
             ),
           ),
         );
       },
-      itemCount: _participants.length,
+      itemCount: 10,
     );
   }
 }
