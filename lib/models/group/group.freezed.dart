@@ -20,7 +20,7 @@ class _$GroupTearOff {
       @required @JsonKey(name: 'group_name') String groupName,
       @required @JsonKey(name: 'github_url') String githubUrl,
       @required @JsonKey(name: 'slide_url') List<String> slideUrls,
-      @required @JsonKey(name: 'other_urls') List<String> otherUrls,
+      @required @JsonKey(name: 'other_urls') List<Link> otherUrls,
       @required @JsonKey(name: 'icon_url') List<String> iconUrls,
       @required List<Participant> participants}) {
     return _Group(
@@ -47,7 +47,7 @@ mixin _$Group {
   @JsonKey(name: 'slide_url')
   List<String> get slideUrls;
   @JsonKey(name: 'other_urls')
-  List<String> get otherUrls;
+  List<Link> get otherUrls;
   @JsonKey(name: 'icon_url')
   List<String> get iconUrls;
   List<Participant> get participants;
@@ -64,7 +64,7 @@ abstract class $GroupCopyWith<$Res> {
       @JsonKey(name: 'group_name') String groupName,
       @JsonKey(name: 'github_url') String githubUrl,
       @JsonKey(name: 'slide_url') List<String> slideUrls,
-      @JsonKey(name: 'other_urls') List<String> otherUrls,
+      @JsonKey(name: 'other_urls') List<Link> otherUrls,
       @JsonKey(name: 'icon_url') List<String> iconUrls,
       List<Participant> participants});
 }
@@ -93,7 +93,7 @@ class _$GroupCopyWithImpl<$Res> implements $GroupCopyWith<$Res> {
       slideUrls:
           slideUrls == freezed ? _value.slideUrls : slideUrls as List<String>,
       otherUrls:
-          otherUrls == freezed ? _value.otherUrls : otherUrls as List<String>,
+          otherUrls == freezed ? _value.otherUrls : otherUrls as List<Link>,
       iconUrls:
           iconUrls == freezed ? _value.iconUrls : iconUrls as List<String>,
       participants: participants == freezed
@@ -112,7 +112,7 @@ abstract class _$GroupCopyWith<$Res> implements $GroupCopyWith<$Res> {
       @JsonKey(name: 'group_name') String groupName,
       @JsonKey(name: 'github_url') String githubUrl,
       @JsonKey(name: 'slide_url') List<String> slideUrls,
-      @JsonKey(name: 'other_urls') List<String> otherUrls,
+      @JsonKey(name: 'other_urls') List<Link> otherUrls,
       @JsonKey(name: 'icon_url') List<String> iconUrls,
       List<Participant> participants});
 }
@@ -142,7 +142,7 @@ class __$GroupCopyWithImpl<$Res> extends _$GroupCopyWithImpl<$Res>
       slideUrls:
           slideUrls == freezed ? _value.slideUrls : slideUrls as List<String>,
       otherUrls:
-          otherUrls == freezed ? _value.otherUrls : otherUrls as List<String>,
+          otherUrls == freezed ? _value.otherUrls : otherUrls as List<Link>,
       iconUrls:
           iconUrls == freezed ? _value.iconUrls : iconUrls as List<String>,
       participants: participants == freezed
@@ -186,7 +186,7 @@ class _$_Group with DiagnosticableTreeMixin implements _Group {
   final List<String> slideUrls;
   @override
   @JsonKey(name: 'other_urls')
-  final List<String> otherUrls;
+  final List<Link> otherUrls;
   @override
   @JsonKey(name: 'icon_url')
   final List<String> iconUrls;
@@ -265,7 +265,7 @@ abstract class _Group implements Group {
       @required @JsonKey(name: 'group_name') String groupName,
       @required @JsonKey(name: 'github_url') String githubUrl,
       @required @JsonKey(name: 'slide_url') List<String> slideUrls,
-      @required @JsonKey(name: 'other_urls') List<String> otherUrls,
+      @required @JsonKey(name: 'other_urls') List<Link> otherUrls,
       @required @JsonKey(name: 'icon_url') List<String> iconUrls,
       @required List<Participant> participants}) = _$_Group;
 
@@ -284,7 +284,7 @@ abstract class _Group implements Group {
   List<String> get slideUrls;
   @override
   @JsonKey(name: 'other_urls')
-  List<String> get otherUrls;
+  List<Link> get otherUrls;
   @override
   @JsonKey(name: 'icon_url')
   List<String> get iconUrls;

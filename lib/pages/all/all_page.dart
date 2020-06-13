@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:morning_weakers/pages/home/home_page.dart';
+import 'package:morning_weakers/pages/login/login_page.dart';
 import 'package:morning_weakers/pages/input_participant_info/input_participant_info_page.dart';
 import 'package:morning_weakers/pages/new_profile/new_profile_page.dart';
 import 'package:morning_weakers/pages/profile_detail/profile_detail_page.dart';
 import 'package:morning_weakers/pages/admin_top/admin_top_page.dart';
 import 'package:morning_weakers/pages/state_notifier_sample/state_notifier_sample_page.dart';
 import 'package:morning_weakers/pages/admin_group_edit/admin_group_edit_page.dart';
+import 'package:morning_weakers/pages/state_management_sample/state_management_sample_page.dart';
 
 class AllPage extends StatelessWidget {
+  const AllPage({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final List<Widget> _pageList = [
+      const LoginPage(),
       InputParticipantInfoPage(),
       NewProfilePage(),
       ProfileDetailPage(),
@@ -18,9 +23,11 @@ class AllPage extends StatelessWidget {
       AdminTopPage(),
       SamplePage(),
       AdminGroupEditPage(),
+      StateManagementSamplePage(),
     ];
 
     final List<String> _pageRouteNames = [
+      '/login',
       '/inputParticipantInfo',
       '/newProfile',
       '/profileDetail',
@@ -28,6 +35,7 @@ class AllPage extends StatelessWidget {
       '/adminTopPage',
       '/sample',
       '/adminGroupEditPage'
+      '/stateManagementSample'
     ];
 
     return Scaffold(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:morning_weakers/pages/all/all_page.dart';
+import 'package:morning_weakers/pages/login/login_page.dart';
 import 'package:morning_weakers/pages/home/home_page.dart';
 import 'package:morning_weakers/pages/input_participant_info/input_participant_info_page.dart';
 import 'package:morning_weakers/pages/new_profile/new_profile_page.dart';
@@ -10,6 +11,7 @@ import 'package:morning_weakers/pages/state_notifier_sample/state_notifier_sampl
 import 'package:morning_weakers/pages/state_notifier_sample/state_notifier_sample_page.dart';
 import 'package:morning_weakers/pages/state_notifier_sample/state_notifier_sample_state.dart';
 import 'package:morning_weakers/pages/admin_group_edit/admin_group_edit_page.dart';
+import 'package:morning_weakers/pages/state_management_sample/state_management_sample_page.dart';
 import 'package:provider/provider.dart';
 
 class MyApp extends StatelessWidget {
@@ -31,7 +33,11 @@ class MyApp extends StatelessWidget {
           switch (settings.name) {
             case '/':
               return MaterialPageRoute<void>(
-                builder: (_) => AllPage(),
+                builder: (_) => const AllPage(),
+              );
+            case '/login':
+              return MaterialPageRoute<void>(
+                builder: (_) => const LoginPage(),
               );
             case '/inputParticipantInfo':
               return MaterialPageRoute<void>(
@@ -60,6 +66,9 @@ class MyApp extends StatelessWidget {
             case '/adminGroupEditPage':
               return MaterialPageRoute<void>(
                 builder: (_) => AdminGroupEditPage(),
+            case '/stateManagementSample':
+              return MaterialPageRoute<void>(
+                builder: (_) => StateManagementSamplePage(),
               );
             default:
               throw UnimplementedError('Undefined route ${settings.name}');
