@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_state_notifier/flutter_state_notifier.dart';
-import 'package:morning_weakers/pages/home/home_controller.dart';
-import 'package:morning_weakers/pages/home/home_state.dart';
 import 'package:morning_weakers/pages/new_profile/input_text_widget.dart';
 import 'package:morning_weakers/pages/new_profile/new_profile_controller.dart';
 import 'package:morning_weakers/pages/new_profile/new_profile_state.dart';
