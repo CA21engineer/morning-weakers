@@ -16,27 +16,13 @@ class _$GroupTearOff {
   const _$GroupTearOff();
 
   _Group call(
-      {@required
-          String id,
-      @required
-      @JsonKey(name: 'group_name')
-          String groupName,
-      @required
-      @JsonKey(name: 'github_url')
-          String githubUrl,
-      @required
-      @JsonKey(name: 'slide_url')
-          String slideUrl,
-      @required
-      @JsonKey(name: 'other_urls')
-      @LinkConverter()
-          List<Link> otherUrls,
-      @required
-      @JsonKey(name: 'icon_url')
-          String iconUrl,
-      @required
-      @ParticipantConverter()
-          List<Participant> participants}) {
+      {String id,
+      @required @JsonKey(name: 'group_name') String groupName,
+      @JsonKey(name: 'github_url') String githubUrl,
+      @JsonKey(name: 'slide_url') String slideUrl,
+      @JsonKey(name: 'other_urls') @LinkConverter() List<Link> otherUrls,
+      @JsonKey(name: 'icon_url') String iconUrl,
+      @required @ParticipantConverter() List<Participant> participants}) {
     return _Group(
       id: id,
       groupName: groupName,
@@ -167,19 +153,14 @@ class __$GroupCopyWithImpl<$Res> extends _$GroupCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Group with DiagnosticableTreeMixin implements _Group {
   const _$_Group(
-      {@required this.id,
+      {this.id,
       @required @JsonKey(name: 'group_name') this.groupName,
-      @required @JsonKey(name: 'github_url') this.githubUrl,
-      @required @JsonKey(name: 'slide_url') this.slideUrl,
-      @required @JsonKey(name: 'other_urls') @LinkConverter() this.otherUrls,
-      @required @JsonKey(name: 'icon_url') this.iconUrl,
+      @JsonKey(name: 'github_url') this.githubUrl,
+      @JsonKey(name: 'slide_url') this.slideUrl,
+      @JsonKey(name: 'other_urls') @LinkConverter() this.otherUrls,
+      @JsonKey(name: 'icon_url') this.iconUrl,
       @required @ParticipantConverter() this.participants})
-      : assert(id != null),
-        assert(groupName != null),
-        assert(githubUrl != null),
-        assert(slideUrl != null),
-        assert(otherUrls != null),
-        assert(iconUrl != null),
+      : assert(groupName != null),
         assert(participants != null);
 
   factory _$_Group.fromJson(Map<String, dynamic> json) =>
@@ -275,27 +256,14 @@ class _$_Group with DiagnosticableTreeMixin implements _Group {
 
 abstract class _Group implements Group {
   const factory _Group(
-      {@required
-          String id,
-      @required
-      @JsonKey(name: 'group_name')
-          String groupName,
-      @required
-      @JsonKey(name: 'github_url')
-          String githubUrl,
-      @required
-      @JsonKey(name: 'slide_url')
-          String slideUrl,
-      @required
-      @JsonKey(name: 'other_urls')
-      @LinkConverter()
-          List<Link> otherUrls,
-      @required
-      @JsonKey(name: 'icon_url')
-          String iconUrl,
-      @required
-      @ParticipantConverter()
-          List<Participant> participants}) = _$_Group;
+          {String id,
+          @required @JsonKey(name: 'group_name') String groupName,
+          @JsonKey(name: 'github_url') String githubUrl,
+          @JsonKey(name: 'slide_url') String slideUrl,
+          @JsonKey(name: 'other_urls') @LinkConverter() List<Link> otherUrls,
+          @JsonKey(name: 'icon_url') String iconUrl,
+          @required @ParticipantConverter() List<Participant> participants}) =
+      _$_Group;
 
   factory _Group.fromJson(Map<String, dynamic> json) = _$_Group.fromJson;
 

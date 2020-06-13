@@ -7,16 +7,17 @@ part 'hackathon.freezed.dart';
 
 part 'hackathon.g.dart';
 
+// TODO: idを@requiredにする
 @freezed
 abstract class Hackathon with _$Hackathon {
   const factory Hackathon({
-    @required String id,
+    String id,
     @required String title,
     @required String description,
     @required String theme,
-    @required @JsonKey(name: 'icon_url') String iconUrl,
-    @required @JsonKey(name: 'slack_url') String slackUrl,
-    @required @JsonKey(name: 'presentation_url') String presentationUrl,
+    @JsonKey(name: 'icon_url') String iconUrl,
+    @JsonKey(name: 'slack_url') String slackUrl,
+    @JsonKey(name: 'presentation_url') String presentationUrl,
     @required @JsonKey(name: 'start_date') DateTime startDate,
     @required @JsonKey(name: 'end_date') DateTime endDate,
     @required int span,

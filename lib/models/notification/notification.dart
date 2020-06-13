@@ -7,10 +7,11 @@ part 'notification.freezed.dart';
 
 part 'notification.g.dart';
 
+// TODO: idを@requiredにする
 @freezed
 abstract class Notification with _$Notification {
   const factory Notification({
-    @required String id,
+    String id,
     @required String title,
     @required String description,
     @required @JsonKey(name: 'published_user') @UserConverter() User publishedUser,

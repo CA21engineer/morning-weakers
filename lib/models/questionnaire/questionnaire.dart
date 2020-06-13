@@ -7,10 +7,11 @@ part 'questionnaire.freezed.dart';
 
 part 'questionnaire.g.dart';
 
+// TODO: idを@requiredにする
 @freezed
 abstract class Questionnaire with _$Questionnaire {
   const factory Questionnaire({
-    @required String id,
+    String id,
     @required String title,
     @required String description,
     @required @JsonKey(name: 'schedule_candidates') @ScheduleCandidateConverter() List<ScheduleCandidate> scheduleCandidates,

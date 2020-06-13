@@ -16,10 +16,10 @@ class _$LinkTearOff {
   const _$LinkTearOff();
 
   _Link call(
-      {@required String id,
+      {String id,
       @required String title,
       @required String url,
-      @required @JsonKey(name: 'icon_url') String iconUrl}) {
+      @JsonKey(name: 'icon_url') String iconUrl}) {
     return _Link(
       id: id,
       title: title,
@@ -114,14 +114,12 @@ class __$LinkCopyWithImpl<$Res> extends _$LinkCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Link with DiagnosticableTreeMixin implements _Link {
   const _$_Link(
-      {@required this.id,
+      {this.id,
       @required this.title,
       @required this.url,
-      @required @JsonKey(name: 'icon_url') this.iconUrl})
-      : assert(id != null),
-        assert(title != null),
-        assert(url != null),
-        assert(iconUrl != null);
+      @JsonKey(name: 'icon_url') this.iconUrl})
+      : assert(title != null),
+        assert(url != null);
 
   factory _$_Link.fromJson(Map<String, dynamic> json) =>
       _$_$_LinkFromJson(json);
@@ -186,10 +184,10 @@ class _$_Link with DiagnosticableTreeMixin implements _Link {
 
 abstract class _Link implements Link {
   const factory _Link(
-      {@required String id,
+      {String id,
       @required String title,
       @required String url,
-      @required @JsonKey(name: 'icon_url') String iconUrl}) = _$_Link;
+      @JsonKey(name: 'icon_url') String iconUrl}) = _$_Link;
 
   factory _Link.fromJson(Map<String, dynamic> json) = _$_Link.fromJson;
 

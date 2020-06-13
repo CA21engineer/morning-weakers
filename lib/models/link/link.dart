@@ -5,13 +5,14 @@ part 'link.freezed.dart';
 
 part 'link.g.dart';
 
+// TODO: idを@requiredにする
 @freezed
 abstract class Link with _$Link {
   const factory Link({
-    @required String id,
+    String id,
     @required String title,
     @required String url,
-    @required @JsonKey(name: 'icon_url') String iconUrl,
+    @JsonKey(name: 'icon_url') String iconUrl,
   }) = _Link;
 
   factory Link.fromJson(Map<String, dynamic> json) => _$LinkFromJson(json);

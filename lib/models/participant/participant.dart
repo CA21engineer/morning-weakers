@@ -7,10 +7,11 @@ part 'participant.freezed.dart';
 
 part 'participant.g.dart';
 
+// TODO: idを@requiredにする
 @freezed
 abstract class Participant with _$Participant {
   const factory Participant({
-    @required String id,
+    String id,
     @required @UserConverter() User user,
     @required @JsonKey(name: 'desired_occupations') @TechnicalStackConverter() List<TechnicalStack> desiredOccupations,
     @required @JsonKey(name: 'working_days') int workingDays,
