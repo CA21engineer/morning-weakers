@@ -1,6 +1,6 @@
 # morning_weakers
 
-![LGTM](https://i.lgtm.fun/k26.png)
+![CI](https://img.shields.io/badge/build-passing-brightgreen)
 
 ## 概要
 
@@ -9,13 +9,26 @@
 ## 開発背景
 
 これは2020/06/07(日)~2020/06/14(日)にCyberAgentの21卒の内定者内で開催された第1回ハッカソンの成果物です。
-このレポジトリはチーム「朝弱いけん」 のクライアントサイド(Flutter)のものです。
+このレポジトリはFlutterチーム「朝弱いけん」のものです。
 
 ## 開発者
-@fukami421, @ho2ri2s, @tomu28, @zoothezoo
+@fukami421([GitHub](https://github.com/fukami421), [Twitter](https://twitter.com/ryu1_ryu421)), @ho2ri2s([GitHub](https://github.com/ho2ri2s), [Twitter](https://twitter.com/hohohoris)), @tomu28([GitHub](https://github.com/fukami421), [Twitter]()), @zoothezoo([GitHub](https://github.com/zoothezoo), [Twitter](https://twitter.com/zoothezoo_pro))
 
 ## 使用技術
 - Flutter / Dart
 
 ## 設計
 - MVVM + Layered Architecture
+
+## 使用ライブラリ
+- [freezed](https://pub.dev/packages/freezed)
+- [state_notifier](https://pub.dev/packages/state_notifier)
+- [Provider](https://pub.dev/packages/provider)
+- [intl](https://pub.dev/packages/intl)
+- [rxdart](https://pub.dev/packages/rxdart)
+- [firebase_core](https://pub.dev/packages/firebase_core)
+- [firebase_auth](https://pub.dev/packages/firebase_auth)
+- [cloud_firestore](https://pub.dev/packages/cloud_firestore)
+- [firebase_storage](https://pub.dev/packages/firebase_storage)
+
+## スクリーンショット
