@@ -12,6 +12,3 @@ export 'technical_stack/proficiency.dart';
 export 'technical_stack/stack.dart';
 export 'technical_stack/technical_stack.dart';
 export 'user/user.dart';
-
-// firebase
-export '../infrastructure/state/auth_state.dart';
