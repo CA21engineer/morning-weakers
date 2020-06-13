@@ -1,14 +1,29 @@
-import 'package:morning_weakers/models/models.dart';
+import 'dart:async';
+
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:state_notifier/state_notifier.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:rxdart/rxdart.dart';
 
 // TODO: interface作ってRepositoryにInjectする
-class FirebaseAuthService extends StateNotifier<AuthState> {
-  FirebaseAuthService() : super(const AuthState());
+class FirebaseAuthService {
+  FirebaseAuthService() {
+    FirebaseAuth.instance.currentUser().then((user) {
+      if (user != null) {
+        _loginController.add(true);
+        _idController.add(user.uid);
+      } else {
+        _loginController.add(false);
+      }
+    });
+  }
 
-  FirebaseUser user;
+  final BehaviorSubject<bool> _loginController = BehaviorSubject();
+  ValueStream<bool> get isLogin => _loginController.stream;
 
+  final BehaviorSubject<String> _idController = BehaviorSubject();
+  ValueStream<String> get uid => _idController.stream;
+
+  //TODO:他のiconたちはmodel作って返す
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -28,17 +43,22 @@ class FirebaseAuthService extends StateNotifier<AuthState> {
     );
 
     final FirebaseUser user = (await _auth.signInWithCredential(credential)).user;
-    state = state.copyWith(
-      isLogin: true,
-      firebaseUserId: user.uid,
-      displayName: user.displayName,
-      iconUrl: user.photoUrl,
-    );
+    _loginController.sink.add(true);
+    _idController.sink.add(user.uid);
   }
+
+  // TODO: あとで
+  void getAuthInfo() async {}
 
   Future<void> signOut() async {
     await FirebaseAuth.instance.signOut();
     await _googleSignIn.signOut();
-    state = state.copyWith(isLogin: true, firebaseUserId: null, displayName: '', iconUrl: '');
+    _loginController.sink.add(false);
+    _idController.sink.add(null);
+  }
+
+  void dispose() {
+    _loginController.close();
+    _idController.close();
   }
 }
