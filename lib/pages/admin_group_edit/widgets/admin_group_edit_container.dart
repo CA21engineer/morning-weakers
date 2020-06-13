@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 import 'package:morning_weakers/pages/admin_group_edit/admin_group_edit_state.dart';
 import 'package:morning_weakers/pages/admin_group_edit/admin_group_edit_controller.dart';
+import 'package:morning_weakers/pages/group_result/group_result_page.dart';
 import 'package:morning_weakers/models/notifier_state.dart';
 
 class AdminGroupEditContainer extends StatelessWidget {
@@ -33,7 +34,10 @@ class AdminGroupEditContainer extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    onPressed: () async => context.read<AdminGroupEditController>().handlePostGroups(),
+                    onPressed: () async {
+                      await context.read<AdminGroupEditController>().handlePostGroups();
+                      await Navigator.push<void>(context, MaterialPageRoute(builder: (_) => GroupResultPage()));
+                    }
                   ),
                 ),
               ),
