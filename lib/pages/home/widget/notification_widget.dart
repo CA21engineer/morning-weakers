@@ -7,11 +7,21 @@ import 'package:provider/provider.dart';
 class NotificationWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final List<model.Notification> notification = context.select<HomeState, List<model.Notification>>(
-      (state) => state.hackathon.notifications,
+
+    final List<model.Notification> notification = context.select<HomeState, List<model.Notification>>((state)
+      //debugPrint('debugger: hackatho　${state.hackathon}');
+      => state.hackathon.notifications
     );
     // ignore: cascade_invocations
     notification.sort((a, b) => a.createdAt.compareTo(b.createdAt));
+/*
+    final Hackathon notification = context.select < HomeState,
+        Hackathon
+    >>((state) {
+    debugPrint('debugger: hackatho　${state.hackathon}');
+    return state.hackathon;
+    });
+*/
 
     return Container(
       padding: const EdgeInsets.all(8),
@@ -21,9 +31,11 @@ class NotificationWidget extends StatelessWidget {
         border: Border.all(color: Colors.cyan[600]),
       ),
       child: ListTile(
+/*
         title: Text(notification[0].title),
         subtitle: Text(notification[0].description),
         trailing: Icon(Icons.arrow_forward_ios),
+*/
       ),
     );
   }
