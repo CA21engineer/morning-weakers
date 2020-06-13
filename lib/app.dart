@@ -11,6 +11,7 @@ import 'package:morning_weakers/pages/admin_top/admin_top_page.dart';
 import 'package:morning_weakers/pages/state_notifier_sample/state_notifier_sample_page.dart';
 import 'package:morning_weakers/pages/admin_group_edit/admin_group_edit_page.dart';
 import 'package:morning_weakers/pages/state_management_sample/state_management_sample_page.dart';
+import 'package:morning_weakers/pages/admin_input_hackathon_info/admin_input_hackathon_info_page.dart';
 import 'package:morning_weakers/repositories/group_repository.dart';
 import 'package:morning_weakers/repositories/hackathon_repository.dart';
 import 'package:morning_weakers/repositories/notification_repository.dart';
@@ -95,6 +96,10 @@ class MyApp extends StatelessWidget {
             case '/groupResultPage':
               return MaterialPageRoute<void>(
                 builder: (_) => GroupResultPage(),
+              );
+            case '/adminInputHackathonInfo':
+              return MaterialPageRoute<void>(
+                builder: (_) => AdminInputHackathonInfoPage(),
               );
             default:
               throw UnimplementedError('Undefined route ${settings.name}');
