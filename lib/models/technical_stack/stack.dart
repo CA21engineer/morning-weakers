@@ -8,15 +8,25 @@ enum Stack {
   Android,
   @JsonValue('Serverside')
   Serverside,
+  @JsonValue('Web')
+  Web,
+  @JsonValue('Unity')
+  Unity,
 }
 
-String getStackValue(Stack stack) {
-  switch (stack) {
-    case Stack.iOS:
-      return 'iOS';
-    case Stack.Android:
-      return 'Android';
-    case Stack.Serverside:
-      return 'Serverside';
+extension StackExtension on Stack {
+  String getValue() {
+    switch (this) {
+      case Stack.iOS:
+        return 'iOS';
+      case Stack.Android:
+        return 'Android';
+      case Stack.Serverside:
+        return 'Serverside';
+      case Stack.Web:
+        return 'Web';
+      case Stack.Unity:
+        return 'Unity';
+    }
   }
 }

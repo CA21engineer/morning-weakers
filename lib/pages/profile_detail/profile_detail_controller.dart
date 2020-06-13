@@ -3,8 +3,7 @@ import 'package:state_notifier/state_notifier.dart';
 import 'package:morning_weakers/models/models.dart';
 import 'package:morning_weakers/core/dummy_data.dart';
 
-class ProfileDetailController extends StateNotifier<ProfileDetailState>
-    with LocatorMixin {
+class ProfileDetailController extends StateNotifier<ProfileDetailState> with LocatorMixin {
   ProfileDetailController() : super(const ProfileDetailState());
 
   @override

@@ -16,5 +16,17 @@ abstract class TechnicalStack with _$TechnicalStack {
     int priority,
   }) = _TechnicalStack;
 
-  factory TechnicalStack.fromJson(Map<String, dynamic> json) => _$TechnicalStackFromJson(json);
+  factory TechnicalStack.fromJson(Map<String, dynamic> json) =>
+      _$TechnicalStackFromJson(json);
+}
+
+extension TechnicalStacksExtension on List<TechnicalStack> {
+  String getCombinedLanguageText() {
+    String text = '';
+    asMap().forEach((index, technicalStack) {
+      text += '${technicalStack.stack.getValue()}';
+      text += index != length - 1 ? ', ' : '';
+    });
+    return text;
+  }
 }
