@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:morning_weakers/infrastructure/firebase_auth_service.dart';
-import 'package:morning_weakers/models/models.dart';
 import 'package:morning_weakers/pages/all/all_page.dart';
 import 'package:morning_weakers/pages/group_result/group_result_page.dart';
 import 'package:morning_weakers/pages/login/login_page.dart';

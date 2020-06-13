@@ -2,16 +2,21 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:morning_weakers/infrastructure/firebase_auth_service.dart';
 import 'package:morning_weakers/models/models.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
+// TODO: コンストラクタor init時にSharedPreferencesからhackathonIdを取得して変数に保持したい
 class HackathonRepository {
   HackathonRepository(this.authService);
 
+  static const String HACKATHON_ID_KEY = 'hackathonId';
   final FirebaseAuthService authService;
   final Firestore _firestore = Firestore.instance;
 
-  String _currentHackathonId;
+  Future<SharedPreferences> prefs = SharedPreferences.getInstance();
 
-  String get currentHackathonId => _currentHackathonId;
+  Future<String> currentHackathonId() async {
+    return Future.value((await prefs).getString(HACKATHON_ID_KEY));
+  }
 
   /// ハッカソンの新規作成
   Future<void> createHackathon(Hackathon hackathon) async {
@@ -21,15 +26,15 @@ class HackathonRepository {
       ..remove('groups')
       ..remove('notifications');
     debugPrint(hackMap.toString());
-    await hackRef.setData(hackMap).whenComplete(() {
+    await hackRef.setData(hackMap).whenComplete(() async {
       // participantsのSubCollectionに代入
       final CollectionReference participantsRef = hackRef.collection('participants');
       hackathon.participants.forEach((participant) async {
         await participantsRef.add(participant.toJson()..remove('id'));
       });
       // TODO: 作成者も強制的にハッカソンに参加する仕様。あとで話し合う
-      _updateJoined(hackathon.copyWith(id: hackRef.documentID));
-      _currentHackathonId = hackRef.documentID;
+      await _updateJoined(hackathon.copyWith(id: hackRef.documentID));
+      await (await prefs).setString(HACKATHON_ID_KEY, hackRef.documentID);
     });
   }
 
@@ -56,7 +61,7 @@ class HackathonRepository {
     final List<Map<String, dynamic>> groups = await getJsonList('groups');
     final List<Map<String, dynamic>> notifications = await getJsonList('notifications');
 
-    _currentHackathonId = hackathonId;
+    await (await prefs).setString(HACKATHON_ID_KEY, hackRef.documentID);
 
     return Future.value(Hackathon.fromJson(hackSnapshot.data
       ..putIfAbsent('id', () => hackRef.documentID)
