@@ -65,6 +65,8 @@ const _$StackEnumMap = {
   Stack.iOS: 'IOS',
   Stack.Android: 'ANDROID',
   Stack.Serverside: 'Serverside',
+  Stack.Web: 'Web',
+  Stack.Unity: 'Unity',
 };
 
 const _$LanguageEnumMap = {

@@ -26,10 +26,10 @@ class _$HackathonTearOff {
       @required @JsonKey(name: 'start_date') DateTime startDate,
       @required @JsonKey(name: 'end_date') DateTime endDate,
       @required int span,
-      Questionnaire questionnaire,
-      @required List<Participant> participants,
-      List<Group> groups,
-      List<Notification> notifications}) {
+      @QuestionnaireConverter() Questionnaire questionnaire,
+      @required @ParticipantConverter() List<Participant> participants,
+      @GroupConverter() List<Group> groups,
+      @NotificationConverter() List<Notification> notifications}) {
     return _Hackathon(
       id: id,
       title: title,
@@ -68,9 +68,13 @@ mixin _$Hackathon {
   @JsonKey(name: 'end_date')
   DateTime get endDate;
   int get span;
+  @QuestionnaireConverter()
   Questionnaire get questionnaire;
+  @ParticipantConverter()
   List<Participant> get participants;
+  @GroupConverter()
   List<Group> get groups;
+  @NotificationConverter()
   List<Notification> get notifications;
 
   Map<String, dynamic> toJson();
@@ -91,10 +95,10 @@ abstract class $HackathonCopyWith<$Res> {
       @JsonKey(name: 'start_date') DateTime startDate,
       @JsonKey(name: 'end_date') DateTime endDate,
       int span,
-      Questionnaire questionnaire,
-      List<Participant> participants,
-      List<Group> groups,
-      List<Notification> notifications});
+      @QuestionnaireConverter() Questionnaire questionnaire,
+      @ParticipantConverter() List<Participant> participants,
+      @GroupConverter() List<Group> groups,
+      @NotificationConverter() List<Notification> notifications});
 
   $QuestionnaireCopyWith<$Res> get questionnaire;
 }
@@ -178,10 +182,10 @@ abstract class _$HackathonCopyWith<$Res> implements $HackathonCopyWith<$Res> {
       @JsonKey(name: 'start_date') DateTime startDate,
       @JsonKey(name: 'end_date') DateTime endDate,
       int span,
-      Questionnaire questionnaire,
-      List<Participant> participants,
-      List<Group> groups,
-      List<Notification> notifications});
+      @QuestionnaireConverter() Questionnaire questionnaire,
+      @ParticipantConverter() List<Participant> participants,
+      @GroupConverter() List<Group> groups,
+      @NotificationConverter() List<Notification> notifications});
 
   @override
   $QuestionnaireCopyWith<$Res> get questionnaire;
@@ -254,10 +258,10 @@ class _$_Hackathon with DiagnosticableTreeMixin implements _Hackathon {
       @required @JsonKey(name: 'start_date') this.startDate,
       @required @JsonKey(name: 'end_date') this.endDate,
       @required this.span,
-      this.questionnaire,
-      @required this.participants,
-      this.groups,
-      this.notifications})
+      @QuestionnaireConverter() this.questionnaire,
+      @required @ParticipantConverter() this.participants,
+      @GroupConverter() this.groups,
+      @NotificationConverter() this.notifications})
       : assert(id != null),
         assert(title != null),
         assert(description != null),
@@ -299,12 +303,16 @@ class _$_Hackathon with DiagnosticableTreeMixin implements _Hackathon {
   @override
   final int span;
   @override
+  @QuestionnaireConverter()
   final Questionnaire questionnaire;
   @override
+  @ParticipantConverter()
   final List<Participant> participants;
   @override
+  @GroupConverter()
   final List<Group> groups;
   @override
+  @NotificationConverter()
   final List<Notification> notifications;
 
   @override
@@ -406,20 +414,21 @@ class _$_Hackathon with DiagnosticableTreeMixin implements _Hackathon {
 
 abstract class _Hackathon implements Hackathon {
   const factory _Hackathon(
-      {@required String id,
-      @required String title,
-      @required String description,
-      @required String theme,
-      @required @JsonKey(name: 'icon_url') String iconUrl,
-      @required @JsonKey(name: 'slack_url') String slackUrl,
-      @required @JsonKey(name: 'presentation_url') String presentationUrl,
-      @required @JsonKey(name: 'start_date') DateTime startDate,
-      @required @JsonKey(name: 'end_date') DateTime endDate,
-      @required int span,
-      Questionnaire questionnaire,
-      @required List<Participant> participants,
-      List<Group> groups,
-      List<Notification> notifications}) = _$_Hackathon;
+          {@required String id,
+          @required String title,
+          @required String description,
+          @required String theme,
+          @required @JsonKey(name: 'icon_url') String iconUrl,
+          @required @JsonKey(name: 'slack_url') String slackUrl,
+          @required @JsonKey(name: 'presentation_url') String presentationUrl,
+          @required @JsonKey(name: 'start_date') DateTime startDate,
+          @required @JsonKey(name: 'end_date') DateTime endDate,
+          @required int span,
+          @QuestionnaireConverter() Questionnaire questionnaire,
+          @required @ParticipantConverter() List<Participant> participants,
+          @GroupConverter() List<Group> groups,
+          @NotificationConverter() List<Notification> notifications}) =
+      _$_Hackathon;
 
   factory _Hackathon.fromJson(Map<String, dynamic> json) =
       _$_Hackathon.fromJson;
@@ -450,12 +459,16 @@ abstract class _Hackathon implements Hackathon {
   @override
   int get span;
   @override
+  @QuestionnaireConverter()
   Questionnaire get questionnaire;
   @override
+  @ParticipantConverter()
   List<Participant> get participants;
   @override
+  @GroupConverter()
   List<Group> get groups;
   @override
+  @NotificationConverter()
   List<Notification> get notifications;
   @override
   _$HackathonCopyWith<_Hackathon> get copyWith;

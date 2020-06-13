@@ -15,7 +15,7 @@ class SourceLinkWidget extends StatelessWidget {
 
     final List<Link> allLinks = [
       Link(id: '', title: 'GitHub', url: group.githubUrl, iconUrl: ''),
-      Link(id: '', title: 'Slide', url: group.slideUrls[0], iconUrl: '')
+      Link(id: '', title: 'Slide', url: group.slideUrl, iconUrl: '')
     ];
 
     otherLinks.forEach((link) => allLinks.add(

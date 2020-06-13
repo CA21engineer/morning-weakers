@@ -16,13 +16,21 @@ class _$UserTearOff {
   const _$UserTearOff();
 
   _User call(
-      {@required String id,
-      @JsonKey(name: 'full_name') String fullName = '',
-      @JsonKey(name: 'display_name') String displayName = '',
-      @JsonKey(name: 'technical_stack') List<TechnicalStack> technicalStacks,
-      @JsonKey(name: 'github_account') String githubAccount = '',
-      @JsonKey(name: 'twitter_account') String twitterAccount = '',
-      @JsonKey(name: 'icon_url') String iconUrl = ''}) {
+      {@required
+          String id,
+      @JsonKey(name: 'full_name')
+          String fullName = '',
+      @JsonKey(name: 'display_name')
+          String displayName = '',
+      @JsonKey(name: 'technical_stacks')
+      @TechnicalStackConverter()
+          List<TechnicalStack> technicalStacks,
+      @JsonKey(name: 'github_account')
+          String githubAccount = '',
+      @JsonKey(name: 'twitter_account')
+          String twitterAccount = '',
+      @JsonKey(name: 'icon_url')
+          String iconUrl = ''}) {
     return _User(
       id: id,
       fullName: fullName,
@@ -44,7 +52,8 @@ mixin _$User {
   String get fullName;
   @JsonKey(name: 'display_name')
   String get displayName;
-  @JsonKey(name: 'technical_stack')
+  @JsonKey(name: 'technical_stacks')
+  @TechnicalStackConverter()
   List<TechnicalStack> get technicalStacks;
   @JsonKey(name: 'github_account')
   String get githubAccount;
@@ -62,12 +71,19 @@ abstract class $UserCopyWith<$Res> {
       _$UserCopyWithImpl<$Res>;
   $Res call(
       {String id,
-      @JsonKey(name: 'full_name') String fullName,
-      @JsonKey(name: 'display_name') String displayName,
-      @JsonKey(name: 'technical_stack') List<TechnicalStack> technicalStacks,
-      @JsonKey(name: 'github_account') String githubAccount,
-      @JsonKey(name: 'twitter_account') String twitterAccount,
-      @JsonKey(name: 'icon_url') String iconUrl});
+      @JsonKey(name: 'full_name')
+          String fullName,
+      @JsonKey(name: 'display_name')
+          String displayName,
+      @JsonKey(name: 'technical_stacks')
+      @TechnicalStackConverter()
+          List<TechnicalStack> technicalStacks,
+      @JsonKey(name: 'github_account')
+          String githubAccount,
+      @JsonKey(name: 'twitter_account')
+          String twitterAccount,
+      @JsonKey(name: 'icon_url')
+          String iconUrl});
 }
 
 class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
@@ -112,12 +128,19 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   @override
   $Res call(
       {String id,
-      @JsonKey(name: 'full_name') String fullName,
-      @JsonKey(name: 'display_name') String displayName,
-      @JsonKey(name: 'technical_stack') List<TechnicalStack> technicalStacks,
-      @JsonKey(name: 'github_account') String githubAccount,
-      @JsonKey(name: 'twitter_account') String twitterAccount,
-      @JsonKey(name: 'icon_url') String iconUrl});
+      @JsonKey(name: 'full_name')
+          String fullName,
+      @JsonKey(name: 'display_name')
+          String displayName,
+      @JsonKey(name: 'technical_stacks')
+      @TechnicalStackConverter()
+          List<TechnicalStack> technicalStacks,
+      @JsonKey(name: 'github_account')
+          String githubAccount,
+      @JsonKey(name: 'twitter_account')
+          String twitterAccount,
+      @JsonKey(name: 'icon_url')
+          String iconUrl});
 }
 
 class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
@@ -160,13 +183,21 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_User with DiagnosticableTreeMixin implements _User {
   const _$_User(
-      {@required this.id,
-      @JsonKey(name: 'full_name') this.fullName = '',
-      @JsonKey(name: 'display_name') this.displayName = '',
-      @JsonKey(name: 'technical_stack') this.technicalStacks,
-      @JsonKey(name: 'github_account') this.githubAccount = '',
-      @JsonKey(name: 'twitter_account') this.twitterAccount = '',
-      @JsonKey(name: 'icon_url') this.iconUrl = ''})
+      {@required
+          this.id,
+      @JsonKey(name: 'full_name')
+          this.fullName = '',
+      @JsonKey(name: 'display_name')
+          this.displayName = '',
+      @JsonKey(name: 'technical_stacks')
+      @TechnicalStackConverter()
+          this.technicalStacks,
+      @JsonKey(name: 'github_account')
+          this.githubAccount = '',
+      @JsonKey(name: 'twitter_account')
+          this.twitterAccount = '',
+      @JsonKey(name: 'icon_url')
+          this.iconUrl = ''})
       : assert(id != null),
         assert(fullName != null),
         assert(displayName != null),
@@ -186,7 +217,8 @@ class _$_User with DiagnosticableTreeMixin implements _User {
   @JsonKey(name: 'display_name')
   final String displayName;
   @override
-  @JsonKey(name: 'technical_stack')
+  @JsonKey(name: 'technical_stacks')
+  @TechnicalStackConverter()
   final List<TechnicalStack> technicalStacks;
   @override
   @JsonKey(name: 'github_account')
@@ -265,13 +297,21 @@ class _$_User with DiagnosticableTreeMixin implements _User {
 
 abstract class _User implements User {
   const factory _User(
-      {@required String id,
-      @JsonKey(name: 'full_name') String fullName,
-      @JsonKey(name: 'display_name') String displayName,
-      @JsonKey(name: 'technical_stack') List<TechnicalStack> technicalStacks,
-      @JsonKey(name: 'github_account') String githubAccount,
-      @JsonKey(name: 'twitter_account') String twitterAccount,
-      @JsonKey(name: 'icon_url') String iconUrl}) = _$_User;
+      {@required
+          String id,
+      @JsonKey(name: 'full_name')
+          String fullName,
+      @JsonKey(name: 'display_name')
+          String displayName,
+      @JsonKey(name: 'technical_stacks')
+      @TechnicalStackConverter()
+          List<TechnicalStack> technicalStacks,
+      @JsonKey(name: 'github_account')
+          String githubAccount,
+      @JsonKey(name: 'twitter_account')
+          String twitterAccount,
+      @JsonKey(name: 'icon_url')
+          String iconUrl}) = _$_User;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
@@ -284,7 +324,8 @@ abstract class _User implements User {
   @JsonKey(name: 'display_name')
   String get displayName;
   @override
-  @JsonKey(name: 'technical_stack')
+  @JsonKey(name: 'technical_stacks')
+  @TechnicalStackConverter()
   List<TechnicalStack> get technicalStacks;
   @override
   @JsonKey(name: 'github_account')

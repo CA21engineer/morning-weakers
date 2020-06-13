@@ -42,6 +42,7 @@ android {
         applicationId "com.ca21engeneer.morning_weakers"
         minSdkVersion 16
         targetSdkVersion 28
+        multiDexEnabled true
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         multiDexEnabled true
