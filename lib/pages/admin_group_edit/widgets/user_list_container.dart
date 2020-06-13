@@ -1,131 +1,91 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:morning_weakers/models/models.dart';
-import 'package:morning_weakers/models/technical_stack/stack.dart' as stackFile;
+import 'package:morning_weakers/models/technical_stack/stack.dart' as stack_file;
 import 'package:morning_weakers/core/dummy_data.dart';
 
 class UserListContainer extends StatelessWidget {
   final List<Participant> _participants = [
     dummyParticipant(
-      user: dummyUser(
-          technicalStacks: [dummyTechnicalStack(stack: stackFile.Stack.iOS)]),
+      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.iOS)]),
     ),
     dummyParticipant(
-      user: dummyUser(
-          technicalStacks: [dummyTechnicalStack(stack: stackFile.Stack.iOS)]),
+      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.iOS)]),
     ),
     dummyParticipant(
-      user: dummyUser(
-          technicalStacks: [dummyTechnicalStack(stack: stackFile.Stack.iOS)]),
+      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.iOS)]),
     ),
     dummyParticipant(
-      user: dummyUser(
-          technicalStacks: [dummyTechnicalStack(stack: stackFile.Stack.iOS)]),
+      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.iOS)]),
     ),
     dummyParticipant(
-      user: dummyUser(
-          technicalStacks: [dummyTechnicalStack(stack: stackFile.Stack.iOS)]),
+      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.iOS)]),
     ),
     dummyParticipant(
-      user: dummyUser(
-          technicalStacks: [dummyTechnicalStack(stack: stackFile.Stack.iOS)]),
+      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.iOS)]),
     ),
     dummyParticipant(
-      user: dummyUser(
-          technicalStacks: [dummyTechnicalStack(stack: stackFile.Stack.iOS)]),
+      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.iOS)]),
     ),
     dummyParticipant(
-      user: dummyUser(technicalStacks: [
-        dummyTechnicalStack(stack: stackFile.Stack.Android)
-      ]),
+      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Android)]),
     ),
     dummyParticipant(
-      user: dummyUser(technicalStacks: [
-        dummyTechnicalStack(stack: stackFile.Stack.Android)
-      ]),
+      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Android)]),
     ),
     dummyParticipant(
-      user: dummyUser(technicalStacks: [
-        dummyTechnicalStack(stack: stackFile.Stack.Android)
-      ]),
+      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Android)]),
     ),
     dummyParticipant(
-      user: dummyUser(technicalStacks: [
-        dummyTechnicalStack(stack: stackFile.Stack.Android)
-      ]),
+      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Android)]),
     ),
     dummyParticipant(
-      user: dummyUser(technicalStacks: [
-        dummyTechnicalStack(stack: stackFile.Stack.Android)
-      ]),
+      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Android)]),
     ),
     dummyParticipant(
-      user: dummyUser(
-          technicalStacks: [dummyTechnicalStack(stack: stackFile.Stack.Web)]),
+      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Web)]),
     ),
     dummyParticipant(
-      user: dummyUser(
-          technicalStacks: [dummyTechnicalStack(stack: stackFile.Stack.Web)]),
+      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Web)]),
     ),
     dummyParticipant(
-      user: dummyUser(
-          technicalStacks: [dummyTechnicalStack(stack: stackFile.Stack.Web)]),
+      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Web)]),
     ),
     dummyParticipant(
-      user: dummyUser(
-          technicalStacks: [dummyTechnicalStack(stack: stackFile.Stack.Web)]),
+      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Web)]),
     ),
     dummyParticipant(
-      user: dummyUser(
-          technicalStacks: [dummyTechnicalStack(stack: stackFile.Stack.Unity)]),
+      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Unity)]),
     ),
     dummyParticipant(
-      user: dummyUser(
-          technicalStacks: [dummyTechnicalStack(stack: stackFile.Stack.Unity)]),
+      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Unity)]),
     ),
     dummyParticipant(
-      user: dummyUser(
-          technicalStacks: [dummyTechnicalStack(stack: stackFile.Stack.Unity)]),
+      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Unity)]),
     ),
     dummyParticipant(
-      user: dummyUser(technicalStacks: [
-        dummyTechnicalStack(stack: stackFile.Stack.Serverside)
-      ]),
+      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Serverside)]),
     ),
     dummyParticipant(
-      user: dummyUser(technicalStacks: [
-        dummyTechnicalStack(stack: stackFile.Stack.Serverside)
-      ]),
+      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Serverside)]),
     ),
     dummyParticipant(
-      user: dummyUser(technicalStacks: [
-        dummyTechnicalStack(stack: stackFile.Stack.Serverside)
-      ]),
+      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Serverside)]),
     ),
     dummyParticipant(
-      user: dummyUser(technicalStacks: [
-        dummyTechnicalStack(stack: stackFile.Stack.Serverside)
-      ]),
+      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Serverside)]),
     ),
     dummyParticipant(
-      user: dummyUser(technicalStacks: [
-        dummyTechnicalStack(stack: stackFile.Stack.Serverside)
-      ]),
+      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Serverside)]),
     ),
     dummyParticipant(
-      user: dummyUser(technicalStacks: [
-        dummyTechnicalStack(stack: stackFile.Stack.Serverside)
-      ]),
+      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Serverside)]),
     ),
     dummyParticipant(
-      user: dummyUser(technicalStacks: [
-        dummyTechnicalStack(stack: stackFile.Stack.Serverside)
-      ]),
+      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Serverside)]),
     ),
     dummyParticipant(
-      user: dummyUser(technicalStacks: [
-        dummyTechnicalStack(stack: stackFile.Stack.Serverside)
-      ]),
+      user: dummyUser(technicalStacks: [dummyTechnicalStack(stack: stack_file.Stack.Serverside)]),
     ),
   ];
 
@@ -142,10 +102,7 @@ class UserListContainer extends StatelessWidget {
               // state.participantsを参照
               title: Text(_participants[index].user.displayName),
               subtitle: Text(
-                _participants[index]
-                    .user
-                    .technicalStacks
-                    .getCombinedLanguageText(),
+                _participants[index].user.technicalStacks.getCombinedLanguageText(),
               ),
               trailing: const Text('チーム1'), //どのチームに属するのかstateを参照
             ),

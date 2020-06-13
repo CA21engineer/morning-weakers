@@ -14,7 +14,7 @@ class TotalNumberContainer extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Text(
+          const Text(
             '参加人数',
             textAlign: TextAlign.left,
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
