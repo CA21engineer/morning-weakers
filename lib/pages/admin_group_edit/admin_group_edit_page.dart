@@ -22,7 +22,7 @@ class AdminGroupEditPage extends StatelessWidget {
       body: Provider(
         create: (_) => StateManagementSampleRepository(),
         child: StateNotifierProvider<AdminGroupEditController, AdminGroupEditState>(
-          create: (_) => AdminGroupEditController(),
+          create: (_) => AdminGroupEditController(_participants),
           child: AdminGroupEditContainer(),
         ),
       ),

@@ -9,6 +9,7 @@ part 'admin_group_edit_state.freezed.dart';
 abstract class AdminGroupEditState with _$AdminGroupEditState {
   const factory AdminGroupEditState({
     @Default(NotifierState.initial) NotifierState notifierState,
+    @Default(<Participant>[]) List<Participant> participants,
     @Default(<Group>[]) List<Group> groups,
   }) = _AdminGroupEditState;
 }

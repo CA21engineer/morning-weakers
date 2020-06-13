@@ -14,9 +14,11 @@ class _$AdminGroupEditStateTearOff {
 
   _AdminGroupEditState call(
       {NotifierState notifierState = NotifierState.initial,
+      List<Participant> participants = const <Participant>[],
       List<Group> groups = const <Group>[]}) {
     return _AdminGroupEditState(
       notifierState: notifierState,
+      participants: participants,
       groups: groups,
     );
   }
@@ -27,6 +29,7 @@ const $AdminGroupEditState = _$AdminGroupEditStateTearOff();
 
 mixin _$AdminGroupEditState {
   NotifierState get notifierState;
+  List<Participant> get participants;
   List<Group> get groups;
 
   $AdminGroupEditStateCopyWith<AdminGroupEditState> get copyWith;
@@ -36,7 +39,10 @@ abstract class $AdminGroupEditStateCopyWith<$Res> {
   factory $AdminGroupEditStateCopyWith(
           AdminGroupEditState value, $Res Function(AdminGroupEditState) then) =
       _$AdminGroupEditStateCopyWithImpl<$Res>;
-  $Res call({NotifierState notifierState, List<Group> groups});
+  $Res call(
+      {NotifierState notifierState,
+      List<Participant> participants,
+      List<Group> groups});
 }
 
 class _$AdminGroupEditStateCopyWithImpl<$Res>
@@ -50,12 +56,16 @@ class _$AdminGroupEditStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object notifierState = freezed,
+    Object participants = freezed,
     Object groups = freezed,
   }) {
     return _then(_value.copyWith(
       notifierState: notifierState == freezed
           ? _value.notifierState
           : notifierState as NotifierState,
+      participants: participants == freezed
+          ? _value.participants
+          : participants as List<Participant>,
       groups: groups == freezed ? _value.groups : groups as List<Group>,
     ));
   }
@@ -67,7 +77,10 @@ abstract class _$AdminGroupEditStateCopyWith<$Res>
           $Res Function(_AdminGroupEditState) then) =
       __$AdminGroupEditStateCopyWithImpl<$Res>;
   @override
-  $Res call({NotifierState notifierState, List<Group> groups});
+  $Res call(
+      {NotifierState notifierState,
+      List<Participant> participants,
+      List<Group> groups});
 }
 
 class __$AdminGroupEditStateCopyWithImpl<$Res>
@@ -83,12 +96,16 @@ class __$AdminGroupEditStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object notifierState = freezed,
+    Object participants = freezed,
     Object groups = freezed,
   }) {
     return _then(_AdminGroupEditState(
       notifierState: notifierState == freezed
           ? _value.notifierState
           : notifierState as NotifierState,
+      participants: participants == freezed
+          ? _value.participants
+          : participants as List<Participant>,
       groups: groups == freezed ? _value.groups : groups as List<Group>,
     ));
   }
@@ -99,20 +116,25 @@ class _$_AdminGroupEditState
     implements _AdminGroupEditState {
   const _$_AdminGroupEditState(
       {this.notifierState = NotifierState.initial,
+      this.participants = const <Participant>[],
       this.groups = const <Group>[]})
       : assert(notifierState != null),
+        assert(participants != null),
         assert(groups != null);
 
   @JsonKey(defaultValue: NotifierState.initial)
   @override
   final NotifierState notifierState;
+  @JsonKey(defaultValue: const <Participant>[])
+  @override
+  final List<Participant> participants;
   @JsonKey(defaultValue: const <Group>[])
   @override
   final List<Group> groups;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AdminGroupEditState(notifierState: $notifierState, groups: $groups)';
+    return 'AdminGroupEditState(notifierState: $notifierState, participants: $participants, groups: $groups)';
   }
 
   @override
@@ -121,6 +143,7 @@ class _$_AdminGroupEditState
     properties
       ..add(DiagnosticsProperty('type', 'AdminGroupEditState'))
       ..add(DiagnosticsProperty('notifierState', notifierState))
+      ..add(DiagnosticsProperty('participants', participants))
       ..add(DiagnosticsProperty('groups', groups));
   }
 
@@ -131,6 +154,9 @@ class _$_AdminGroupEditState
             (identical(other.notifierState, notifierState) ||
                 const DeepCollectionEquality()
                     .equals(other.notifierState, notifierState)) &&
+            (identical(other.participants, participants) ||
+                const DeepCollectionEquality()
+                    .equals(other.participants, participants)) &&
             (identical(other.groups, groups) ||
                 const DeepCollectionEquality().equals(other.groups, groups)));
   }
@@ -139,6 +165,7 @@ class _$_AdminGroupEditState
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(notifierState) ^
+      const DeepCollectionEquality().hash(participants) ^
       const DeepCollectionEquality().hash(groups);
 
   @override
@@ -150,10 +177,13 @@ class _$_AdminGroupEditState
 abstract class _AdminGroupEditState implements AdminGroupEditState {
   const factory _AdminGroupEditState(
       {NotifierState notifierState,
+      List<Participant> participants,
       List<Group> groups}) = _$_AdminGroupEditState;
 
   @override
   NotifierState get notifierState;
+  @override
+  List<Participant> get participants;
   @override
   List<Group> get groups;
   @override
