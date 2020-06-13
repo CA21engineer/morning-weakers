@@ -15,24 +15,24 @@ jobs:
           channel: 'stable'
       - name: Flutter analyze
         run: ./scripts/analyze.sh
-      - name: Cache bundle
-        uses: actions/cache@v1
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gem-
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 2.7.1
-      - name: Danger PR Comment
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gem install bundler
-          bundle install
-          bundle exec danger
+#      - name: Cache bundle
+#        uses: actions/cache@v1
+#        with:
+#          path: vendor/bundle
+#          key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
+#          restore-keys: |
+#            ${{ runner.os }}-gem-
+#      - name: Setup Ruby
+#        uses: ruby/setup-ruby@v1
+#        with:
+#          ruby-version: 2.7.0
+#      - name: Danger PR Comment
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        run: |
+#          gem install bundler
+#          bundle install
+#          bundle exec danger
 
   build-android:
     if: ${{ !contains(github.event.pull_request.title, '[skip ci]') }}
