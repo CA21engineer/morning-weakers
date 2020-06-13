@@ -14,16 +14,17 @@ class NotificationWidget extends StatelessWidget {
     notification.sort((a, b) => a.createdAt.compareTo(b.createdAt));
 
     return Container(
-        padding: const EdgeInsets.all(8),
-        decoration: BoxDecoration(
-          color: Colors.cyan[100],
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: Colors.cyan[600]),
-        ),
-        child: ListTile(
-          title: Text(notification[0].title),
-          subtitle: Text(notification[0].description),
-          trailing: Icon(Icons.arrow_forward_ios),
-        ));
+      padding: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        color: Colors.cyan[100],
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: Colors.cyan[600]),
+      ),
+      child: ListTile(
+        title: Text(notification[0].title),
+        subtitle: Text(notification[0].description),
+        trailing: Icon(Icons.arrow_forward_ios),
+      ),
+    );
   }
 }
