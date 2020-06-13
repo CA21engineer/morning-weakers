@@ -34,8 +34,8 @@ class AllPage extends StatelessWidget {
       '/home',
       '/adminTopPage',
       '/sample',
-      '/adminGroupEditPage'
-      '/stateManagementSample'
+      '/adminGroupEditPage',
+      '/stateManagementSample',
     ];
 
     return Scaffold(
