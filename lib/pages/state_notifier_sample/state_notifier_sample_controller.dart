@@ -6,6 +6,7 @@ import 'package:morning_weakers/repositories/group_repository.dart';
 import 'package:morning_weakers/repositories/hackathon_repository.dart';
 import 'package:morning_weakers/repositories/participant_repository.dart';
 import 'package:morning_weakers/repositories/questionnaire_repository.dart';
+import 'package:morning_weakers/repositories/user_repository.dart';
 import 'package:state_notifier/state_notifier.dart';
 
 // TODO: 動作確認用、あとで消す
@@ -19,6 +20,8 @@ class SampleController extends StateNotifier<SampleState> with LocatorMixin {
   GroupRepository get groupRepository => read<GroupRepository>();
 
   QuestionnaireRepository get questionnaireRepository => read<QuestionnaireRepository>();
+
+  UserRepository get userRepository => read<UserRepository>();
 
   void handleClick() {
     state = state.copyWith(count: state.count + 1);
@@ -41,6 +44,15 @@ class SampleController extends StateNotifier<SampleState> with LocatorMixin {
     }
     final Hackathon hackathon = await hackathonRepository.getHackathon(hackathonRepository.currentHackathonId);
     state = state.copyWith(hackathon: hackathon);
+  }
+
+  Future<void> createUser() async {
+    final FirebaseUser firebaseUser = await FirebaseAuth.instance.currentUser();
+    if (firebaseUser == null) {
+      return;
+    }
+    final User user = dummyUser();
+    await userRepository.createUser(user);
   }
 
   Future<void> getMyJoined() async {
@@ -78,7 +90,8 @@ class SampleController extends StateNotifier<SampleState> with LocatorMixin {
     if (firebaseUser == null) {
       return;
     }
-    final List<Participant> participants = await participantRepository.getParticipants(hackathonRepository.currentHackathonId);
+    final List<Participant> participants =
+        await participantRepository.getParticipants(hackathonRepository.currentHackathonId);
     state = state.copyWith(participants: participants);
   }
 

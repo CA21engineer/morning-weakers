@@ -25,11 +25,14 @@ class SamplePage extends StatelessWidget {
                     onTap: () => context.read<SampleController>().handleClick(),
                     child: const Icon(Icons.add),
                   ),
-                  Text(
-                    'createHackathon ${context.select<SampleState, Hackathon>((state) => state.hackathon)?.toString() ?? 'null'}',
-                  ),
+                  const Text('createHackathon'),
                   GestureDetector(
                     onTap: () => context.read<SampleController>().createHackathon(),
+                    child: const Icon(Icons.add),
+                  ),
+                  const Text('createUser'),
+                  GestureDetector(
+                    onTap: () => context.read<SampleController>().createUser(),
                     child: const Icon(Icons.add),
                   ),
                   Text(

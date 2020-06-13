@@ -1,10 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:morning_weakers/core/dummy_data.dart';
 import 'package:morning_weakers/models/models.dart';
 
 class HackathonRepository {
+  HackathonRepository(this.uid);
+
+  final String uid;
   final Firestore _firestore = Firestore.instance;
+
   String _currentHackathonId;
   String get currentHackathonId => _currentHackathonId;
 
@@ -23,7 +26,8 @@ class HackathonRepository {
       hackathon.participants.forEach((participant) async {
         await participantsRef.add(participant.toJson()..remove('id'));
       });
-      // TODO: joinする
+      // TODO: 作成者も強制的にハッカソンに参加する仕様。あとで話し合う
+      joinHackathon(hackathon, null, null, null);
       _currentHackathonId = hackRef.documentID;
     });
   }
@@ -57,14 +61,17 @@ class HackathonRepository {
       ..putIfAbsent('id', () => hackRef.documentID)
       ..putIfAbsent('participants', () => participants)
       ..putIfAbsent('groups', () => groups)
-      ..putIfAbsent('notification', () => notifications)));
+      ..putIfAbsent('notifications', () => notifications)));
   }
 
   /// Drawerに表示するハッカソンアイコン一覧とidの取得, 所属なしならnullが返る
   Future<Joined> getMyJoined() async {
-    // TODO: userIdはAuthができたら変更
     Joined joined;
-    _firestore.collection('joined').where('user_id', isEqualTo: 'userId').snapshots().listen((event) {
+    _firestore
+        .collection('joined')
+        .where('user_id', isEqualTo: uid)
+        .snapshots()
+        .listen((event) {
       if (event.documents.isEmpty) {
         joined = null;
       } else {
@@ -84,10 +91,11 @@ class HackathonRepository {
     // hackathon documentに参加者を追加
     final DocumentReference hackathonRef = _firestore.collection('hackathons').document(hackathon.id);
 
-    // TODO: authができたらUserはauthから取得する
+    final User user = User.fromJson((await _firestore.collection('users').document(uid).get()).data..putIfAbsent('id', () => uid));
+
     final Participant participant = Participant(
       id: hackathonRef.collection('participants').document().documentID,
-      user: dummyUser(),
+      user: user,
       desiredOccupations: desiredOccupations,
       workingDays: workingDays,
       note: note,
@@ -102,7 +110,7 @@ class HackathonRepository {
 
     // Joined documentに新しいhackathonを追加
     final CollectionReference joinedRef = _firestore.collection('joined');
-    await joinedRef.where('user_id', isEqualTo: participant.user.id).getDocuments().then((snapshot) {
+    await joinedRef.where('user_id', isEqualTo: uid).getDocuments().then((snapshot) {
       if (snapshot.documents.isEmpty) {
         joinedRef.add(<String, dynamic>{
           'user_id': participant.user.id,
