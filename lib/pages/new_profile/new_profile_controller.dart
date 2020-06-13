@@ -13,7 +13,7 @@ class NewProfileController extends StateNotifier<NewProfileState>
     getData();
   }
 
-  //TODO:API生えたら非同期処理実装する！
+  // TODO:API生えたら非同期処理実装する！
   Future<void> getData() {
     final User user = dummyUser();
     state = state.copyWith(
@@ -21,17 +21,17 @@ class NewProfileController extends StateNotifier<NewProfileState>
       displayName: user.displayName,
       twitterAccount: user.twitterAccount,
       githubAccount: user.githubAccount,
-      //TODO:technicalStacks: user.technicalStacks,
+      // TODO:technicalStacks: user.technicalStacks,
     );
   }
 
-  Future<void> postUser() {
-    //TODO:Repositoryやる
+  Future<void> handlePostUser() {
+    // TODO:Repositoryやる
     debugPrint('debugger: $state');
   }
 
   void setState(int key, String value) {
-    //TODO:Refactor
+    // TODO:Refactor
     debugPrint('debugger: $key ,$value');
     switch (key) {
       case 0:
@@ -46,7 +46,7 @@ class NewProfileController extends StateNotifier<NewProfileState>
       case 3:
         _setGithubState(value);
         break;
-      //TODO:case 4: _set
+      // TODO:case 4: _set
     }
   }
 
@@ -61,5 +61,5 @@ class NewProfileController extends StateNotifier<NewProfileState>
   void _setGithubState(String value) =>
       state = state.copyWith(githubAccount: value);
 
-//TODO:void _setStackState(String value) => state = state.copyWith(stacks: [Stack.]);
+// TODO:void _setStackState(String value) => state = state.copyWith(stacks: [Stack.]);
 }
