@@ -11,7 +11,7 @@ class InputParticipantInfoPage extends StatelessWidget {
     print('input:$userData');
     return Scaffold(
       appBar: AppBar(
-        title: const Text('参加者情報入力'),
+        title: const Text('参加者アンケート'),
       ),
       body: _inputParticipantInfo,
     );
