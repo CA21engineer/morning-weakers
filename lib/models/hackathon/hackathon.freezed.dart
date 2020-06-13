@@ -16,13 +16,13 @@ class _$HackathonTearOff {
   const _$HackathonTearOff();
 
   _Hackathon call(
-      {@required String id,
+      {String id,
       @required String title,
       @required String description,
       @required String theme,
-      @required @JsonKey(name: 'icon_url') String iconUrl,
-      @required @JsonKey(name: 'slack_url') String slackUrl,
-      @required @JsonKey(name: 'presentation_url') String presentationUrl,
+      @JsonKey(name: 'icon_url') String iconUrl,
+      @JsonKey(name: 'slack_url') String slackUrl,
+      @JsonKey(name: 'presentation_url') String presentationUrl,
       @required @JsonKey(name: 'start_date') DateTime startDate,
       @required @JsonKey(name: 'end_date') DateTime endDate,
       @required int span,
@@ -248,13 +248,13 @@ class __$HackathonCopyWithImpl<$Res> extends _$HackathonCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Hackathon with DiagnosticableTreeMixin implements _Hackathon {
   const _$_Hackathon(
-      {@required this.id,
+      {this.id,
       @required this.title,
       @required this.description,
       @required this.theme,
-      @required @JsonKey(name: 'icon_url') this.iconUrl,
-      @required @JsonKey(name: 'slack_url') this.slackUrl,
-      @required @JsonKey(name: 'presentation_url') this.presentationUrl,
+      @JsonKey(name: 'icon_url') this.iconUrl,
+      @JsonKey(name: 'slack_url') this.slackUrl,
+      @JsonKey(name: 'presentation_url') this.presentationUrl,
       @required @JsonKey(name: 'start_date') this.startDate,
       @required @JsonKey(name: 'end_date') this.endDate,
       @required this.span,
@@ -262,13 +262,9 @@ class _$_Hackathon with DiagnosticableTreeMixin implements _Hackathon {
       @required @ParticipantConverter() this.participants,
       @GroupConverter() this.groups,
       @NotificationConverter() this.notifications})
-      : assert(id != null),
-        assert(title != null),
+      : assert(title != null),
         assert(description != null),
         assert(theme != null),
-        assert(iconUrl != null),
-        assert(slackUrl != null),
-        assert(presentationUrl != null),
         assert(startDate != null),
         assert(endDate != null),
         assert(span != null),
@@ -414,13 +410,13 @@ class _$_Hackathon with DiagnosticableTreeMixin implements _Hackathon {
 
 abstract class _Hackathon implements Hackathon {
   const factory _Hackathon(
-          {@required String id,
+          {String id,
           @required String title,
           @required String description,
           @required String theme,
-          @required @JsonKey(name: 'icon_url') String iconUrl,
-          @required @JsonKey(name: 'slack_url') String slackUrl,
-          @required @JsonKey(name: 'presentation_url') String presentationUrl,
+          @JsonKey(name: 'icon_url') String iconUrl,
+          @JsonKey(name: 'slack_url') String slackUrl,
+          @JsonKey(name: 'presentation_url') String presentationUrl,
           @required @JsonKey(name: 'start_date') DateTime startDate,
           @required @JsonKey(name: 'end_date') DateTime endDate,
           @required int span,

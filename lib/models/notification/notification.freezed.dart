@@ -16,8 +16,7 @@ class _$NotificationTearOff {
   const _$NotificationTearOff();
 
   _Notification call(
-      {@required
-          String id,
+      {String id,
       @required
           String title,
       @required
@@ -174,8 +173,7 @@ class __$NotificationCopyWithImpl<$Res> extends _$NotificationCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Notification with DiagnosticableTreeMixin implements _Notification {
   const _$_Notification(
-      {@required
-          this.id,
+      {this.id,
       @required
           this.title,
       @required
@@ -190,8 +188,7 @@ class _$_Notification with DiagnosticableTreeMixin implements _Notification {
       @required
       @JsonKey(name: 'is_important')
           this.isImportant})
-      : assert(id != null),
-        assert(title != null),
+      : assert(title != null),
         assert(description != null),
         assert(publishedUser != null),
         assert(createdAt != null),
@@ -279,8 +276,7 @@ class _$_Notification with DiagnosticableTreeMixin implements _Notification {
 
 abstract class _Notification implements Notification {
   const factory _Notification(
-      {@required
-          String id,
+      {String id,
       @required
           String title,
       @required

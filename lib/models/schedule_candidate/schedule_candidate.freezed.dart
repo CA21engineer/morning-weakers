@@ -16,7 +16,7 @@ class _$ScheduleCandidateTearOff {
   const _$ScheduleCandidateTearOff();
 
   _ScheduleCandidate call(
-      {@required String id, @required DateTime start, @required DateTime end}) {
+      {String id, @required DateTime start, @required DateTime end}) {
     return _ScheduleCandidate(
       id: id,
       start: start,
@@ -104,9 +104,8 @@ class _$_ScheduleCandidate
     with DiagnosticableTreeMixin
     implements _ScheduleCandidate {
   const _$_ScheduleCandidate(
-      {@required this.id, @required this.start, @required this.end})
-      : assert(id != null),
-        assert(start != null),
+      {this.id, @required this.start, @required this.end})
+      : assert(start != null),
         assert(end != null);
 
   factory _$_ScheduleCandidate.fromJson(Map<String, dynamic> json) =>
@@ -165,7 +164,7 @@ class _$_ScheduleCandidate
 
 abstract class _ScheduleCandidate implements ScheduleCandidate {
   const factory _ScheduleCandidate(
-      {@required String id,
+      {String id,
       @required DateTime start,
       @required DateTime end}) = _$_ScheduleCandidate;
 

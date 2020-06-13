@@ -16,8 +16,7 @@ class _$QuestionnaireTearOff {
   const _$QuestionnaireTearOff();
 
   _Questionnaire call(
-      {@required
-          String id,
+      {String id,
       @required
           String title,
       @required
@@ -185,8 +184,7 @@ class __$QuestionnaireCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Questionnaire with DiagnosticableTreeMixin implements _Questionnaire {
   const _$_Questionnaire(
-      {@required
-          this.id,
+      {this.id,
       @required
           this.title,
       @required
@@ -204,8 +202,7 @@ class _$_Questionnaire with DiagnosticableTreeMixin implements _Questionnaire {
           this.workingDays,
       @required
           this.note})
-      : assert(id != null),
-        assert(title != null),
+      : assert(title != null),
         assert(description != null),
         assert(scheduleCandidates != null),
         assert(desiredOccupations != null),
@@ -301,8 +298,7 @@ class _$_Questionnaire with DiagnosticableTreeMixin implements _Questionnaire {
 
 abstract class _Questionnaire implements Questionnaire {
   const factory _Questionnaire(
-      {@required
-          String id,
+      {String id,
       @required
           String title,
       @required

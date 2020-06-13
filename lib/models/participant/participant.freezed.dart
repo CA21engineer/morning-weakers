@@ -16,8 +16,7 @@ class _$ParticipantTearOff {
   const _$ParticipantTearOff();
 
   _Participant call(
-      {@required
-          String id,
+      {String id,
       @required
       @UserConverter()
           User user,
@@ -182,8 +181,7 @@ class __$ParticipantCopyWithImpl<$Res> extends _$ParticipantCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Participant with DiagnosticableTreeMixin implements _Participant {
   const _$_Participant(
-      {@required
-          this.id,
+      {this.id,
       @required
       @UserConverter()
           this.user,
@@ -199,8 +197,7 @@ class _$_Participant with DiagnosticableTreeMixin implements _Participant {
       @required
       @JsonKey(name: 'is_admin')
           this.isAdmin})
-      : assert(id != null),
-        assert(user != null),
+      : assert(user != null),
         assert(desiredOccupations != null),
         assert(workingDays != null),
         assert(note != null),
@@ -287,8 +284,7 @@ class _$_Participant with DiagnosticableTreeMixin implements _Participant {
 
 abstract class _Participant implements Participant {
   const factory _Participant(
-      {@required
-          String id,
+      {String id,
       @required
       @UserConverter()
           User user,

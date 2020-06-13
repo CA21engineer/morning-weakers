@@ -7,15 +7,16 @@ part 'group.freezed.dart';
 
 part 'group.g.dart';
 
+// TODO: idを@requiredにする
 @freezed
 abstract class Group with _$Group {
   const factory Group({
-    @required String id,
+    String id,
     @required @JsonKey(name: 'group_name') String groupName,
-    @required @JsonKey(name: 'github_url') String githubUrl,
-    @required @JsonKey(name: 'slide_url') String slideUrl,
-    @required @JsonKey(name: 'other_urls') @LinkConverter() List<Link> otherUrls,
-    @required @JsonKey(name: 'icon_url') String iconUrl,
+    @JsonKey(name: 'github_url') String githubUrl,
+    @JsonKey(name: 'slide_url') String slideUrl,
+    @JsonKey(name: 'other_urls') @LinkConverter() List<Link> otherUrls,
+    @JsonKey(name: 'icon_url') String iconUrl,
     @required @ParticipantConverter() List<Participant> participants,
   }) = _Group;
 
