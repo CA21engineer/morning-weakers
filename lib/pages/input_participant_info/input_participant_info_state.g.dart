@@ -16,6 +16,11 @@ _$_InputParticipantInfoState _$_$_InputParticipantInfoStateFromJson(
         ?.toList(),
     workingDays: json['working_days'] as int,
     note: json['note'] as String,
+    scheduleCandidates: (json['schedule_candidate'] as List)
+        ?.map((e) => e == null
+            ? null
+            : ScheduleCandidate.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
   );
 }
 
@@ -25,4 +30,5 @@ Map<String, dynamic> _$_$_InputParticipantInfoStateToJson(
       'desired_occupations': instance.desiredOccupations,
       'working_days': instance.workingDays,
       'note': instance.note,
+      'schedule_candidate': instance.scheduleCandidates,
     };

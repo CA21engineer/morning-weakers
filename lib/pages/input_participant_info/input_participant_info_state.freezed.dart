@@ -21,11 +21,15 @@ class _$InputParticipantInfoStateTearOff {
           List<TechnicalStack> desiredOccupations,
       @JsonKey(name: 'working_days')
           int workingDays,
-      String note}) {
+      String note,
+      @required
+      @JsonKey(name: 'schedule_candidate')
+          List<ScheduleCandidate> scheduleCandidates}) {
     return _InputParticipantInfoState(
       desiredOccupations: desiredOccupations,
       workingDays: workingDays,
       note: note,
+      scheduleCandidates: scheduleCandidates,
     );
   }
 }
@@ -39,6 +43,8 @@ mixin _$InputParticipantInfoState {
   @JsonKey(name: 'working_days')
   int get workingDays;
   String get note;
+  @JsonKey(name: 'schedule_candidate')
+  List<ScheduleCandidate> get scheduleCandidates;
 
   Map<String, dynamic> toJson();
   $InputParticipantInfoStateCopyWith<InputParticipantInfoState> get copyWith;
@@ -53,7 +59,9 @@ abstract class $InputParticipantInfoStateCopyWith<$Res> {
           List<TechnicalStack> desiredOccupations,
       @JsonKey(name: 'working_days')
           int workingDays,
-      String note});
+      String note,
+      @JsonKey(name: 'schedule_candidate')
+          List<ScheduleCandidate> scheduleCandidates});
 }
 
 class _$InputParticipantInfoStateCopyWithImpl<$Res>
@@ -69,6 +77,7 @@ class _$InputParticipantInfoStateCopyWithImpl<$Res>
     Object desiredOccupations = freezed,
     Object workingDays = freezed,
     Object note = freezed,
+    Object scheduleCandidates = freezed,
   }) {
     return _then(_value.copyWith(
       desiredOccupations: desiredOccupations == freezed
@@ -77,6 +86,9 @@ class _$InputParticipantInfoStateCopyWithImpl<$Res>
       workingDays:
           workingDays == freezed ? _value.workingDays : workingDays as int,
       note: note == freezed ? _value.note : note as String,
+      scheduleCandidates: scheduleCandidates == freezed
+          ? _value.scheduleCandidates
+          : scheduleCandidates as List<ScheduleCandidate>,
     ));
   }
 }
@@ -92,7 +104,9 @@ abstract class _$InputParticipantInfoStateCopyWith<$Res>
           List<TechnicalStack> desiredOccupations,
       @JsonKey(name: 'working_days')
           int workingDays,
-      String note});
+      String note,
+      @JsonKey(name: 'schedule_candidate')
+          List<ScheduleCandidate> scheduleCandidates});
 }
 
 class __$InputParticipantInfoStateCopyWithImpl<$Res>
@@ -111,6 +125,7 @@ class __$InputParticipantInfoStateCopyWithImpl<$Res>
     Object desiredOccupations = freezed,
     Object workingDays = freezed,
     Object note = freezed,
+    Object scheduleCandidates = freezed,
   }) {
     return _then(_InputParticipantInfoState(
       desiredOccupations: desiredOccupations == freezed
@@ -119,6 +134,9 @@ class __$InputParticipantInfoStateCopyWithImpl<$Res>
       workingDays:
           workingDays == freezed ? _value.workingDays : workingDays as int,
       note: note == freezed ? _value.note : note as String,
+      scheduleCandidates: scheduleCandidates == freezed
+          ? _value.scheduleCandidates
+          : scheduleCandidates as List<ScheduleCandidate>,
     ));
   }
 }
@@ -130,7 +148,9 @@ class _$_InputParticipantInfoState
   const _$_InputParticipantInfoState(
       {@JsonKey(name: 'desired_occupations') this.desiredOccupations,
       @JsonKey(name: 'working_days') this.workingDays,
-      this.note});
+      this.note,
+      @required @JsonKey(name: 'schedule_candidate') this.scheduleCandidates})
+      : assert(scheduleCandidates != null);
 
   factory _$_InputParticipantInfoState.fromJson(Map<String, dynamic> json) =>
       _$_$_InputParticipantInfoStateFromJson(json);
@@ -143,10 +163,13 @@ class _$_InputParticipantInfoState
   final int workingDays;
   @override
   final String note;
+  @override
+  @JsonKey(name: 'schedule_candidate')
+  final List<ScheduleCandidate> scheduleCandidates;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'InputParticipantInfoState(desiredOccupations: $desiredOccupations, workingDays: $workingDays, note: $note)';
+    return 'InputParticipantInfoState(desiredOccupations: $desiredOccupations, workingDays: $workingDays, note: $note, scheduleCandidates: $scheduleCandidates)';
   }
 
   @override
@@ -156,7 +179,8 @@ class _$_InputParticipantInfoState
       ..add(DiagnosticsProperty('type', 'InputParticipantInfoState'))
       ..add(DiagnosticsProperty('desiredOccupations', desiredOccupations))
       ..add(DiagnosticsProperty('workingDays', workingDays))
-      ..add(DiagnosticsProperty('note', note));
+      ..add(DiagnosticsProperty('note', note))
+      ..add(DiagnosticsProperty('scheduleCandidates', scheduleCandidates));
   }
 
   @override
@@ -170,7 +194,10 @@ class _$_InputParticipantInfoState
                 const DeepCollectionEquality()
                     .equals(other.workingDays, workingDays)) &&
             (identical(other.note, note) ||
-                const DeepCollectionEquality().equals(other.note, note)));
+                const DeepCollectionEquality().equals(other.note, note)) &&
+            (identical(other.scheduleCandidates, scheduleCandidates) ||
+                const DeepCollectionEquality()
+                    .equals(other.scheduleCandidates, scheduleCandidates)));
   }
 
   @override
@@ -178,7 +205,8 @@ class _$_InputParticipantInfoState
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(desiredOccupations) ^
       const DeepCollectionEquality().hash(workingDays) ^
-      const DeepCollectionEquality().hash(note);
+      const DeepCollectionEquality().hash(note) ^
+      const DeepCollectionEquality().hash(scheduleCandidates);
 
   @override
   _$InputParticipantInfoStateCopyWith<_InputParticipantInfoState>
@@ -194,11 +222,15 @@ class _$_InputParticipantInfoState
 
 abstract class _InputParticipantInfoState implements InputParticipantInfoState {
   const factory _InputParticipantInfoState(
-      {@JsonKey(name: 'desired_occupations')
-          List<TechnicalStack> desiredOccupations,
-      @JsonKey(name: 'working_days')
-          int workingDays,
-      String note}) = _$_InputParticipantInfoState;
+          {@JsonKey(name: 'desired_occupations')
+              List<TechnicalStack> desiredOccupations,
+          @JsonKey(name: 'working_days')
+              int workingDays,
+          String note,
+          @required
+          @JsonKey(name: 'schedule_candidate')
+              List<ScheduleCandidate> scheduleCandidates}) =
+      _$_InputParticipantInfoState;
 
   factory _InputParticipantInfoState.fromJson(Map<String, dynamic> json) =
       _$_InputParticipantInfoState.fromJson;
@@ -211,6 +243,9 @@ abstract class _InputParticipantInfoState implements InputParticipantInfoState {
   int get workingDays;
   @override
   String get note;
+  @override
+  @JsonKey(name: 'schedule_candidate')
+  List<ScheduleCandidate> get scheduleCandidates;
   @override
   _$InputParticipantInfoStateCopyWith<_InputParticipantInfoState> get copyWith;
 }
