@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:morning_weakers/pages/home/home_page.dart';
 import 'package:morning_weakers/pages/new_profile/new_profile_controller.dart';
 
 class OkButtonWidget extends StatelessWidget {
@@ -11,6 +12,7 @@ class OkButtonWidget extends StatelessWidget {
         color: Theme.of(context).primaryColor,
         onPressed: () async {
           await context.read<NewProfileController>().handlePostUser();
+          await Navigator.push<void>(context, MaterialPageRoute(builder: (_) => HomePage()));
         });
   }
 }
