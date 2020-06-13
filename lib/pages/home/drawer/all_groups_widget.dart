@@ -24,7 +24,11 @@ class AllGroupsWidget extends StatelessWidget {
               )
               .toList(),
         ),
-        const Icon(Icons.add, size: 52),
+        FlatButton(
+          padding: EdgeInsets.all(5.0),
+          child: const Icon(Icons.add, size: 52),
+          // onPressed: () => Navigator.push<void>(context, MaterialPageRoute(builder: (_) => ()));
+        )
       ]),
     );
   }
