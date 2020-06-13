@@ -7,8 +7,7 @@ import 'package:morning_weakers/extensions/list.dart';
 class TechnicalStackContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final models.User user =
-        context.select<ProfileDetailState, models.User>((state) => state.user);
+    final models.User user = context.select<ProfileDetailState, models.User>((state) => state.user);
 
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 12),
@@ -25,9 +24,7 @@ class TechnicalStackContainer extends StatelessWidget {
             children: user.technicalStacks
                 .indexedMap(
                   (index, technicalStack) => Container(
-                    padding: index != user.technicalStacks.length - 1
-                        ? const EdgeInsets.only(bottom: 32)
-                        : null,
+                    padding: index != user.technicalStacks.length - 1 ? const EdgeInsets.only(bottom: 32) : null,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: <Widget>[
@@ -51,14 +48,5 @@ class TechnicalStackContainer extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  String _getCombinedLanguageText(List<models.Language> languages) {
-    String text = '';
-    languages.asMap().forEach((index, language) {
-      text += '${models.getLanguageValue(language)}';
-      text += index != languages.length - 1 ? ', ' : '';
-    });
-    return text;
   }
 }

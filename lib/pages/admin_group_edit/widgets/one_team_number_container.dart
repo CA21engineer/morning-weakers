@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
 class OneTeamNumberContainer extends StatelessWidget {
-  const OneTeamNumberContainer(
-      {this.memberNumber, this.teamNumber, this.pickerList});
+  const OneTeamNumberContainer({this.memberNumber, this.teamNumber, this.pickerList});
 
   final int memberNumber, teamNumber;
   final List<int> pickerList;
@@ -15,7 +14,7 @@ class OneTeamNumberContainer extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Text(
+          const Text(
             '1チームの最低人数',
             textAlign: TextAlign.left,
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -58,9 +57,7 @@ class OneTeamNumberContainer extends StatelessWidget {
             },
             child: CupertinoPicker(
               itemExtent: 40,
-              children: pickerList
-                  .map<Widget>((element) => Text(element.toString()))
-                  .toList(),
+              children: pickerList.map<Widget>((element) => Text(element.toString())).toList(),
               onSelectedItemChanged: (index) {
                 // stateに変更を伝える
               },
