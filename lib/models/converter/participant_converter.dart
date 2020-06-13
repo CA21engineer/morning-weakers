@@ -5,8 +5,14 @@ class ParticipantConverter implements JsonConverter<Participant, Map<String, dyn
   const ParticipantConverter();
 
   @override
-  Participant fromJson(Map<String, dynamic> json) => Participant.fromJson(json);
+  Participant fromJson(Map<String, dynamic> json) {
+    if (json != null) {
+      return Participant.fromJson(json);
+    } else {
+      return null;
+    }
+  }
 
   @override
-  Map<String, dynamic> toJson(Participant participant) => participant.toJson();
+  Map<String, dynamic> toJson(Participant participant) => participant?.toJson();
 }

@@ -1,11 +1,16 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:morning_weakers/core/dummy_data.dart';
+import 'package:morning_weakers/infrastructure/firebase_auth_service.dart';
 import 'package:morning_weakers/models/models.dart';
 
 class HackathonRepository {
+  HackathonRepository(this.authService);
+
+  final FirebaseAuthService authService;
   final Firestore _firestore = Firestore.instance;
+
   String _currentHackathonId;
+
   String get currentHackathonId => _currentHackathonId;
 
   /// ハッカソンの新規作成
@@ -14,7 +19,6 @@ class HackathonRepository {
     final Map<String, dynamic> hackMap = hackathon.copyWith(id: hackRef.documentID).toJson()
       ..remove('participants')
       ..remove('groups')
-      ..remove('questionnaire')
       ..remove('notifications');
     debugPrint(hackMap.toString());
     await hackRef.setData(hackMap).whenComplete(() {
@@ -23,7 +27,8 @@ class HackathonRepository {
       hackathon.participants.forEach((participant) async {
         await participantsRef.add(participant.toJson()..remove('id'));
       });
-      // TODO: joinする
+      // TODO: 作成者も強制的にハッカソンに参加する仕様。あとで話し合う
+      _updateJoined(hackathon.copyWith(id: hackRef.documentID));
       _currentHackathonId = hackRef.documentID;
     });
   }
@@ -57,20 +62,21 @@ class HackathonRepository {
       ..putIfAbsent('id', () => hackRef.documentID)
       ..putIfAbsent('participants', () => participants)
       ..putIfAbsent('groups', () => groups)
-      ..putIfAbsent('notification', () => notifications)));
+      ..putIfAbsent('notifications', () => notifications)));
   }
 
   /// Drawerに表示するハッカソンアイコン一覧とidの取得, 所属なしならnullが返る
   Future<Joined> getMyJoined() async {
-    // TODO: userIdはAuthができたら変更
+    final uid = authService.uid.value;
     Joined joined;
-    _firestore.collection('joined').where('user_id', isEqualTo: 'userId').snapshots().listen((event) {
-      if (event.documents.isEmpty) {
+    await _firestore.collection('joined').where('user_id', isEqualTo: uid).getDocuments().then((snapshot) {
+      if (snapshot.documents.isEmpty) {
         joined = null;
       } else {
-        joined = Joined.fromJson(event.documents[0].data);
+        joined = Joined.fromJson(snapshot.documents[0].data..putIfAbsent('id', () => snapshot.documents[0].documentID));
       }
     });
+
     return joined;
   }
 
@@ -84,28 +90,36 @@ class HackathonRepository {
     // hackathon documentに参加者を追加
     final DocumentReference hackathonRef = _firestore.collection('hackathons').document(hackathon.id);
 
-    // TODO: authができたらUserはauthから取得する
+    final uid = authService.uid.value;
+    final User user =
+        User.fromJson((await _firestore.collection('users').document(uid).get()).data..putIfAbsent('id', () => uid));
+
     final Participant participant = Participant(
       id: hackathonRef.collection('participants').document().documentID,
-      user: dummyUser(),
+      user: user,
       desiredOccupations: desiredOccupations,
       workingDays: workingDays,
       note: note,
       isAdmin: false,
     );
+    final newParticipants = hackathon.participants..add(participant);
+    final participantMap = newParticipants.map((e) => e.toJson()).toList();
 
-    await hackathonRef.setData(
-      <String, dynamic>{
-        'participants': hackathon.copyWith(participants: hackathon.participants..add(participant)).toJson()
-      },
+    await hackathonRef.updateData(
+      <String, dynamic>{'participants': participantMap},
     );
 
     // Joined documentに新しいhackathonを追加
+    await _updateJoined(hackathon);
+  }
+
+  Future<void> _updateJoined(Hackathon hackathon) async {
+    final uid = authService.uid.value;
     final CollectionReference joinedRef = _firestore.collection('joined');
-    await joinedRef.where('user_id', isEqualTo: participant.user.id).getDocuments().then((snapshot) {
+    await joinedRef.where('user_id', isEqualTo: uid).getDocuments().then((snapshot) {
       if (snapshot.documents.isEmpty) {
         joinedRef.add(<String, dynamic>{
-          'user_id': participant.user.id,
+          'user_id': uid,
           'hackathon_ids': [hackathon.id],
           'hackathon_icon_urls': [hackathon.iconUrl],
         });
@@ -117,7 +131,7 @@ class HackathonRepository {
           _firestore
               .collection('joined')
               .document(id)
-              .setData(<String, dynamic>{'hackathon_ids': hackathonIds..add(hackathon.id)});
+              .updateData(<String, dynamic>{'hackathon_ids': hackathonIds..add(hackathon.id)});
         });
       }
     });
