@@ -25,18 +25,23 @@ class SamplePage extends StatelessWidget {
                     onTap: () => context.read<SampleController>().handleClick(),
                     child: const Icon(Icons.add),
                   ),
+                  Text(
+                    'createHackathon ${context.select<SampleState, Hackathon>((state) => state.hackathon)?.toString() ?? 'null'}',
+                  ),
                   GestureDetector(
                     onTap: () => context.read<SampleController>().createHackathon(),
-                    child: const Icon(Icons.create),
+                    child: const Icon(Icons.add),
                   ),
                   Text(
-                      'getHackathon ${context.select<SampleState, Hackathon>((state) => state.hackathon)?.toString() ?? 'null'}'),
+                    'getHackathon ${context.select<SampleState, Hackathon>((state) => state.hackathon)?.toString() ?? 'null'}',
+                  ),
                   GestureDetector(
                     onTap: () => context.read<SampleController>().getHackathon(),
                     child: const Icon(Icons.add),
                   ),
                   Text(
-                      'getMyJoined ${context.select<SampleState, Joined>((state) => state.joined)?.toString() ?? 'null'}'),
+                    'getMyJoined ${context.select<SampleState, Joined>((state) => state.joined)?.toString() ?? 'null'}',
+                  ),
                   GestureDetector(
                     onTap: () => context.read<SampleController>().getMyJoined(),
                     child: const Icon(Icons.add),
@@ -52,13 +57,15 @@ class SamplePage extends StatelessWidget {
                     child: const Icon(Icons.add),
                   ),
                   Text(
-                      'getParticipants ${context.select<SampleState, List<Participant>>((state) => state.participants)?.toString() ?? 'null'}'),
+                    'getParticipants ${context.select<SampleState, List<Participant>>((state) => state.participants)?.toString() ?? 'null'}',
+                  ),
                   GestureDetector(
                     onTap: () => context.read<SampleController>().getParticipants(),
                     child: const Icon(Icons.add),
                   ),
                   Text(
-                      'getGroups ${context.select<SampleState, List<Group>>((state) => state.groups)?.toString() ?? 'null'}'),
+                    'getGroups ${context.select<SampleState, List<Group>>((state) => state.groups)?.toString() ?? 'null'}',
+                  ),
                   GestureDetector(
                     onTap: () => context.read<SampleController>().getGroups(),
                     child: const Icon(Icons.add),

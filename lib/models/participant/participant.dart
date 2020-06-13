@@ -55,7 +55,7 @@ extension ParticipantsExtension on List<Participant> {
         participants.add(Participant(id: '', user: iosUsers.first, desiredOccupations: [], workingDays: 0, note: '', isAdmin: false));
         iosUsers.removeAt(0);
       }
-      iosGroups.add(Group(id: '', groupName: '', githubUrl: '', slideUrls: [], otherUrls: [], iconUrl: '', participants: participants));
+      iosGroups.add(Group(id: '', groupName: '', githubUrl: '', slideUrl: '', otherUrls: [], iconUrl: '', participants: participants));
     }
 
     /// Android
@@ -75,7 +75,7 @@ extension ParticipantsExtension on List<Participant> {
         participants.add(Participant(id: '', user: androidUsers.first, desiredOccupations: [], workingDays: 0, note: '', isAdmin: false));
         androidUsers.removeAt(0);
       }
-      androidGroups.add(Group(id: '', groupName: '', githubUrl: '', slideUrls: [], otherUrls: [], iconUrl: '', participants: participants));
+      androidGroups.add(Group(id: '', groupName: '', githubUrl: '', slideUrl: '', otherUrls: [], iconUrl: '', participants: participants));
     }
 
     /// Web
@@ -95,7 +95,7 @@ extension ParticipantsExtension on List<Participant> {
         participants.add(Participant(id: '', user: webUsers.first, desiredOccupations: [], workingDays: 0, note: '', isAdmin: false));
         webUsers.removeAt(0);
       }
-      webGroups.add(Group(id: '', groupName: '', githubUrl: '', slideUrls: [], otherUrls: [], iconUrl: '', participants: participants));
+      webGroups.add(Group(id: '', groupName: '', githubUrl: '', slideUrl: '', otherUrls: [], iconUrl: '', participants: participants));
     }
 
     /// Unity
@@ -115,7 +115,7 @@ extension ParticipantsExtension on List<Participant> {
         participants.add(Participant(id: '', user: unityUsers.first, desiredOccupations: [], workingDays: 0, note: '', isAdmin: false));
         unityUsers.removeAt(0);
       }
-      unityGroups.add(Group(id: '', groupName: '', githubUrl: '', slideUrls: [], otherUrls: [], iconUrl: '', participants: participants));
+      unityGroups.add(Group(id: '', groupName: '', githubUrl: '', slideUrl: '', otherUrls: [], iconUrl: '', participants: participants));
     }
 
     /// All

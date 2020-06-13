@@ -30,7 +30,7 @@ class SampleController extends StateNotifier<SampleState> with LocatorMixin {
       return;
     }
     final Participant participant = dummyParticipant(user: dummyUser(id: firebaseUser.uid), isAdmin: true);
-    final hackathon = dummyHackathon(participants: [participant], questionnaire: null);
+    final Hackathon hackathon = dummyHackathon(participants: [participant], questionnaire: null);
     await hackathonRepository.createHackathon(hackathon);
   }
 
@@ -39,7 +39,7 @@ class SampleController extends StateNotifier<SampleState> with LocatorMixin {
     if (firebaseUser == null) {
       return;
     }
-    final hackathon = await hackathonRepository.getHackathon(hackathonRepository.currentHackathonId);
+    final Hackathon hackathon = await hackathonRepository.getHackathon(hackathonRepository.currentHackathonId);
     state = state.copyWith(hackathon: hackathon);
   }
 
@@ -48,7 +48,7 @@ class SampleController extends StateNotifier<SampleState> with LocatorMixin {
     if (firebaseUser == null) {
       return;
     }
-    final joined = await hackathonRepository.getMyJoined();
+    final Joined joined = await hackathonRepository.getMyJoined();
     state = state.copyWith(joined: joined);
   }
 
@@ -58,7 +58,11 @@ class SampleController extends StateNotifier<SampleState> with LocatorMixin {
       return;
     }
     await hackathonRepository.joinHackathon(
-        dummyHackathon(id: hackathonRepository.currentHackathonId), [dummyTechnicalStack()], 2, '備考だよ');
+      dummyHackathon(id: hackathonRepository.currentHackathonId),
+      [dummyTechnicalStack()],
+      2,
+      '備考だよ',
+    );
   }
 
   Future<void> createQuestionnaire() async {
@@ -74,7 +78,7 @@ class SampleController extends StateNotifier<SampleState> with LocatorMixin {
     if (firebaseUser == null) {
       return;
     }
-    final participants = await participantRepository.getParticipants(hackathonRepository.currentHackathonId);
+    final List<Participant> participants = await participantRepository.getParticipants(hackathonRepository.currentHackathonId);
     state = state.copyWith(participants: participants);
   }
 
@@ -83,7 +87,7 @@ class SampleController extends StateNotifier<SampleState> with LocatorMixin {
     if (firebaseUser == null) {
       return;
     }
-    final groups = await groupRepository.getGroups(hackathonRepository.currentHackathonId);
+    final List<Group> groups = await groupRepository.getGroups(hackathonRepository.currentHackathonId);
     state = state.copyWith(groups: groups);
   }
 

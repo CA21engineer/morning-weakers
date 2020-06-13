@@ -124,7 +124,7 @@ Group dummyGroup({
   String id = 'dummy',
   String groupName = 'morning weaker ~朝弱いけん~',
   String githubUrl = 'https://github.com/CA21engineer/morning-weakers',
-  List<String> slideUrl,
+  String slideUrl = 'slide_url',
   List<Link> otherUrls,
   String iconUrl = 'https://avatars1.githubusercontent.com/u/64519003?s=200&v=4',
   List<Participant> participants,
@@ -133,9 +133,9 @@ Group dummyGroup({
       id: id,
       groupName: groupName,
       githubUrl: githubUrl,
-      slideUrl: slideUrl ?? ['slide_url'],
+      slideUrl: slideUrl,
       otherUrls: otherUrls ?? [dummyLink()],
-      iconUrl: iconUrl ?? 'icon_url',
+      iconUrl: iconUrl,
       participants: participants ?? [dummyParticipant()],
     );
 
