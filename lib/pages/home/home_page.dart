@@ -12,37 +12,39 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          title: const Text('ホーム画面'),
-        ),
-        body: StateNotifierProvider<HomeController, HomeState>(
-          create: (_) => HomeController(),
-          child: Container(
-            child: ListView(
-              padding: const EdgeInsets.all(20),
-              children: <Widget>[
-                DataTableView(),
-                Divider(
-                  color: Theme.of(context).primaryColor,
-                ),
-                SourceLinkWidget(),
-                Divider(
-                  color: Theme.of(context).primaryColor,
-                ),
-                ListTile(
-                  title: const Text(
-                    '全てのグループを見る',
-                    style: TextStyle(fontSize: 20),
+          appBar: AppBar(
+            title: const Text('ホーム画面'),
+          ),
+          body: StateNotifierProvider<HomeController, HomeState>(
+            create: (_) => HomeController(),
+            child: Container(
+              child: ListView(
+                padding: const EdgeInsets.all(20),
+                children: <Widget>[
+                  DataTableView(),
+                  Divider(
+                    color: Theme.of(context).primaryColor,
                   ),
-                  trailing: const Icon(Icons.arrow_forward_ios),
-                  onTap: () => null,
-                ),
-              ],
+                  SourceLinkWidget(),
+                  Divider(
+                    color: Theme.of(context).primaryColor,
+                  ),
+                  ListTile(
+                    title: const Text(
+                      '全てのグループを見る',
+                      style: TextStyle(fontSize: 20),
+                    ),
+                    trailing: const Icon(Icons.arrow_forward_ios),
+                    onTap: () => null,
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
-        drawer: HomeDrawer(),
-      ),
+          drawer: StateNotifierProvider<HomeController, HomeState>(
+            create: (_) => HomeController(),
+            child: HomeDrawer(),
+          )),
     );
   }
 }

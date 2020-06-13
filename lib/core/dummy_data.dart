@@ -126,7 +126,8 @@ Group dummyGroup({
   String githubUrl = 'https://github.com/CA21engineer/morning-weakers',
   List<String> slideUrls,
   List<Link> otherUrls,
-  List<String> iconUrls,
+  String iconUrl =
+      'https://avatars1.githubusercontent.com/u/64519003?s=200&v=4',
   List<Participant> participants,
 }) =>
     Group(
@@ -135,7 +136,7 @@ Group dummyGroup({
       githubUrl: githubUrl,
       slideUrls: slideUrls ?? ['slide_url'],
       otherUrls: otherUrls ?? [dummyLink()],
-      iconUrls: iconUrls ?? ['icon_url'],
+      iconUrl: iconUrl ?? 'icon_url',
       participants: participants ?? [dummyParticipant()],
     );
 
@@ -153,7 +154,8 @@ ScheduleCandidate dummyScheduleCandidate({
 Link dummyLink({
   String id = 'dummy',
   String title = 'Notion',
-  String url = 'https://www.notion.so/ho2ri2s/21hack01-Flutter-e0c721715bf64506b071fc90a3f3462e',
+  String url =
+      'https://www.notion.so/ho2ri2s/21hack01-Flutter-e0c721715bf64506b071fc90a3f3462e',
   String iconUrl = 'https://github.com/zoothezoo.png?size=48',
 }) =>
     Link(
