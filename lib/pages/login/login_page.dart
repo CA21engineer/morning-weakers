@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:morning_weakers/models/models.dart';
 import 'package:morning_weakers/infrastructure/firebase_auth_service.dart';
-import 'package:morning_weakers/pages/all/all_page.dart';
+import 'package:morning_weakers/pages/new_profile/new_profile_page.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -22,8 +22,7 @@ class LoginPage extends StatelessWidget {
               ),
               onPressed: () {
                 FirebaseAuthService().signIn().then((user) {
-                  // Debug用
-                  Navigator.push<void>(context, MaterialPageRoute(builder: (_) => AllPage()
+                  Navigator.push<void>(context, MaterialPageRoute(builder: (_) => NewProfilePage()
                   ));
                 });
               }
