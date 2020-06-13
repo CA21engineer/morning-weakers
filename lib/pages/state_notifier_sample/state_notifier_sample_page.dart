@@ -46,12 +46,12 @@ class SamplePage extends StatelessWidget {
                     onTap: () => context.read<SampleController>().getMyJoined(),
                     child: const Icon(Icons.add),
                   ),
-                  Text('joinHackathon'),
+                  const Text('joinHackathon'),
                   GestureDetector(
                     onTap: () => context.read<SampleController>().joinHackathon(),
                     child: const Icon(Icons.add),
                   ),
-                  Text('createQuestionnaire'),
+                  const Text('createQuestionnaire'),
                   GestureDetector(
                     onTap: () => context.read<SampleController>().createQuestionnaire(),
                     child: const Icon(Icons.add),
@@ -70,7 +70,7 @@ class SamplePage extends StatelessWidget {
                     onTap: () => context.read<SampleController>().getGroups(),
                     child: const Icon(Icons.add),
                   ),
-                  Text('createGroups'),
+                  const Text('createGroups'),
                   GestureDetector(
                     onTap: () => context.read<SampleController>().createGroups(),
                     child: const Icon(Icons.add),

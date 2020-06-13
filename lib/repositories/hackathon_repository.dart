@@ -5,7 +5,6 @@ import 'package:morning_weakers/models/models.dart';
 class HackathonRepository {
   final Firestore _firestore = Firestore.instance;
   String _currentHackathonId;
-
   String get currentHackathonId => _currentHackathonId;
 
   /// ハッカソンの新規作成
@@ -58,8 +57,7 @@ class HackathonRepository {
       ..putIfAbsent('notification', () => notifications)));
   }
 
-  /// Drawerに表示するハッカソンアイコン一覧とidの取得
-  // if user is not belong to Hackathon, return null
+  /// Drawerに表示するハッカソンアイコン一覧とidの取得, 所属なしならnullが返る
   Future<Joined> getMyJoined() async {
     // TODO: userIdはAuthができたら変更
     Joined joined;
@@ -111,7 +109,8 @@ class HackathonRepository {
       } else {
         snapshot.documents.forEach((doc) {
           final String id = doc.documentID;
-          final List<String> hackathonIds = (doc['hackathon_ids'] as List<dynamic>).map((dynamic e) => e.toString()).toList();
+          final List<String> hackathonIds =
+              (doc['hackathon_ids'] as List<dynamic>).map((dynamic e) => e.toString()).toList();
           _firestore
               .collection('joined')
               .document(id)
