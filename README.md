@@ -1,16 +1,21 @@
 # morning_weakers
 
-A new Flutter application.
+![LGTM](https://i.lgtm.fun/k26.png)
 
-## Getting Started
+## 概要
 
-This project is a starting point for a Flutter application.
+ハッカソンを手間なく企画・運営出来るスマートフォンアプリ
 
-A few resources to get you started if this is your first Flutter project:
+## 開発背景
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+これは2020/06/07(日)~2020/06/14(日)にCyberAgentの21卒の内定者内で開催された第1回ハッカソンの成果物です。
+このレポジトリはチーム「朝弱いけん」 のクライアントサイド(Flutter)のものです。
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 開発者
+@fukami421, @ho2ri2s, @tomu28, @zoothezoo
+
+## 使用技術
+- Flutter / Dart
+
+## 設計
+- MVVM + Layered Architecture
