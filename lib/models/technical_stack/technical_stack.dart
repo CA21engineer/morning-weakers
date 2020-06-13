@@ -6,7 +6,7 @@ part 'technical_stack.freezed.dart';
 
 part 'technical_stack.g.dart';
 
-// TODO: idを@requiredにする
+// TODO: idを@requiredにする?idいらなくね
 @freezed
 abstract class TechnicalStack with _$TechnicalStack {
   const factory TechnicalStack({
