@@ -28,7 +28,7 @@ class HackathonRepository {
         await participantsRef.add(participant.toJson()..remove('id'));
       });
       // TODO: 作成者も強制的にハッカソンに参加する仕様。あとで話し合う
-      _updateJoined(hackathon);
+      _updateJoined(hackathon.copyWith(id: hackRef.documentID));
       _currentHackathonId = hackRef.documentID;
     });
   }
@@ -69,13 +69,14 @@ class HackathonRepository {
   Future<Joined> getMyJoined() async {
     final uid = authService.uid.value;
     Joined joined;
-    _firestore.collection('joined').where('user_id', isEqualTo: uid).snapshots().listen((event) {
-      if (event.documents.isEmpty) {
+    await _firestore.collection('joined').where('user_id', isEqualTo: uid).getDocuments().then((snapshot) {
+      if (snapshot.documents.isEmpty) {
         joined = null;
       } else {
-        joined = Joined.fromJson(event.documents[0].data..putIfAbsent('id', () => event.documents[0].documentID));
+        joined = Joined.fromJson(snapshot.documents[0].data..putIfAbsent('id', () => snapshot.documents[0].documentID));
       }
     });
+
     return joined;
   }
 
@@ -101,11 +102,11 @@ class HackathonRepository {
       note: note,
       isAdmin: false,
     );
+    final newParticipants = hackathon.participants..add(participant);
+    final participantMap = newParticipants.map((e) => e.toJson()).toList();
 
     await hackathonRef.updateData(
-      <String, dynamic>{
-        'participants': hackathon.participants..add(participant)..map((participant) => participant.toJson())
-      },
+      <String, dynamic>{'participants': participantMap},
     );
 
     // Joined documentに新しいhackathonを追加
@@ -126,11 +127,11 @@ class HackathonRepository {
         snapshot.documents.forEach((doc) {
           final String id = doc.documentID;
           final List<String> hackathonIds =
-          (doc['hackathon_ids'] as List<dynamic>).map((dynamic e) => e.toString()).toList();
+              (doc['hackathon_ids'] as List<dynamic>).map((dynamic e) => e.toString()).toList();
           _firestore
               .collection('joined')
               .document(id)
-              .setData(<String, dynamic>{'hackathon_ids': hackathonIds..add(hackathon.id)});
+              .updateData(<String, dynamic>{'hackathon_ids': hackathonIds..add(hackathon.id)});
         });
       }
     });
