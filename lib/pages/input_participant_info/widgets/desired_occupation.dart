@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:morning_weakers/pages/input_participant_info/input_participant_info_controller.dart';
 
 class DesiredOccupation extends StatelessWidget {
   final List<String> desires = ['参加希望職種(第1希望)', '参加希望職種(第2希望)', '参加希望職種(第3希望)' ];

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:morning_weakers/pages/input_participant_info/input_participant_info_controller.dart';
 
 class ScheduleCandidate extends StatelessWidget {
   final List<String> scheduleCandidates = [
@@ -19,7 +21,7 @@ class ScheduleCandidate extends StatelessWidget {
             children: scheduleCandidates.map(
               (scheduleCandidate) => CheckboxListTile(
               value: false,
-  //            onChanged: _handleCheckbox(),
+//              onChanged: context.read<InputParticipantInfoController>().setDesiredOccupationsState(value),
               activeColor: Theme.of(context).primaryColor,
               title: Text(scheduleCandidate),
               ),

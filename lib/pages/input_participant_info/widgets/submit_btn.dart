@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:morning_weakers/pages/input_participant_info/input_participant_info_controller.dart';
 
 class SubmitBtn extends StatelessWidget {
   @override
@@ -9,7 +9,7 @@ class SubmitBtn extends StatelessWidget {
       child: const Text('OK'),
       color: Theme.of(context).accentColor,
       onPressed: () async {
-//        await context.read<InputParticipantInfoController>().handlePost();
+        await context.read<InputParticipantInfoController>().handlePostParticipantInfo();
       });
   }
 }
