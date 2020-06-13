@@ -20,7 +20,7 @@ class AdminInputHackathonInfoPage extends StatelessWidget {
         create: (_) => StateManagementSampleRepository(),
         child: StateNotifierProvider<AdminInputHackathonInfoController, AdminInputHackathonInfoState>(
           create: (_) => AdminInputHackathonInfoController(),
-          child: AdminGroupEditContainer(),
+          child: AdminInputHackathonInfoContainer(),
         ),
       ),
     );
