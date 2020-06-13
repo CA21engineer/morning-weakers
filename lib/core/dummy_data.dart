@@ -1,4 +1,3 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:morning_weakers/models/hackathon/hackathon.dart';
 import 'package:morning_weakers/models/models.dart';
 
@@ -108,8 +107,8 @@ Questionnaire dummyQuestionnaire({
   String description = 'アンケートの概要',
   List<ScheduleCandidate> scheduleCandidates,
   List<TechnicalStack> desiredOccupations,
-  @Default(1) int workingDays,
-  @Default('') String note,
+  int workingDays = 1,
+  String note = 'note',
 }) =>
     Questionnaire(
       id: id,
@@ -126,7 +125,7 @@ Group dummyGroup({
   String groupName = 'morning weaker ~朝弱いけん~',
   String githubUrl = 'https://github.com/CA21engineer/morning-weakers',
   List<String> slideUrls,
-  List<String> otherUrls,
+  List<Link> otherUrls,
   List<String> iconUrls,
   List<Participant> participants,
 }) =>
@@ -135,7 +134,7 @@ Group dummyGroup({
       groupName: groupName,
       githubUrl: githubUrl,
       slideUrls: slideUrls ?? ['slide_url'],
-      otherUrls: otherUrls ?? ['other_url'],
+      otherUrls: otherUrls ?? [dummyLink()],
       iconUrls: iconUrls ?? ['icon_url'],
       participants: participants ?? [dummyParticipant()],
     );
