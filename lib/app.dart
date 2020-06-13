@@ -3,6 +3,7 @@ import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:morning_weakers/pages/all/all_page.dart';
 import 'package:morning_weakers/pages/group_result/group_result_page.dart';
 import 'package:morning_weakers/pages/login/login_page.dart';
+import 'package:morning_weakers/pages/login/logout_page.dart';
 import 'package:morning_weakers/pages/home/home_page.dart';
 import 'package:morning_weakers/pages/input_participant_info/input_participant_info_page.dart';
 import 'package:morning_weakers/pages/new_profile/new_profile_page.dart';
@@ -34,11 +35,15 @@ class MyApp extends StatelessWidget {
           switch (settings.name) {
             case '/':
               return MaterialPageRoute<void>(
-                builder: (_) => const AllPage(),
+                builder: (_) => AllPage(),
               );
             case '/login':
               return MaterialPageRoute<void>(
-                builder: (_) => const LoginPage(),
+                builder: (_) => LoginPage(),
+              );
+            case '/logout':
+              return MaterialPageRoute<void>(
+                builder: (_) => LogoutPage(),
               );
             case '/inputParticipantInfo':
               return MaterialPageRoute<void>(
