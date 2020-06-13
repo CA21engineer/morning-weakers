@@ -19,7 +19,7 @@ class TotalNumberContainer extends StatelessWidget {
           Row(
             children: <Widget>[
               Text(
-                '${context.select<AdminGroupEditState, int>((state) => state.participants.length)}',
+                '${context.select<AdminGroupEditState, int>((state) => state.participants.length)}人',
                 textAlign: TextAlign.right,
                 style: const TextStyle(fontSize: 20),
               ),

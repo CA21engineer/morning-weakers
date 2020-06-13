@@ -17,7 +17,6 @@ class AdminGroupEditController extends StateNotifier<AdminGroupEditState> with L
   Future<void> postGroups() async {
     state = state.copyWith(notifierState: NotifierState.loading);
     // TODO: Repositoryのmethod
-    print('jf');
     await Future<void>.delayed(const Duration(seconds: 2));
 //    await stateManagementSampleRepository.waitFewSecond();
     state = state.copyWith(notifierState: NotifierState.loaded);

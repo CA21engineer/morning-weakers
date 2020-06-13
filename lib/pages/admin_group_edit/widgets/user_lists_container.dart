@@ -26,12 +26,11 @@ class ListItem extends StatelessWidget {
     return Container(
       child: Card(
         child: ListTile(
-          // state.participantsを参照
           title: Text('${context.select<AdminGroupEditState, String>((state) => state.participants[index].user.displayName)}'),
           subtitle: Text(
             '${context.select<AdminGroupEditState, String>((state) => state.participants[index].user.technicalStacks[0].stack.getValue())}',
           ),
-          trailing: const Text('チーム1'), //どのチームに属するのかstateを参照
+          trailing: const Text('チーム1'),
         ),
       ),
     );
