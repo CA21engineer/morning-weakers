@@ -8,8 +8,8 @@ class OkButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlatButton(
         child: const Text('ok'),
-        onPressed: () {
-          return context.read<NewProfileController>().postUser();
+        onPressed: () async {
+          await context.read<NewProfileController>().postUser();
         });
   }
 }

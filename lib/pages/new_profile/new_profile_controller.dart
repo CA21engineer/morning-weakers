@@ -31,6 +31,7 @@ class NewProfileController extends StateNotifier<NewProfileState>
   }
 
   void setState(int key, String value) {
+    //TODO:Refactor
     debugPrint('debugger: $key ,$value');
     switch (key) {
       case 0:
