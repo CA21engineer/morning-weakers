@@ -13,7 +13,7 @@ class AdminGroupEditContainer extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            const TotalNumberContainer(totalNumber: 12), // state.participants.lengthを監視
+            TotalNumberContainer(), // state.participants.lengthを監視
             const Divider(),
             UserListContainer(),
             SizedBox(

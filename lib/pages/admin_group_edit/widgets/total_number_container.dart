@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:morning_weakers/pages/admin_group_edit/admin_group_edit_state.dart';
 
 class TotalNumberContainer extends StatelessWidget {
-  const TotalNumberContainer({
-    @required this.totalNumber,
-  });
-
-  final int totalNumber;
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,7 +19,7 @@ class TotalNumberContainer extends StatelessWidget {
           Row(
             children: <Widget>[
               Text(
-                '$totalNumber人',
+                '${context.select<AdminGroupEditState, int>((state) => state.participants.length)}',
                 textAlign: TextAlign.right,
                 style: const TextStyle(fontSize: 20),
               ),
