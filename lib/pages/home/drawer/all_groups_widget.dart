@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:morning_weakers/pages/home/home_state.dart';
 import 'package:provider/provider.dart';
+import 'package:morning_weakers/pages/admin_input_hackathon_info/admin_input_hackathon_info_page.dart';
 
 class AllGroupsWidget extends StatelessWidget {
   @override
@@ -27,7 +28,7 @@ class AllGroupsWidget extends StatelessWidget {
         FlatButton(
           padding: EdgeInsets.all(5.0),
           child: const Icon(Icons.add, size: 52),
-          // onPressed: () => Navigator.push<void>(context, MaterialPageRoute(builder: (_) => ()));
+          onPressed: () => Navigator.push<void>(context, MaterialPageRoute(builder: (_) => AdminInputHackathonInfoPage())),
         )
       ]),
     );

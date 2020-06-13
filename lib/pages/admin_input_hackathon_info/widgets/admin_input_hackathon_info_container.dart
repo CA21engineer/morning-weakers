@@ -4,7 +4,9 @@ import 'package:morning_weakers/pages/admin_input_hackathon_info/admin_input_hac
 import 'package:morning_weakers/pages/admin_input_hackathon_info/widgets/date_list_container.dart';
 import 'package:morning_weakers/pages/admin_input_hackathon_info/widgets/text_input_container.dart';
 import 'package:morning_weakers/pages/admin_input_hackathon_info/admin_input_hackathon_info_state.dart';
+import 'package:morning_weakers/pages/admin_group_edit/admin_group_edit_page.dart';
 import 'package:morning_weakers/models/notifier_state.dart';
+import 'package:morning_weakers/core/dummy_data.dart';
 import 'package:provider/provider.dart';
 
 class AdminInputHackathonInfoContainer extends StatelessWidget {
@@ -48,7 +50,10 @@ class AdminInputHackathonInfoContainer extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    onPressed: () async => context.read<AdminInputHackathonInfoController>().handleCreateHackathon(),
+                    onPressed: () async {
+                      await context.read<AdminInputHackathonInfoController>().handleCreateHackathon();
+                      await Navigator.push<void>(context, MaterialPageRoute(builder: (_) => AdminGroupEditPage(dummyParticipants())));
+                    }
                   ),
                 ),
               ),
