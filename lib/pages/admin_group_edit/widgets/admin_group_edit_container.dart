@@ -25,13 +25,16 @@ class AdminGroupEditContainer extends StatelessWidget {
               UserListsContainer(),
               SizedBox(
                 width: double.infinity,
-                child: RaisedButton(
-                  child: const Text('チームを確定する'),
-                  color: Colors.blue,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
+                child: Container(
+                  margin: const EdgeInsets.symmetric(vertical: 16),
+                  child: RaisedButton(
+                    child: const Text('チームを確定する'),
+                    color: Colors.blue,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    onPressed: () async => context.read<AdminGroupEditController>().postGroups(),
                   ),
-                  onPressed: () async => context.read<AdminGroupEditController>().postGroups(),
                 ),
               ),
             ],

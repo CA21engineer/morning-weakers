@@ -7,13 +7,14 @@ import 'package:morning_weakers/pages/admin_group_edit/admin_group_edit_state.da
 class UserListsContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      itemBuilder: (BuildContext context, int index) {
-        return ListItem(index: index);
-      },
-      itemCount: context.select<AdminGroupEditState, int>((state) => state.participants.length),
+    return Container(
+      height: MediaQuery.of(context).size.height * 0.65,
+      child: ListView.builder(
+        itemBuilder: (_, int index) {
+          return ListItem(index: index);
+        },
+        itemCount: context.select<AdminGroupEditState, int>((state) => state.participants.length),
+      ),
     );
   }
 }
