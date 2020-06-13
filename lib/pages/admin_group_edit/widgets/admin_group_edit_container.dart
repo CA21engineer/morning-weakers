@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:morning_weakers/pages/admin_group_edit/widgets/total_number_container.dart';
-import 'package:morning_weakers/pages/admin_group_edit/widgets/user_list_container.dart';
+import 'package:morning_weakers/pages/admin_group_edit/widgets/user_lists_container.dart';
 import 'package:flutter/cupertino.dart';
 
 class AdminGroupEditContainer extends StatelessWidget {
@@ -15,7 +15,7 @@ class AdminGroupEditContainer extends StatelessWidget {
           children: <Widget>[
             TotalNumberContainer(), // state.participants.lengthを監視
             const Divider(),
-            UserListContainer(),
+            UserListsContainer(),
             SizedBox(
               width: double.infinity,
               child: RaisedButton(
