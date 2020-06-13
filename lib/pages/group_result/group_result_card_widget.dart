@@ -8,7 +8,7 @@ import 'package:morning_weakers/models/models.dart';
 class GroupResultCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final List<Group> groups = context.select<GroupResultState, List<Group>>((state) => state.hackathon.groups);
+    //final List<Group> groups = context.select<GroupResultState, List<Group>>((state) => state.hackathon.groups);
     return const Text('a');
   }
 }
