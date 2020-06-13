@@ -17,7 +17,7 @@ class AuthRepository {
     await authService.signIn();
   }
 
-  Future<void> signUp() async {
+  Future<void> signOut() async {
     await authService.signOut();
   }
 
