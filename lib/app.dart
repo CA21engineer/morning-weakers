@@ -66,6 +66,7 @@ class MyApp extends StatelessWidget {
             case '/adminGroupEditPage':
               return MaterialPageRoute<void>(
                 builder: (_) => AdminGroupEditPage(),
+              );
             case '/stateManagementSample':
               return MaterialPageRoute<void>(
                 builder: (_) => StateManagementSamplePage(),
