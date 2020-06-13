@@ -14,13 +14,11 @@ class AdminGroupEditController extends StateNotifier<AdminGroupEditState> with L
   // TODO: Repositoy
   //  StateManagementSampleRepository get stateManagementSampleRepository => read<StateManagementSampleRepository>();
 
-//  void setEditedGroups(List<Participant> participants) {
-//    state = state.copyWith(groups: state.participants.setEditedGroups());
-//  }
-
-  Future<void> postGroups(List<Group> groups) async {
+  Future<void> postGroups() async {
     state = state.copyWith(notifierState: NotifierState.loading);
     // TODO: Repositoryのmethod
+    print('jf');
+    await Future<void>.delayed(const Duration(seconds: 2));
 //    await stateManagementSampleRepository.waitFewSecond();
     state = state.copyWith(notifierState: NotifierState.loaded);
   }
