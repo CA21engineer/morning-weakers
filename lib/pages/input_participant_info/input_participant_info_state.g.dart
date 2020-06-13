@@ -14,7 +14,7 @@ _$_InputParticipantInfoState _$_$_InputParticipantInfoStateFromJson(
             ? null
             : TechnicalStack.fromJson(e as Map<String, dynamic>))
         ?.toList(),
-    workingDays: json['working_days'] as String,
+    workingDays: json['working_days'] as int,
     note: json['note'] as String,
   );
 }

@@ -20,7 +20,7 @@ class _$InputParticipantInfoStateTearOff {
       {@JsonKey(name: 'desired_occupations')
           List<TechnicalStack> desiredOccupations,
       @JsonKey(name: 'working_days')
-          String workingDays,
+          int workingDays,
       String note}) {
     return _InputParticipantInfoState(
       desiredOccupations: desiredOccupations,
@@ -37,7 +37,7 @@ mixin _$InputParticipantInfoState {
   @JsonKey(name: 'desired_occupations')
   List<TechnicalStack> get desiredOccupations;
   @JsonKey(name: 'working_days')
-  String get workingDays;
+  int get workingDays;
   String get note;
 
   Map<String, dynamic> toJson();
@@ -52,7 +52,7 @@ abstract class $InputParticipantInfoStateCopyWith<$Res> {
       {@JsonKey(name: 'desired_occupations')
           List<TechnicalStack> desiredOccupations,
       @JsonKey(name: 'working_days')
-          String workingDays,
+          int workingDays,
       String note});
 }
 
@@ -75,7 +75,7 @@ class _$InputParticipantInfoStateCopyWithImpl<$Res>
           ? _value.desiredOccupations
           : desiredOccupations as List<TechnicalStack>,
       workingDays:
-          workingDays == freezed ? _value.workingDays : workingDays as String,
+          workingDays == freezed ? _value.workingDays : workingDays as int,
       note: note == freezed ? _value.note : note as String,
     ));
   }
@@ -91,7 +91,7 @@ abstract class _$InputParticipantInfoStateCopyWith<$Res>
       {@JsonKey(name: 'desired_occupations')
           List<TechnicalStack> desiredOccupations,
       @JsonKey(name: 'working_days')
-          String workingDays,
+          int workingDays,
       String note});
 }
 
@@ -117,7 +117,7 @@ class __$InputParticipantInfoStateCopyWithImpl<$Res>
           ? _value.desiredOccupations
           : desiredOccupations as List<TechnicalStack>,
       workingDays:
-          workingDays == freezed ? _value.workingDays : workingDays as String,
+          workingDays == freezed ? _value.workingDays : workingDays as int,
       note: note == freezed ? _value.note : note as String,
     ));
   }
@@ -140,7 +140,7 @@ class _$_InputParticipantInfoState
   final List<TechnicalStack> desiredOccupations;
   @override
   @JsonKey(name: 'working_days')
-  final String workingDays;
+  final int workingDays;
   @override
   final String note;
 
@@ -197,7 +197,7 @@ abstract class _InputParticipantInfoState implements InputParticipantInfoState {
       {@JsonKey(name: 'desired_occupations')
           List<TechnicalStack> desiredOccupations,
       @JsonKey(name: 'working_days')
-          String workingDays,
+          int workingDays,
       String note}) = _$_InputParticipantInfoState;
 
   factory _InputParticipantInfoState.fromJson(Map<String, dynamic> json) =
@@ -208,7 +208,7 @@ abstract class _InputParticipantInfoState implements InputParticipantInfoState {
   List<TechnicalStack> get desiredOccupations;
   @override
   @JsonKey(name: 'working_days')
-  String get workingDays;
+  int get workingDays;
   @override
   String get note;
   @override

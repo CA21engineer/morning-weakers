@@ -8,7 +8,7 @@ part 'input_participant_info_state.g.dart';
 abstract class InputParticipantInfoState with _$InputParticipantInfoState {
   const factory InputParticipantInfoState({
     @JsonKey(name: 'desired_occupations') List<TechnicalStack> desiredOccupations,
-    @JsonKey(name: 'working_days') String workingDays,
+    @JsonKey(name: 'working_days') int workingDays,
     String note,
   }) = _InputParticipantInfoState;
 
