@@ -10,6 +10,7 @@ import 'package:morning_weakers/pages/admin_top/admin_top_page.dart';
 import 'package:morning_weakers/pages/state_notifier_sample/state_notifier_sample_page.dart';
 import 'package:morning_weakers/pages/admin_group_edit/admin_group_edit_page.dart';
 import 'package:morning_weakers/pages/state_management_sample/state_management_sample_page.dart';
+import 'package:morning_weakers/pages/admin_input_hackathon_info/admin_input_hackathon_info_page.dart';
 import 'package:morning_weakers/core/dummy_data.dart';
 
 class AllPage extends StatelessWidget {
@@ -27,6 +28,7 @@ class AllPage extends StatelessWidget {
       StateManagementSamplePage(),
       GroupResultPage(),
       AdminGroupEditPage(dummyParticipants()),
+      AdminInputHackathonInfoPage(),
     ];
 
     final List<String> _pageRouteNames = [
@@ -41,6 +43,7 @@ class AllPage extends StatelessWidget {
       '/stateManagementSample',
       '/groupResultPage',
       '/adminGroupEditPage',
+      '/adminInputHackathonInfo',
     ];
 
     return Scaffold(

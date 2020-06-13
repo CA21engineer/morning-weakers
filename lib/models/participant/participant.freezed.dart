@@ -20,15 +20,12 @@ class _$ParticipantTearOff {
       @required
       @UserConverter()
           User user,
-      @required
       @JsonKey(name: 'desired_occupations')
       @TechnicalStackConverter()
           List<TechnicalStack> desiredOccupations,
-      @required
       @JsonKey(name: 'working_days')
           int workingDays,
-      @required
-          String note,
+      String note,
       @required
       @JsonKey(name: 'is_admin')
           bool isAdmin}) {
@@ -185,22 +182,16 @@ class _$_Participant with DiagnosticableTreeMixin implements _Participant {
       @required
       @UserConverter()
           this.user,
-      @required
       @JsonKey(name: 'desired_occupations')
       @TechnicalStackConverter()
           this.desiredOccupations,
-      @required
       @JsonKey(name: 'working_days')
           this.workingDays,
-      @required
-          this.note,
+      this.note,
       @required
       @JsonKey(name: 'is_admin')
           this.isAdmin})
       : assert(user != null),
-        assert(desiredOccupations != null),
-        assert(workingDays != null),
-        assert(note != null),
         assert(isAdmin != null);
 
   factory _$_Participant.fromJson(Map<String, dynamic> json) =>
@@ -288,15 +279,12 @@ abstract class _Participant implements Participant {
       @required
       @UserConverter()
           User user,
-      @required
       @JsonKey(name: 'desired_occupations')
       @TechnicalStackConverter()
           List<TechnicalStack> desiredOccupations,
-      @required
       @JsonKey(name: 'working_days')
           int workingDays,
-      @required
-          String note,
+      String note,
       @required
       @JsonKey(name: 'is_admin')
           bool isAdmin}) = _$_Participant;
