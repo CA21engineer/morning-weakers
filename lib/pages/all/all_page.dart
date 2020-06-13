@@ -9,8 +9,6 @@ import 'package:morning_weakers/pages/admin_top/admin_top_page.dart';
 import 'package:morning_weakers/pages/state_notifier_sample/state_notifier_sample_page.dart';
 
 class AllPage extends StatelessWidget {
-  const AllPage({Key key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     final List<Widget> _pageList = [

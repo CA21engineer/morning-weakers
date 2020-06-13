@@ -23,8 +23,7 @@ class LoginPage extends StatelessWidget {
               onPressed: () {
                 FirebaseAuthService().signIn().then((user) {
                   // Debug用
-                  Navigator.push<void>(context, MaterialPageRoute(builder: (_) =>
-                    const AllPage()
+                  Navigator.push<void>(context, MaterialPageRoute(builder: (_) => AllPage()
                   ));
                 });
               }

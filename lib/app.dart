@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
           switch (settings.name) {
             case '/':
               return MaterialPageRoute<void>(
-                builder: (_) => const AllPage(),
+                builder: (_) => AllPage(),
               );
             case '/login':
               return MaterialPageRoute<void>(

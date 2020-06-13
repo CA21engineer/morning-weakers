@@ -22,8 +22,7 @@ class LogoutPage extends StatelessWidget {
               onPressed: () {
                 FirebaseAuthService().signOut().then((user) {
                   // Debug用
-                  Navigator.push<void>(context, MaterialPageRoute(builder: (_) =>
-                    const AllPage()
+                  Navigator.push<void>(context, MaterialPageRoute(builder: (_) => AllPage()
                   ));
                 });
               }
