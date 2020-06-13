@@ -5,6 +5,7 @@ import 'package:morning_weakers/pages/home/drawer/home_drawer.dart';
 import 'package:morning_weakers/pages/home/home_controller.dart';
 import 'package:morning_weakers/pages/home/home_state.dart';
 import 'package:morning_weakers/pages/home/widget/data_table.dart';
+import 'package:morning_weakers/pages/home/widget/notification_widget.dart';
 import 'package:morning_weakers/pages/home/widget/source_link_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -21,14 +22,10 @@ class HomePage extends StatelessWidget {
               child: ListView(
                 padding: const EdgeInsets.all(20),
                 children: <Widget>[
+                  NotificationWidget(),
                   DataTableView(),
-                  Divider(
-                    color: Theme.of(context).primaryColor,
-                  ),
                   SourceLinkWidget(),
-                  Divider(
-                    color: Theme.of(context).primaryColor,
-                  ),
+                  Divider(color: Theme.of(context).primaryColor),
                   ListTile(
                     title: const Text(
                       '全てのグループを見る',
