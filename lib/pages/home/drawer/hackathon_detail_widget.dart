@@ -67,6 +67,7 @@ class HackathonDetailWidget extends StatelessWidget {
       ['All Groups', '/navigation'],
       ['All Participants', '/navigation'],
       ['Edit My Info', '/navigation'],
+      ['Questionnaire', '/navigation'],
     ];
 
     return Column(
