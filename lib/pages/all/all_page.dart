@@ -37,7 +37,7 @@ class AllPage extends StatelessWidget {
       '/adminTopPage',
       '/sample',
       '/stateManagementSample',
-      '/groupResultPage'
+      '/groupResultPage',
       '/adminGroupEditPage',
       '/stateManagementSample',
     ];
