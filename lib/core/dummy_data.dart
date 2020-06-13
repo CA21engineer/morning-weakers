@@ -44,12 +44,13 @@ Participant dummyParticipant({
   bool isAdmin = false,
 }) =>
     Participant(
-        id: id,
-        user: user ?? dummyUser(),
-        desiredOccupations: desiredOccupations ?? [dummyTechnicalStack()],
-        workingDays: workingDays,
-        note: note,
-        isAdmin: isAdmin);
+      id: id,
+      user: user ?? dummyUser(),
+      desiredOccupations: desiredOccupations ?? [dummyTechnicalStack()],
+      workingDays: workingDays,
+      note: note,
+      isAdmin: isAdmin,
+    );
 
 Hackathon dummyHackathon({
   String id = 'dummy',
@@ -108,7 +109,7 @@ Questionnaire dummyQuestionnaire({
   List<ScheduleCandidate> scheduleCandidates,
   List<TechnicalStack> desiredOccupations,
   int workingDays = 1,
-  String note = 'note',
+  String note = '備考欄だよ',
 }) =>
     Questionnaire(
       id: id,
@@ -124,19 +125,18 @@ Group dummyGroup({
   String id = 'dummy',
   String groupName = 'morning weaker ~朝弱いけん~',
   String githubUrl = 'https://github.com/CA21engineer/morning-weakers',
-  List<String> slideUrls,
+  String slideUrl = 'slide_url',
   List<Link> otherUrls,
-  String iconUrl =
-      'https://avatars1.githubusercontent.com/u/64519003?s=200&v=4',
+  String iconUrl = 'https://avatars1.githubusercontent.com/u/64519003?s=200&v=4',
   List<Participant> participants,
 }) =>
     Group(
       id: id,
       groupName: groupName,
       githubUrl: githubUrl,
-      slideUrls: slideUrls ?? ['slide_url'],
+      slideUrl: slideUrl,
       otherUrls: otherUrls ?? [dummyLink()],
-      iconUrl: iconUrl ?? 'icon_url',
+      iconUrl: iconUrl,
       participants: participants ?? [dummyParticipant()],
     );
 
@@ -154,8 +154,7 @@ ScheduleCandidate dummyScheduleCandidate({
 Link dummyLink({
   String id = 'dummy',
   String title = 'Notion',
-  String url =
-      'https://www.notion.so/ho2ri2s/21hack01-Flutter-e0c721715bf64506b071fc90a3f3462e',
+  String url = 'https://www.notion.so/ho2ri2s/21hack01-Flutter-e0c721715bf64506b071fc90a3f3462e',
   String iconUrl = 'https://github.com/zoothezoo.png?size=48',
 }) =>
     Link(
@@ -163,4 +162,45 @@ Link dummyLink({
       title: title,
       url: url,
       iconUrl: iconUrl,
+    );
+
+List<Participant> dummyParticipants() =>
+    List<Participant>.filled(
+      7,
+      dummyParticipant(
+        user: dummyUser(
+          technicalStacks: [dummyTechnicalStack(stack: Stack.iOS)],
+        ),
+      ),
+    ) +
+    List<Participant>.filled(
+      5,
+      dummyParticipant(
+        user: dummyUser(
+          technicalStacks: [dummyTechnicalStack(stack: Stack.Android)],
+        ),
+      ),
+    ) +
+    List<Participant>.filled(
+      4,
+      dummyParticipant(
+          user: dummyUser(
+        technicalStacks: [dummyTechnicalStack(stack: Stack.Web)],
+      )),
+    ) +
+    List<Participant>.filled(
+      3,
+      dummyParticipant(
+        user: dummyUser(
+          technicalStacks: [dummyTechnicalStack(stack: Stack.Unity)],
+        ),
+      ),
+    ) +
+    List<Participant>.filled(
+      8,
+      dummyParticipant(
+        user: dummyUser(
+          technicalStacks: [dummyTechnicalStack(stack: Stack.Serverside)],
+        ),
+      ),
     );

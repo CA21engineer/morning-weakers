@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:morning_weakers/pages/all/all_page.dart';
 import 'package:morning_weakers/pages/group_result/group_result_page.dart';
 import 'package:morning_weakers/pages/login/login_page.dart';
@@ -9,21 +8,37 @@ import 'package:morning_weakers/pages/input_participant_info/input_participant_i
 import 'package:morning_weakers/pages/new_profile/new_profile_page.dart';
 import 'package:morning_weakers/pages/profile_detail/profile_detail_page.dart';
 import 'package:morning_weakers/pages/admin_top/admin_top_page.dart';
-import 'package:morning_weakers/pages/state_notifier_sample/state_notifier_sample_controller.dart';
 import 'package:morning_weakers/pages/state_notifier_sample/state_notifier_sample_page.dart';
-import 'package:morning_weakers/pages/state_notifier_sample/state_notifier_sample_state.dart';
 import 'package:morning_weakers/pages/admin_group_edit/admin_group_edit_page.dart';
 import 'package:morning_weakers/pages/state_management_sample/state_management_sample_page.dart';
+import 'package:morning_weakers/repositories/group_repository.dart';
+import 'package:morning_weakers/repositories/hackathon_repository.dart';
+import 'package:morning_weakers/repositories/notification_repository.dart';
+import 'package:morning_weakers/repositories/participant_repository.dart';
+import 'package:morning_weakers/repositories/questionnaire_repository.dart';
 import 'package:provider/provider.dart';
+import 'package:morning_weakers/core/dummy_data.dart';
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        StateNotifierProvider<SampleController, SampleState>(
-          create: (context) => SampleController(),
-        )
+        Provider<HackathonRepository>.value(
+          value: HackathonRepository(),
+        ),
+        Provider<QuestionnaireRepository>.value(
+          value: QuestionnaireRepository(),
+        ),
+        Provider<ParticipantRepository>.value(
+          value: ParticipantRepository(),
+        ),
+        Provider<GroupRepository>.value(
+          value: GroupRepository(),
+        ),
+        Provider<NotificationRepository>.value(
+          value: NotificationRepository(),
+        ),
       ],
       child: MaterialApp(
         theme: ThemeData(
@@ -71,7 +86,7 @@ class MyApp extends StatelessWidget {
               );
             case '/adminGroupEditPage':
               return MaterialPageRoute<void>(
-                builder: (_) => AdminGroupEditPage(),
+                builder: (_) => AdminGroupEditPage(dummyParticipants()),
               );
             case '/stateManagementSample':
               return MaterialPageRoute<void>(

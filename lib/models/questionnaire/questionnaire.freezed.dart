@@ -16,17 +16,18 @@ class _$QuestionnaireTearOff {
   const _$QuestionnaireTearOff();
 
   _Questionnaire call(
-      {@required
-          String id,
+      {String id,
       @required
           String title,
       @required
           String description,
       @required
-      @JsonKey(name: 'schedule_candidate')
+      @JsonKey(name: 'schedule_candidates')
+      @ScheduleCandidateConverter()
           List<ScheduleCandidate> scheduleCandidates,
       @required
-      @JsonKey(name: 'desired_occupation')
+      @JsonKey(name: 'desired_occupations')
+      @TechnicalStackConverter()
           List<TechnicalStack> desiredOccupations,
       @required
       @JsonKey(name: 'working_days')
@@ -52,9 +53,11 @@ mixin _$Questionnaire {
   String get id;
   String get title;
   String get description;
-  @JsonKey(name: 'schedule_candidate')
+  @JsonKey(name: 'schedule_candidates')
+  @ScheduleCandidateConverter()
   List<ScheduleCandidate> get scheduleCandidates;
-  @JsonKey(name: 'desired_occupation')
+  @JsonKey(name: 'desired_occupations')
+  @TechnicalStackConverter()
   List<TechnicalStack> get desiredOccupations;
   @JsonKey(name: 'working_days')
   int get workingDays;
@@ -72,9 +75,11 @@ abstract class $QuestionnaireCopyWith<$Res> {
       {String id,
       String title,
       String description,
-      @JsonKey(name: 'schedule_candidate')
+      @JsonKey(name: 'schedule_candidates')
+      @ScheduleCandidateConverter()
           List<ScheduleCandidate> scheduleCandidates,
-      @JsonKey(name: 'desired_occupation')
+      @JsonKey(name: 'desired_occupations')
+      @TechnicalStackConverter()
           List<TechnicalStack> desiredOccupations,
       @JsonKey(name: 'working_days')
           int workingDays,
@@ -127,9 +132,11 @@ abstract class _$QuestionnaireCopyWith<$Res>
       {String id,
       String title,
       String description,
-      @JsonKey(name: 'schedule_candidate')
+      @JsonKey(name: 'schedule_candidates')
+      @ScheduleCandidateConverter()
           List<ScheduleCandidate> scheduleCandidates,
-      @JsonKey(name: 'desired_occupation')
+      @JsonKey(name: 'desired_occupations')
+      @TechnicalStackConverter()
           List<TechnicalStack> desiredOccupations,
       @JsonKey(name: 'working_days')
           int workingDays,
@@ -177,15 +184,25 @@ class __$QuestionnaireCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Questionnaire with DiagnosticableTreeMixin implements _Questionnaire {
   const _$_Questionnaire(
-      {@required this.id,
-      @required this.title,
-      @required this.description,
-      @required @JsonKey(name: 'schedule_candidate') this.scheduleCandidates,
-      @required @JsonKey(name: 'desired_occupation') this.desiredOccupations,
-      @required @JsonKey(name: 'working_days') this.workingDays,
-      @required this.note})
-      : assert(id != null),
-        assert(title != null),
+      {this.id,
+      @required
+          this.title,
+      @required
+          this.description,
+      @required
+      @JsonKey(name: 'schedule_candidates')
+      @ScheduleCandidateConverter()
+          this.scheduleCandidates,
+      @required
+      @JsonKey(name: 'desired_occupations')
+      @TechnicalStackConverter()
+          this.desiredOccupations,
+      @required
+      @JsonKey(name: 'working_days')
+          this.workingDays,
+      @required
+          this.note})
+      : assert(title != null),
         assert(description != null),
         assert(scheduleCandidates != null),
         assert(desiredOccupations != null),
@@ -202,10 +219,12 @@ class _$_Questionnaire with DiagnosticableTreeMixin implements _Questionnaire {
   @override
   final String description;
   @override
-  @JsonKey(name: 'schedule_candidate')
+  @JsonKey(name: 'schedule_candidates')
+  @ScheduleCandidateConverter()
   final List<ScheduleCandidate> scheduleCandidates;
   @override
-  @JsonKey(name: 'desired_occupation')
+  @JsonKey(name: 'desired_occupations')
+  @TechnicalStackConverter()
   final List<TechnicalStack> desiredOccupations;
   @override
   @JsonKey(name: 'working_days')
@@ -279,17 +298,18 @@ class _$_Questionnaire with DiagnosticableTreeMixin implements _Questionnaire {
 
 abstract class _Questionnaire implements Questionnaire {
   const factory _Questionnaire(
-      {@required
-          String id,
+      {String id,
       @required
           String title,
       @required
           String description,
       @required
-      @JsonKey(name: 'schedule_candidate')
+      @JsonKey(name: 'schedule_candidates')
+      @ScheduleCandidateConverter()
           List<ScheduleCandidate> scheduleCandidates,
       @required
-      @JsonKey(name: 'desired_occupation')
+      @JsonKey(name: 'desired_occupations')
+      @TechnicalStackConverter()
           List<TechnicalStack> desiredOccupations,
       @required
       @JsonKey(name: 'working_days')
@@ -307,10 +327,12 @@ abstract class _Questionnaire implements Questionnaire {
   @override
   String get description;
   @override
-  @JsonKey(name: 'schedule_candidate')
+  @JsonKey(name: 'schedule_candidates')
+  @ScheduleCandidateConverter()
   List<ScheduleCandidate> get scheduleCandidates;
   @override
-  @JsonKey(name: 'desired_occupation')
+  @JsonKey(name: 'desired_occupations')
+  @TechnicalStackConverter()
   List<TechnicalStack> get desiredOccupations;
   @override
   @JsonKey(name: 'working_days')

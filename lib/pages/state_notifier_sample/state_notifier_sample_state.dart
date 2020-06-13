@@ -8,7 +8,10 @@ part 'state_notifier_sample_state.freezed.dart';
 abstract class SampleState with _$SampleState {
   const factory SampleState({
     @Default(0) int count,
-    // テスト用のUser
-    @required User user,
+    Hackathon hackathon,
+    List<Participant> participants,
+    List<Group> groups,
+    Questionnaire questionnaire,
+    Joined joined,
   }) = _SampleState;
 }

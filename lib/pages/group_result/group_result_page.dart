@@ -1,64 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_state_notifier/flutter_state_notifier.dart';
+import 'package:morning_weakers/pages/group_result/group_result_controller.dart';
+import 'package:morning_weakers/pages/group_result/group_result_list_widget.dart';
+import 'package:morning_weakers/pages/group_result/group_result_state.dart';
 
 class GroupResultPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
-    //TODO:dummyData
-    const String tomLink =
-        'https://pbs.twimg.com/profile_images/711875358149062656/pSW1TCfr_400x400.jpg';
-    const List<List<String>> data = [
-      [tomLink, 'tom', 'server'],
-      [tomLink, 'tom', 'server'],
-      [tomLink, 'tom', 'server'],
-      [tomLink, 'tom', 'server'],
-    ];
-
     return Scaffold(
       appBar: AppBar(title: const Text('グループ分け結果')),
-      body: Container(
-        padding: const EdgeInsets.all(4),
-        child: GridView.count(
-            shrinkWrap: true,
-            childAspectRatio: 0.1,
-            crossAxisCount: 2,
-            children: <Widget>[
-              SingleChildScrollView(
-                child: Card(
-                  child: Container(
-                    margin: const EdgeInsets.all(12),
-                    child: Column(
-                      children: <Widget>[
-                        const Text(
-                          '朝弱いけん',
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Column(
-                          children: data
-                              .map(
-                                (e) => ListTile(
-                                  leading: CircleAvatar(
-                                    radius: 20,
-                                    backgroundImage: NetworkImage(e[0]),
-                                    backgroundColor: Colors.transparent,
-                                  ),
-                                  title: Text(e[1]),
-                                  subtitle: Text(e[2]),
-                                ),
-                              )
-                              .toList(),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ]),
+      body: StateNotifierProvider<GroupResultController, GroupResultState>(
+        create: (_) => GroupResultController(),
+        child: Container(
+          padding: const EdgeInsets.all(4),
+          child: GroupResultListWidget(),
+        ),
       ),
     );
   }

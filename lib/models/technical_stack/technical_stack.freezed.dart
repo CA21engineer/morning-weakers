@@ -16,7 +16,7 @@ class _$TechnicalStackTearOff {
   const _$TechnicalStackTearOff();
 
   _TechnicalStack call(
-      {@required String id,
+      {String id,
       @required Stack stack,
       @required List<Language> languages,
       @required Proficiency proficiency,
@@ -136,13 +136,12 @@ class _$_TechnicalStack
     with DiagnosticableTreeMixin
     implements _TechnicalStack {
   const _$_TechnicalStack(
-      {@required this.id,
+      {this.id,
       @required this.stack,
       @required this.languages,
       @required this.proficiency,
       this.priority})
-      : assert(id != null),
-        assert(stack != null),
+      : assert(stack != null),
         assert(languages != null),
         assert(proficiency != null);
 
@@ -217,7 +216,7 @@ class _$_TechnicalStack
 
 abstract class _TechnicalStack implements TechnicalStack {
   const factory _TechnicalStack(
-      {@required String id,
+      {String id,
       @required Stack stack,
       @required List<Language> languages,
       @required Proficiency proficiency,

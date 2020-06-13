@@ -5,10 +5,11 @@ part 'schedule_candidate.freezed.dart';
 
 part 'schedule_candidate.g.dart';
 
+// TODO: idを@requiredにする
 @freezed
 abstract class ScheduleCandidate with _$ScheduleCandidate {
   const factory ScheduleCandidate({
-    @required String id,
+    String id,
     @required DateTime start,
     @required DateTime end,
   }) = _ScheduleCandidate;

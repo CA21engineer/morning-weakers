@@ -22,16 +22,16 @@ class _$JoinedTearOff {
       @JsonKey(name: 'user_id')
           String userId,
       @required
-      @JsonKey(name: 'hackathon_id')
-          List<String> hackathonId,
+      @JsonKey(name: 'hackathon_ids')
+          List<String> hackathonIds,
       @required
-      @JsonKey(name: 'hackathon_icon_url')
-          List<String> hackathonIconUrl}) {
+      @JsonKey(name: 'hackathon_icon_urls')
+          List<String> hackathonIconUrls}) {
     return _Joined(
       id: id,
       userId: userId,
-      hackathonId: hackathonId,
-      hackathonIconUrl: hackathonIconUrl,
+      hackathonIds: hackathonIds,
+      hackathonIconUrls: hackathonIconUrls,
     );
   }
 }
@@ -43,10 +43,10 @@ mixin _$Joined {
   String get id;
   @JsonKey(name: 'user_id')
   String get userId;
-  @JsonKey(name: 'hackathon_id')
-  List<String> get hackathonId;
-  @JsonKey(name: 'hackathon_icon_url')
-  List<String> get hackathonIconUrl;
+  @JsonKey(name: 'hackathon_ids')
+  List<String> get hackathonIds;
+  @JsonKey(name: 'hackathon_icon_urls')
+  List<String> get hackathonIconUrls;
 
   Map<String, dynamic> toJson();
   $JoinedCopyWith<Joined> get copyWith;
@@ -58,8 +58,8 @@ abstract class $JoinedCopyWith<$Res> {
   $Res call(
       {String id,
       @JsonKey(name: 'user_id') String userId,
-      @JsonKey(name: 'hackathon_id') List<String> hackathonId,
-      @JsonKey(name: 'hackathon_icon_url') List<String> hackathonIconUrl});
+      @JsonKey(name: 'hackathon_ids') List<String> hackathonIds,
+      @JsonKey(name: 'hackathon_icon_urls') List<String> hackathonIconUrls});
 }
 
 class _$JoinedCopyWithImpl<$Res> implements $JoinedCopyWith<$Res> {
@@ -73,18 +73,18 @@ class _$JoinedCopyWithImpl<$Res> implements $JoinedCopyWith<$Res> {
   $Res call({
     Object id = freezed,
     Object userId = freezed,
-    Object hackathonId = freezed,
-    Object hackathonIconUrl = freezed,
+    Object hackathonIds = freezed,
+    Object hackathonIconUrls = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as String,
       userId: userId == freezed ? _value.userId : userId as String,
-      hackathonId: hackathonId == freezed
-          ? _value.hackathonId
-          : hackathonId as List<String>,
-      hackathonIconUrl: hackathonIconUrl == freezed
-          ? _value.hackathonIconUrl
-          : hackathonIconUrl as List<String>,
+      hackathonIds: hackathonIds == freezed
+          ? _value.hackathonIds
+          : hackathonIds as List<String>,
+      hackathonIconUrls: hackathonIconUrls == freezed
+          ? _value.hackathonIconUrls
+          : hackathonIconUrls as List<String>,
     ));
   }
 }
@@ -96,8 +96,8 @@ abstract class _$JoinedCopyWith<$Res> implements $JoinedCopyWith<$Res> {
   $Res call(
       {String id,
       @JsonKey(name: 'user_id') String userId,
-      @JsonKey(name: 'hackathon_id') List<String> hackathonId,
-      @JsonKey(name: 'hackathon_icon_url') List<String> hackathonIconUrl});
+      @JsonKey(name: 'hackathon_ids') List<String> hackathonIds,
+      @JsonKey(name: 'hackathon_icon_urls') List<String> hackathonIconUrls});
 }
 
 class __$JoinedCopyWithImpl<$Res> extends _$JoinedCopyWithImpl<$Res>
@@ -112,18 +112,18 @@ class __$JoinedCopyWithImpl<$Res> extends _$JoinedCopyWithImpl<$Res>
   $Res call({
     Object id = freezed,
     Object userId = freezed,
-    Object hackathonId = freezed,
-    Object hackathonIconUrl = freezed,
+    Object hackathonIds = freezed,
+    Object hackathonIconUrls = freezed,
   }) {
     return _then(_Joined(
       id: id == freezed ? _value.id : id as String,
       userId: userId == freezed ? _value.userId : userId as String,
-      hackathonId: hackathonId == freezed
-          ? _value.hackathonId
-          : hackathonId as List<String>,
-      hackathonIconUrl: hackathonIconUrl == freezed
-          ? _value.hackathonIconUrl
-          : hackathonIconUrl as List<String>,
+      hackathonIds: hackathonIds == freezed
+          ? _value.hackathonIds
+          : hackathonIds as List<String>,
+      hackathonIconUrls: hackathonIconUrls == freezed
+          ? _value.hackathonIconUrls
+          : hackathonIconUrls as List<String>,
     ));
   }
 }
@@ -133,12 +133,12 @@ class _$_Joined with DiagnosticableTreeMixin implements _Joined {
   const _$_Joined(
       {@required this.id,
       @required @JsonKey(name: 'user_id') this.userId,
-      @required @JsonKey(name: 'hackathon_id') this.hackathonId,
-      @required @JsonKey(name: 'hackathon_icon_url') this.hackathonIconUrl})
+      @required @JsonKey(name: 'hackathon_ids') this.hackathonIds,
+      @required @JsonKey(name: 'hackathon_icon_urls') this.hackathonIconUrls})
       : assert(id != null),
         assert(userId != null),
-        assert(hackathonId != null),
-        assert(hackathonIconUrl != null);
+        assert(hackathonIds != null),
+        assert(hackathonIconUrls != null);
 
   factory _$_Joined.fromJson(Map<String, dynamic> json) =>
       _$_$_JoinedFromJson(json);
@@ -149,15 +149,15 @@ class _$_Joined with DiagnosticableTreeMixin implements _Joined {
   @JsonKey(name: 'user_id')
   final String userId;
   @override
-  @JsonKey(name: 'hackathon_id')
-  final List<String> hackathonId;
+  @JsonKey(name: 'hackathon_ids')
+  final List<String> hackathonIds;
   @override
-  @JsonKey(name: 'hackathon_icon_url')
-  final List<String> hackathonIconUrl;
+  @JsonKey(name: 'hackathon_icon_urls')
+  final List<String> hackathonIconUrls;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Joined(id: $id, userId: $userId, hackathonId: $hackathonId, hackathonIconUrl: $hackathonIconUrl)';
+    return 'Joined(id: $id, userId: $userId, hackathonIds: $hackathonIds, hackathonIconUrls: $hackathonIconUrls)';
   }
 
   @override
@@ -167,8 +167,8 @@ class _$_Joined with DiagnosticableTreeMixin implements _Joined {
       ..add(DiagnosticsProperty('type', 'Joined'))
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('userId', userId))
-      ..add(DiagnosticsProperty('hackathonId', hackathonId))
-      ..add(DiagnosticsProperty('hackathonIconUrl', hackathonIconUrl));
+      ..add(DiagnosticsProperty('hackathonIds', hackathonIds))
+      ..add(DiagnosticsProperty('hackathonIconUrls', hackathonIconUrls));
   }
 
   @override
@@ -179,12 +179,12 @@ class _$_Joined with DiagnosticableTreeMixin implements _Joined {
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.userId, userId) ||
                 const DeepCollectionEquality().equals(other.userId, userId)) &&
-            (identical(other.hackathonId, hackathonId) ||
+            (identical(other.hackathonIds, hackathonIds) ||
                 const DeepCollectionEquality()
-                    .equals(other.hackathonId, hackathonId)) &&
-            (identical(other.hackathonIconUrl, hackathonIconUrl) ||
+                    .equals(other.hackathonIds, hackathonIds)) &&
+            (identical(other.hackathonIconUrls, hackathonIconUrls) ||
                 const DeepCollectionEquality()
-                    .equals(other.hackathonIconUrl, hackathonIconUrl)));
+                    .equals(other.hackathonIconUrls, hackathonIconUrls)));
   }
 
   @override
@@ -192,8 +192,8 @@ class _$_Joined with DiagnosticableTreeMixin implements _Joined {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(userId) ^
-      const DeepCollectionEquality().hash(hackathonId) ^
-      const DeepCollectionEquality().hash(hackathonIconUrl);
+      const DeepCollectionEquality().hash(hackathonIds) ^
+      const DeepCollectionEquality().hash(hackathonIconUrls);
 
   @override
   _$JoinedCopyWith<_Joined> get copyWith =>
@@ -213,11 +213,11 @@ abstract class _Joined implements Joined {
       @JsonKey(name: 'user_id')
           String userId,
       @required
-      @JsonKey(name: 'hackathon_id')
-          List<String> hackathonId,
+      @JsonKey(name: 'hackathon_ids')
+          List<String> hackathonIds,
       @required
-      @JsonKey(name: 'hackathon_icon_url')
-          List<String> hackathonIconUrl}) = _$_Joined;
+      @JsonKey(name: 'hackathon_icon_urls')
+          List<String> hackathonIconUrls}) = _$_Joined;
 
   factory _Joined.fromJson(Map<String, dynamic> json) = _$_Joined.fromJson;
 
@@ -227,11 +227,11 @@ abstract class _Joined implements Joined {
   @JsonKey(name: 'user_id')
   String get userId;
   @override
-  @JsonKey(name: 'hackathon_id')
-  List<String> get hackathonId;
+  @JsonKey(name: 'hackathon_ids')
+  List<String> get hackathonIds;
   @override
-  @JsonKey(name: 'hackathon_icon_url')
-  List<String> get hackathonIconUrl;
+  @JsonKey(name: 'hackathon_icon_urls')
+  List<String> get hackathonIconUrls;
   @override
   _$JoinedCopyWith<_Joined> get copyWith;
 }

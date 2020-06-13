@@ -30,10 +30,10 @@ class DataTableView extends StatelessWidget {
     }).toList();
 
     final List<String> columnTitles = [
-      'アイコン',
-      'ユーザ名',
-      '合計稼働時間',
-      '技術スタック',
+      'icon',
+      'name',
+      'time',
+      'stacks',
     ];
 
     return Container(
@@ -59,7 +59,13 @@ class DataTableView extends StatelessWidget {
               rows: dataTableList
                   .map(
                     (row) => DataRow(cells: [
-                      DataCell(Image.network(row.iconUrl)),
+                      DataCell(
+                          CircleAvatar(
+                            radius: 20,
+                            backgroundImage: NetworkImage(row.iconUrl),
+                            backgroundColor: Colors.transparent,
+                          ),
+                      ),
                       DataCell(Text(row.displayName)),
                       DataCell(Text(row.workingDays.toString())),
                       DataCell(

@@ -10,8 +10,8 @@ abstract class Joined with _$Joined {
   const factory Joined({
     @required String id,
     @required @JsonKey(name: 'user_id') String userId,
-    @required @JsonKey(name: 'hackathon_id') List<String> hackathonId,
-    @required @JsonKey(name: 'hackathon_icon_url') List<String> hackathonIconUrl,
+    @required @JsonKey(name: 'hackathon_ids') List<String> hackathonIds,
+    @required @JsonKey(name: 'hackathon_icon_urls') List<String> hackathonIconUrls,
   }) = _Joined;
 
   factory Joined.fromJson(Map<String, dynamic> json) => _$JoinedFromJson(json);

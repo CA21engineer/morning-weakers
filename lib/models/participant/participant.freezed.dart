@@ -16,12 +16,13 @@ class _$ParticipantTearOff {
   const _$ParticipantTearOff();
 
   _Participant call(
-      {@required
-          String id,
+      {String id,
       @required
+      @UserConverter()
           User user,
       @required
-      @JsonKey(name: 'desired_occupation')
+      @JsonKey(name: 'desired_occupations')
+      @TechnicalStackConverter()
           List<TechnicalStack> desiredOccupations,
       @required
       @JsonKey(name: 'working_days')
@@ -47,8 +48,10 @@ const $Participant = _$ParticipantTearOff();
 
 mixin _$Participant {
   String get id;
+  @UserConverter()
   User get user;
-  @JsonKey(name: 'desired_occupation')
+  @JsonKey(name: 'desired_occupations')
+  @TechnicalStackConverter()
   List<TechnicalStack> get desiredOccupations;
   @JsonKey(name: 'working_days')
   int get workingDays;
@@ -66,8 +69,10 @@ abstract class $ParticipantCopyWith<$Res> {
       _$ParticipantCopyWithImpl<$Res>;
   $Res call(
       {String id,
-      User user,
-      @JsonKey(name: 'desired_occupation')
+      @UserConverter()
+          User user,
+      @JsonKey(name: 'desired_occupations')
+      @TechnicalStackConverter()
           List<TechnicalStack> desiredOccupations,
       @JsonKey(name: 'working_days')
           int workingDays,
@@ -126,8 +131,10 @@ abstract class _$ParticipantCopyWith<$Res>
   @override
   $Res call(
       {String id,
-      User user,
-      @JsonKey(name: 'desired_occupation')
+      @UserConverter()
+          User user,
+      @JsonKey(name: 'desired_occupations')
+      @TechnicalStackConverter()
           List<TechnicalStack> desiredOccupations,
       @JsonKey(name: 'working_days')
           int workingDays,
@@ -174,14 +181,23 @@ class __$ParticipantCopyWithImpl<$Res> extends _$ParticipantCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Participant with DiagnosticableTreeMixin implements _Participant {
   const _$_Participant(
-      {@required this.id,
-      @required this.user,
-      @required @JsonKey(name: 'desired_occupation') this.desiredOccupations,
-      @required @JsonKey(name: 'working_days') this.workingDays,
-      @required this.note,
-      @required @JsonKey(name: 'is_admin') this.isAdmin})
-      : assert(id != null),
-        assert(user != null),
+      {this.id,
+      @required
+      @UserConverter()
+          this.user,
+      @required
+      @JsonKey(name: 'desired_occupations')
+      @TechnicalStackConverter()
+          this.desiredOccupations,
+      @required
+      @JsonKey(name: 'working_days')
+          this.workingDays,
+      @required
+          this.note,
+      @required
+      @JsonKey(name: 'is_admin')
+          this.isAdmin})
+      : assert(user != null),
         assert(desiredOccupations != null),
         assert(workingDays != null),
         assert(note != null),
@@ -193,9 +209,11 @@ class _$_Participant with DiagnosticableTreeMixin implements _Participant {
   @override
   final String id;
   @override
+  @UserConverter()
   final User user;
   @override
-  @JsonKey(name: 'desired_occupation')
+  @JsonKey(name: 'desired_occupations')
+  @TechnicalStackConverter()
   final List<TechnicalStack> desiredOccupations;
   @override
   @JsonKey(name: 'working_days')
@@ -266,12 +284,13 @@ class _$_Participant with DiagnosticableTreeMixin implements _Participant {
 
 abstract class _Participant implements Participant {
   const factory _Participant(
-      {@required
-          String id,
+      {String id,
       @required
+      @UserConverter()
           User user,
       @required
-      @JsonKey(name: 'desired_occupation')
+      @JsonKey(name: 'desired_occupations')
+      @TechnicalStackConverter()
           List<TechnicalStack> desiredOccupations,
       @required
       @JsonKey(name: 'working_days')
@@ -288,9 +307,11 @@ abstract class _Participant implements Participant {
   @override
   String get id;
   @override
+  @UserConverter()
   User get user;
   @override
-  @JsonKey(name: 'desired_occupation')
+  @JsonKey(name: 'desired_occupations')
+  @TechnicalStackConverter()
   List<TechnicalStack> get desiredOccupations;
   @override
   @JsonKey(name: 'working_days')
