@@ -7,7 +7,16 @@ class QuestionnaireRepository {
   Future<void> createQuestionnaire(String hackathonId, Questionnaire questionnaire) async {
     final DocumentReference hackRef = _firestore.collection('hackathons').document(hackathonId);
     // TODO: Firestoreに移行する
-    final Hackathon hackathon = Hackathon.fromJson((await hackRef.get()).data);
+    final participants = (await hackRef.collection('participants').getDocuments()).documents.map((document) {
+      if (document.data.isNotEmpty) {
+        return document.data..putIfAbsent('id', () => document.documentID);
+      } else {
+        return <String, dynamic>{};
+      }
+    }).toList();
+    final Hackathon hackathon = Hackathon.fromJson((await hackRef.get()).data
+      ..putIfAbsent('id', () => hackathonId)
+      ..putIfAbsent('participants', () => participants));
     // TODO: 既に作成していたらメッセージ出す？そもそも導線最初しかなさそう
     if (hackathon.questionnaire == null) {
       await hackRef.updateData(questionnaire.toJson());

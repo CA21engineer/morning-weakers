@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:morning_weakers/core/dummy_data.dart';
 import 'package:morning_weakers/models/models.dart';
 
@@ -13,7 +14,9 @@ class HackathonRepository {
     final Map<String, dynamic> hackMap = hackathon.copyWith(id: hackRef.documentID).toJson()
       ..remove('participants')
       ..remove('groups')
+      ..remove('questionnaire')
       ..remove('notifications');
+    debugPrint(hackMap.toString());
     await hackRef.setData(hackMap).whenComplete(() {
       // participantsのSubCollectionに代入
       final CollectionReference participantsRef = hackRef.collection('participants');
