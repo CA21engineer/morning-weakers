@@ -22,7 +22,7 @@ class OneTeamNumberContainer extends StatelessWidget {
           Row(
             children: <Widget>[
               Text(
-                '$memberNumber人', // (state.1チームの人数)を監視する
+                '$memberNumber人', // TODO: (state.1チームの人数)を監視する
                 textAlign: TextAlign.right,
                 style: const TextStyle(fontSize: 20),
               ),
@@ -59,7 +59,7 @@ class OneTeamNumberContainer extends StatelessWidget {
               itemExtent: 40,
               children: pickerList.map<Widget>((element) => Text(element.toString())).toList(),
               onSelectedItemChanged: (index) {
-                // stateに変更を伝える
+                // TODO: stateに変更を伝える
               },
             ),
           ),

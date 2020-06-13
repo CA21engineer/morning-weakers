@@ -17,6 +17,7 @@ import 'package:morning_weakers/repositories/notification_repository.dart';
 import 'package:morning_weakers/repositories/participant_repository.dart';
 import 'package:morning_weakers/repositories/questionnaire_repository.dart';
 import 'package:provider/provider.dart';
+import 'package:morning_weakers/core/dummy_data.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -85,7 +86,7 @@ class MyApp extends StatelessWidget {
               );
             case '/adminGroupEditPage':
               return MaterialPageRoute<void>(
-                builder: (_) => AdminGroupEditPage(),
+                builder: (_) => AdminGroupEditPage(dummyParticipants()),
               );
             case '/stateManagementSample':
               return MaterialPageRoute<void>(

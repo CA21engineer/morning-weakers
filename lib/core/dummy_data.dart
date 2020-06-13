@@ -44,12 +44,13 @@ Participant dummyParticipant({
   bool isAdmin = false,
 }) =>
     Participant(
-        id: id,
-        user: user ?? dummyUser(),
-        desiredOccupations: desiredOccupations ?? [dummyTechnicalStack()],
-        workingDays: workingDays,
-        note: note,
-        isAdmin: isAdmin);
+      id: id,
+      user: user ?? dummyUser(),
+      desiredOccupations: desiredOccupations ?? [dummyTechnicalStack()],
+      workingDays: workingDays,
+      note: note,
+      isAdmin: isAdmin,
+    );
 
 Hackathon dummyHackathon({
   String id = 'dummy',
@@ -161,4 +162,45 @@ Link dummyLink({
       title: title,
       url: url,
       iconUrl: iconUrl,
+    );
+
+List<Participant> dummyParticipants() =>
+    List<Participant>.filled(
+      7,
+      dummyParticipant(
+        user: dummyUser(
+          technicalStacks: [dummyTechnicalStack(stack: Stack.iOS)],
+        ),
+      ),
+    ) +
+    List<Participant>.filled(
+      5,
+      dummyParticipant(
+        user: dummyUser(
+          technicalStacks: [dummyTechnicalStack(stack: Stack.Android)],
+        ),
+      ),
+    ) +
+    List<Participant>.filled(
+      4,
+      dummyParticipant(
+          user: dummyUser(
+        technicalStacks: [dummyTechnicalStack(stack: Stack.Web)],
+      )),
+    ) +
+    List<Participant>.filled(
+      3,
+      dummyParticipant(
+        user: dummyUser(
+          technicalStacks: [dummyTechnicalStack(stack: Stack.Unity)],
+        ),
+      ),
+    ) +
+    List<Participant>.filled(
+      8,
+      dummyParticipant(
+        user: dummyUser(
+          technicalStacks: [dummyTechnicalStack(stack: Stack.Serverside)],
+        ),
+      ),
     );
