@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:morning_weakers/models/models.dart';
 import 'package:morning_weakers/pages/home/home_state.dart';
+import 'package:morning_weakers/pages/home/drawer/widget/menu_widget.dart';
 import 'package:provider/provider.dart';
 
 class HackathonDetailWidget extends StatelessWidget {
@@ -53,35 +54,12 @@ class HackathonDetailWidget extends StatelessWidget {
                       )
                       .toList(),
                 ),
-                _menus()
+                Menu()
               ],
             ),
           ),
         ],
       ),
     );
-  }
-
-  Widget _menus() {
-    final List<List<String>> menus = [
-      ['All Groups', '/navigation'],
-      ['All Participants', '/navigation'],
-      ['Edit My Info', '/navigation'],
-      ['Questionnaire', '/navigation'],
-    ];
-
-    return Column(
-        children: menus
-            .map(
-              (button) => ListTile(
-                title: Text(
-                  button[0],
-                  style: const TextStyle(fontSize: 15),
-                ),
-                trailing: const Icon(Icons.arrow_forward_ios),
-//onTap: () => button[1],
-              ),
-            )
-            .toList());
   }
 }
