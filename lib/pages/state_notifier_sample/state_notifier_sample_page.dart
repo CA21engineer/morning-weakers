@@ -16,19 +16,60 @@ class SamplePage extends StatelessWidget {
         ),
         body: Center(
           child: Builder(builder: (context) {
-            return Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text('${context.select<SampleState, int>((state) => state.count)}'),
-                GestureDetector(
-                  onTap: () => context.read<SampleController>().handleClick(),
-                  child: const Icon(Icons.add),
-                ),
-                GestureDetector(
-                  onTap: () => context.read<SampleController>().createHackathon(),
-                  child: const Icon(Icons.create),
-                )
-              ],
+            return SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text('${context.select<SampleState, int>((state) => state.count)}'),
+                  GestureDetector(
+                    onTap: () => context.read<SampleController>().handleClick(),
+                    child: const Icon(Icons.add),
+                  ),
+                  GestureDetector(
+                    onTap: () => context.read<SampleController>().createHackathon(),
+                    child: const Icon(Icons.create),
+                  ),
+                  Text(
+                      'getHackathon ${context.select<SampleState, Hackathon>((state) => state.hackathon)?.toString() ?? 'null'}'),
+                  GestureDetector(
+                    onTap: () => context.read<SampleController>().getHackathon(),
+                    child: const Icon(Icons.add),
+                  ),
+                  Text(
+                      'getMyJoined ${context.select<SampleState, Joined>((state) => state.joined)?.toString() ?? 'null'}'),
+                  GestureDetector(
+                    onTap: () => context.read<SampleController>().getMyJoined(),
+                    child: const Icon(Icons.add),
+                  ),
+                  Text('joinHackathon'),
+                  GestureDetector(
+                    onTap: () => context.read<SampleController>().joinHackathon(),
+                    child: const Icon(Icons.add),
+                  ),
+                  Text('createQuestionnaire'),
+                  GestureDetector(
+                    onTap: () => context.read<SampleController>().createQuestionnaire(),
+                    child: const Icon(Icons.add),
+                  ),
+                  Text(
+                      'getParticipants ${context.select<SampleState, List<Participant>>((state) => state.participants)?.toString() ?? 'null'}'),
+                  GestureDetector(
+                    onTap: () => context.read<SampleController>().getParticipants(),
+                    child: const Icon(Icons.add),
+                  ),
+                  Text(
+                      'getGroups ${context.select<SampleState, List<Group>>((state) => state.groups)?.toString() ?? 'null'}'),
+                  GestureDetector(
+                    onTap: () => context.read<SampleController>().getGroups(),
+                    child: const Icon(Icons.add),
+                  ),
+                  Text('createGroups'),
+                  GestureDetector(
+                    onTap: () => context.read<SampleController>().createGroups(),
+                    child: const Icon(Icons.add),
+                  ),
+                ],
+              ),
             );
           }),
         ),

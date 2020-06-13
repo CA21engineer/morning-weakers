@@ -11,7 +11,11 @@ import 'package:morning_weakers/pages/admin_top/admin_top_page.dart';
 import 'package:morning_weakers/pages/state_notifier_sample/state_notifier_sample_page.dart';
 import 'package:morning_weakers/pages/admin_group_edit/admin_group_edit_page.dart';
 import 'package:morning_weakers/pages/state_management_sample/state_management_sample_page.dart';
+import 'package:morning_weakers/repositories/group_repository.dart';
 import 'package:morning_weakers/repositories/hackathon_repository.dart';
+import 'package:morning_weakers/repositories/notification_repository.dart';
+import 'package:morning_weakers/repositories/participant_repository.dart';
+import 'package:morning_weakers/repositories/questionnaire_repository.dart';
 import 'package:provider/provider.dart';
 
 class MyApp extends StatelessWidget {
@@ -21,6 +25,18 @@ class MyApp extends StatelessWidget {
       providers: [
         Provider<HackathonRepository>.value(
           value: HackathonRepository(),
+        ),
+        Provider<QuestionnaireRepository>.value(
+          value: QuestionnaireRepository(),
+        ),
+        Provider<ParticipantRepository>.value(
+          value: ParticipantRepository(),
+        ),
+        Provider<GroupRepository>.value(
+          value: GroupRepository(),
+        ),
+        Provider<NotificationRepository>.value(
+          value: NotificationRepository(),
         ),
       ],
       child: MaterialApp(
