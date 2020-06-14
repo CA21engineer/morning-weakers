@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:morning_weakers/repositories/model/user_base_info.dart';
 import 'package:rxdart/rxdart.dart';
 
 // TODO: interface作ってRepositoryにInjectする
@@ -18,9 +19,11 @@ class FirebaseAuthService {
   }
 
   final BehaviorSubject<bool> _loginController = BehaviorSubject();
+
   ValueStream<bool> get isLogin => _loginController.stream;
 
   final BehaviorSubject<String> _idController = BehaviorSubject();
+
   ValueStream<String> get uid => _idController.stream;
 
   //TODO:他のiconたちはmodel作って返す
@@ -55,6 +58,15 @@ class FirebaseAuthService {
     await _googleSignIn.signOut();
     _loginController.sink.add(false);
     _idController.sink.add(null);
+  }
+
+  Future<UserBaseInfo> getUserBaseInfo() async {
+    final FirebaseUser user = await FirebaseAuth.instance.currentUser();
+    if (user != null) {
+      return UserBaseInfo(displayName: user.displayName, iconUrl: user.photoUrl);
+    } else {
+      return null;
+    }
   }
 
   void dispose() {

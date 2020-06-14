@@ -15,6 +15,7 @@ import 'package:morning_weakers/pages/state_notifier_sample/state_notifier_sampl
 import 'package:morning_weakers/pages/admin_group_edit/admin_group_edit_page.dart';
 import 'package:morning_weakers/pages/state_management_sample/state_management_sample_page.dart';
 import 'package:morning_weakers/pages/admin_input_hackathon_info/admin_input_hackathon_info_page.dart';
+import 'package:morning_weakers/repositories/auth_repository.dart';
 import 'package:morning_weakers/repositories/group_repository.dart';
 import 'package:morning_weakers/repositories/hackathon_repository.dart';
 import 'package:morning_weakers/repositories/notification_repository.dart';
@@ -33,9 +34,11 @@ class MyApp extends StatelessWidget {
         child: Consumer<FirebaseAuthService>(builder: (_, authService, __) {
           return MultiProvider(
             providers: [
-              // TODO: この書き方はアンチパターンなのか調べる
               Provider<HackathonRepository>.value(
                 value: HackathonRepository(authService),
+              ),
+              Provider<AuthRepository>.value(
+                value: AuthRepository(authService),
               ),
               Provider<UserRepository>.value(
                 value: UserRepository(authService),

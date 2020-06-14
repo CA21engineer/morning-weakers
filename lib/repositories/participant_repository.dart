@@ -8,6 +8,19 @@ class ParticipantRepository {
     final List<DocumentSnapshot> documents =
         (await _firestore.collection('hackathons').document(hackathonId).collection('participants').getDocuments())
             .documents;
-    return Future.value(documents.map((snapshot) => Participant.fromJson(snapshot.data..putIfAbsent('id', () => snapshot.documentID))).toList());
+    return Future.value(documents
+        .map((snapshot) => Participant.fromJson(snapshot.data..putIfAbsent('id', () => snapshot.documentID)))
+        .toList());
+  }
+
+  Future<bool> isAdmin(String hackathonId, User user) async {
+    // TODO: userをparticipantの埋め込みにせず、useridでクエリできるようにする
+    final participantSnapshot = await _firestore
+        .collection('hackathons')
+        .document(hackathonId)
+        .collection('participants')
+        .where('user', isEqualTo: user)
+        .getDocuments();
+    return participantSnapshot.documents.isNotEmpty;
   }
 }
