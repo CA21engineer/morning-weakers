@@ -31,7 +31,6 @@ class ListItem extends StatelessWidget {
           subtitle: Text(
             '${context.select<AdminGroupEditState, String>((state) => state.participants[index].user.technicalStacks[0].stack.getValue())}',
           ),
-          trailing: const Text('チーム1'),
         ),
       ),
     );
