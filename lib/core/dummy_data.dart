@@ -173,37 +173,37 @@ List<Participant> dummyParticipants() =>
         ),
       ),
     ) +
-        List<Participant>.filled(
-          5,
-          dummyParticipant(
-            user: dummyUser(
-              technicalStacks: [dummyTechnicalStack(stack: Stack.Android)],
-            ),
-          ),
-        ) +
-        List<Participant>.filled(
-          4,
-          dummyParticipant(
-              user: dummyUser(
-                technicalStacks: [dummyTechnicalStack(stack: Stack.Web)],
-              )),
-        ) +
-        List<Participant>.filled(
-          3,
-          dummyParticipant(
-            user: dummyUser(
-              technicalStacks: [dummyTechnicalStack(stack: Stack.Unity)],
-            ),
-          ),
-        ) +
-        List<Participant>.filled(
-          8,
-          dummyParticipant(
-            user: dummyUser(
-              technicalStacks: [dummyTechnicalStack(stack: Stack.Serverside)],
-            ),
-          ),
-        );
+    List<Participant>.filled(
+      5,
+      dummyParticipant(
+        user: dummyUser(
+          technicalStacks: [dummyTechnicalStack(stack: Stack.Android)],
+        ),
+      ),
+    ) +
+    List<Participant>.filled(
+      4,
+      dummyParticipant(
+          user: dummyUser(
+        technicalStacks: [dummyTechnicalStack(stack: Stack.Web)],
+      )),
+    ) +
+    List<Participant>.filled(
+      3,
+      dummyParticipant(
+        user: dummyUser(
+          technicalStacks: [dummyTechnicalStack(stack: Stack.Unity)],
+        ),
+      ),
+    ) +
+    List<Participant>.filled(
+      8,
+      dummyParticipant(
+        user: dummyUser(
+          technicalStacks: [dummyTechnicalStack(stack: Stack.Serverside)],
+        ),
+      ),
+    );
 
 Joined dummyJoined({
   String id = 'dummy',
@@ -218,16 +218,14 @@ Joined dummyJoined({
       hackathonIconUrls: hackathonIconUrls ?? dummyHackathonIcons(),
     );
 
-List<String> dummyHackathonIds() =>
-    [
+List<String> dummyHackathonIds() => [
       'https://avatars1.githubusercontent.com/u/64519003?s=200&v=4',
       'https://avatars1.githubusercontent.com/u/64519003?s=200&v=4',
       'https://avatars1.githubusercontent.com/u/64519003?s=200&v=4',
       'https://avatars1.githubusercontent.com/u/64519003?s=200&v=4',
     ];
 
-List<String> dummyHackathonIcons() =>
-    [
+List<String> dummyHackathonIcons() => [
       'https://avatars1.githubusercontent.com/u/64519003?s=200&v=4',
       'https://avatars2.githubusercontent.com/u/41050625?s=200&v=200',
       'https://avatars2.githubusercontent.com/u/60251703?s=200&v=4',
