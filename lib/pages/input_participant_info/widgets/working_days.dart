@@ -9,7 +9,7 @@ class WorkingDays extends StatelessWidget {
       padding: const EdgeInsets.all(8),
       child: Column(
         children: <Widget>[
-          const Text('参加可能日程(複数選択可)'),
+          const Text('稼働可能日数(目安でOKです😃)'),
           Column(
             children: workingDays.map(
               (workingDay) => ListTile(
