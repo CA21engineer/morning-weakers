@@ -7,9 +7,9 @@ import 'package:provider/provider.dart';
 class NotificationWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final List<model.Notification> notification = context.select<HomeState, List<model.Notification>>(
-      (state) => state.hackathon.notifications,
-    );
+    // TODO: hackathonがnullだからそこfix
+    final List<model.Notification> notification =
+        context.select<HomeState, List<model.Notification>>((state) => state.hackathon.notifications);
     // ignore: cascade_invocations
     notification.sort((a, b) => a.createdAt.compareTo(b.createdAt));
 
