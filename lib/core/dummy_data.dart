@@ -81,8 +81,8 @@ Hackathon dummyHackathon({
       span: span,
       questionnaire: questionnaire,
       participants: participants ?? [dummyParticipant()],
-      groups: groups,
-      notifications: notifications,
+      groups: groups ?? [dummyGroup()],
+      notifications: notifications ?? [dummyNotification()],
     );
 
 Notification dummyNotification({
