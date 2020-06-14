@@ -1,6 +1,8 @@
 import 'package:state_notifier/state_notifier.dart';
 import 'package:morning_weakers/models/notifier_state.dart';
+// import 'package:morning_weakers/models/models.dart';
 import 'package:morning_weakers/pages/admin_input_hackathon_info/admin_input_hackathon_info_state.dart';
+import 'package:morning_weakers/repositories/hackathon_repository.dart';
 
 class AdminInputHackathonInfoController extends StateNotifier<AdminInputHackathonInfoState> with LocatorMixin {
   AdminInputHackathonInfoController() : super(const AdminInputHackathonInfoState()) {
@@ -10,8 +12,7 @@ class AdminInputHackathonInfoController extends StateNotifier<AdminInputHackatho
     );
   }
 
-  // TODO: Repositoy
-  // StateManagementSampleRepository get stateManagementSampleRepository => read<StateManagementSampleRepository>();
+  HackathonRepository get groupRepository => read<HackathonRepository>();
 
   void setState(StateOption stateOption, String stringValue, DateTime dateTimeValue) {
     switch (stateOption) {
@@ -41,9 +42,17 @@ class AdminInputHackathonInfoController extends StateNotifier<AdminInputHackatho
 
   Future<void> handleCreateHackathon() async {
     state = state.copyWith(notifierState: NotifierState.loading);
-    // TODO: Repositoryのmethod
+    // TODO: User情報の取得
     await Future<void>.delayed(const Duration(seconds: 2));
-    // await stateManagementSampleRepository.waitFewSecond();
+//    await groupRepository.createHackathon(Hackathon(
+//      title: state.title,
+//      description: state.description,
+//      theme: state.theme,
+//      startDate: state.startDate,
+//      endDate: state.endDate,
+//      span: 0,
+//      participants: Participant(user: User(), isAdmin: true),
+//    ));
     state = state.copyWith(notifierState: NotifierState.loaded);
   }
 }
