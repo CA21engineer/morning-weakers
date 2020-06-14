@@ -14,11 +14,12 @@ class AdminGroupEditController extends StateNotifier<AdminGroupEditState> with L
   }
 
   GroupRepository get groupRepository => read<GroupRepository>();
+
   HackathonRepository get hackathonRepository => read<HackathonRepository>();
 
   Future<void> handlePostGroups() async {
     state = state.copyWith(notifierState: NotifierState.loading);
-    await groupRepository.createGroups(hackathonRepository.currentHackathonId, state.groups);
+    await groupRepository.createGroups(await hackathonRepository.currentHackathonId(), state.groups);
     state = state.copyWith(notifierState: NotifierState.loaded);
   }
 }
