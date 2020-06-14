@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:morning_weakers/pages/input_participant_info/input_participant_info_page.dart';
 
 class Menu extends StatelessWidget {
-  final List<List<String>> menus = [
+  final List<List<String>> _menus = [
     ['All Groups', '/navigation'],
     ['All Participants', '/navigation'],
     ['Edit My Info', '/navigation'],
@@ -12,11 +12,11 @@ class Menu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
   return Column(
-      children: menus
+      children: _menus
           .map(
-            (button) => ListTile(
+            (buttonTitle) => ListTile(
           title: Text(
-            button[0],
+            buttonTitle[0],
             style: const TextStyle(fontSize: 15),
           ),
           trailing: const Icon(Icons.arrow_forward_ios),
