@@ -12,8 +12,8 @@ class AdminInputHackathonInfoContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<List<Object>> formList = [
       ['ハッカソン名', StateOption.Title, 1],
-      ['概要', StateOption.Theme, 1],
-      ['ハッカソン名', StateOption.Description, 4],
+      ['テーマ', StateOption.Theme, 1],
+      ['概要', StateOption.Description, 4],
     ];
     if (context.select<AdminInputHackathonInfoState, NotifierState>((state) => state.notifierState) == NotifierState.loading) {
       return const Center(child: CircularProgressIndicator());

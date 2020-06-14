@@ -28,7 +28,7 @@ class AdminGroupEditContainer extends StatelessWidget {
                 child: Container(
                   margin: const EdgeInsets.symmetric(vertical: 16),
                   child: RaisedButton(
-                    child: const Text('チームを確定する'),
+                    child: const Text('グループを作成する'),
                     color: Theme.of(context).accentColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
