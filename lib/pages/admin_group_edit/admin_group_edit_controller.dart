@@ -3,6 +3,7 @@ import 'package:state_notifier/state_notifier.dart';
 import 'package:morning_weakers/models/notifier_state.dart';
 import 'package:morning_weakers/models/models.dart';
 import 'package:morning_weakers/repositories/group_repository.dart';
+import 'package:morning_weakers/repositories/hackathon_repository.dart';
 
 class AdminGroupEditController extends StateNotifier<AdminGroupEditState> with LocatorMixin {
   AdminGroupEditController(List<Participant> participants) : super(const AdminGroupEditState()) {
@@ -13,12 +14,11 @@ class AdminGroupEditController extends StateNotifier<AdminGroupEditState> with L
   }
 
   GroupRepository get groupRepository => read<GroupRepository>();
+  HackathonRepository get hackathonRepository => read<HackathonRepository>();
 
   Future<void> handlePostGroups() async {
     state = state.copyWith(notifierState: NotifierState.loading);
-    // TODO: Repositoryのmethod
-    await Future<void>.delayed(const Duration(seconds: 2));
-//    await groupRepository.createGroups('', state.groups);
+    await groupRepository.createGroups(hackathonRepository.currentHackathonId, state.groups);
     state = state.copyWith(notifierState: NotifierState.loaded);
   }
 }
