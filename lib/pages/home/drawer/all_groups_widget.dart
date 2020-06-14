@@ -7,26 +7,28 @@ import 'package:morning_weakers/pages/admin_input_hackathon_info/admin_input_hac
 class AllGroupsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final List<String> groupIconUrls = context.select<HomeState, List<String>>(
-        (state) =>
-            state.hackathon.groups.map((group) => group.iconUrl).toList());
+    final List<String> hackathonIconUrls =
+        context.select<HomeState, List<String>>((state) => state.joined.hackathonIconUrls.map((state) => state).toList());
 
     return Container(
-      padding: const EdgeInsets.all(12),
+      padding: const EdgeInsets.all(8),
       child: ListView(children: [
         ListView(
           shrinkWrap: true,
-          children: groupIconUrls
+          children: hackathonIconUrls
               .map(
-                (url) => ClipRRect(
-                  borderRadius: BorderRadius.circular(12),
-                  child: Image.network(url, fit: BoxFit.cover),
+                (url) => Container(
+                  margin: const EdgeInsets.all(4),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(12),
+                    child: Image.network(url, fit: BoxFit.cover),
+                  ),
                 ),
               )
               .toList(),
         ),
         FlatButton(
-          padding: EdgeInsets.all(5.0),
+          padding: const EdgeInsets.all(4),
           child: const Icon(Icons.add, size: 52),
           onPressed: () => Navigator.push<void>(context, MaterialPageRoute(builder: (_) => AdminInputHackathonInfoPage())),
         )

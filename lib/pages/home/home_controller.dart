@@ -14,6 +14,10 @@ class HomeController extends StateNotifier<HomeState> with LocatorMixin {
   //TODO:API生えたら非同期処理実装する！
   Future<void> getData() {
     final Hackathon hackathon = dummyHackathon();
-    state = state.copyWith(hackathon: hackathon);
+    final Joined joined = dummyJoined();
+    state = state.copyWith(
+      hackathon: hackathon,
+      joined: joined,
+    );
   }
 }
