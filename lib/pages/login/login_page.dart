@@ -21,8 +21,6 @@ class LoginPage extends StatelessWidget {
                     // debug用
                     Navigator.push<void>(context, MaterialPageRoute(builder: (_) => NewProfilePage())));
               });
-            }
-          );
         })
       ]),
     );
